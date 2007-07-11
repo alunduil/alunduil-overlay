@@ -32,8 +32,8 @@ crc32c_check()
 	ebegin "Checking for CRC32C support..."
 	linux_chkconfig_present CRYPTO_CRC32C
 
-	if [[ $? -gt 0 ]]; then
-		eend 0
+	if [[ $? -eq 0 ]]; then
+		eend 1
 		eerror "This version needs CRC32C support!"
 		eerror "Please enable CRC32C support in your kernel config, found at:"
 		eerror
@@ -43,7 +43,7 @@ crc32c_check()
 		eerror "and recompile your kernel..."
 		die "CRC32C support not detected"
 	else
-		eend 1
+		eend 0
 	fi
 }
 
