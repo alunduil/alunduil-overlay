@@ -30,7 +30,7 @@ RDEPEND="!sys-block/iscsi-initiator-core-tools\
 crc32c_check()
 {
 	ebegin "Checking for CRC32C support..."
-	linux_chkconfig_present CRC32C
+	linux_chkconfig_present CRYPTO_CRC32C
 	eend $?
 
 	if [[ $? -ne 0 ]]; then
