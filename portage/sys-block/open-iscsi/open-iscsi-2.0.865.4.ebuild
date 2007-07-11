@@ -31,6 +31,7 @@ crc32c_check()
 {
 	ebegin "Checking for CRC32C support..."
 	linux_chkconfig_present CRYPTO_CRC32C
+	linux_chkconfig_present LIBCRC32C
 	eend $?
 
 	if [[ $? -ne 0 ]]; then
