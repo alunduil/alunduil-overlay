@@ -1,0 +1,89 @@
+diff -cr open-iscsi-2.0-865.4/Makefile open-iscsi-2.0.865.4/Makefile
+*** open-iscsi-2.0-865.4/Makefile	2007-06-21 11:15:17.000000000 -0500
+--- open-iscsi-2.0.865.4/Makefile	2007-07-09 17:03:28.000000000 -0500
+***************
+*** 30,46 ****
+  	$(MAKE) -C kernel
+  	$(MAKE) -C utils
+  	$(MAKE) -C utils/fwparam_ibft
+- 	@echo
+- 	@echo "Compilation complete                Output file"
+- 	@echo "----------------------------------- ----------------"
+- 	@echo "Built iSCSI Open Interface module:  kernel/scsi_transport_iscsi.ko"
+- 	@echo "Built iSCSI library module:         kernel/libiscsi.ko"
+- 	@echo "Built iSCSI over TCP kernel module: kernel/iscsi_tcp.ko"
+- 	@echo "Built iSCSI daemon:                 usr/iscsid"
+- 	@echo "Built management application:       usr/iscsiadm"
+- 	@echo "Built utility:                      utils/fwparam_ibft/fwparam_ibft"
+- 	@echo
+- 	@echo Read README file for detailed information.
+  
+  clean:
+  	$(MAKE) -C utils clean
+--- 30,35 ----
+diff -cr open-iscsi-2.0-865.4/usr/io.c open-iscsi-2.0.865.4/usr/io.c
+*** open-iscsi-2.0-865.4/usr/io.c	2007-06-21 11:15:17.000000000 -0500
+--- open-iscsi-2.0.865.4/usr/io.c	2007-07-09 15:57:21.000000000 -0500
+***************
+*** 82,87 ****
+--- 82,88 ----
+  
+  }
+  
++ #if 0
+  static int get_hwaddress_from_netdev(char *netdev, char *hwaddress)
+  {
+  	struct ifaddrs *ifap, *ifa;
+***************
+*** 159,164 ****
+--- 160,166 ----
+  	freeifaddrs(ifap);
+  	return found;
+  }
++ #endif
+  
+  /*
+   * In this mode we do not support interfaces like a bond or alias because
+diff -cr open-iscsi-2.0-865.4/usr/log.c open-iscsi-2.0.865.4/usr/log.c
+*** open-iscsi-2.0-865.4/usr/log.c	2007-06-21 11:15:17.000000000 -0500
+--- open-iscsi-2.0.865.4/usr/log.c	2007-07-09 15:58:11.000000000 -0500
+***************
+*** 278,283 ****
+--- 278,284 ----
+  	}
+  }
+  
++ #if 0
+  static void __dump_line(int level, unsigned char *buf, int *cp)
+  {
+  	char line[16*3+5], *lp = line;
+***************
+*** 308,313 ****
+--- 309,315 ----
+  	if (cnt == 15)
+  		__dump_line(level, buf, cp);
+  }
++ #endif
+  
+  #define dump_line() __dump_line(level, char_buf, &char_cnt)
+  #define dump_char(ch) __dump_char(level, char_buf, &char_cnt, ch)
+diff -cr open-iscsi-2.0-865.4/usr/Makefile open-iscsi-2.0.865.4/usr/Makefile
+*** open-iscsi-2.0-865.4/usr/Makefile	2007-06-21 11:15:17.000000000 -0500
+--- open-iscsi-2.0.865.4/usr/Makefile	2007-07-09 14:46:28.000000000 -0500
+***************
+*** 50,56 ****
+  
+  iscsistart: $(IPC_OBJ) $(ISCSI_LIB_SRCS) $(INITIATOR_SRCS) iscsistart.o \
+  		statics.o
+! 	$(CC) $(CFLAGS) -static $^ -o $@
+  
+  clean:
+  	rm -f *.o $(PROGRAMS)
+--- 50,56 ----
+  
+  iscsistart: $(IPC_OBJ) $(ISCSI_LIB_SRCS) $(INITIATOR_SRCS) iscsistart.o \
+  		statics.o
+! 	$(CC) $(CFLAGS) -static $^ -o $@ 
+  
+  clean:
+  	rm -f *.o $(PROGRAMS)
