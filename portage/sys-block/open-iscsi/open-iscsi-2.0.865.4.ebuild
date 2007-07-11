@@ -64,7 +64,7 @@ pkg_setup()
 	fi
 	eend 0
 
-# 	crc32c_check
+	crc32c_check
 }
 
 src_unpack()
