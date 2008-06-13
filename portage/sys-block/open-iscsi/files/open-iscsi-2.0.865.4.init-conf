@@ -2,12 +2,5 @@
 # modified. Parameters such as the location of the config file, and etc.
 # This rc script and config file were created by Alex Brandt on 2007-06-08.
 
-INITIATOR='/etc/iscsi/initiatorname.iscsi'
-
 # Options to pass to the iscsid daemon.
 OPTIONS=""
-
-# Mounting commands for the mountpoints created by this daemon.
-# Example: mount /dev/sda1 /mnt; mount /dev/sdb1 /var;
-MOUNTS="mount /dev/sdb1 /var/www/localhost -o noatime,acl"
-

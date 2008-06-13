@@ -8,10 +8,6 @@ depend() {
 	before	*
 }
 
-mount() {
-	# Do mounting stuff here...
-}
-
 start() {
 	ebegin "Starting iscsid"
 	start-stop-daemon --start --exec /sbin/iscsid --pidfile /var/run/iscsid.pid -- ${OPTIONS}
