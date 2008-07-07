@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/sys-block/open-iscsi/ChangeLog,v 1.12 2007/02/22 00:59:56 jokey Exp $
 
+  07 Jul 2008: Alex Brandt <alunduil@alunduil.com>
+    Added the ebuild for version 2.0.8 that fixes
+	a couple of minor bugs in handling default options.
+
   16 Jun 2008: John Harris <harrisj@mnstate.edu>
     Created new ebuild for version 2.0.6.
 
