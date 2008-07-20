@@ -1,0 +1,112 @@
+
+# HG changeset patch
+# User tiwai
+# Date 1203418566 -3600
+# Node ID 2d6164f0bf0e2fa0ab4f86410a062fcab56cbfd1
+# Parent 1755f49098f52721c69a478dfe292ffaa58b1d8a
+Dont touch fs_struct in drivers
+
+The sound drivers and the pnpbios core test for current->root != NULL.  This
+test seems to be unnecessary since we always have rootfs mounted before
+initializing the drivers.
+
+Patch-level: Merged
+Signed-off-by: Jan Blunck <jblunck@suse.de>
+Acked-by: Christoph Hellwig <hch@lst.de>
+Cc: Bjorn Helgaas <bjorn.helgaas@hp.com>
+Cc: Jaroslav Kysela <perex@suse.cz>
+Acked-by: Takashi Iwai <tiwai@suse.de>
+Cc: Al Viro <viro@zeniv.linux.org.uk>
+Signed-off-by: Andrew Morton <akpm@linux-foundation.org>
+Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>
+
+--- alsa-kernel/core/seq/seq_clientmgr.c	Tue Feb 19 11:38:05 2008 +0100
++++ alsa-kernel/core/seq/seq_clientmgr.c	Tue Feb 19 11:56:06 2008 +0100
+@@ -149,13 +149,13 @@ struct snd_seq_client *snd_seq_client_us
+ 	}
+ 	spin_unlock_irqrestore(&clients_lock, flags);
+ #ifdef CONFIG_KMOD
+-	if (!in_interrupt() && current->fs->root) {
++	if (!in_interrupt()) {
+ 		static char client_requested[SNDRV_SEQ_GLOBAL_CLIENTS];
+ 		static char card_requested[SNDRV_CARDS];
+ 		if (clientid < SNDRV_SEQ_GLOBAL_CLIENTS) {
+ 			int idx;
+ 			
+-			if (! client_requested[clientid] && current->fs->root) {
++			if (!client_requested[clientid]) {
+ 				client_requested[clientid] = 1;
+ 				for (idx = 0; idx < 15; idx++) {
+ 					if (seq_client_load[idx] < 0)
+--- alsa-kernel/core/seq/seq_device.c	Tue Feb 19 11:38:05 2008 +0100
++++ alsa-kernel/core/seq/seq_device.c	Tue Feb 19 11:56:06 2008 +0100
+@@ -147,9 +147,6 @@ void snd_seq_device_load_drivers(void)
+ 	 * may cause blocking.
+ 	 */
+ 	if (snd_seq_in_init)
+-		return;
+-
+-	if (! current->fs->root)
+ 		return;
+ 
+ 	mutex_lock(&ops_mutex);
+--- alsa-kernel/core/sound.c	Tue Feb 19 11:38:05 2008 +0100
++++ alsa-kernel/core/sound.c	Tue Feb 19 11:56:06 2008 +0100
+@@ -71,8 +71,6 @@ static DEFINE_MUTEX(sound_mutex);
+  */
+ void snd_request_card(int card)
+ {
+-	if (! current->fs->root)
+-		return;
+ 	if (snd_card_locked(card))
+ 		return;
+ 	if (card < 0 || card >= cards_limit)
+@@ -86,8 +84,6 @@ static void snd_request_other(int minor)
+ {
+ 	char *str;
+ 
+-	if (! current->fs->root)
+-		return;
+ 	switch (minor) {
+ 	case SNDRV_MINOR_SEQUENCER:	str = "snd-seq";	break;
+ 	case SNDRV_MINOR_TIMER:		str = "snd-timer";	break;
+--- alsa-kernel/core/timer.c	Tue Feb 19 11:38:05 2008 +0100
++++ alsa-kernel/core/timer.c	Tue Feb 19 11:56:06 2008 +0100
+@@ -150,8 +150,6 @@ static struct snd_timer *snd_timer_find(
+ 
+ static void snd_timer_request(struct snd_timer_id *tid)
+ {
+-	if (! current->fs->root)
+-		return;
+ 	switch (tid->dev_class) {
+ 	case SNDRV_TIMER_CLASS_GLOBAL:
+ 		if (tid->device < timer_limit)
+--- alsa-kernel/ppc/daca.c	Tue Feb 19 11:38:05 2008 +0100
++++ alsa-kernel/ppc/daca.c	Tue Feb 19 11:56:06 2008 +0100
+@@ -250,9 +250,8 @@ int __init snd_pmac_daca_init(struct snd
+ 	struct pmac_daca *mix;
+ 
+ #ifdef CONFIG_KMOD
+-	if (current->fs->root)
+-		request_module("i2c-powermac");
+-#endif /* CONFIG_KMOD */	
++	request_module("i2c-powermac");
++#endif /* CONFIG_KMOD */
+ 
+ 	mix = kzalloc(sizeof(*mix), GFP_KERNEL);
+ 	if (! mix)
+--- alsa-kernel/ppc/tumbler.c	Tue Feb 19 11:38:05 2008 +0100
++++ alsa-kernel/ppc/tumbler.c	Tue Feb 19 11:56:06 2008 +0100
+@@ -1351,9 +1351,8 @@ int __init snd_pmac_tumbler_init(struct 
+ 	char *chipname;
+ 
+ #ifdef CONFIG_KMOD
+-	if (current->fs->root)
+-		request_module("i2c-powermac");
+-#endif /* CONFIG_KMOD */	
++	request_module("i2c-powermac");
++#endif /* CONFIG_KMOD */
+ 
+ 	mix = kzalloc(sizeof(*mix), GFP_KERNEL);
+ 	if (! mix)
+
