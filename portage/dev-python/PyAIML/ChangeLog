@@ -1,0 +1,27 @@
+# ChangeLog for dev-python/python-irclib
+# Copyright 2000-2008 Gentoo Technologies, Inc.; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/python-irclib/ChangeLog,v 1.5 2008/12/07 01:01:09 patrick Exp $
+
+*python-irclib-0.4.8 (07 Dec 2008)
+
+  07 Dec 2008; Patrick Lauer <patrick@gentoo.org>
+  +python-irclib-0.4.8.ebuild:
+  Bumping to 0.4.8, closing #238199
+
+  06 Aug 2008; Jesus Rivero <neurogeek@gentoo.org>
+  python-irclib-0.4.6.ebuild:
+  Fixed ebuild to use distutils. See bug #232575
+
+  02 Jul 2007; Piotr Jaroszyński <peper@gentoo.org>
+  python-irclib-0.4.6.ebuild:
+  (QA) RESTRICT clean up.
+
+  14 May 2007; Thilo Bangert <bangert@gentoo.org> metadata.xml:
+  add <herd>no-herd</herd>
+
+*python-irclib-0.4.6 (22 Oct 2006)
+
+  22 Oct 2006; Radoslaw Stachowiak <radek@gentoo.org> +python-irclib-0.4.6.ebuild:
+  Initial import. Ebuild submitted by Steingrim Dovland and Conrad Kostecki.
+  Closes bug #43826
+
