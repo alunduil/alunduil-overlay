@@ -23,7 +23,7 @@ SRC_URI="${SRC_URI}
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="-* ~amd64 ~x86 ~x86-fbsd"
+KEYWORDS="-* amd64 x86 ~x86-fbsd"
 IUSE="alsa cups dbus esd +gecko hal jack jpeg lcms ldap nas ncurses +opengl oss samba scanner xml +X"
 RESTRICT="test" #72375
 
