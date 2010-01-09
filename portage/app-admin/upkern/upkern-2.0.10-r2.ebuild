@@ -13,6 +13,8 @@ SLOT="0"
 KEYWORDS="-* ~amd64 ~x86 ~sparc"
 IUSE=""
 
+RESTRICT="mirror"
+
 DEPEND="dev-lang/python"
 RDEPEND="${DEPEND}
     sys-kernel/module-rebuild"
