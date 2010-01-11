@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<layman>
+	<overlay
+    	type = "svn"
+		src  = "http://www.alunduil.com/svn/portage/trunk/portage/"
+        contact = "alunduil@alunduil.com"
+        name = "alunduil-overlay">
+        <link>
+			http://www.alunduil.com/svn/portage/trunk/portage/
+	    </link>
+	    <description>Alunduil's Personal Overlay</description>
+	</overlay>
+</layman>
+
