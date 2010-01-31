@@ -5,8 +5,8 @@
 inherit distutils
 
 DESCRIPTION="Automated Gentoo kernel updater."
-HOMEPAGE="http://www.alunduil.com/programs/python-kernel-updater/"
-SRC_URI="http://www.alunduil.com/svn/upkern/trunk/dist/${P}.tar.bz2"
+HOMEPAGE="http://www.alunduil.com/programs/upkern/"
+SRC_URI="http://www.alunduil.com/svn/distfiles/upkern/${P}.tar.bz2"
 
 # Remove this when added to the portage tree:
 RESTRICT="test"

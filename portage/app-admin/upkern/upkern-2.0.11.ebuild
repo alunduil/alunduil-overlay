@@ -6,7 +6,7 @@ inherit distutils
 
 DESCRIPTION="Automated Gentoo kernel updater."
 HOMEPAGE="http://www.alunduil.com/programs/upkern/"
-SRC_URI="http://www.alunduil.com/svn/upkern/trunk/dist/${P}.tar.bz2"
+SRC_URI="http://www.alunduil.com/svn/distfiles/upkern/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
