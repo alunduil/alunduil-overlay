@@ -1,6 +1,0 @@
-# This configuration file allows parameters to be passed to iscsid to be
-# modified. Parameters such as the location of the config file, and etc.
-# This rc script and config file were created by Alex Brandt on 2007-06-08.
-
-# Options to pass to the iscsid daemon.
-OPTIONS=""
