@@ -10,7 +10,7 @@ SRC_URI="http://www.alunduil.com/svn/distfiles/upkern/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="-* ~amd64 ~x86 ~sparc"
+KEYWORDS="amd64 x86 sparc"
 IUSE=""
 
 RESTRICT="mirror"
@@ -20,8 +20,8 @@ RDEPEND="${DEPEND}
     sys-kernel/module-rebuild"
 
 src_install() {
-    distutils_src_install
+	distutils_src_install
 	newbin upkern.py upkern || die "newbin failed"
-    dodoc ChangeLog || die "dodoc failed"
+	dodoc ChangeLog || die "dodoc failed"
 }
 

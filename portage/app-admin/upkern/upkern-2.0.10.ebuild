@@ -13,7 +13,7 @@ RESTRICT="test"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="-* ~amd64 ~x86 ~sparc"
+KEYWORDS="amd64 x86 sparc"
 IUSE=""
 
 DEPEND="dev-lang/python"
