@@ -17,15 +17,14 @@ KEYWORDS="-* ~amd64 ~x86 ~sparc"
 IUSE=""
 
 DEPEND="dev-lang/python"
-RDEPEND="${DEPEND}
-    sys-kernel/module-rebuild"
+RDEPEND="${DEPEND} \
+	sys-kernel/module-rebuild"
 
 src_install()
 {
-    distutils_src_install
+	distutils_src_install
 
-    #dodoc ChangeLog README TODO || die "dodoc failed"
-    dodoc ChangeLog || die "dodoc failed"
+	#dodoc ChangeLog README TODO || die "dodoc failed"
+	dodoc ChangeLog || die "dodoc failed"
 	#doman man/*.8 || die "doman failed"
 }
-
