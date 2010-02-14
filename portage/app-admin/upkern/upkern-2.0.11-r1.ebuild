@@ -25,10 +25,10 @@ PROPERTIES=""
 
 src_install() {
 	distutils_src_install
-	newbin upkern.py upkern || die "newbin failed"
+	newsbin upkern.py upkern || die "newbin upkern.py upkern failed"
 	
 	if use doc; then
-		dodoc ChangeLog || die "dodoc failed"
+		dodoc ChangeLog || die "dodoc ChangeLog failed"
 	fi
 }
 
