@@ -6,22 +6,29 @@ inherit distutils
 
 DESCRIPTION="Automated Gentoo kernel updater."
 HOMEPAGE="http://www.alunduil.com/programs/upkern/"
-SRC_URI="http://www.alunduil.com/svn/distfiles/upkern/${P}.tar.bz2"
 
+IUSE="doc"
+
+KEYWORDS="-* amd64 x86 ~sparc"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="-* amd64 x86 ~sparc"
-IUSE=""
 
-RESTRICT="mirror"
+SRC_URI="http://www.alunduil.com/svn/distfiles/upkern/${P}.tar.bz2"
 
 DEPEND="dev-lang/python"
-RDEPEND="${DEPEND}
-    sys-kernel/module-rebuild"
+#RDEPEND=""
+PDEPEND="sys-kernel/module-rebuild"
+
+RESTRICT="mirror"
+PROPERTIES=""
+
 
 src_install() {
-    distutils_src_install
+	distutils_src_install
 	newbin upkern.py upkern || die "newbin failed"
-    dodoc ChangeLog || die "dodoc failed"
+	
+	if use doc; then
+		dodoc ChangeLog || die "dodoc failed"
+	fi
 }
 
