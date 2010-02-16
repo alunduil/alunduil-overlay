@@ -41,7 +41,7 @@ src_compile() {
 }
 
 src_test() {
-	if use doc; then
+	if use test; then
 		cmake-utils_src_test
 	fi
 }
