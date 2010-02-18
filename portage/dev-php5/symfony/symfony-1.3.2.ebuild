@@ -4,7 +4,7 @@
 
 inherit php-pear-lib-r1 depend.php
 
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 
 DESCRIPTION="Open-source PHP5 professional web framework."
 HOMEPAGE="http://www.symfony-project.com/"
