@@ -1,1 +1,2 @@
 app-admin/upkern:doc - Install the documentation for upkern.
+app-admin/upkern:rebuild-modules - Require module-rebuild for the module rebuilding features.
