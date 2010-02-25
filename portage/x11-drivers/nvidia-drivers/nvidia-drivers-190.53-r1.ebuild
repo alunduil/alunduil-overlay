@@ -238,7 +238,7 @@ src_unpack() {
 	fi
 
 	if use kernel_linux && kernel_is gt 2 6 31; then
-		epatch "${FILESDIR}"/nvidia-190.53-2.6.33.path
+		epatch "${FILESDIR}"/nvidia-190.53-2.6.33.patch
 	fi
 }
 
