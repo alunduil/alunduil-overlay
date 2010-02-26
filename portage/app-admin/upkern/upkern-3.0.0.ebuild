@@ -27,6 +27,8 @@ PROPERTIES=""
 src_install() {
 	distutils_src_install
 	rm ${D}/usr/bin/upkern.py
+	rm ${D}/usr/COPYING
+	rmdir ${D}/usr/bin
 
 	newsbin upkern.py upkern || die "newsbin upkern.py upkern failed"
 
