@@ -14,7 +14,7 @@ SLOT="0"
 IUSE=""
 
 DEPEND="${DEPEND} >=dev-lang/php-5.2.0"
-RDEPEND="${DEPEND} dev-php/pear"
+RDEPEND="${DEPEND} >=dev-php/pear-1.9.0"
 
 need_php_by_category
 
