@@ -2,13 +2,13 @@
 <layman>
 	<overlay
     	type = "svn"
-		src  = "http://www.alunduil.com/svn/portage/trunk/portage/"
-        contact = "alunduil@alunduil.com"
-        name = "alunduil-overlay">
-        <link>
-			http://www.alunduil.com/svn/portage/trunk/portage/
+		  src  = "http://www.alunduil.com/svn/portage/trunk"
+      contact = "alunduil@alunduil.com"
+      name = "alunduil-overlay">
+      <link>
+			  http://www.alunduil.com/svn/portage/trunk
 	    </link>
-	    <description>Alunduil's Personal Overlay</description>
+	    <description>Alunduil's Overlay</description>
 	</overlay>
 </layman>
 
