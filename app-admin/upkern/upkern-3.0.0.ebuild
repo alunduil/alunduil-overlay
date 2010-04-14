@@ -17,6 +17,7 @@ SRC_URI="http://www.alunduil.com/svn/distfiles/upkern/${P}.tar.bz2"
 
 DEPEND="dev-lang/python
 	>=app-portage/gentoolkit-0.3
+	<app-portage/gentoolkit-0.3.0_rc10
 	"
 RDEPEND="${DEPEND}"
 PDEPEND="module-rebuild? ( sys-kernel/module-rebuild )"
