@@ -1,0 +1,58 @@
+diff --git a/btrfsck.c b/btrfsck.c
+index 73f1836..3110c03 100644
+--- a/btrfsck.c
++++ b/btrfsck.c
+@@ -1847,7 +1847,7 @@ static int all_backpointers_checked(struct extent_record *rec, int print_errs)
+ 					(unsigned long long)rec->start,
+ 					back->full_backref ?
+ 					"parent" : "root",
+-					back->full_backref ? 
++					back->full_backref ?
+ 					(unsigned long long)dback->parent:
+ 					(unsigned long long)dback->root,
+ 					(unsigned long long)dback->owner,
+@@ -1941,7 +1941,7 @@ static int check_owner_ref(struct btrfs_root *root,
+ 		btrfs_item_key_to_cpu(buf, &key, 0);
+ 	else
+ 		btrfs_node_key_to_cpu(buf, &key, 0);
+-	
++
+ 	btrfs_init_path(&path);
+ 	path.lowest_level = level + 1;
+ 	ret = btrfs_search_slot(NULL, ref_root, &key, &path, 0, 0);
+@@ -2047,7 +2047,7 @@ static struct data_backref *find_data_backref(struct extent_record *rec,
+ 		if (!node->is_data)
+ 			continue;
+ 		back = (struct data_backref *)node;
+-		if (parent > 0) { 
++		if (parent > 0) {
+ 			if (!node->full_backref)
+ 				continue;
+ 			if (parent == back->parent)
+@@ -2583,7 +2583,7 @@ static int run_next_block(struct btrfs_root *root,
+ 				ref = btrfs_item_ptr(buf, i,
+ 						struct btrfs_shared_data_ref);
+ 				add_data_backref(extent_cache,
+-					key.objectid, key.offset, 0, 0, 0, 
++					key.objectid, key.offset, 0, 0, 0,
+ 					btrfs_shared_data_ref_count(buf, ref),
+ 					0);
+ 				continue;
+@@ -2626,7 +2626,7 @@ static int run_next_block(struct btrfs_root *root,
+ 					     ptr, size, 0, 0, 1, 0);
+ 			BUG_ON(ret);
+ 
+-			add_tree_backref(extent_cache, ptr, parent, 
++			add_tree_backref(extent_cache, ptr, parent,
+ 					 owner, 1);
+ 
+ 			if (level > 1) {
+@@ -2821,6 +2821,8 @@ int main(int ac, char **av)
+ 
+ 	radix_tree_init();
+ 	cache_tree_init(&root_cache);
++    if (strncmp("-p", av[1], 2))
++        av[1] = av[2];
+ 	root = open_ctree(av[1], 0, 0);
+ 
+ 	if (root == NULL)
