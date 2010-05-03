@@ -1,5 +1,5 @@
 diff --git a/btrfsck.c b/btrfsck.c
-index 73f1836..3110c03 100644
+index 73f1836..b3fabcc 100644
 --- a/btrfsck.c
 +++ b/btrfsck.c
 @@ -1847,7 +1847,7 @@ static int all_backpointers_checked(struct extent_record *rec, int print_errs)
@@ -47,12 +47,23 @@ index 73f1836..3110c03 100644
  					 owner, 1);
  
  			if (level > 1) {
-@@ -2821,6 +2821,8 @@ int main(int ac, char **av)
+@@ -2815,13 +2815,18 @@ int main(int ac, char **av)
+ 	struct cache_tree root_cache;
+ 	struct btrfs_root *root;
+ 	int ret;
++    int i;
+ 
+ 	if (ac < 2)
+ 		print_usage();
  
  	radix_tree_init();
  	cache_tree_init(&root_cache);
-+    if (strncmp("-p", av[1], 2))
-+        av[1] = av[2];
- 	root = open_ctree(av[1], 0, 0);
+-	root = open_ctree(av[1], 0, 0);
++
++    for (i = 1; !strncmp("-", av[i], 1) && i < ac; ++i);
++    if (i >= ac)
++        print_usage();
++	root = open_ctree(av[i], 0, 0);
  
  	if (root == NULL)
+ 		return 1;
