@@ -22,6 +22,7 @@ RDEPEND="${DEPEND}"
 
 EGIT_REPO_URI="git://git.kernel.org/pub/scm/linux/kernel/git/mason/btrfs-progs-unstable.git"
 EGIT_BRANCH="master"
+EGIT_PATCHES=( "${FILESDIR}"/btrfsck_boot.patch )
 
 src_unpack() {
 	git_src_unpack
@@ -30,10 +31,6 @@ src_unpack() {
 	# Fix hardcoded "gcc" and "make"
 	sed -i -e 's:gcc $(CFLAGS):$(CC) $(CFLAGS):' Makefile
 	sed -i -e 's:make:$(MAKE):' Makefile
-}
-
-src_prepare() {
-	epatch "${FILESDIR}"/btrfsck_boot.patch
 }
 
 src_compile() {
