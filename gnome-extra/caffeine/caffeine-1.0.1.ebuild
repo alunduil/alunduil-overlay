@@ -15,6 +15,7 @@ SRC_URI="http://launchpad.net/${PN}/${PV%.*}/${PV}/+download/${P}.tar.gz"
 
 DEPEND="dev-lang/python
 	dev-python/gconf-python
+	dev-python/python-xlib
 	"
 RDEPEND="${DEPEND}"
 #PDEPEND=""
