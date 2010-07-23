@@ -21,6 +21,8 @@ SRC_URI="http://www.alunduil.com/svn/distfiles/holland/${P}.tar.bz2"
 SRC_URI="http://hollandbackup.org/releases/stable/${PV%.*}/${P}.tar.gz"
 
 DEPEND="dev-lang/python
+	dev-python/sphinx
+	dev-python/setuptools
 	"
 RDEPEND="${DEPEND}"
 PDEPEND=""
