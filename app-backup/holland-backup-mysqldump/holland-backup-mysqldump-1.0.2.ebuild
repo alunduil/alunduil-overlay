@@ -23,9 +23,10 @@ SRC_URI="http://hollandbackup.org/releases/stable/${PV%.*}/${MY_P}.tar.gz"
 
 MY_DIR="$(echo ${PN} | tr '-' '.')"
 
-DEPEND=""
-RDEPEND="${DEPEND}
+DEPEND="
 	app-backup/holland
+	"
+RDEPEND="${DEPEND}
 	"
 PDEPEND=""
 
