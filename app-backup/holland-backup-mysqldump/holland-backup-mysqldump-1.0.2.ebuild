@@ -40,7 +40,7 @@ src_unpack() {
 }
 
 src_compile() {
-	cd ${MY_DIR}
+	cd ${MY_P}/plugins/${MY_DIR}
 	distutils_src_compile
 }
 
