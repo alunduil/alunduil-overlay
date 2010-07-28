@@ -39,3 +39,8 @@ src_unpack() {
 	unpack ${MY_P}.tar.gz
 }
 
+src_compile() {
+	cd ${MY_DIR}
+	distutils_src_compile
+}
+
