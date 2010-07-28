@@ -33,7 +33,7 @@ PDEPEND=""
 RESTRICT="mirror"
 PROPERTIES=""
 
-DISTUTILS_SETUP_FILES="${MY_P}/plugins/${MY_DIR}/setup.py"
+#DISTUTILS_SETUP_FILES="${MY_P}/plugins/${MY_DIR}/setup.py"
 
 src_unpack() {
 	unpack ${MY_P}.tar.gz
