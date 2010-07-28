@@ -13,7 +13,7 @@ structure, Holland can be used to backup anything you want by whatever means you
 want."
 HOMEPAGE="http://hollandbackup.org/"
 
-IUSE="doc"
+IUSE="doc mysql"
 
 KEYWORDS="-* amd64 x86"
 LICENSE="BSD"
@@ -25,6 +25,7 @@ SRC_URI="http://hollandbackup.org/releases/stable/${PV%.*}/${P}.tar.gz"
 DEPEND="dev-lang/python
 	dev-python/sphinx
 	dev-python/setuptools
+	mysql? ( app-backup/holland-backup-mysqldump )
 	"
 RDEPEND="${DEPEND}"
 PDEPEND=""
