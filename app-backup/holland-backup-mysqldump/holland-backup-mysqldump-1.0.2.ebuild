@@ -44,3 +44,8 @@ src_compile() {
 	distutils_src_compile
 }
 
+src_install() {
+	cd ${MY_P}/plugins/${MY_DIR}
+	distutils_src_install
+}
+
