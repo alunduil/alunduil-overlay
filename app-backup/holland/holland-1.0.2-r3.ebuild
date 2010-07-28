@@ -38,6 +38,8 @@ src_install() {
 	insinto /etc/holland
 	newins config/holland.conf holland.conf || \
 		die "Failed Inserting Holland Configuration!"
-	newins config/backupsets backupsets || \
-		die "Failed Inserting Holland BackupSet Configuration!"
+	keepdir /etc/holland/backupsets
+	insinto /etc/holland/backupsets
+	newins config/backupsets/default.conf default.conf || \
+		die "Failed Inserting Holland Default BackupSet Configuration!"
 }
