@@ -27,7 +27,10 @@ DEPEND="dev-lang/python
 	dev-python/setuptools
 	"
 RDEPEND="${DEPEND}"
-PDEPEND="mysql? ( app-backup/holland-backup-mysqldump )"
+PDEPEND="
+	mysql? ( app-backup/holland-backup-mysqldump )
+	app-backup/holland-lib-common
+	"
 
 RESTRICT="mirror"
 PROPERTIES=""
@@ -58,6 +61,9 @@ src_install() {
 
 	keepdir /etc/holland/providers
 	insinto /etc/holland/providers
+
+	if use mysql; then
 	newins config/providers/mysqldump.conf mysqldump.conf || \
 		die "Failed to insert mysqldump configuration!"
+	fi
 }
