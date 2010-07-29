@@ -4,7 +4,8 @@
 
 inherit distutils
 
-DESCRIPTION="Provides convenience methods for MySQL with Holland."
+DESCRIPTION="This script provides support for performing safe LVM snapshot
+backups for MySQL databases with Holland."
 HOMEPAGE="http://hollandbackup.org/"
 
 KEYWORDS="-* amd64 x86"
@@ -19,7 +20,7 @@ MY_DIR="$(echo ${PN} | tr '-' '.')"
 
 DEPEND="
 	app-backup/holland
-	dev-python/mysql-python
+	sys-fs/lvm2
 	"
 RDEPEND="${DEPEND}
 	"
@@ -33,12 +34,12 @@ src_unpack() {
 }
 
 src_compile() {
-	cd ${MY_P}/plugins/${MY_DIR}
+	cd ${MY_P}/plugins/$(echo ${MY_DIR} | sed -e 's/.lvm/_lvm/g')
 	distutils_src_compile
 }
 
 src_install() {
-	cd ${MY_P}/plugins/${MY_DIR}
+	cd ${MY_P}/plugins/$(echo ${MY_DIR} | sed -e 's/.lvm/_lvm/g')
 	distutils_src_install
 }
 

@@ -4,7 +4,8 @@
 
 inherit distutils
 
-DESCRIPTION="Provides convenience methods for MySQL with Holland."
+DESCRIPTION="Plugin support to provide backup and restore functionality through
+mysqldump backups with Holland."
 HOMEPAGE="http://hollandbackup.org/"
 
 KEYWORDS="-* amd64 x86"
