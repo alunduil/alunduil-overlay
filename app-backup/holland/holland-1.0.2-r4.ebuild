@@ -29,6 +29,7 @@ DEPEND="dev-lang/python
 RDEPEND="${DEPEND}"
 PDEPEND="
 	mysql? ( app-backup/holland-backup-mysqldump )
+	mysql? ( app-backup/holland-lib-mysql )
 	app-backup/holland-lib-common
 	"
 
