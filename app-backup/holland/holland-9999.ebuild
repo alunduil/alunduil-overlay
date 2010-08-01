@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit distutils
+inherit distutils git
 
 EAPI="3"
 
@@ -12,11 +12,11 @@ HOMEPAGE="http://hollandbackup.org/"
 
 IUSE="doc examples lvm maatkit +mysql postgresql sqlite"
 
-KEYWORDS="-* amd64 x86"
 LICENSE="BSD"
 SLOT="0"
 
-SRC_URI="http://hollandbackup.org/releases/stable/${PV%.*}/${P}.tar.gz"
+EGIT_REPO_URI="git://github.com/holland-backup/holland.git"
+SRC_URI=""
 
 DEPEND="dev-lang/python
 	dev-python/sphinx
