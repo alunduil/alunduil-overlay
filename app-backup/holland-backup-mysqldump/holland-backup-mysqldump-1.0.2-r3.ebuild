@@ -40,7 +40,7 @@ src_install() {
 	cd ${MY_P}/plugins/${MY_DIR}
 	distutils_src_install
 
-	cd ${W}/${MY_P}
+	cd ${WORKDIR}/${MY_P}
 
 	insinto /etc/holland/providers
 	newins config/providers/mysqldump.conf mysqldump.conf || \

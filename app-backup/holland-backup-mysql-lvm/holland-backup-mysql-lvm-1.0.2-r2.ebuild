@@ -6,7 +6,8 @@ inherit distutils
 
 EAPI="3"
 
-DESCRIPTION="An example backup plugin for Holland."
+DESCRIPTION="This script provides support for performing safe LVM snapshot
+backups for MySQL databases with Holland."
 HOMEPAGE="http://hollandbackup.org/"
 
 KEYWORDS="-* amd64 x86"
@@ -19,26 +20,30 @@ SRC_URI="http://hollandbackup.org/releases/stable/${PV%.*}/${MY_P}.tar.gz"
 
 MY_DIR="$(echo ${PN} | tr '-' '.')"
 
-DEPEND="app-backup/holland"
-RDEPEND="${DEPEND}"
+DEPEND="
+	app-backup/holland
+	app-backup/holland-lib-lvm
+	"
+RDEPEND="${DEPEND}
+	"
 PDEPEND=""
 
 RESTRICT="mirror"
 PROPERTIES=""
 
 src_compile() {
-	cd ${MY_P}/plugins/${MY_DIR}
+	cd ${MY_P}/plugins/$(echo ${MY_DIR} | sed -e 's/.lvm/_lvm/g')
 	distutils_src_compile
 }
 
 src_install() {
-	cd ${MY_P}/plugins/${MY_DIR}
+	cd ${MY_P}/plugins/$(echo ${MY_DIR} | sed -e 's/.lvm/_lvm/g')
 	distutils_src_install
 
 	cd ${WORKDIR}/${MY_P}
 
 	insinto /etc/holland/providers
-	newins config/providers/example.conf example.conf || \
-		die "Failed to insert example configuration!"
+	newins config/providers/mysql-lvm.conf mysql-lvm.conf || \
+		die "Could not insert mysql-lvm configuration!"
 }
 

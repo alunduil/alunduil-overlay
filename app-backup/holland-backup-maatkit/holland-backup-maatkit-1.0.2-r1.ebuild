@@ -6,7 +6,8 @@ inherit distutils
 
 EAPI="3"
 
-DESCRIPTION="An example backup plugin for Holland."
+DESCRIPTION="Provides support for using Maatkit's mk-parallel-dump script with
+Holland."
 HOMEPAGE="http://hollandbackup.org/"
 
 KEYWORDS="-* amd64 x86"
@@ -19,7 +20,10 @@ SRC_URI="http://hollandbackup.org/releases/stable/${PV%.*}/${MY_P}.tar.gz"
 
 MY_DIR="$(echo ${PN} | tr '-' '.')"
 
-DEPEND="app-backup/holland"
+DEPEND="
+	app-backup/holland
+	dev-db/maatkit
+	"
 RDEPEND="${DEPEND}"
 PDEPEND=""
 
@@ -38,7 +42,7 @@ src_install() {
 	cd ${WORKDIR}/${MY_P}
 
 	insinto /etc/holland/providers
-	newins config/providers/example.conf example.conf || \
-		die "Failed to insert example configuration!"
+	newins config/providers/maatkit.conf maatkit.conf || \
+		die "Failed to insert maatkit configuration!"
 }
 

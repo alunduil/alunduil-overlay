@@ -6,7 +6,8 @@ inherit distutils
 
 EAPI="3"
 
-DESCRIPTION="An example backup plugin for Holland."
+DESCRIPTION="Uses /dev/random. A bit more of an example than
+holland.backup.example."
 HOMEPAGE="http://hollandbackup.org/"
 
 KEYWORDS="-* amd64 x86"
@@ -38,7 +39,7 @@ src_install() {
 	cd ${WORKDIR}/${MY_P}
 
 	insinto /etc/holland/providers
-	newins config/providers/example.conf example.conf || \
-		die "Failed to insert example configuration!"
+	newins config/providers/random.conf random.conf || \
+		die "Could not insert random configuration!"
 }
 
