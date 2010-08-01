@@ -6,8 +6,7 @@ inherit distutils
 
 EAPI="3"
 
-DESCRIPTION="Plugin support to provide backup and restore functionality through
-mysqldump backups with Holland."
+DESCRIPTION="An example backup plugin for Holland."
 HOMEPAGE="http://hollandbackup.org/"
 
 KEYWORDS="-* amd64 x86"
@@ -20,12 +19,8 @@ SRC_URI="http://hollandbackup.org/releases/stable/${PV%.*}/${MY_P}.tar.gz"
 
 MY_DIR="$(echo ${PN} | tr '-' '.')"
 
-DEPEND="
-	app-backup/holland
-	app-backup/holland-lib-mysql
-	"
-RDEPEND="${DEPEND}
-	"
+DEPEND="app-backup/holland"
+RDEPEND="${DEPEND}"
 PDEPEND=""
 
 RESTRICT="mirror"
@@ -43,7 +38,7 @@ src_install() {
 	cd ${W}/${MY_P}
 
 	insinto /etc/holland/providers
-	newins config/providers/mysqldump.conf mysqldump.conf || \
-		die "Failed to insert mysqldump configuration!"
+	newins config/providers/example.conf example.conf || \
+		die "Failed to insert example configuration!"
 }
 
