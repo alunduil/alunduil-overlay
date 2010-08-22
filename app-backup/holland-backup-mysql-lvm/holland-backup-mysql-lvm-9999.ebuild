@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -6,8 +6,7 @@ EAPI="3"
 
 inherit distutils git
 
-DESCRIPTION="This script provides support for performing safe LVM snapshot
-backups for MySQL databases with Holland."
+DESCRIPTION="Provides a safe LVM snapshot backup for MySQL with Holland."
 HOMEPAGE="http://hollandbackup.org/"
 
 IUSE=""
@@ -42,10 +41,9 @@ src_install() {
 	cd ${MY_P}/plugins/$(echo ${MY_DIR} | sed -e 's/.lvm/_lvm/g')
 	distutils_src_install
 
-	cd ${WORKDIR}/${MY_P}
+	cd "${WORKDIR}"/${MY_P}
 
 	insinto /etc/holland/providers
 	newins config/providers/mysql-lvm.conf mysql-lvm.conf || \
 		die "Could not insert mysql-lvm configuration!"
 }
-

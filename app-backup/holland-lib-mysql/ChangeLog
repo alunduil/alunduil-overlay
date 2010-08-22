@@ -1,0 +1,9 @@
+# ChangeLog for app-backup/holland-lib-mysql
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  22 Aug 2010; <alunduil@gentoo.org> holland-lib-mysql-1.0.2-r1.ebuild,
+  holland-lib-mysql-1.0.2-r2.ebuild, holland-lib-mysql-1.0.4.ebuild,
+  holland-lib-mysql-9999.ebuild:
+  Adding initial holland ebuilds
+

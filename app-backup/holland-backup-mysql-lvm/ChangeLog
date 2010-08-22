@@ -1,0 +1,11 @@
+# ChangeLog for app-backup/holland-backup-mysql-lvm
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  22 Aug 2010; <alunduil@gentoo.org>
+  holland-backup-mysql-lvm-1.0.2-r1.ebuild,
+  holland-backup-mysql-lvm-1.0.2-r2.ebuild,
+  holland-backup-mysql-lvm-1.0.4.ebuild,
+  holland-backup-mysql-lvm-9999.ebuild:
+  Adding initial holland ebuilds
+

@@ -1,0 +1,7 @@
+# ChangeLog for sys-apps/pclean
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  22 Aug 2010; <alunduil@gentoo.org> pclean-0.3.ebuild, pclean-0.4.ebuild:
+  Adding initial pclean ebuilds
+

@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -29,12 +29,12 @@ PDEPEND="
 	sqlite? ( app-backup/holland-backup-sqlite )
 	postgresql? ( app-backup/holland-backup-pgdump )
 	lvm? ( mysql? ( app-backup/holland-backup-mysql-lvm ) )
-	examples? ( 
-		app-backup/holland-backup-example 
+	examples? (
+		app-backup/holland-backup-example
 		app-backup/holland-backup-random
 		)
-	maatkit? ( 
-		app-backup/holland[mysql] 
+	maatkit? (
+		app-backup/holland[mysql]
 		app-backup/holland-backup-maatkit
 		)
 	"
@@ -49,12 +49,12 @@ src_install() {
 
 	keepdir /etc/holland
 	insinto /etc/holland
-	doins config/holland.conf || die "Failed Inserting Holland 
+	doins config/holland.conf || die "Failed Inserting Holland
 		Configuration!"
 
 	keepdir /etc/holland/backupsets
 	insinto /etc/holland/backupsets
-	doins config/backupsets/default.conf || die "Failed Inserting Holland 
+	doins config/backupsets/default.conf || die "Failed Inserting Holland
 		Default BackupSet Configuration!"
 
 	dodir /etc/holland/backupsets/examples

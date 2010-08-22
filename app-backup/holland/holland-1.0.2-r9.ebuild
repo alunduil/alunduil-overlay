@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -32,12 +32,12 @@ PDEPEND="
 		postgresql? ( app-backup/holland-backup-pgdump )
 		)
 	lvm? ( mysql? ( app-backup/holland-backup-mysql-lvm ) )
-	examples? ( 
-		app-backup/holland-backup-example 
+	examples? (
+		app-backup/holland-backup-example
 		app-backup/holland-backup-random
 		)
-	maatkit? ( 
-		app-backup/holland[mysql] 
+	maatkit? (
+		app-backup/holland[mysql]
 		app-backup/holland-backup-maatkit
 		)
 	"

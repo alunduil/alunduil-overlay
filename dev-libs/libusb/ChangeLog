@@ -1,0 +1,7 @@
+# ChangeLog for dev-libs/libusb
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  22 Aug 2010; <alunduil@gentoo.org> -libusb-0.1.12-r8.ebuild:
+  Updated the docbook-sgml-dtd dependency to the current version
+

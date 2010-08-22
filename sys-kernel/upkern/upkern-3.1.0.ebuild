@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -7,7 +7,7 @@ inherit distutils
 DESCRIPTION="Automated Gentoo kernel updater."
 HOMEPAGE="http://www.alunduil.com/programs/upkern/"
 
-IUSE="doc module-rebuild"
+IUSE="module-rebuild"
 
 KEYWORDS="-* ~amd64 ~x86"
 LICENSE="GPL-2"
@@ -26,15 +26,9 @@ PROPERTIES=""
 
 src_install() {
 	distutils_src_install
-	rm ${D}/usr/bin/upkern.py
-	rm ${D}/usr/COPYING
-	rmdir ${D}/usr/bin
+	rm "${D}"/usr/bin/upkern.py
+	rm "${D}"/usr/COPYING
+	rmdir "${D}"/usr/bin
 
 	newsbin upkern.py upkern || die "newsbin upkern.py upkern failed"
-
-	if use doc; then
-		dodoc COPYING || die "dodoc COPYING failed"
-		#dodoc README || die "dodoc README failed"
-	fi
 }
-

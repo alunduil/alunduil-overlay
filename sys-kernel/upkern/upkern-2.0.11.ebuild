@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -17,11 +17,10 @@ RESTRICT="mirror"
 
 DEPEND="dev-lang/python"
 RDEPEND="${DEPEND}
-    sys-kernel/module-rebuild"
+	sys-kernel/module-rebuild"
 
 src_install() {
-    distutils_src_install
+	distutils_src_install
 	newbin upkern.py upkern || die "newbin failed"
-    dodoc ChangeLog || die "dodoc failed"
+	dodoc ChangeLog || die "dodoc failed"
 }
-

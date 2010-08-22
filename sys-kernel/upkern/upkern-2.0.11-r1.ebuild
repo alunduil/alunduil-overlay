@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -22,13 +22,11 @@ PDEPEND="sys-kernel/module-rebuild"
 RESTRICT="mirror"
 PROPERTIES=""
 
-
 src_install() {
 	distutils_src_install
 	newsbin upkern.py upkern || die "newbin upkern.py upkern failed"
-	
+
 	if use doc; then
 		dodoc ChangeLog || die "dodoc ChangeLog failed"
 	fi
 }
-
