@@ -7,6 +7,8 @@ inherit distutils
 DESCRIPTION="Provides convenience methods for MySQL with Holland."
 HOMEPAGE="http://hollandbackup.org/"
 
+IUSE=""
+
 KEYWORDS="-* amd64 x86"
 LICENSE="BSD"
 SLOT="0"

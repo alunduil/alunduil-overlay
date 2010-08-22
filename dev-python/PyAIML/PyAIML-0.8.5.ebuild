@@ -5,8 +5,8 @@ inherit distutils
 
 DESCRIPTION="AIML framework written in Python."
 HOMEPAGE="http://pyaiml.sourceforge.net/"
-PN=$(echo $PN | tr [:upper:] [:lower:])
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+MY_PN=$(echo $PN | tr [:upper:] [:lower:])
+SRC_URI="mirror://sourceforge/${MY_PN}/${P}.tar.gz"
 RESTRICT="mirror"
 LICENSE="LGPL-2.1"
 

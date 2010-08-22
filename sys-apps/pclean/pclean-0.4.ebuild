@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit distutils
-
 EAPI=3
+
+inherit distutils
 
 DESCRIPTION="Automated Gentoo /etc/portage/package.* cleaner."
 HOMEPAGE="http://www.alunduil.com/programs/pclean/"

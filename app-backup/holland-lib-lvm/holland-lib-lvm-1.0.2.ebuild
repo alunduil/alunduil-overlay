@@ -4,8 +4,10 @@
 
 inherit distutils
 
-DESCRIPTION=""
+DESCRIPTION="holland lvm libraries"
 HOMEPAGE="http://hollandbackup.org/"
+
+IUSE=""
 
 KEYWORDS="-* amd64 x86"
 LICENSE="BSD"

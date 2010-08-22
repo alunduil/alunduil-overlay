@@ -2,12 +2,14 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit distutils git
-
 EAPI="3"
 
-DESCRIPTION=""
+inherit distutils git
+
+DESCRIPTION="holland core libraries"
 HOMEPAGE="http://hollandbackup.org/"
+
+IUSE=""
 
 LICENSE="BSD"
 SLOT="0"

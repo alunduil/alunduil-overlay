@@ -2,13 +2,15 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit distutils git
-
 EAPI="3"
+
+inherit distutils git
 
 DESCRIPTION="Plugin support to provide backup and restore functionality through
 mysqldump backups with Holland."
 HOMEPAGE="http://hollandbackup.org/"
+
+IUSE=""
 
 LICENSE="BSD"
 SLOT="0"

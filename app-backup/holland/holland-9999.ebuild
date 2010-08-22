@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit distutils git
-
 EAPI="3"
+
+inherit distutils git
 
 DESCRIPTION="Holland is an Open Source backup framework originally developed at
 Rackspace and written in Python."

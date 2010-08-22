@@ -1,2 +1,4 @@
-app-admin/upkern:doc - Install the documentation for upkern.
-app-admin/upkern:rebuild-modules - Require module-rebuild for the module rebuilding features.
+app-admin/upkern:doc - Install the documentation for upkern
+app-admin/upkern:rebuild-modules - Require module-rebuild for the module rebuilding features
+app-backup/holland:lvm - Add support for the Logical Volume Manager sys-apps/lvm2
+dev-python/pylons:genshi - Add optional genshi support

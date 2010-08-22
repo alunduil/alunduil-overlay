@@ -2,13 +2,14 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit distutils
-
 EAPI="3"
 
-DESCRIPTION="This script provides support for performing safe LVM snapshot
-backups for MySQL databases with Holland."
+inherit distutils
+
+DESCRIPTION="Provides a safe LVM snapshot backup for MySQL with Holland."
 HOMEPAGE="http://hollandbackup.org/"
+
+IUSE=""
 
 KEYWORDS="-* amd64 x86"
 LICENSE="BSD"

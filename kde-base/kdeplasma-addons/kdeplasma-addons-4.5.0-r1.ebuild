@@ -13,7 +13,7 @@ HOMEPAGE="http://www.kde.org/"
 LICENSE="GPL-2 LGPL-2"
 
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
-IUSE="debug desktopglobe exif qalculate qwt rss scim semantic-desktop microblog"
+IUSE="debug desktopglobe exif qalculate qwt rss scim semantic-desktop"
 
 # krunner is only needed to generate dbus interface for lancelot
 COMMON_DEPEND="
@@ -40,7 +40,7 @@ RDEPEND="${COMMON_DEPEND}
 		!kde-misc/plasmaboard
 		!kde-misc/qalculate-applet
 	)
-	microblog? ( app-crypt/qca-ossl )
+	app-crypt/qca-ossl
 "
 
 # kdebase-data: some svg icons moved from data directly here.

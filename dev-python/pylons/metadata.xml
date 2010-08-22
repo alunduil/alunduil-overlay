@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd>no-herd</herd>
+<maintainer>
+	<email>alunduil@alunduil.com</email>
+	<name>Alex Brandt</name>
+</maintainer>
+<longdescription lang="en">
+</longdescription>
+<use>
+	<flag name="genshi">Add optional genshi support</flag>
+	<flag name="jinja">Add optional jinja support</flag>
+	<flag name="sqlalchemy">Add optional sqlalchemy support</flag>
+</use>
+</pkgmetadata>
+

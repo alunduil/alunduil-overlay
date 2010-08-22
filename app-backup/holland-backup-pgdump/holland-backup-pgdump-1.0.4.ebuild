@@ -2,12 +2,14 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit distutils
-
 EAPI="3"
 
-DESCRIPTION=""
+inherit distutils
+
+DESCRIPTION="postgresql plugin for holland"
 HOMEPAGE="http://hollandbackup.org/"
+
+IUSE=""
 
 KEYWORDS="-* amd64 x86"
 LICENSE="BSD"

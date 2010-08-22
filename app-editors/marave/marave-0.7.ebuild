@@ -4,8 +4,11 @@
 
 inherit distutils
 
-DESCRIPTION="Inspired by ommwriter and other similar projects, marave (it means \"nothing\" or \"it doesn't matter\" in guaraní) aims to be a simple, clean text editor that doesn't distract you from your writing."
+DESCRIPTION="Aims to be a simple, clean text editor that doesn't distract you
+from your writing."
 HOMEPAGE="http://http://code.google.com/p/marave/"
+
+IUSE=""
 
 KEYWORDS="-* ~amd64 ~x86"
 LICENSE="GPL-2"
@@ -23,14 +26,5 @@ PROPERTIES=""
 
 src_install() {
 	distutils_src_install
-#	rm ${D}/usr/bin/upkern.py
-#	rm ${D}/usr/COPYING
-#	rmdir ${D}/usr/bin
-
-#	newsbin upkern.py upkern || die "newsbin upkern.py upkern failed"
-
-#	if use doc; then
-#		dodoc COPYING || die "dodoc COPYING failed"
-#	fi
 }
 
