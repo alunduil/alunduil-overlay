@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*holland-backup-random-1.0.4-r1 (24 Aug 2010)
+
+  24 Aug 2010; <alunduil@gentoo.org> +holland-backup-random-1.0.4-r1.ebuild:
+  Adding the example backupset configuration file
+
   22 Aug 2010; <alunduil@gentoo.org> holland-backup-random-1.0.2.ebuild,
   holland-backup-random-1.0.2-r1.ebuild, holland-backup-random-1.0.4.ebuild:
   Adding initial holland ebuilds
