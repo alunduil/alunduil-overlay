@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*kdeplasma-addons-4.5.1-r1 (02 Sep 2010)
+
+  02 Sep 2010; <alunduil@gentoo.org> +kdeplasma-addons-4.5.1-r1.ebuild:
+  Adding the app-crypt/qca-ossl dependency
+
   22 Aug 2010; <alunduil@gentoo.org> ChangeLog:
   Added app-crypt/qca-ossl as a dependency for microblog
 
