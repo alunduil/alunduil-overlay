@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Image J
+Comment=Image Processing and Analysis in Java
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Categories=Graphics;Application
+Exec=imagej
+TryExec=imagej
+Terminal=false
+StartupNotify=true
+Icon=imagej.png
