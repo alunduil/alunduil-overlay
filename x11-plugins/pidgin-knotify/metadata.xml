@@ -3,13 +3,10 @@
 <pkgmetadata>
 <herd>no-herd</herd>
 <maintainer>
-	<email>harrisj@mnstate.edu</email>
-	<name>John Harris</name>
+<email>alunduil@alunduil.com</email>
+<name>Alex Brandt</name>
 </maintainer>
 <longdescription lang="en">
 </longdescription>
-<use>
-	<flag name="plugins">Adds plugins to imagej</flag>
-</use>
 </pkgmetadata>
 

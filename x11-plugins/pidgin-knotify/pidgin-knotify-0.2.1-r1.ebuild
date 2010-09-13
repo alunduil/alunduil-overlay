@@ -19,7 +19,7 @@ DEPEND="net-im/pidgin
 	kde-base/knotify"
 RDEPEND="${DEPEND}"
 
-src_unpack() {
+src_prepare() {
 	epatch "${FILESDIR}"/security-336916.patch || die "Could not apply patch!"
 }
 

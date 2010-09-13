@@ -13,7 +13,7 @@ HOMEPAGE="http://rsb.info.nih.gov/ij/"
 SRC_URI="http://rsb.info.nih.gov/ij/download/src/${MY_PN}${MY_PV}-src.zip
 	http://rsb.info.nih.gov/ij/images/ImageJ.png
 	plugins? ( http://rsb.info.nih.gov/ij/download/zips/${MY_PN}${IJ_PV}.zip )"
-RESTRICT="nomirror"
+RESTRICT="mirror"
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~ppc"
