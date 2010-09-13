@@ -7,7 +7,7 @@ Index: src/pidgin-knotify.c
  /*int timeout = 3;*/				/* in second */
  
 +inline gchar *
-+escapeshellcmd(gchar * input_string)
++escapeshellcmd(const gchar * input_string)
 +{
 +  int escaped_string_length = 0;
 +
