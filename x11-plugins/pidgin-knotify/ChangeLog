@@ -3,6 +3,9 @@
 # $Header: $
 
   13 Sep 2010; <alunduil@gentoo.org> files/security-336916.patch:
+  Changed to using the PHP escapeshellcmd code
+
+  13 Sep 2010; <alunduil@gentoo.org> files/security-336916.patch:
   Missing an escape for the escape slash
 
   13 Sep 2010; <alunduil@gentoo.org> files/security-336916.patch:

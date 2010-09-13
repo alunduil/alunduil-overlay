@@ -2,98 +2,92 @@ Index: src/pidgin-knotify.c
 ===================================================================
 --- src/pidgin-knotify.c	(revision 18)
 +++ src/pidgin-knotify.c	(working copy)
-@@ -60,18 +60,111 @@
+@@ -60,18 +60,105 @@
  
  /*int timeout = 3;*/				/* in second */
  
 +inline gchar *
-+escapeshellcmd(const gchar * input_string)
++escapeshellcmd(gchar * str)
 +{
-+  int escaped_string_length = 0;
++/* {{{ php_escape_shell_cmd
++   Escape all chars that could possibly be used to
++   break out of a shell command
 +
-+  gchar * escaped_string = NULL;
++   This function emalloc's a string and returns the pointer.
++   Remember to efree it when done with it.
 +
-+  int i = 0;
++   *NOT* safe for binary strings
++*/
++	register int x, y, l = strlen(str);
++	char *cmd;
++	char *p = NULL;
++	size_t estimate = (2 * l) + 1;
 +
-+  int escaped_string_position = 0;
++	TSRMLS_FETCH();
 +
-+  for (i = 0; input_string[i] != '\0'; ++i)
-+  {
-+    switch (input_string[i]) 
-+    {
-+      case '#':
-+      case '&':
-+      case ';':
-+      case '`':
-+      case '|':
-+      case '*':
-+      case '?':
-+      case '~':
-+      case '<':
-+      case '>':
-+      case '^':
-+      case '(':
-+      case ')':
-+      case '[':
-+      case ']':
-+      case '{':
-+      case '}':
-+      case '$':
-+      case '\\':
-+      case ',':
-+      case ' ':
-+      case \x0A:
-+      case \xFF:
-+      case '.'
-+      case '\''
-+      case '"':
-+        ++escaped_string_length;
-+      default:
-+        ++escaped_string_length;
-+        break;
-+    }
-+  }
++	cmd = safe_emalloc(2, l, 1);
 +
-+  escaped_string = malloc(sizeof(gchar)*escaped_string_length);
++	for (x = 0, y = 0; x < l; x++) {
++		int mb_len = php_mblen(str + x, (l - x));
 +
-+  for (i = 0; input_string[i] != '\0'; ++i)
-+  {
-+    switch (input_string[i]) 
-+    {
-+      case '#':
-+      case '&':
-+      case ';':
-+      case '`':
-+      case '|':
-+      case '*':
-+      case '?':
-+      case '~':
-+      case '<':
-+      case '>':
-+      case '^':
-+      case '(':
-+      case ')':
-+      case '[':
-+      case ']':
-+      case '{':
-+      case '}':
-+      case '$':
-+      case '\\':
-+      case ',':
-+      case ' ':
-+      case \x0A:
-+      case \xFF:
-+      case '.'
-+      case '\''
-+      case '"':
-+        escaped_string[escaped_string_position++] = '\';
-+      default:
-+        escaped_string[escaped_string_position++] = input_string[i];
-+        break;
-+    }
-+  }
++		/* skip non-valid multibyte characters */
++		if (mb_len < 0) {
++			continue;
++		} else if (mb_len > 1) {
++			memcpy(cmd + y, str + x, mb_len);
++			y += mb_len;
++			x += mb_len - 1;
++			continue;
++		}
 +
-+  return escaped_string;
++		switch (str[x]) {
++			case '"':
++			case '\'':
++				if (!p && (p = memchr(str + x + 1, str[x], l - x - 1))) {
++					/* noop */
++				} else if (p && *p == str[x]) {
++					p = NULL;
++				} else {
++					cmd[y++] = '\\';
++				}
++				cmd[y++] = str[x];
++				break;
++			case '#': /* This is character-set independent */
++			case '&':
++			case ';':
++			case '`':
++			case '|':
++			case '*':
++			case '?':
++			case '~':
++			case '<':
++			case '>':
++			case '^':
++			case '(':
++			case ')':
++			case '[':
++			case ']':
++			case '{':
++			case '}':
++			case '$':
++			case '\\':
++			case '\x0A': /* excluding these two */
++			case '\xFF':
++				cmd[y++] = '\\';
++				/* fall-through */
++			default:
++				cmd[y++] = str[x];
++		}
++	}
++	cmd[y] = '\0';
++
++	if ((estimate - y) > 4096) {
++		/* realloc if the estimate was way overill
++		 * Arbitrary cutoff point of 4096 */
++		cmd = erealloc(cmd, y + 1);
++	}
++
++	return cmd;
 +}
 +
  static void
@@ -111,7 +105,7 @@ Index: src/pidgin-knotify.c
  
  	if (command != NULL) {
 -			result = system(command);
-+    result = system(command);
++                       result = system(command);
  			g_free(command);
  	}
  }
