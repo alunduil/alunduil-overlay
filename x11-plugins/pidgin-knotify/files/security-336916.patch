@@ -2,7 +2,15 @@ Index: src/pidgin-knotify.c
 ===================================================================
 --- src/pidgin-knotify.c	(revision 18)
 +++ src/pidgin-knotify.c	(working copy)
-@@ -60,18 +60,105 @@
+@@ -27,6 +27,7 @@
+ 
+ #include <glib.h>
+ #include <stdlib.h>
++#include <string.h>
+ 
+ #include "connection.h"
+ #include "conversation.h"
+@@ -60,18 +61,105 @@
  
  /*int timeout = 3;*/				/* in second */
  
