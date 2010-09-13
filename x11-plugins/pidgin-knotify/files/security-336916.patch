@@ -1,0 +1,117 @@
+Index: src/pidgin-knotify.c
+===================================================================
+--- src/pidgin-knotify.c	(revision 18)
++++ src/pidgin-knotify.c	(working copy)
+@@ -60,18 +60,111 @@
+ 
+ /*int timeout = 3;*/				/* in second */
+ 
++inline gchar *
++escapeshellcmd(gchar * input_string)
++{
++  int escaped_string_length = 0;
++
++  gchar * escaped_string = NULL;
++
++  int i = 0;
++
++  int escaped_string_position = 0;
++
++  for (i = 0; input_string[i] != '\0'; ++i)
++  {
++    switch (input_string[i]) 
++    {
++      case '#':
++      case '&':
++      case ';':
++      case '`':
++      case '|':
++      case '*':
++      case '?':
++      case '~':
++      case '<':
++      case '>':
++      case '^':
++      case '(':
++      case ')':
++      case '[':
++      case ']':
++      case '{':
++      case '}':
++      case '$':
++      case '\':
++      case ',':
++      case ' ':
++      case \x0A:
++      case \xFF:
++      case '.'
++      case '\''
++      case '"':
++        ++escaped_string_length;
++      default:
++        ++escaped_string_length;
++        break;
++    }
++  }
++
++  escaped_string = malloc(sizeof(gchar)*escaped_string_length);
++
++  for (i = 0; input_string[i] != '\0'; ++i)
++  {
++    switch (input_string[i]) 
++    {
++      case '#':
++      case '&':
++      case ';':
++      case '`':
++      case '|':
++      case '*':
++      case '?':
++      case '~':
++      case '<':
++      case '>':
++      case '^':
++      case '(':
++      case ')':
++      case '[':
++      case ']':
++      case '{':
++      case '}':
++      case '$':
++      case '\':
++      case ',':
++      case ' ':
++      case \x0A:
++      case \xFF:
++      case '.'
++      case '\''
++      case '"':
++        escaped_string[escaped_string_position++] = '\';
++      default:
++        escaped_string[escaped_string_position++] = input_string[i];
++        break;
++    }
++  }
++
++  return escaped_string;
++}
++
+ static void
+ notify(const gchar *title,
+ 	   const gchar *body)
+ {
+ 	gchar *command = NULL;
+ 	int result, timeout;
++  gchar *escaped_body = NULL;
+ 
++  escaped_body = escapeshellcmd(body);
++
+ 	timeout = purple_prefs_get_int("/plugins/knotify/notify_timeout");
+ 	command = g_strdup_printf("kdialog --title '%s' --passivepopup '%s' %d", title, body, timeout);
+ 
+ 	if (command != NULL) {
+-			result = system(command);
++    result = system(command);
+ 			g_free(command);
+ 	}
+ }

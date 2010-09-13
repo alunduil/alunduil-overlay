@@ -40,7 +40,7 @@ src_install() {
 
 	insinto /etc/holland/providers
 	doins config/providers/example.conf || die "Failed to insert example configuration!"
-	
+
 	insinto /etc/holland/backupsets/examples
 	doins config/backupsets/examples/example.conf || die "Failed to insert example example!"
 }
