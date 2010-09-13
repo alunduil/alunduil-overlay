@@ -39,7 +39,7 @@ Index: src/pidgin-knotify.c
 +      case '{':
 +      case '}':
 +      case '$':
-+      case '\':
++      case '\\':
 +      case ',':
 +      case ' ':
 +      case \x0A:
@@ -78,7 +78,7 @@ Index: src/pidgin-knotify.c
 +      case '{':
 +      case '}':
 +      case '$':
-+      case '\':
++      case '\\':
 +      case ',':
 +      case ' ':
 +      case \x0A:
