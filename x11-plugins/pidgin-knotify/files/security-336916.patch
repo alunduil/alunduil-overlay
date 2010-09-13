@@ -1,119 +1,41 @@
-Index: src/pidgin-knotify.c
+Index: pidgin-knotify.c
 ===================================================================
---- src/pidgin-knotify.c	(revision 18)
-+++ src/pidgin-knotify.c	(working copy)
+--- pidgin-knotify.c	(revision 18)
++++ pidgin-knotify.c	(working copy)
 @@ -27,6 +27,7 @@
  
  #include <glib.h>
  #include <stdlib.h>
-+#include <string.h>
++#include <unistd.h>
  
  #include "connection.h"
  #include "conversation.h"
-@@ -60,18 +61,105 @@
- 
- /*int timeout = 3;*/				/* in second */
- 
-+inline gchar *
-+escapeshellcmd(gchar * str)
-+{
-+/* {{{ php_escape_shell_cmd
-+   Escape all chars that could possibly be used to
-+   break out of a shell command
-+
-+   This function emalloc's a string and returns the pointer.
-+   Remember to efree it when done with it.
-+
-+   *NOT* safe for binary strings
-+*/
-+	register int x, y, l = strlen(str);
-+	char *cmd;
-+	char *p = NULL;
-+	size_t estimate = (2 * l) + 1;
-+
-+	TSRMLS_FETCH();
-+
-+	cmd = safe_emalloc(2, l, 1);
-+
-+	for (x = 0, y = 0; x < l; x++) {
-+		int mb_len = php_mblen(str + x, (l - x));
-+
-+		/* skip non-valid multibyte characters */
-+		if (mb_len < 0) {
-+			continue;
-+		} else if (mb_len > 1) {
-+			memcpy(cmd + y, str + x, mb_len);
-+			y += mb_len;
-+			x += mb_len - 1;
-+			continue;
-+		}
-+
-+		switch (str[x]) {
-+			case '"':
-+			case '\'':
-+				if (!p && (p = memchr(str + x + 1, str[x], l - x - 1))) {
-+					/* noop */
-+				} else if (p && *p == str[x]) {
-+					p = NULL;
-+				} else {
-+					cmd[y++] = '\\';
-+				}
-+				cmd[y++] = str[x];
-+				break;
-+			case '#': /* This is character-set independent */
-+			case '&':
-+			case ';':
-+			case '`':
-+			case '|':
-+			case '*':
-+			case '?':
-+			case '~':
-+			case '<':
-+			case '>':
-+			case '^':
-+			case '(':
-+			case ')':
-+			case '[':
-+			case ']':
-+			case '{':
-+			case '}':
-+			case '$':
-+			case '\\':
-+			case '\x0A': /* excluding these two */
-+			case '\xFF':
-+				cmd[y++] = '\\';
-+				/* fall-through */
-+			default:
-+				cmd[y++] = str[x];
-+		}
-+	}
-+	cmd[y] = '\0';
-+
-+	if ((estimate - y) > 4096) {
-+		/* realloc if the estimate was way overill
-+		 * Arbitrary cutoff point of 4096 */
-+		cmd = erealloc(cmd, y + 1);
-+	}
-+
-+	return cmd;
-+}
-+
- static void
+@@ -64,16 +65,22 @@
  notify(const gchar *title,
  	   const gchar *body)
  {
- 	gchar *command = NULL;
+-	gchar *command = NULL;
  	int result, timeout;
-+  gchar *escaped_body = NULL;
++  char timeout_str[255];
  
-+  escaped_body = escapeshellcmd(body);
-+
  	timeout = purple_prefs_get_int("/plugins/knotify/notify_timeout");
- 	command = g_strdup_printf("kdialog --title '%s' --passivepopup '%s' %d", title, body, timeout);
+-	command = g_strdup_printf("kdialog --title '%s' --passivepopup '%s' %d", title, body, timeout);
++  sprintf(timeout_str, "%d", timeout);
++  
++  char * args[] = {
++    "kdialog",
++    "--title",
++    title,
++    "--passivepopup",
++    body,
++    timeout
++    };
  
- 	if (command != NULL) {
+-	if (command != NULL) {
 -			result = system(command);
-+                       result = system(command);
- 			g_free(command);
- 	}
+-			g_free(command);
+-	}
++  result = execvp(args[0], args);
  }
+ 
+ /* Signon flood be gone! - thanks to pidgin-libnotify */

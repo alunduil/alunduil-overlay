@@ -3,6 +3,9 @@
 # $Header: $
 
   13 Sep 2010; <alunduil@gentoo.org> files/security-336916.patch:
+  A smaller simpler patch
+
+  13 Sep 2010; <alunduil@gentoo.org> files/security-336916.patch:
   Added QA problems to patch to test for submission
 
   13 Sep 2010; <alunduil@gentoo.org> files/security-336916.patch:
