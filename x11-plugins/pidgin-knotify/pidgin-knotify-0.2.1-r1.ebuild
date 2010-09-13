@@ -4,6 +4,8 @@
 
 EAPI="2"
 
+inherit eutils
+
 DESCRIPTION="Plugin that enables knotify for Pidgin in KDE 4 environment"
 HOMEPAGE="http://code.google.com/p/pidgin-knotify/"
 SRC_URI="http://${PN}.googlecode.com/files/${P}.tar.gz"
