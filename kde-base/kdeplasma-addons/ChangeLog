@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Sep 2010; <alunduil@gentoo.org> -kdeplasma-addons-4.5.0-r1.ebuild:
+  Removing a defunct version
+
 *kdeplasma-addons-4.5.1-r1 (02 Sep 2010)
 
   02 Sep 2010; <alunduil@gentoo.org> +kdeplasma-addons-4.5.1-r1.ebuild:
