@@ -1,0 +1,10 @@
+# ChangeLog for dev-python/pycolorize
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*pycolorize-0.0.1 (21 Sep 2010)
+
+  21 Sep 2010; <alunduil@gentoo.org> +pycolorize-0.0.1.ebuild,
+  +metadata.xml:
+  Initial add of pycolorize
+
