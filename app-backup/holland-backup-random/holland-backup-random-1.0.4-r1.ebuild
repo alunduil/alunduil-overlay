@@ -13,7 +13,7 @@ HOMEPAGE="http://hollandbackup.org/"
 IUSE=""
 
 KEYWORDS="-* amd64 x86"
-LICENSE="GPLv2"
+LICENSE="GPL-2"
 SLOT="0"
 
 MY_P=${P%%-*}-${P##*-}
