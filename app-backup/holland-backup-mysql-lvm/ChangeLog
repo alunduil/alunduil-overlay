@@ -2,6 +2,19 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Oct 2010; <alunduil@gentoo.org>
+  -holland-backup-mysql-lvm-1.0.2-r1.ebuild,
+  -holland-backup-mysql-lvm-1.0.2-r2.ebuild,
+  holland-backup-mysql-lvm-1.0.4.ebuild,
+  holland-backup-mysql-lvm-1.0.4-r1.ebuild,
+  holland-backup-mysql-lvm-9999.ebuild:
+  Changing license to GPLv2 per upstream
+
+  03 Oct 2010; <alunduil@gentoo.org>
+  -holland-backup-mysql-lvm-1.0.2-r1.ebuild,
+  -holland-backup-mysql-lvm-1.0.2-r2.ebuild:
+  Removing version 1.0.2
+
 *holland-backup-mysql-lvm-1.0.4-r1 (24 Aug 2010)
 
   24 Aug 2010; <alunduil@gentoo.org>

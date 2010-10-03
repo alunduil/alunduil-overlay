@@ -11,7 +11,7 @@ HOMEPAGE="http://hollandbackup.org/"
 
 IUSE=""
 
-LICENSE="BSD"
+LICENSE="GPLv2"
 SLOT="0"
 
 MY_P=${P%%-*}-${P##*-}

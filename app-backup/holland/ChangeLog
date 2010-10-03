@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Oct 2010; <alunduil@gentoo.org> -holland-1.0.2-r9.ebuild,
+  -holland-1.0.2-r10.ebuild:
+  Removing version 1.0.2
+
 *holland-1.0.4-r2 (24 Aug 2010)
 
   24 Aug 2010; <alunduil@gentoo.org> +holland-1.0.4-r2.ebuild:
