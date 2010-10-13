@@ -16,7 +16,7 @@ SLOT="0"
 SRC_URI="http://www.alunduil.com/svn/distfiles/upkern/${P}.tar.bz2"
 
 DEPEND="dev-lang/python"
-#RDEPEND=""
+RDEPEND=""
 PDEPEND="sys-kernel/module-rebuild"
 
 RESTRICT="mirror"

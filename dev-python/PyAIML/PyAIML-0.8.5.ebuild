@@ -16,6 +16,7 @@ IUSE=""
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 DEPEND="virtual/python"
+RDEPEND=""
 
 src_install() {
 	distutils_src_install
