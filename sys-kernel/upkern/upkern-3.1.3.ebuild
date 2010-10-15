@@ -30,5 +30,8 @@ src_install() {
 	rm "${D}"/usr/COPYING
 	rmdir "${D}"/usr/bin
 
+	doman "${D}"/usr/doc/man/upkern.8 || die "doman upkern.8 failed"
+	rmdir "${D}"/usr/doc
+
 	newsbin upkern.py upkern || die "newsbin upkern.py upkern failed"
 }
