@@ -3,10 +3,15 @@
 <pkgmetadata>
 <herd>no-herd</herd>
 <maintainer>
-	<email>alunduil@alundui.com</email>
-	<name>Alex Brandt</name>
+<email>alunduil@alunduil.com</email>
+<name>Alex Brandt</name>
 </maintainer>
 <longdescription lang="en">
 </longdescription>
+<use>
+	<flag name="google-gadgets">Add google-gadgets support</flag>
+	<flag name="qalculate">Enable Qalculate runner
+	using<pkg>sci-libs/libqalculate</pkg></flag>
+</use>
 </pkgmetadata>
 
