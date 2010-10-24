@@ -1,9 +1,0 @@
-# ChangeLog for www-client/chromium
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-*chromium-8.0.552.11-r1 (23 Oct 2010)
-
-  23 Oct 2010; <alunduil@gentoo.org> +chromium-8.0.552.11-r1.ebuild:
-  Added PDF support to chromium
-
