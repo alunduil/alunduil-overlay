@@ -1,2 +1,2 @@
 =sys-kernel/upkern-3.1.4
-=sys-kernel/upkern-2.0.12
+<sys-kernel/upkern-2.0.14
