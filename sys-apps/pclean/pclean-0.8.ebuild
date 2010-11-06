@@ -17,6 +17,7 @@ IUSE=""
 
 DEPEND="dev-lang/python
 	>=app-portage/gentoolkit-0.3
+	dev-python/pycolorize
 	"
 RDEPEND="${DEPEND}"
 
