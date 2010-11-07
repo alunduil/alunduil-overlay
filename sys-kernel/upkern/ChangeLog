@@ -2,6 +2,10 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/sys-block/open-iscsi/ChangeLog,v 1.12 2007/02/22 00:59:56 jokey Exp $
 
+  07 Nov 2010; <alunduil@gentoo.org> -upkern-2.0.11-r1.ebuild,
+  -upkern-2.0.12.ebuild, -upkern-2.0.13.ebuild:
+  Cleaning out unsupported versions.
+
 *upkern-2.0.14 (24 Oct 2010)
 
   24 Oct 2010; <alunduil@gentoo.org> +upkern-2.0.14.ebuild:
