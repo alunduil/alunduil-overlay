@@ -2,6 +2,11 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*pclean-0.9 (07 Nov 2010)
+
+  07 Nov 2010; <alunduil@gentoo.org> +pclean-0.9.ebuild:
+  Adding pclean-0.9
+
 *pclean-0.8 (06 Nov 2010)
 
   06 Nov 2010; <alunduil@gentoo.org> -pclean-0.3.ebuild, -pclean-0.4.ebuild,
