@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Nov 2010; <alunduil@gentoo.org> -pclean-0.7.ebuild, -pclean-0.8.ebuild:
+  Removing dated versions of pcleanwq
+
 *pclean-0.10 (09 Nov 2010)
 
   09 Nov 2010; <alunduil@gentoo.org> +pclean-0.10.ebuild:
