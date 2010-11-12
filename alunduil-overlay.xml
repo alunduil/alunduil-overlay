@@ -1,14 +1,14 @@
-<?xml version="1.0" ?>
-<layman>
-	<overlay
-    	type = "svn"
-		  src  = "http://www.alunduil.com/svn/portage/trunk"
-      contact = "alunduil@alunduil.com"
-      name = "alunduil-overlay">
-      <link>
-			  http://www.alunduil.com/svn/portage/trunk
-	    </link>
-	    <description>Alunduil's Overlay</description>
-	</overlay>
-</layman>
+<?xml version="1.0" encoding="UTF-8"?>
+<repositories xmlns="" version="1.0">
+  <repo quality="experimental" status="unofficial">
+    <name><![CDATA[alunduili-overlay]]></name>
+    <description><![CDATA[Development of personal ebuilds that may or may not make it into the tree]]></description>
+    <homepage>http://www.alunduil.com/alunduil-overlay/</homepage>
+    <owner>
+      <email>alunduil@alunduil.com</email>
+      <name><![CDATA[Alex Brandt]]></name>
+    </owner>
+    <source type="svn">http://www.alunduil.com/svn/portage/trunk</source>
+  </repo>
+</repositories>
 
