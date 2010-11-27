@@ -1,6 +1,11 @@
-# ChangeLog for sys-apps/pclean
+# ChangeLog for app-portage/pclean
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*pclean-0.11 (27 Nov 2010)
+
+  27 Nov 2010; <alunduil@gentoo.org> +pclean-0.11.ebuild:
+  Adding pclean 0.11
 
   09 Nov 2010; <alunduil@gentoo.org> -pclean-0.7.ebuild, -pclean-0.8.ebuild:
   Removing dated versions of pcleanwq
