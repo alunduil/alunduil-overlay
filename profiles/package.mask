@@ -1,2 +1,2 @@
 =sys-kernel/upkern-3.1.4
-<sys-apps/pclean-1
+<apps-portage/pclean-1
