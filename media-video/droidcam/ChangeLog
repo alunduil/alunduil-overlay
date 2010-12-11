@@ -1,0 +1,9 @@
+# ChangeLog for media-video/droidcam
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*droidcam-2.0 (11 Dec 2010)
+
+  11 Dec 2010; <alunduil@gentoo.org> +droidcam-2.0.ebuild, +metadata.xml:
+  Adding droidcam from bug #339780
+
