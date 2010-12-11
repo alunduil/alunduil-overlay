@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Dec 2010; <alunduil@gentoo.org> droidcam-2.0.ebuild:
+  Keyworded ~amd64
+
 *droidcam-2.0 (11 Dec 2010)
 
   11 Dec 2010; <alunduil@gentoo.org> +droidcam-2.0.ebuild, +metadata.xml:
