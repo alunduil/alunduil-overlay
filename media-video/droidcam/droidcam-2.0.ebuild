@@ -24,7 +24,8 @@ src_compile() {
 	cd "${S}"/src
 	emake droidcam || die "emake droidcam failed"
 	cd "${S}"/driver
-	emake -C /lib/modules/`uname -r`/build M=`pwd` || die "emake kernel module failed"
+	ARCH=$(uname -m)
+	emake -C "${KV_OUT_DIR}" M=`pwd` || die "emake kernel module failed"
 }
 
 src_install() {

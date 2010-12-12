@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Dec 2010; <alunduil@gentoo.org> droidcam-2.0.ebuild:
+  Needed to force ARCH?
+
   11 Dec 2010; <alunduil@gentoo.org> droidcam-2.0.ebuild:
   Keyworded ~amd64
 
