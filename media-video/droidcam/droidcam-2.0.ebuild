@@ -18,7 +18,7 @@ RDEPEND="${DEPEND}"
 
 S="${WORKDIR}"
 
-MODULE_NAMES="droidcam_v4l(kernel/drivers/media/video:${S})"
+MODULE_NAMES="droidcam_v4l(kernel/drivers/media/video:${S}/driver:${S}/driver)"
 
 src_compile() {
 	cd "${S}"/src
