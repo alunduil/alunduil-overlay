@@ -2,6 +2,12 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*droidcam-2.0-r1 (16 Dec 2010)
+
+  16 Dec 2010; <alunduil@gentoo.org> droidcam-2.0.ebuild,
+  +droidcam-2.0-r1.ebuild:
+  Adding a revision with my personal changes
+
   13 Dec 2010; <alunduil@gentoo.org> droidcam-2.0.ebuild:
   Updating module build location
 
