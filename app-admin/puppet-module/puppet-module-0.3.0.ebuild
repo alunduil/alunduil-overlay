@@ -21,7 +21,7 @@ KEYWORDS="-* ~amd64 ~x86"
 
 RESTRICT="mirror"
 
-ruby_add_bdepend ">=app-admin/puppet-0.25
+ruby_add_bdepend "=app-admin/puppet-0.25*
     test? (
 		dev-ruby/mocha
 		dev-ruby/rspec:0
