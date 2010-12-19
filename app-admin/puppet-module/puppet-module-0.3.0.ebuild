@@ -24,7 +24,8 @@ RESTRICT="mirror"
 ruby_add_bdepend "test? (
 		dev-ruby/mocha
 		dev-ruby/rspec:0
-	)"
+	)
+	dev-ruby/facets"
 
 PDEPEND="${PDEPEND}
   =app-admin/puppet-0.25*

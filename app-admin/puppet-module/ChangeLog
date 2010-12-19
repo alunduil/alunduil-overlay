@@ -3,6 +3,9 @@
 # $Header: $
 
   19 Dec 2010; <alunduil@gentoo.org> puppet-module-0.3.0.ebuild:
+  Adding facets dependency
+
+  19 Dec 2010; <alunduil@gentoo.org> puppet-module-0.3.0.ebuild:
   Updating puppet dependency version
 
 *puppet-module-0.3.0 (19 Dec 2010)
