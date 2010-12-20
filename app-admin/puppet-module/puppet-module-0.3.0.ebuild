@@ -26,7 +26,8 @@ ruby_add_bdepend "test? (
 		dev-ruby/rspec:0
 	)
 	dev-ruby/facets
-	dev-ruby/multipart-post"
+	dev-ruby/multipart-post
+	dev-ruby/thor"
 
 PDEPEND="${PDEPEND}
 	=app-admin/puppet-0.25*
