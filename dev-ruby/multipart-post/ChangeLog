@@ -1,0 +1,9 @@
+# ChangeLog for dev-ruby/multipart-post
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*multipart-post-1.0 (20 Dec 2010)
+
+  20 Dec 2010; <alunduil@gentoo.org> +multipart-post-1.0.ebuild:
+  Adding multipart-post for puppet-module
+

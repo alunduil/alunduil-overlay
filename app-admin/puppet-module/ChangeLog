@@ -2,6 +2,9 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Dec 2010; <alunduil@gentoo.org> puppet-module-0.3.0.ebuild:
+  Adding dependency on multipart-post
+
   19 Dec 2010; <alunduil@gentoo.org> puppet-module-0.3.0.ebuild:
   Adding facets dependency
 
