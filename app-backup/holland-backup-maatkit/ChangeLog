@@ -1,6 +1,11 @@
 # ChangeLog for app-backup/holland-backup-maatkit
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*holland-backup-maatkit-1.0.6 (12 Jan 2011)
+
+  12 Jan 2011; <alunduil@gentoo.org> +holland-backup-maatkit-1.0.6.ebuild:
+  Adding holland 1.0.6
 
   03 Oct 2010; <alunduil@gentoo.org> holland-backup-maatkit-1.0.4.ebuild,
   holland-backup-maatkit-1.0.4-r1.ebuild:
