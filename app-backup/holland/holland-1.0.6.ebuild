@@ -7,12 +7,12 @@ EAPI="3"
 inherit distutils
 
 DESCRIPTION="Holland is an Open Source backup framework originally developed at
-Rackspace and written in Python."
+Rackspace and written in Python"
 HOMEPAGE="http://hollandbackup.org/"
 
 IUSE="doc examples lvm maatkit +mysql postgresql sqlite"
 
-KEYWORDS="-* ~amd64 ~x86"
+KEYWORDS="-* amd64 x86"
 LICENSE="BSD"
 SLOT="0"
 

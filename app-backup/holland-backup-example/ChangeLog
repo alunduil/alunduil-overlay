@@ -2,6 +2,9 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 Jan 2011; <alunduil@gentoo.org> holland-backup-example-1.0.6.ebuild:
+  Stabilizing holland-backup-example
+
 *holland-backup-example-1.0.6 (12 Jan 2011)
 
   12 Jan 2011; <alunduil@gentoo.org> +holland-backup-example-1.0.6.ebuild:
