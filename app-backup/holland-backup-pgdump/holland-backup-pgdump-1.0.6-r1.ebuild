@@ -45,8 +45,4 @@ src_install() {
 	insinto /etc/holland/providers
 	doins config/providers/pgdump.conf || die "Failed to insert pbdump
 	configuration!"
-
-	insinto /etc/holland/backupsets/examples
-	doins config/backupsets/examples/pgdump.conf || die "Failed to insert pgdump
-	backupset example!"
 }
