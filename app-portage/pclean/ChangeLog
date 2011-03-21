@@ -2,6 +2,11 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*pclean-0.14 (21 Mar 2011)
+
+  21 Mar 2011; <alunduil@gentoo.org> +pclean-0.14.ebuild:
+  Adding the new release of pclean.
+
 *pclean-0.13 (14 Jan 2011)
 
   14 Jan 2011; <alunduil@gentoo.org> -pclean-0.11.ebuild, +pclean-0.13.ebuild:
