@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -15,7 +15,7 @@ IUSE=""
 
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-DEPEND="virtual/python"
+DEPEND="dev-lang/python"
 RDEPEND=""
 
 src_install() {
