@@ -10,7 +10,7 @@ EGIT_REPO_URI="git://anongit.freedesktop.org/git/xorg/xserver"
 OPENGL_DIR="xorg-x11"
 
 DESCRIPTION="X.Org X servers"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ~ppc ~ppc64 sh sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd"
 
 IUSE_SERVERS="dmx kdrive xnest xorg xvfb"
 IUSE="${IUSE_SERVERS} doc ipv6 minimal nptl tslib +udev"
