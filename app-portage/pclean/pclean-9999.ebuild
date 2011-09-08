@@ -9,7 +9,7 @@ RESTRICT_PYTHON_ABIS="*-jython"
 
 inherit git-2 distutils
 
-EGIT_REPO_URL="git://github.com/alunduil/pclean.git"
+EGIT_REPO_URI="git://github.com/alunduil/pclean.git"
 
 DESCRIPTION="Automated /etc/portage/package.* cleaner."
 HOMEPAGE="http://www.alunduil.com/programs/pclean/"
