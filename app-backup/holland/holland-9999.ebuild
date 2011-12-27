@@ -3,27 +3,28 @@
 # $Header: $
 
 EAPI="3"
+PYTHON_DEPEND="2"
+SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="*-jython"
 
 inherit distutils git-2
+
+EGIT_REPO_URI="git://github.com/holland-backup/holland.git"
 
 DESCRIPTION="Holland is an Open Source backup framework originally developed at
 Rackspace and written in Python."
 HOMEPAGE="http://hollandbackup.org/"
-
-IUSE="doc examples lvm maatkit +mysql postgresql sqlite"
+SRC_URI=""
 
 LICENSE="BSD"
 SLOT="0"
+KEYWORDS=""
+IUSE="doc examples lvm maatkit +mysql postgresql sqlite"
 
-EGIT_REPO_URI="git://github.com/holland-backup/holland.git"
-SRC_URI=""
-
-DEPEND="dev-lang/python
-	dev-python/sphinx
+DEPEND="dev-python/sphinx
 	dev-python/setuptools
 	"
-RDEPEND="${DEPEND}"
-PDEPEND="
+RDEPEND="${DEPEND}
 	app-backup/holland-lib-common
 	mysql? ( app-backup/holland-backup-mysqldump )
 	sqlite? ( app-backup/holland-backup-sqlite )
@@ -61,7 +62,6 @@ src_install() {
 
 	if use doc; then
 		dodoc docs/man/README
-		dodoc docs/test_cases.txt
 	fi
 
 	keepdir /etc/holland/providers
