@@ -24,7 +24,8 @@ RDEPEND="
 	>=dev-python/urlgrabber-2.9.0
 	>=app-arch/rpm-4.0[python]
 	dev-libs/libxml2[python]
-	>=sys-apps/yum-3.2.23"
+	>=sys-apps/yum-3.2.23
+	app-arch/deltarpm"
 
 pkg_setup() {
 	python_pkg_setup
