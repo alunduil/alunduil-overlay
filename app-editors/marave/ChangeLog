@@ -1,7 +1,0 @@
-# ChangeLog for app-editors/marave
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  22 Aug 2010; <alunduil@gentoo.org> marave-0.7.ebuild:
-  Adding initial marave ebuild
-
