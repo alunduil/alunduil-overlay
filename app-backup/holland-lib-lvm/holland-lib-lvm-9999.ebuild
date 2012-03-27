@@ -1,36 +1,34 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI="3"
+PYTHON_DEPEND="2"
+SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="*-jython"
 
 inherit distutils git-2
 
+EGIT_REPO_URI="git://github.com/holland-backup/holland.git"
+
 DESCRIPTION="holland lvm libraries"
 HOMEPAGE="http://hollandbackup.org/"
-
-IUSE=""
+SRC_URI=""
 
 LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS=""
+IUSE=""
 
 MY_P=${P%%-*}-${P##*-}
-
-EGIT_REPO_URI="git://github.com/holland-backup/holland.git"
-SRC_URI=""
-
 MY_DIR="$(echo ${PN} | tr '-' '.')"
 
-DEPEND="
-	app-backup/holland
+RDEPEND="app-backup/holland
 	sys-fs/lvm2
 	"
-RDEPEND="${DEPEND}
-	"
-PDEPEND=""
+DEPEND="${RDEPEND}"
 
 RESTRICT="mirror"
-PROPERTIES=""
 
 src_compile() {
 	cd ${MY_P}/plugins/${MY_DIR}
