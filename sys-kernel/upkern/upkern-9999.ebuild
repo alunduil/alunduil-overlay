@@ -18,8 +18,9 @@ SRC_URI=""
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="module-rebuild"
+IUSE="module-rebuild initrd"
 
-RDEPEND=">=app-portage/gentoolkit-0.3"
+RDEPEND=">=app-portage/gentoolkit-0.3
+module-rebuild? ( sys-kernel/module-rebuild )
+initrd? ( sys-kernel/dracut )"
 DEPEND="${RDEPEND}"
-PDEPEND="module-rebuild? ( sys-kernel/module-rebuild )"

@@ -9,7 +9,8 @@
 </longdescription>
 <use>
 	<flag name="module-rebuild">Require module-rebuild for the module
-	rebuilding features</flag>
+		rebuilding features</flag>
+	<flag name="initrd">Require dracut so that upkern can build initrds</flag>
 </use>
 </pkgmetadata>
 
