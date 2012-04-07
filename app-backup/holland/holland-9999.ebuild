@@ -24,9 +24,9 @@ IUSE="doc examples lvm maatkit +mysql postgresql sqlite"
 DEPEND="dev-python/sphinx
 	dev-python/setuptools
 	"
-RDEPEND="${DEPEND}
-	app-backup/holland-lib-common"
-PDEPEND="mysql? ( app-backup/holland-backup-mysqldump
+RDEPEND="${DEPEND}"
+PDEPEND="app-backup/holland-lib-common
+	mysql? ( app-backup/holland-backup-mysqldump
 		virtual/mysql )
 	sqlite? ( app-backup/holland-backup-sqlite )
 	postgresql? ( app-backup/holland-backup-pgdump )
@@ -37,6 +37,7 @@ PDEPEND="mysql? ( app-backup/holland-backup-mysqldump
 		)
 	maatkit? (
 		app-backup/holland-backup-maatkit
+		app-backup/holland[mysql]
 		)
 	"
 
