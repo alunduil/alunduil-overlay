@@ -3,6 +3,9 @@
 # $Header: $
 
   07 Apr 2012; <alunduil@gentoo.org> holland-9999.ebuild:
+  Adding a virtual dep on mysql
+
+  07 Apr 2012; <alunduil@gentoo.org> holland-9999.ebuild:
   Updated the live holland ebuild.
 
   14 Jan 2011; <alunduil@gentoo.org> holland-1.0.6.ebuild:

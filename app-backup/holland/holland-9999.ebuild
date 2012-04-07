@@ -26,7 +26,8 @@ DEPEND="dev-python/sphinx
 	"
 RDEPEND="${DEPEND}
 	app-backup/holland-lib-common
-	mysql? ( app-backup/holland-backup-mysqldump )
+	mysql? ( app-backup/holland-backup-mysqldump
+		virtual/mysql )
 	sqlite? ( app-backup/holland-backup-sqlite )
 	postgresql? ( app-backup/holland-backup-pgdump )
 	lvm? ( mysql? ( app-backup/holland-backup-mysql-lvm ) )
