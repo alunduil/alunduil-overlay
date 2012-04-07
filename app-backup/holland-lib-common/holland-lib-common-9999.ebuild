@@ -15,9 +15,10 @@ DESCRIPTION="holland core libraries"
 HOMEPAGE="http://hollandbackup.org/"
 SRC_URI=""
 
-LICENSE="BSD"
+LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
+IUSE=""
 
 DEPEND="app-backup/holland"
 RDEPEND="${DEPEND}"
@@ -26,13 +27,13 @@ MY_P="${PN%%-*}-${PVR}"
 MY_DIR="${PN//-/.}"
 
 src_compile() {
-	cd ${MY_P}/plugins/${MY_DIR}
+	cd "${MY_P}/plugins/${MY_DIR}"
 	distutils_src_compile
 }
 
 src_install() {
-	cd ${MY_P}/plugins/${MY_DIR}
+	cd "${MY_P}/plugins/${MY_DIR}"
 	distutils_src_install
 
-	rm -rf ${D}/usr/bin # binaries are provided by holland
+	rm -rf "${D}/usr/bin" # binaries are provided by holland
 }

@@ -42,13 +42,13 @@ RDEPEND="${DEPEND}
 
 src_install() {
 	distutils_src_install
-	
+
 	# Setup the configuration directory ...
 	keepdir /etc/holland
 	insinto /etc/holland
 
 	newins config/holland.conf holland.conf || die "Failed to insert"
-	
+
 	keepdir /etc/holland/backupsets
 	insinto /etc/holland/backupsets
 
