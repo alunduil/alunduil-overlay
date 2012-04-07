@@ -23,3 +23,4 @@
 =app-backup/holland-lib-common-9999
 =app-backup/holland-backup-mysql-lvm-9999
 =app-backup/holland-backup-mysqldump-9999
+=app-emulation/openstack-nova-9999
