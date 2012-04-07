@@ -11,19 +11,18 @@ inherit distutils git-2
 
 EGIT_REPO_URI="git://github.com/holland-backup/holland.git"
 
-DESCRIPTION="Plugin support to provide backup and restore functionality through
-mysqldump backups with Holland."
+DESCRIPTION="postgresql plugin for holland"
 HOMEPAGE="http://hollandbackup.org/"
 SRC_URI=""
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORD=""
+KEYWORDS=""
 IUSE=""
 
 DEPEND="app-backup/holland
-	app-backup/holland-lib-mysql
-	"
+	dev-db/postgresql-base
+	dev-python/psycopg"
 RDEPEND="${DEPEND}"
 
 MY_P="${PN%%-*}-${PVR}"
@@ -41,6 +40,6 @@ src_install() {
 	cd "${WORKDIR}/${MY_P}"
 
 	insinto /etc/holland/providers
-	newins "config/providers/mysqldump.conf" mysqldump.conf || die "Insert
-	failed"
+	doins config/providers/pgdump.conf || die "Failed to insert pbdump
+	configuration!"
 }

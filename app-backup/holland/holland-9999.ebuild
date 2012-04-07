@@ -26,8 +26,7 @@ DEPEND="dev-python/sphinx
 	"
 RDEPEND="${DEPEND}"
 PDEPEND="app-backup/holland-lib-common
-	mysql? ( app-backup/holland-backup-mysqldump
-		virtual/mysql )
+	mysql? ( app-backup/holland-backup-mysqldump )
 	sqlite? ( app-backup/holland-backup-sqlite )
 	postgresql? ( app-backup/holland-backup-pgdump )
 	lvm? ( mysql? ( app-backup/holland-backup-mysql-lvm ) )
@@ -54,8 +53,6 @@ src_install() {
 	insinto /etc/holland/backupsets
 
 	newins config/backupsets/default.conf default.conf || die "Failed to insert"
-
-	keepdir /etc/holland/providers
 
 	doman docs/man/holland.1 || dir "Failed to doman"
 

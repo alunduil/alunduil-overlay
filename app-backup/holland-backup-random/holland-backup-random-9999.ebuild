@@ -11,19 +11,17 @@ inherit distutils git-2
 
 EGIT_REPO_URI="git://github.com/holland-backup/holland.git"
 
-DESCRIPTION="Plugin support to provide backup and restore functionality through
-mysqldump backups with Holland."
+DESCRIPTION="Uses /dev/random. A bit more of an example than
+holland.backup.example."
 HOMEPAGE="http://hollandbackup.org/"
 SRC_URI=""
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORD=""
-IUSE=""
+IUSE="examples"
 
-DEPEND="app-backup/holland
-	app-backup/holland-lib-mysql
-	"
+DEPEND="app-backup/holland"
 RDEPEND="${DEPEND}"
 
 MY_P="${PN%%-*}-${PVR}"
@@ -41,6 +39,10 @@ src_install() {
 	cd "${WORKDIR}/${MY_P}"
 
 	insinto /etc/holland/providers
-	newins "config/providers/mysqldump.conf" mysqldump.conf || die "Insert
-	failed"
+	doins config/providers/random.conf || die "Could not insert random configuration!"
+
+	if use examples; then
+		insinto /etc/holland/backupsets/examples
+		doins config/backupsets/examples/random.conf || die "Insert failed."
+	fi
 }

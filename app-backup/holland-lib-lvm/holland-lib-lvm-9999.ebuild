@@ -24,18 +24,15 @@ MY_P=${P%%-*}-${P##*-}
 MY_DIR="$(echo ${PN} | tr '-' '.')"
 
 RDEPEND="app-backup/holland
-	sys-fs/lvm2
-	"
+	sys-fs/lvm2"
 DEPEND="${RDEPEND}"
 
-RESTRICT="mirror"
-
 src_compile() {
-	cd ${MY_P}/plugins/${MY_DIR}
+	cd "${MY_P}/plugins/${MY_DIR}"
 	distutils_src_compile
 }
 
 src_install() {
-	cd ${MY_P}/plugins/${MY_DIR}
+	cd "${MY_P}/plugins/${MY_DIR}"
 	distutils_src_install
 }

@@ -41,6 +41,6 @@ src_install() {
 	cd "${WORKDIR}/${MY_P}"
 
 	insinto /etc/holland/providers
-	newins "config/providers/mysqldump.conf" mysqldump.conf || die "Insert
+	newins "config/providers/mysqlhotcopy.conf" mysqlhotcopy.conf || die "Insert
 	failed"
 }
