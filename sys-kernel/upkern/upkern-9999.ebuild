@@ -20,7 +20,8 @@ SLOT="0"
 KEYWORDS=""
 IUSE="module-rebuild initrd"
 
-RDEPEND=">=app-portage/gentoolkit-0.3
+DEPEND=""
+RDEPEND="${DEPEND}
+>=app-portage/gentoolkit-0.3
 module-rebuild? ( sys-kernel/module-rebuild )
 initrd? ( sys-kernel/dracut )"
-DEPEND="${RDEPEND}"
