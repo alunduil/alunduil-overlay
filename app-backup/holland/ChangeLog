@@ -1,6 +1,9 @@
 # ChangeLog for app-backup/holland
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  07 Apr 2012; <alunduil@gentoo.org> holland-9999.ebuild:
+  Updated the live holland ebuild.
 
   14 Jan 2011; <alunduil@gentoo.org> holland-1.0.6.ebuild:
   Stabilizing holland

@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -35,34 +35,29 @@ RDEPEND="${DEPEND}
 		app-backup/holland-backup-random
 		)
 	maatkit? (
-		app-backup/holland[mysql]
 		app-backup/holland-backup-maatkit
 		)
 	"
 
-RESTRICT="mirror"
-PROPERTIES=""
-
 src_install() {
 	distutils_src_install
-
-	keepdir /var/log/holland
-
+	
+	# Setup the configuration directory ...
 	keepdir /etc/holland
 	insinto /etc/holland
-	newins config/holland.conf holland.conf || \
-		die "Failed Inserting Holland Configuration!"
 
+	newins config/holland.conf holland.conf || die "Failed to insert"
+	
 	keepdir /etc/holland/backupsets
 	insinto /etc/holland/backupsets
-	newins config/backupsets/default.conf default.conf || \
-		die "Failed Inserting Holland Default BackupSet Configuration!"
 
-	doman docs/man/holland.1 || die "Failed to insert man page!"
-
-	if use doc; then
-		dodoc docs/man/README
-	fi
+	newins config/backupsets/default.conf default.conf || die "Failed to insert"
 
 	keepdir /etc/holland/providers
+
+	doman docs/man/holland.1 || dir "Failed to doman"
+
+	if use doc; then
+		dodoc README
+	fi
 }
