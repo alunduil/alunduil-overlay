@@ -24,3 +24,7 @@
 =app-backup/holland-backup-mysql-lvm-9999
 =app-backup/holland-backup-mysqldump-9999
 =app-emulation/openstack-nova-9999
+=app-emulation/openstack-swift-9999
+=app-emulation/openstack-glance-9999
+=app-emulation/openstack-keystone-9999
+=app-emulation/openstack-horizon-9999
