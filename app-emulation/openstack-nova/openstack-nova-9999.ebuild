@@ -23,13 +23,17 @@ IUSE="sqlite mysql postgres kvm lxc qemu xen"
 DEPEND=""
 RDEPEND="${DEPEND}
 	net-misc/ntp
-	sqlite? ( dev-db/sqlite )
-	mysql? ( virtual/mysql )
-	postgres? ( dev-db/postgresql-base )
-	kvm? ( app-emulation/qemu-kvm )
-	lxc? ( app-emulation/lxc )
-	qemu? ( app-emulation/qemu )
-	xen? ( app-emulation/xen )"
+	|| (
+		sqlite? ( dev-db/sqlite )
+		mysql? ( virtual/mysql )
+		postgres? ( dev-db/postgresql-base )
+	)
+	|| (
+		kvm? ( app-emulation/qemu-kvm )
+		lxc? ( app-emulation/lxc )
+		qemu? ( app-emulation/qemu )
+		xen? ( app-emulation/xen )
+	)"
 
 pkg_setup() {
 	python_pkg_setup
@@ -49,6 +53,10 @@ src_install() {
 }
 
 pkg_postinst() {
+	elog "Documentation on Openstack Compute can be found at the following"
+	elog "location:"
+	elog "http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html"
+	elog ""
 	elog "The following parameters must be configured correctly in"
 	elog "/etc/nova/nova.conf:"
 	elog "  * sql_connection ::"
@@ -86,10 +94,17 @@ pkg_postinst() {
 	elog "      If this flag is present, the cactus method of authentication is"
 	elog "      used with the novarc file containing credentials"
 	elog ""
-	elog "After configuring the above parameters you might want to run:"
+	elog "After configuring the above parameters you need to run the following"
+	elog "commands:"
+	elog "  nova-manage db sync"
+	elog "  nova-manage network create <CIDR NETWORK> <NUMBER> <SIZE>"
+	elog ""
+	elog "If you are installing Openstack for the first time and would like a"
+	elog "fairly standard deployment you can run:"
 	elog "\"emerge --config =${CATEGORY}/${PF}\""
 }
 
 pkg_config() {
 	"${ROOT}"/usr/bin/nova-manage db sync
+	"${ROOT}"/usr/bin/nova-manage create network
 }
