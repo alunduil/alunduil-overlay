@@ -18,10 +18,15 @@ SRC_URI=""
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS=""
-IUSE="sqlite mysql postgres"
+IUSE="sqlite mysql postgres kvm lxc qemu xen"
 
 DEPEND=""
 RDEPEND="${DEPEND}
+	net-misc/ntp
 	sqlite? ( dev-db/sqlite )
 	mysql? ( virtual/mysql )
-	postgres? ( dev-db/postgresql-base )"
+	postgres? ( dev-db/postgresql-base )
+	kvm? ( app-emulation/qemu-kvm )
+	lxc? ( app-emulation/lxc )
+	qemu? ( app-emulation/qemu )
+	xen? ( app-emulation/xen )"

@@ -22,7 +22,7 @@ IUSE="ldap sqlite mysql postgres"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-  ldap? ( net-nds/openldap )
-  sqlite? ( dev-db/sqlite )
-  mysql? ( virtual/mysql )
-  postgres? ( dev-db/postgresql-base )"
+	ldap? ( net-nds/openldap )
+	sqlite? ( dev-db/sqlite )
+	mysql? ( virtual/mysql )
+	postgres? ( dev-db/postgresql-base )"
