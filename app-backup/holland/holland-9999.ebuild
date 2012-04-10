@@ -19,24 +19,32 @@ SRC_URI=""
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS=""
-IUSE="doc examples lvm maatkit +mysql postgresql sqlite"
+IUSE="doc examples lvm maatkit mysql postgres sqlite"
 
 DEPEND="dev-python/sphinx
 	dev-python/setuptools
 	"
 RDEPEND="${DEPEND}"
 PDEPEND="app-backup/holland-lib-common
-	mysql? ( app-backup/holland-backup-mysqldump )
+	mysql? (
+		app-backup/holland-backup-mysqldump
+		lvm? (
+			app-backup/holland-backup-mysql-lvm
+			)
+		maatkit? (
+			app-backup/holland-backup-maatkit
+			)
+		)
 	sqlite? ( app-backup/holland-backup-sqlite )
-	postgresql? ( app-backup/holland-backup-pgdump )
-	lvm? ( mysql? ( app-backup/holland-backup-mysql-lvm ) )
+	postgres? ( app-backup/holland-backup-pgdump )
+	( || (
+		app-backup/holland[mysql]
+		app-backup/holland[postgres]
+		app-backup/holland[sqlite]
+		) )
 	examples? (
 		app-backup/holland-backup-example
 		app-backup/holland-backup-random
-		)
-	maatkit? (
-		app-backup/holland-backup-maatkit
-		app-backup/holland[mysql]
 		)
 	"
 
