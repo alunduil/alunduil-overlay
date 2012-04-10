@@ -30,3 +30,58 @@ RDEPEND="${DEPEND}
 	lxc? ( app-emulation/lxc )
 	qemu? ( app-emulation/qemu )
 	xen? ( app-emulation/xen )"
+
+pkg_setup() {
+	enewgroup nova
+}
+
+src_install() {
+	distutils_src_install
+
+	keepdir /etc/nova
+	insinto /etc/nova
+
+	newins ${W}/etc/nova/nova.conf.sample nova.conf
+
+	fowners root:nova "${D}/etc/nova/nova.conf" || die "fowners failed"
+	fperms 640 "${D}/etc/nova/nova.conf" || die "fperms failed"
+}
+
+pkg_postinst() {
+	elog "The following parameters must be configured correctly in"
+	elog "/etc/nova/nova.conf:"
+	elog "  * sql_connection ::"
+	elog "      SQL Alchemy connect string (reference); location of the"
+	elog "      openstack compute SQL database."
+	elog "  * s3_host ::"
+	elog "      IP address of the host where openstack compute is hosting the"
+	elog "      object store service which will contain the virtual machine"
+	elog "      images and buckets"
+	elog "  * rabbit_host ::"
+	elog "      IP address of the RabbitMQ server"
+	elog "  * verbose ::"
+	elog "      Set to 1 to turn on verbose output (helpful during initial"
+	elog "      setup)"
+	elog "  * network_manager ::"
+	elog "      Configures how your controller will communicate with additional"
+	elog "      openstack compute nodes and virtual machines.  The choices are:"
+	elog "        * nova.network.manager.FlatManager - Non-VLAN Networking"
+	elog "        * nova.network.manager.FlatDHCPManager - Flat with DHCP"
+	elog "        * nova.network.manager.VlanManager - VLAN with DHCP (Default)"
+	elog "  * fixed_range ::"
+	elog "      CIDR address of the network that all projects for future VM"
+	elog "      guests reside on (e.g. 192.168.0.0./12)"
+	elog "  * ec2_host ::"
+	elog "      IP address of the nova-api service"
+	elog "  * ec2_url ::"
+	elog "      URL of the EC2 service"
+	elog "  * osapi_host ::"
+	elog "      IP address of the nova-api service"
+	elog "  * network_size ::"
+	elog "      Number of addresses in each private subnet"
+	elog "  * glance_api_servers ::"
+	elog "      IP and port for the image service"
+	elog "  * use_deprecated_auth ::"
+	elog "      If this flag is present, the cactus method of authentication is"
+	elog "      used with the novarc file containing credentials"
+}
