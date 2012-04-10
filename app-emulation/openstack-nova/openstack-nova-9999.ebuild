@@ -18,7 +18,7 @@ SRC_URI=""
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS=""
-IUSE="sqlite mysql postgres kvm lxc qemu xen"
+IUSE="sqlite mysql postgres kvm lxc qemu xen test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -50,6 +50,10 @@ src_install() {
 
 	fowners root:nova "/etc/nova/nova.conf" || die "fowners failed"
 	fperms 640 "/etc/nova/nova.conf" || die "fperms failed"
+
+	if not use test; then
+		find "${D}" -type d -name tests -exec rm -rf "{}" \;
+	fi
 }
 
 pkg_postinst() {
