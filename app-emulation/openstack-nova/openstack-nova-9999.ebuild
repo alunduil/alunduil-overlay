@@ -44,8 +44,8 @@ src_install() {
 
 	newins "etc/nova/nova.conf.sample" nova.conf
 
-	fowners root:nova "etc/nova/nova.conf" || die "fowners failed"
-	fperms 640 "etc/nova/nova.conf" || die "fperms failed"
+	fowners root:nova "/etc/nova/nova.conf" || die "fowners failed"
+	fperms 640 "/etc/nova/nova.conf" || die "fperms failed"
 }
 
 pkg_postinst() {
