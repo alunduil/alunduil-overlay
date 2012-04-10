@@ -18,7 +18,10 @@ SRC_URI=""
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS=""
-IUSE=""
+IUSE="sqlite mysql postgres"
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	sqlite? ( dev-db/sqlite )
+	mysql? ( virtual/mysql )
+	postgres? ( dev-db/postgresql-base )"

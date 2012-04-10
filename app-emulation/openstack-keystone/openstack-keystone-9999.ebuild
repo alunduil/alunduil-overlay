@@ -18,7 +18,11 @@ SRC_URI=""
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS=""
-IUSE=""
+IUSE="ldap sqlite mysql postgres"
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+  ldap? ( net-nds/openldap )
+  sqlite? ( dev-db/sqlite )
+  mysql? ( virtual/mysql )
+  postgres? ( dev-db/postgresql-base )"
