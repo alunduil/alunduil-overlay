@@ -23,17 +23,24 @@ IUSE="sqlite mysql postgres kvm lxc qemu xen test"
 DEPEND=""
 RDEPEND="${DEPEND}
 	net-misc/ntp
-	|| (
-		sqlite? ( dev-db/sqlite )
-		mysql? ( virtual/mysql )
-		postgres? ( dev-db/postgresql-base )
-	)
-	|| (
-		kvm? ( app-emulation/qemu-kvm )
-		lxc? ( app-emulation/lxc )
-		qemu? ( app-emulation/qemu )
-		xen? ( app-emulation/xen )
-	)"
+	( || (
+		app-emulation/openstack-nova[sqlite]
+		app-emulation/openstack-nova[mysql]
+		app-emulation/openstack-nova[postgres]
+		) )
+	sqlite? ( dev-db/sqlite )
+	mysql? ( virtual/mysql )
+	postgres? ( dev-db/postgresql-base )
+	( || (
+		app-emulation/openstack-nova[kvm]
+		app-emulation/openstack-nova[lxc]
+		app-emulation/openstack-nova[qemu]
+		app-emulation/openstack-nova[xen]
+		) )
+	kvm? ( app-emulation/qemu-kvm )
+	lxc? ( app-emulation/lxc )
+	qemu? ( app-emulation/qemu )
+	xen? ( app-emulation/xen )"
 
 pkg_setup() {
 	python_pkg_setup
