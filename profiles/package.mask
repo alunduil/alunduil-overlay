@@ -28,3 +28,4 @@
 =app-emulation/openstack-glance-9999
 =app-emulation/openstack-keystone-9999
 =app-emulation/openstack-horizon-9999
+=app-emulation/openstack-quantum-9999
