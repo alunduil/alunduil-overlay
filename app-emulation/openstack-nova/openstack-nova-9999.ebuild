@@ -88,3 +88,7 @@ pkg_postinst() {
 	elog "After configuring the above parameters you might want to run:"
 	elog "\"emerge --config =${CATEGORY}/${PF}\""
 }
+
+pkg_config() {
+	"${ROOT}"/usr/bin/nova-manage db sync
+}
