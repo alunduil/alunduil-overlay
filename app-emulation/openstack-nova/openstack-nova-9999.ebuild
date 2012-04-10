@@ -7,7 +7,7 @@ PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="3* *-jython"
 
-inherit git-2 distutils
+inherit eutils git-2 distutils
 
 EGIT_REPO_URI="https://github.com/openstack/nova.git"
 
