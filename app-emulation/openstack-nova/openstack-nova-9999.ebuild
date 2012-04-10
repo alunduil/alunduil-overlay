@@ -32,6 +32,7 @@ RDEPEND="${DEPEND}
 	xen? ( app-emulation/xen )"
 
 pkg_setup() {
+	python_pkg_setup
 	enewgroup nova
 }
 
