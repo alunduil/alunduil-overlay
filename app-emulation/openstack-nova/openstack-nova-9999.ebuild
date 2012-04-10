@@ -18,7 +18,7 @@ SRC_URI=""
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS=""
-IUSE="sqlite mysql postgres kvm lxc qemu xen test"
+IUSE="sqlite +mysql postgres +kvm lxc qemu xen test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
