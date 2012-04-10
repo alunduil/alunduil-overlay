@@ -42,7 +42,7 @@ src_install() {
 	keepdir /etc/nova
 	insinto /etc/nova
 
-	newins ${W}/etc/nova/nova.conf.sample nova.conf
+	newins etc/nova/nova.conf.sample nova.conf
 
 	fowners root:nova "${D}/etc/nova/nova.conf" || die "fowners failed"
 	fperms 640 "${D}/etc/nova/nova.conf" || die "fperms failed"
