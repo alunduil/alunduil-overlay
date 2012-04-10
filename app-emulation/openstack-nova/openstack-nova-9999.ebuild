@@ -51,8 +51,8 @@ src_install() {
 	fowners root:nova "/etc/nova/nova.conf" || die "fowners failed"
 	fperms 640 "/etc/nova/nova.conf" || die "fperms failed"
 
-	if not use test; then
-		find "${D}" -type d -name tests -exec rm -rf "{}" \;
+	if ! use test; then
+		find "${D}" -iname "*test*" -exec rm -rf "{}" \;
 	fi
 }
 
