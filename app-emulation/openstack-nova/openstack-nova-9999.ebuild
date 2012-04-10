@@ -84,4 +84,7 @@ pkg_postinst() {
 	elog "  * use_deprecated_auth ::"
 	elog "      If this flag is present, the cactus method of authentication is"
 	elog "      used with the novarc file containing credentials"
+	elog ""
+	elog "After configuring the above parameters you might want to run:"
+	elog "\"emerge --config =${CATEGORY}/${PF}\""
 }
