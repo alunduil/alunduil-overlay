@@ -25,6 +25,7 @@ RDEPEND="${DEPEND}
 	dev-python/greenlet
 	dev-python/pastedeploy
 	dev-python/eventlet
+	dev-python/routes
 	"
 
 src_install() {
