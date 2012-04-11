@@ -29,3 +29,4 @@
 =sys-auth/openstack-keystone-9999
 =www-apps/openstack-horizon-9999
 =app-emulation/openstack-quantum-9999
+=dev-python/eventlet-9999
