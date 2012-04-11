@@ -22,3 +22,15 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
+
+src_install() {
+	distutils_src_install
+
+	newinitd "${FILESDIR}/keystone.initd" keystone
+
+	keepdir /etc/keystone
+	insinto /etc/keystone
+
+	newins "etc/keystone.conf" "keystone.conf"
+	newins "etc/logging.conf.sample" "logging.conf"
+}

@@ -1,0 +1,13 @@
+#!/sbin/runscript
+# Copyright 1999-2012 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+command=/usr/bin/keystone-all
+pidfile=/var/run/keystone.pid
+command_args=""
+name="OpenStack Keystone"
+
+depend() {
+  need logger net
+}
