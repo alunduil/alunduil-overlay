@@ -26,6 +26,7 @@ RDEPEND="${DEPEND}
 	dev-python/pastedeploy
 	dev-python/eventlet
 	dev-python/routes
+	dev-python/webob
 	"
 
 src_install() {
