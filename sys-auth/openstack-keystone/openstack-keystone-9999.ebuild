@@ -18,7 +18,7 @@ SRC_URI=""
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS=""
-IUSE=""
+IUSE="+sqlite mysql postgres"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -30,6 +30,14 @@ RDEPEND="${DEPEND}
 	dev-python/passlib
 	dev-python/lxml
 	dev-python/sqlalchemy-migrate
+	sqlite? ( dev-python/sqlalchemy[sqlite] )
+	mysql? ( dev-python/sqlalchemy[mysql] )
+	postgres? ( dev-python/sqlalchemy[postgres] )
+	( || (
+		sys-auth/openstack-keystone[sqlite]
+		sys-auth/openstack-keystone[mysql]
+		sys-auth/openstack-keystone[postgres]
+		) )
 	"
 
 src_install() {
