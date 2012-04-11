@@ -29,6 +29,7 @@ RDEPEND="${DEPEND}
 	dev-python/webob
 	dev-python/passlib
 	dev-python/lxml
+	dev-python/sqlalchemy
 	"
 
 src_install() {
