@@ -19,7 +19,7 @@ SLOT="0"
 KEYWORD=""
 IUSE="examples"
 
-DEPEND="app-backup/holland"
+DEPEND=""
 RDEPEND="${DEPEND}"
 
 MY_P="${PN%%-*}-${PVR}"

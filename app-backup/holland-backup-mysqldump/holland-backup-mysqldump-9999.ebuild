@@ -21,9 +21,7 @@ SLOT="0"
 KEYWORD=""
 IUSE=""
 
-DEPEND="app-backup/holland
-	app-backup/holland-lib-mysql
-	"
+DEPEND="app-backup/holland-lib-mysql"
 RDEPEND="${DEPEND}"
 
 MY_P="${PN%%-*}-${PVR}"

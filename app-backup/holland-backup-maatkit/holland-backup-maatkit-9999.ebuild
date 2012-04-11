@@ -21,8 +21,7 @@ SLOT="0"
 KEYWORDS=""
 IUSE="examples"
 
-DEPEND="app-backup/holland
-	dev-db/maatkit"
+DEPEND="dev-db/maatkit"
 RDEPEND="${DEPEND}"
 
 MY_P="${PN%%-*}-${PVR}"

@@ -19,8 +19,7 @@ SLOT="0"
 KEYWORD=""
 IUSE="examples"
 
-DEPEND="app-backup/holland
-	dev-db/sqlite"
+DEPEND="dev-db/sqlite"
 RDEPEND="${DEPEND}"
 
 MY_P="${PN%%-*}-${PVR}"

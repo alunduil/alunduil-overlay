@@ -20,8 +20,7 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-DEPEND="app-backup/holland
-	dev-db/postgresql-base
+DEPEND="dev-db/postgresql-base
 	dev-python/psycopg"
 RDEPEND="${DEPEND}"
 

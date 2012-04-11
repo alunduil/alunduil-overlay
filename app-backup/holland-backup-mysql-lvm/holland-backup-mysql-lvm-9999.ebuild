@@ -20,8 +20,7 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-DEPEND="app-backup/holland
-	app-backup/holland-lib-lvm"
+DEPEND="app-backup/holland-lib-lvm"
 RDEPEND="${DEPEND}"
 
 MY_P="${PN%%-*}-${PVR}"
