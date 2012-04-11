@@ -21,7 +21,9 @@ KEYWORDS=""
 IUSE=""
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	dev-python/greenlet
+	"
 
 src_install() {
 	distutils_src_install
