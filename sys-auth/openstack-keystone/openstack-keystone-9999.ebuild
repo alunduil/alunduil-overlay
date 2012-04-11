@@ -27,6 +27,7 @@ RDEPEND="${DEPEND}
 	dev-python/eventlet
 	dev-python/routes
 	dev-python/webob
+	dev-python/passlib
 	"
 
 src_install() {
