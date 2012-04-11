@@ -12,12 +12,12 @@ depend() {
 
 start() {
   ebegin "Starting ${SVCNAME}"
-  start-stop-daemon --start --quiet --pidfile ${PIDFILE} --make-pidfile ${COMMAND}
+  start-stop-daemon --start --quiet -i -b --pidfile ${PIDFILE} --make-pidfile ${COMMAND}
   eend $?
 }
 
 stop() {
   ebegin "Stopping ${SVCNAME}"
-  start-stop-daemon --stop --quiet --pidfile ${PIDFILE}
+  start-stop-daemon --stop --quiet -i --pidfile ${PIDFILE}
   eend $?
 }
