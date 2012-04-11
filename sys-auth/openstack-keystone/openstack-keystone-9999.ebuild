@@ -42,4 +42,6 @@ src_install() {
 
 	newins "etc/keystone.conf" "keystone.conf"
 	newins "etc/logging.conf.sample" "logging.conf"
+
+	dodir /var/run/keystone
 }
