@@ -23,7 +23,7 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-python/greenlet
-	dev-python/paste
+	dev-python/pastedeploy
 	"
 
 src_install() {
