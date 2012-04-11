@@ -26,6 +26,6 @@
 =app-emulation/openstack-nova-9999
 =app-emulation/openstack-swift-9999
 =app-emulation/openstack-glance-9999
-=app-emulation/openstack-keystone-9999
-=app-emulation/openstack-horizon-9999
+=sys-auth/openstack-keystone-9999
+=www-apps/openstack-horizon-9999
 =app-emulation/openstack-quantum-9999

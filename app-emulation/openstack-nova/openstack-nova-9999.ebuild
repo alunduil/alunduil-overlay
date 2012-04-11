@@ -109,13 +109,4 @@ pkg_postinst() {
 	elog "commands:"
 	elog "  nova-manage db sync"
 	elog "  nova-manage network create <CIDR NETWORK> <NUMBER> <SIZE>"
-	elog ""
-	elog "If you are installing Openstack for the first time and would like a"
-	elog "fairly standard deployment you can run:"
-	elog "\"emerge --config =${CATEGORY}/${PF}\""
-}
-
-pkg_config() {
-	"${ROOT}"/usr/bin/nova-manage db sync
-	"${ROOT}"/usr/bin/nova-manage create network
 }
