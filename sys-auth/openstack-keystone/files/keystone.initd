@@ -3,11 +3,21 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-command=/usr/bin/keystone-all
-pidfile=/var/run/keystone.pid
-command_args=""
-name="OpenStack Keystone"
+COMMAND=/usr/bin/keystone-all
+PIDFILE=/var/run/keystone/keystone.pid
 
 depend() {
-  need logger net
+  need net
+}
+
+start() {
+  ebegin "Starting ${SVCNAME}"
+  start-stop-daemon --start --quiet --pidfile ${PIDFILE} --make-pidfile ${COMMAND}
+  eend $?
+}
+
+stop() {
+  ebegin "Stopping ${SVCNAME}"
+  start-stop-daemon --stop --quiet --pidfile ${PIDFILE}
+  eend $?
 }
