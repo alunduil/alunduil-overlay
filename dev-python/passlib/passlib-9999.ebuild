@@ -9,7 +9,7 @@ RESTRICT_PYTHON_ABIS=""
 
 inherit distutils mercurial
 
-EHG_REPO_URL="https://code.google.com/p/passlib/"
+EHG_REPO_URI="https://code.google.com/p/passlib/"
 
 DESCRIPTION="Password hashing library which provides cross-platform
 implementations of hashing algorithms; as well as a management framework
