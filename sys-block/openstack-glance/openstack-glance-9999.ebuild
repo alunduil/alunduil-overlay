@@ -19,7 +19,15 @@ SRC_URI=""
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS=""
-IUSE=""
+IUSE="test"
 
 DEPEND=""
 RDEPEND="${DEPEND}"
+
+src_install() {
+	distutils_src_install
+
+	if ! use test; then
+		find "${D}" -iname "*test*" -exec rm -rf "{}" \;
+	fi
+}
