@@ -24,6 +24,7 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-python/greenlet
 	dev-python/pastedeploy
+	dev-python/eventlet
 	"
 
 src_install() {
