@@ -18,7 +18,7 @@ SRC_URI=""
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS=""
-IUSE="+sqlite mysql postgres"
+IUSE="+sqlite mysql postgres ldap"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -33,10 +33,12 @@ RDEPEND="${DEPEND}
 	sqlite? ( dev-python/sqlalchemy[sqlite] )
 	mysql? ( dev-python/sqlalchemy[mysql] )
 	postgres? ( dev-python/sqlalchemy[postgres] )
+	ldap? ( dev-python/python-ldap )
 	( || (
 		sys-auth/openstack-keystone[sqlite]
 		sys-auth/openstack-keystone[mysql]
 		sys-auth/openstack-keystone[postgres]
+		sys-auth/openstack-keystone[ldap]
 		) )
 	"
 
