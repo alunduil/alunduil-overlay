@@ -16,18 +16,20 @@
 
 # All live ebuilds provided by this overlay.
 =sys-kernel/upkern-9999
-=app-portage/pclean-9999
+
 =app-backup/holland-lib-lvm-9999
 =app-backup/holland-lib-mysql-9999
 =app-backup/holland-9999
 =app-backup/holland-lib-common-9999
 =app-backup/holland-backup-mysql-lvm-9999
 =app-backup/holland-backup-mysqldump-9999
+
 =app-emulation/openstack-nova-9999
 =app-emulation/openstack-swift-9999
-=app-emulation/openstack-glance-9999
+=sys-block/openstack-glance-9999
 =sys-auth/openstack-keystone-9999
 =www-apps/openstack-horizon-9999
 =app-emulation/openstack-quantum-9999
+
 =dev-python/eventlet-9999
 =dev-python/passlib-9999
