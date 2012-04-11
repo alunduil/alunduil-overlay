@@ -28,6 +28,7 @@ RDEPEND="${DEPEND}
 	dev-python/routes
 	dev-python/webob
 	dev-python/passlib
+	dev-python/lxml
 	"
 
 src_install() {
