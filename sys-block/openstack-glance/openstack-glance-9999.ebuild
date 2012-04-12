@@ -28,6 +28,7 @@ RDEPEND="${DEPEND}
 	dev-python/sqlalchemy-migrate
 	dev-python/pastedeploy
 	dev-python/routes
+	dev-python/webob
 	sqlite? ( dev-python/sqlalchemy[sqlite] )
 	mysql? ( dev-python/sqlalchemy[mysql] )
 	postgres? ( dev-python/sqlalchemy[postgres] )
