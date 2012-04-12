@@ -19,10 +19,11 @@ SRC_URI=""
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS=""
-IUSE="sqlite mysql postgres test"
+IUSE="+sqlite mysql postgres test"
 
 DEPEND=""
 RDEPEND="${DEPEND}
+	dev-python/eventlet
 	dev-python/sqlalchemy-migrate
 	sqlite? ( dev-python/sqlalchemy[sqlite] )
 	mysql? ( dev-python/sqlalchemy[mysql] )
