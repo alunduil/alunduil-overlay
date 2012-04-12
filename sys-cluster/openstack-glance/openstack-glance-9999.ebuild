@@ -36,9 +36,9 @@ RDEPEND="${DEPEND}
 	mysql? ( dev-python/sqlalchemy[mysql] )
 	postgres? ( dev-python/sqlalchemy[postgres] )
 	( || (
-		sys-block/openstack-glance[sqlite]
-		sys-block/openstack-glance[mysql]
-		sys-block/openstack-glance[postgres]
+		sys-cluster/openstack-glance[sqlite]
+		sys-cluster/openstack-glance[mysql]
+		sys-cluster/openstack-glance[postgres]
 		) )
 	"
 
@@ -59,6 +59,6 @@ src_install() {
 	if ! use test; then
 		find "${D}" -iname "*test*" -exec rm -rf "{}" \;
 	fi
-	
+
 	dodir /var/log/glance
 }
