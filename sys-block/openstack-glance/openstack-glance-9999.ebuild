@@ -56,4 +56,6 @@ src_install() {
 	if ! use test; then
 		find "${D}" -iname "*test*" -exec rm -rf "{}" \;
 	fi
+	
+	dodir /var/log/glance
 }
