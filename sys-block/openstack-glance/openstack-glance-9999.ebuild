@@ -26,6 +26,7 @@ RDEPEND="${DEPEND}
 	dev-python/eventlet
 	dev-python/greenlet
 	dev-python/sqlalchemy-migrate
+	dev-python/pastedeploy
 	sqlite? ( dev-python/sqlalchemy[sqlite] )
 	mysql? ( dev-python/sqlalchemy[mysql] )
 	postgres? ( dev-python/sqlalchemy[postgres] )
