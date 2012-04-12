@@ -37,7 +37,7 @@ RDEPEND="${DEPEND}
 src_install() {
 	distutils_src_install
 
-	newinitd "${FILESDIR}/glance.initd"
+	newinitd "${FILESDIR}/glance.initd" glance
 
 	keepdir /etc/glance
 	insinto /etc/glance
