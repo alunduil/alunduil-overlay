@@ -19,13 +19,33 @@ SRC_URI=""
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS=""
-IUSE="test"
+IUSE="sqlite mysql postgres test"
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	dev-python/sqlalchemy-migrate
+	sqlite? ( dev-python/sqlalchemy[sqlite] )
+	mysql? ( dev-python/sqlalchemy[mysql] )
+	postgres? ( dev-python/sqlalchemy[postgres] )
+	( || (
+		sys-block/openstack-glance[sqlite]
+		sys-block/openstack-glance[mysql]
+		sys-block/openstack-glance[postgres]
+		) )
+	"
 
 src_install() {
 	distutils_src_install
+
+	newinitd "${FILESDIR}/glance.initd"
+
+	keepdir /etc/glance
+	insinto /etc/glance
+
+	newins "etc/glance-api.conf" "glance-api.conf"
+	newins "etc/glance-api-paste.conf" "glance-api-paste.conf"
+	newins "etc/glance-registry.conf" "glance-registry.conf"
+	newins "etc/glance-registry-paste.conf" "glance-registry-paste.conf"
 
 	if ! use test; then
 		find "${D}" -iname "*test*" -exec rm -rf "{}" \;
