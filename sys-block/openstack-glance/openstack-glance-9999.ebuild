@@ -30,6 +30,7 @@ RDEPEND="${DEPEND}
 	dev-python/routes
 	dev-python/webob
 	dev-python/iso8601
+	dev-python/httplib2
 	sqlite? ( dev-python/sqlalchemy[sqlite] )
 	mysql? ( dev-python/sqlalchemy[mysql] )
 	postgres? ( dev-python/sqlalchemy[postgres] )
