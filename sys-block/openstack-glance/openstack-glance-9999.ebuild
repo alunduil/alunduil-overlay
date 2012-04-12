@@ -27,6 +27,7 @@ RDEPEND="${DEPEND}
 	dev-python/greenlet
 	dev-python/sqlalchemy-migrate
 	dev-python/pastedeploy
+	dev-python/routes
 	sqlite? ( dev-python/sqlalchemy[sqlite] )
 	mysql? ( dev-python/sqlalchemy[mysql] )
 	postgres? ( dev-python/sqlalchemy[postgres] )
