@@ -31,6 +31,7 @@ RDEPEND="${DEPEND}
 	dev-python/webob
 	dev-python/iso8601
 	dev-python/httplib2
+	dev-python/pycrypto
 	sqlite? ( dev-python/sqlalchemy[sqlite] )
 	mysql? ( dev-python/sqlalchemy[mysql] )
 	postgres? ( dev-python/sqlalchemy[postgres] )
