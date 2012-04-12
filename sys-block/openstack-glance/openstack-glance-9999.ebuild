@@ -54,6 +54,7 @@ src_install() {
 	newins "etc/glance-api-paste.ini" "glance-api-paste.ini"
 	newins "etc/glance-registry.conf" "glance-registry.conf"
 	newins "etc/glance-registry-paste.ini" "glance-registry-paste.ini"
+	newins "etc/policy.json" "policy.json"
 
 	if ! use test; then
 		find "${D}" -iname "*test*" -exec rm -rf "{}" \;
