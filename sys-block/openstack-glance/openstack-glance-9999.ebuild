@@ -43,9 +43,9 @@ src_install() {
 	insinto /etc/glance
 
 	newins "etc/glance-api.conf" "glance-api.conf"
-	newins "etc/glance-api-paste.conf" "glance-api-paste.conf"
+	newins "etc/glance-api-paste.ini" "glance-api-paste.ini"
 	newins "etc/glance-registry.conf" "glance-registry.conf"
-	newins "etc/glance-registry-paste.conf" "glance-registry-paste.conf"
+	newins "etc/glance-registry-paste.ini" "glance-registry-paste.ini"
 
 	if ! use test; then
 		find "${D}" -iname "*test*" -exec rm -rf "{}" \;
