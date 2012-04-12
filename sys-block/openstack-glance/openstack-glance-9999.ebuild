@@ -24,6 +24,7 @@ IUSE="+sqlite mysql postgres test"
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-python/eventlet
+	dev-python/greenlet
 	dev-python/sqlalchemy-migrate
 	sqlite? ( dev-python/sqlalchemy[sqlite] )
 	mysql? ( dev-python/sqlalchemy[mysql] )
