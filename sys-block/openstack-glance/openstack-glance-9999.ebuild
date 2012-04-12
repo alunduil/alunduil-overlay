@@ -29,6 +29,7 @@ RDEPEND="${DEPEND}
 	dev-python/pastedeploy
 	dev-python/routes
 	dev-python/webob
+	dev-python/iso8601
 	sqlite? ( dev-python/sqlalchemy[sqlite] )
 	mysql? ( dev-python/sqlalchemy[mysql] )
 	postgres? ( dev-python/sqlalchemy[postgres] )
