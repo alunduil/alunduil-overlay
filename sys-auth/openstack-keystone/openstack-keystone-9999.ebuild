@@ -50,7 +50,7 @@ src_install() {
 	keepdir /etc/keystone
 	insinto /etc/keystone
 
-	newins "etc/keystone.conf" "keystone.conf"
+	newins "etc/keystone.conf.sample" "keystone.conf"
 	newins "etc/logging.conf.sample" "logging.conf"
 
 	dodir /var/run/keystone
