@@ -23,4 +23,4 @@ IUSE=""
 DEPEND="dev-python/mysql-python"
 RDEPEND="${DEPEND}"
 
-S="${PN%%-*}-${PVR}/plugins/${PN//-/.}"
+S="${S}/plugins/${PN//-/.}"
