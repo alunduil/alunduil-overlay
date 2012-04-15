@@ -22,8 +22,7 @@ IUSE=""
 
 MY_S="${S}/plugins/${PN//-/.}"
 
-RDEPEND="app-backup/holland[lvm]
-	sys-fs/lvm2"
+RDEPEND="sys-fs/lvm2"
 DEPEND="${RDEPEND}"
 
 src_compile() {
