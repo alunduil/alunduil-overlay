@@ -33,3 +33,5 @@
 
 =dev-python/eventlet-9999
 =dev-python/passlib-9999
+
+=net-analyzer/httpry-9999
