@@ -23,4 +23,14 @@ IUSE=""
 DEPEND="dev-python/mysql-python"
 RDEPEND="${DEPEND}"
 
-S="${PN%%-*}-${PVR}/plugins/${PN//-/.}"
+MY_S="${S}/plugins/${PN//-/.}"
+
+src_compile() {
+	cd ${MY_S}
+	distutils_src_compile
+}
+
+src_install() {
+	cd "${MY_S}"
+	distutils_src_install
+}

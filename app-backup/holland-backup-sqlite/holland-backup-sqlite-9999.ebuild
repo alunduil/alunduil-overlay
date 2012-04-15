@@ -22,19 +22,18 @@ IUSE="examples"
 DEPEND="dev-db/sqlite"
 RDEPEND="${DEPEND}"
 
-MY_P="${PN%%-*}-${PVR}"
-MY_DIR="${PN//-/.}"
+MY_S="${PN%%-*}-${PVR}/plugins/${PN//-/.}"
 
 src_compile() {
-	cd "${MY_P}/plugins/${MY_DIR}"
+	cd "${MY_S}"
 	distutils_src_compile
 }
 
 src_install() {
-	cd "${MY_P}/plugins/${MY_DIR}"
+	cd "${MY_S}"
 	distutils_src_install
 
-	cd "${WORKDIR}/${MY_P}"
+	cd "${S}"
 
 	insinto /etc/holland/providers
 	doins config/providers/sqlite.conf || die "Could not insert sqlite configuration!"

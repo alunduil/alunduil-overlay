@@ -23,20 +23,19 @@ IUSE=""
 DEPEND="app-backup/holland-lib-lvm"
 RDEPEND="${DEPEND}"
 
-MY_P="${PN%%-*}-${PVR}"
 MY_DIR="${PN//-/.}"
-MY_DIR="${MY_DIR//.lvm/_lvm/}"
+MY_S="${PN%%-*}-${PVR}/plugins/${MY_DIR//.lvm/_lvm/}"
 
 src_compile() {
-	cd "${MY_P}/plugins/${MY_DIR}"
+	cd "${MY_S}"
 	distutils_src_compile
 }
 
 src_install() {
-	cd "${MY_P}/plugins/${MY_DIR}"
+	cd "${MY_S}"
 	distutils_src_install
 
-	cd "${WORKDIR}/${MY_P}"
+	cd "${S}"
 
 	insinto /etc/holland/providers
 	newins config/providers/mysql-lvm.conf mysql-lvm.conf || die "Insert
