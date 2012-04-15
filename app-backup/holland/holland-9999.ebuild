@@ -19,7 +19,7 @@ SRC_URI=""
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS=""
-IUSE="doc examples lvm maatkit mysql postgres sqlite"
+IUSE="examples lvm maatkit mysql postgres sqlite"
 
 DEPEND="dev-python/sphinx
 	dev-python/setuptools
@@ -63,8 +63,4 @@ src_install() {
 	newins config/backupsets/default.conf default.conf || die "Failed to insert"
 
 	doman docs/man/holland.1 || die "Failed to doman"
-
-	if use doc; then
-		dodoc README
-	fi
 }
