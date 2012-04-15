@@ -9,7 +9,7 @@ RESTRICT_PYTHON_ABIS=""
 
 inherit distutils git-2
 
-EGIT_REPO_URL="https://github.com/holland-backup/holland.git"
+EGIT_REPO_URI="https://github.com/holland-backup/holland.git"
 
 DESCRIPTION="Dump SQLite databases into pure ASCII SQL text for archiving with
 Holland."
