@@ -5,7 +5,7 @@
 EAPI="3"
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="*-jython"
+RESTRICT_PYTHON_ABIS=""
 
 inherit distutils git-2
 
@@ -20,19 +20,18 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-MY_P=${P%%-*}-${P##*-}
-MY_DIR="$(echo ${PN} | tr '-' '.')"
+MY_S="${S}/plugins/${PN//-/.}"
 
-RDEPEND="app-backup/holland
+RDEPEND="app-backup/holland[lvm]
 	sys-fs/lvm2"
 DEPEND="${RDEPEND}"
 
 src_compile() {
-	cd "${MY_P}/plugins/${MY_DIR}"
+	cd "${MY_S}" || die "Failed to change directory"
 	distutils_src_compile
 }
 
 src_install() {
-	cd "${MY_P}/plugins/${MY_DIR}"
+	cd "${MY_S}" || die "Failed to change directory"
 	distutils_src_install
 }
