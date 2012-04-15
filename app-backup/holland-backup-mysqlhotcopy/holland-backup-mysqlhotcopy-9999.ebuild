@@ -24,7 +24,7 @@ IUSE=""
 DEPEND="app-backup/holland-lib-mysql"
 RDEPEND="${DEPEND}"
 
-MY_S="${PN%%-*}-${PVR}/plugins/${PN//-/.}"
+MY_S="${S}/plugins/${PN//-/.}"
 
 src_compile() {
 	cd "${MY_S}}"

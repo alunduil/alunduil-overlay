@@ -24,10 +24,12 @@ IUSE=""
 DEPEND="app-backup/holland-lib-mysql"
 RDEPEND="${DEPEND}"
 
-MY_S="${PN%%-*}-${PVR}/plugins/${PN//-/.}"
+MY_S="${S}/plugins/${PN//-/.}"
 
 src_compile() {
+	elog "${MY_S}"
 	cd "${MY_S}"
+	elog "$(pwd)"
 	distutils_src_compile
 }
 

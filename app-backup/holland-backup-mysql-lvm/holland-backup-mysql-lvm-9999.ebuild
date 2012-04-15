@@ -24,7 +24,7 @@ DEPEND="app-backup/holland-lib-lvm"
 RDEPEND="${DEPEND}"
 
 MY_DIR="${PN//-/.}"
-MY_S="${PN%%-*}-${PVR}/plugins/${MY_DIR//.lvm/_lvm/}"
+MY_S="${S}/plugins/${MY_DIR//.lvm/_lvm/}"
 
 src_compile() {
 	cd "${MY_S}"

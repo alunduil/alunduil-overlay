@@ -22,7 +22,7 @@ IUSE="examples"
 DEPEND="dev-db/sqlite"
 RDEPEND="${DEPEND}"
 
-MY_S="${PN%%-*}-${PVR}/plugins/${PN//-/.}"
+MY_S="${S}/plugins/${PN//-/.}"
 
 src_compile() {
 	cd "${MY_S}"
