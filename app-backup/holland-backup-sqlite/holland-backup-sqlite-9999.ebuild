@@ -5,9 +5,11 @@
 EAPI="3"
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABI="1"
-RESTRICT_PYTHON_ABIS="*-jython"
+RESTRICT_PYTHON_ABIS=""
 
 inherit distutils git-2
+
+EGIT_REPO_URL="https://github.com/holland-backup/holland.git"
 
 DESCRIPTION="Dump SQLite databases into pure ASCII SQL text for archiving with
 Holland."
