@@ -23,10 +23,13 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
-S="${PN%%-*}-${PVR}/plugins/${PN//-/.}"
+MY_S="${S}/plugins/${PN//-/.}"
 
 src_install() {
+	cd "${MY_S}"
 	distutils_src_install
+
+	cd "${S}"
 
 	rm -rf "${D}/usr/bin" # binaries are provided by holland
 }
