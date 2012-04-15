@@ -27,17 +27,15 @@ RDEPEND="${DEPEND}"
 MY_S="${S}/plugins/${PN//-/.}"
 
 src_compile() {
-	elog "${MY_S}"
-	cd "${MY_S}"
-	elog "$(pwd)"
+	cd "${MY_S}" || die "Failed to change directory"
 	distutils_src_compile
 }
 
 src_install() {
-	cd "${MY_S}"
+	cd "${MY_S}" || die "Failed to change directory"
 	distutils_src_install
 
-	cd "${S}"
+	cd "${S}" || die "Failed to change directory"
 
 	insinto /etc/holland/providers
 	newins "config/providers/mysqldump.conf" mysqldump.conf || die "Insert

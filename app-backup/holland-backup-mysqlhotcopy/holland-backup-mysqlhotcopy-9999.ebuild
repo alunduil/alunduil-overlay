@@ -27,15 +27,15 @@ RDEPEND="${DEPEND}"
 MY_S="${S}/plugins/${PN//-/.}"
 
 src_compile() {
-	cd "${MY_S}}"
+	cd "${MY_S}}" || die "Failed to change directory"
 	distutils_src_compile
 }
 
 src_install() {
-	cd "${MY_S}"
+	cd "${MY_S}" || die "Failed to change directory"
 	distutils_src_install
 
-	cd "${S}"
+	cd "${S}" || die "Failed to change directory"
 
 	insinto /etc/holland/providers
 	newins "config/providers/mysqlhotcopy.conf" mysqlhotcopy.conf || die "Insert

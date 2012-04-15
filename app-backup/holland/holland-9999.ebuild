@@ -62,7 +62,7 @@ src_install() {
 
 	newins config/backupsets/default.conf default.conf || die "Failed to insert"
 
-	doman docs/man/holland.1 || dir "Failed to doman"
+	doman docs/man/holland.1 || die "Failed to doman"
 
 	if use doc; then
 		dodoc README
