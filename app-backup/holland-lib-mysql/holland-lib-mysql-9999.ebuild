@@ -20,19 +20,7 @@ SLOT="0"
 KEYWORD=""
 IUSE=""
 
-DEPEND="app-backup/holland
-	dev-python/mysql-python"
+DEPEND="dev-python/mysql-python"
 RDEPEND="${DEPEND}"
 
-MY_P="${PN%%-*}-${PVR}"
-MY_DIR="${PN//-/.}"
-
-src_compile() {
-	cd "${MY_P}/plugins/${MY_DIR}"
-	distutils_src_compile
-}
-
-src_install() {
-	cd "${MY_P}/plugins/${MY_DIR}"
-	distutils_src_install
-}
+S="${PN%%-*}-${PVR}/plugins/${PN//-/.}"
