@@ -7,7 +7,7 @@ PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS=""
 
-inherit distutils git-2
+inherit git-2 distutils
 
 EGIT_REPO_URI="git://github.com/gak/pycallgraph.git"
 
