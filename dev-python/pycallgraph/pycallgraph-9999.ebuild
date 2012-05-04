@@ -9,7 +9,7 @@ RESTRICT_PYTHON_ABIS=""
 
 inherit distutils git-2
 
-GIT_REPO_URI="git://github.com/gak/pycallgraph.git"
+EGIT_REPO_URI="git://github.com/gak/pycallgraph.git"
 
 DESCRIPTION="pycallgraph is a Python module that creates call graphs for Python
 programs."

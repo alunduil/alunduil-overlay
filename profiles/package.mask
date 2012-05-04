@@ -28,6 +28,7 @@
 
 =dev-python/passlib-9999
 =dev-python/eventlet-9999
+=dev-python/pycallgraph-9999
 
 =app-backup/holland-backup-random-9999
 =app-backup/holland-backup-maatkit-9999
