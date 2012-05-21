@@ -7,7 +7,7 @@ PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="*-jython"
 
-inherit git-2 distutils
+inherit distutils
 
 DESCRIPTION="Automated Gentoo kernel updater."
 HOMEPAGE="http://www.alunduil.com/programs/upkern/"
