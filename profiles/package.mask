@@ -1,5 +1,6 @@
 =x11-base/xorg-server-1.9.5-r1
 <app-portage/pclean-1
+=sys-kernel/upkern-4.0.0
 
 # Holland mask non-released upstream versions.
 >=app-backup/holland-1.0.7
