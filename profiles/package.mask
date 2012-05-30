@@ -17,6 +17,7 @@
 
 # All live ebuilds provided by this overlay.
 =sys-kernel/upkern-9999
+=app-admin/pmort-9999
 
 =app-emulation/openstack-quantum-9999
 =app-emulation/openstack-nova-9999
