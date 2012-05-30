@@ -24,3 +24,28 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-python/python-daemon
 	"
+
+pkg_setup() {
+	python_pkg_setup
+	enewuser pmort
+	enewgroup pmort
+}
+
+src_install() {
+	distutils_src_install
+
+	keepdir /etc/pmort
+	insinto /etc/pmort
+	newins config/pmort.conf pmort.conf || die "Failed newins"
+
+	newinitd config/init.sh pmort || die "Failed newinitd"
+
+	insinto /etc/logrotate.d
+	newins config/logrotate.conf pmort || die "Failed newins"
+
+	dodir "/var/cache/pmort" || die "Failed dodir"
+	dodir "/var/log/pmort" || die "Failed dodir"
+
+	fowners pmort:pmort "/var/cache/pmort" || die "Failed fowners"
+	fowners pmort:pmort "/var/log/pmort" || die "Failed fowners"
+}
