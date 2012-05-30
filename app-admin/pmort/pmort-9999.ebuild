@@ -7,7 +7,7 @@ PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS=""
 
-inherit git-2 distutils
+inherit git-2 distutils eutils
 
 EGIT_REPO_URI="git://github.com/alunduil/pmort.git"
 
