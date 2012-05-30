@@ -48,4 +48,6 @@ src_install() {
 
 	fowners pmort:pmort "/var/cache/pmort" || die "Failed fowners"
 	fowners pmort:pmort "/var/log/pmort" || die "Failed fowners"
+
+	rm "${D}"/etc
 }
