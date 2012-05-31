@@ -38,7 +38,7 @@ src_install() {
 	insinto /etc/pmort
 	newins config/pmort.conf pmort.conf || die "Failed newins"
 
-	newinitd config/init.sh pmort || die "Failed newinitd"
+	newinitd config/init.gentoo pmort || die "Failed newinitd"
 
 	insinto /etc/logrotate.d
 	newins config/logrotate.conf pmort || die "Failed newins"
