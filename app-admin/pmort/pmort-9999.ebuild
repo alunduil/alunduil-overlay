@@ -24,7 +24,7 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-python/python-daemon
 	sysstat? ( app-admin/sysstat )
-	mysql (
+	mysql? (
 		dev-db/mysqltuner
 		virtual/mysql
 		)
