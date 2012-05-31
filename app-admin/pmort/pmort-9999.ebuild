@@ -18,11 +18,16 @@ SRC_URI=""
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE=""
+IUSE="+sysstat mysql"
 
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-python/python-daemon
+	sysstat? app-admin/sysstat
+	mysql (
+		dev-db/mysqltuner
+		virtual/mysql
+		)
 	"
 
 pkg_setup() {
