@@ -43,6 +43,10 @@ src_install() {
 	insinto /etc/logrotate.d
 	newins config/logrotate.conf pmort || die "Failed newins"
 
+	insinto /etc/cron.daily
+	newins config/pmort.cron pmort.cron || die "Failed newins"
+	fperms +x "/etc/cron.daily/pmort.cron" || die "Failed fperms"
+
 	dodir "/var/cache/pmort" || die "Failed dodir"
 	dodir "/var/log/pmort" || die "Failed dodir"
 
