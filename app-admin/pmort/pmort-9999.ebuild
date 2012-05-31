@@ -23,7 +23,7 @@ IUSE="+sysstat mysql"
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-python/python-daemon
-	sysstat? app-admin/sysstat
+	sysstat? ( app-admin/sysstat )
 	mysql (
 		dev-db/mysqltuner
 		virtual/mysql
