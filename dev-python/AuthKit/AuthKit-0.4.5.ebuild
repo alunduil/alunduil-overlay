@@ -17,4 +17,7 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	>=dev-python/elementtree-1.2
+	<=dev-python/elementtree-1.3
+	"
