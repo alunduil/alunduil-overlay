@@ -20,4 +20,5 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	>=dev-python/elementtree-1.2
 	<=dev-python/elementtree-1.3
+	>=dev-python/python-openid-2.1.1
 	"
