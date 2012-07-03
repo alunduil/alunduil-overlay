@@ -3,9 +3,6 @@
 # $Header: $
 
 EAPI=4
-PYTHON_DEPEND="2"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS=""
 
 inherit git-2 eutils
 
@@ -22,6 +19,7 @@ IUSE=""
 
 DEPEND="
 	dev-util/patchelf
+	dev-python/pyxenstore
 	"
 RDEPEND="${DEPEND}"
 
