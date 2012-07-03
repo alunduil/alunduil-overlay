@@ -7,7 +7,7 @@ PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS=""
 
-inherit git-2 distutils
+inherit git-2 eutils
 
 EGIT_REPO_URI="git://github.com/rackspace/openstack-guest-agents-unix.git"
 
@@ -20,6 +20,13 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-DEPEND=""
+DEPEND="
+	dev-util/patchelf
+	"
 RDEPEND="${DEPEND}"
 
+src_prepare() {
+	epatch "${FILESDIR}/${P}_build.patch"
+
+	sh autogen.sh
+}
