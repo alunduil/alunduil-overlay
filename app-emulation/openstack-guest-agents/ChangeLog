@@ -1,0 +1,9 @@
+# ChangeLog for app-emulation/openstack-guest-agents
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*openstack-guest-agents-9999 (03 Jul 2012)
+
+  03 Jul 2012; <alunduil@gentoo.org> +openstack-guest-agents-9999.ebuild:
+  Adding openstack guest agent.
+
