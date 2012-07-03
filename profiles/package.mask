@@ -25,6 +25,7 @@
 =www-apps/openstack-horizon-9999
 =sys-auth/openstack-keystone-9999
 =sys-cluster/openstack-glance-9999
+=app-emulation/openstack-guest-agents-9999
 
 =net-analyzer/httpry-9999
 
