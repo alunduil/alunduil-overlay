@@ -25,6 +25,7 @@ RDEPEND="${DEPEND}"
 
 src_prepare() {
 	epatch "${FILESDIR}/${P}_build.patch"
+	epatch "${FILESDIR}/${P}_init.patch"
 
 	sh autogen.sh
 }

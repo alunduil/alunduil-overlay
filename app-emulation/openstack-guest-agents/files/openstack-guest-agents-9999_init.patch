@@ -1,0 +1,22 @@
+diff --git a/scripts/gentoo/nova-agent.in b/scripts/gentoo/nova-agent.in
+index 0d11ac2..a47dc8f 100755
+--- a/scripts/gentoo/nova-agent.in
++++ b/scripts/gentoo/nova-agent.in
+@@ -30,11 +30,16 @@ pidfile="/var/run/nova-agent.pid"
+ logfile="/var/log/nova-agent.log"
+ loglevel="info"
+ 
++NOVA_PYTHON_PATH="$(python --version |& tr "[:upper:]" "[:lower:]" | tr -d " ")"
++NOVA_PYTHON_PATH="${reallibdir}/${NOVA_PYTHON_PATH%.*}"
++PYTHONPATH="$(python -c 'import sys; print ":".join(sys.path)'):${NOVA_PYTHON_PATH}:${NOVA_PYTHON_PATH}/site-packages"
++
+ start() {
+     ebegin "Starting nova-agent"
+     start-stop-daemon --start --exec ${nova_agent} \
++        -e "PYTHONPATH=${PYTHONPATH}" \
+         --pidfile ${pidfile} \
+-        -- -q -p ${pidfile} -o ${logfile} -l ${loglevel} ${agent_config}
++        -- -q -p ${pidfile} -o ${logfile} -l ${loglevel} ${agent_config} -S
+     eend $?
+ }
+ 
