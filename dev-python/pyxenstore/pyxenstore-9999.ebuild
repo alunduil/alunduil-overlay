@@ -15,7 +15,7 @@ DESCRIPTION="Provides Python interfaces for Xen's XenStore."
 HOMEPAGE="https://launchpad.net/pyxenstore"
 SRC_URI=""
 
-LICENSE="apache"
+LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS=""
 IUSE=""
