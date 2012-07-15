@@ -10,7 +10,6 @@ inherit ruby-fakegem
 
 DESCRIPTION="Static analysis Lint-type tool to improve your OO Ruby code"
 HOMEPAGE="http://codegram.github.com/pelusa"
-SRC_URI=""
 
 LICENSE=""
 SLOT="0"
