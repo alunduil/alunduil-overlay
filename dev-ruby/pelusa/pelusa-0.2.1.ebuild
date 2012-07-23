@@ -5,13 +5,14 @@
 EAPI=4
 
 USE_RUBY="ruby18 ruby19"
+RUBY_FAKEGEM_TASK_DOC=""
 
 inherit ruby-fakegem
 
 DESCRIPTION="Static analysis Lint-type tool to improve your OO Ruby code"
 HOMEPAGE="http://codegram.github.com/pelusa"
 
-LICENSE=""
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
