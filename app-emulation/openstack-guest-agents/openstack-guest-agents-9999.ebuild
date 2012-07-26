@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit git-2 eutils
+inherit git-2 eutils autotools
 
 EGIT_REPO_URI="git://github.com/rackspace/openstack-guest-agents-unix.git"
 
@@ -23,11 +23,14 @@ DEPEND="
 	"
 RDEPEND="${DEPEND}"
 
-src_prepare() {
-	epatch "${FILESDIR}/${P}_build.patch"
-	epatch "${FILESDIR}/${P}_init.patch"
+src_unpack() {
+	git-2_src_unpack
 
-	sh autogen.sh
+	cd "${S}"
+	epatch "${FILESDIR}"/gentoo_init.patch || die "epatch failed"
+	epatch "${FILESDIR}"/gentoo_networking.patch || die "epatch failed"
+
+	eautoreconf
 }
 
 src_install() {
