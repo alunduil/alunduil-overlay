@@ -23,13 +23,9 @@ DEPEND="
 	"
 RDEPEND="${DEPEND}"
 
-src_unpack() {
-	git-2_src_unpack
-
-	cd "${S}"
+src_prepare() {
 	epatch "${FILESDIR}"/gentoo_init.patch || die "epatch failed"
 	epatch "${FILESDIR}"/gentoo_networking.patch || die "epatch failed"
-
 	eautoreconf
 }
 
