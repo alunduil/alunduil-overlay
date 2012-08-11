@@ -3,5 +3,8 @@
 <pkgmetadata>
 	<longdescription lang="en">
 	</longdescription>
+	<use>
+		<flag name="sysstat">Require the systat items for sar and such</flag>
+	</use>
 </pkgmetadata>
 
