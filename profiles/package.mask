@@ -1,7 +1,3 @@
-=x11-base/xorg-server-1.9.5-r1
-<app-portage/pclean-1
-=sys-kernel/upkern-4.0.0
-
 # Holland mask non-released upstream versions.
 >=app-backup/holland-1.0.7
 >=app-backup/holland-backup-example-1.0.7
@@ -19,18 +15,10 @@
 =sys-kernel/upkern-9999
 =app-admin/pmort-9999
 
-=app-emulation/openstack-quantum-9999
-=app-emulation/openstack-nova-9999
-=sys-block/openstack-swift-9999
-=www-apps/openstack-horizon-9999
-=sys-auth/openstack-keystone-9999
-=sys-cluster/openstack-glance-9999
 =app-emulation/openstack-guest-agents-9999
 
 =net-analyzer/httpry-9999
 
-=dev-python/passlib-9999
-=dev-python/eventlet-9999
 =dev-python/pycallgraph-9999
 =dev-python/pyxenstore-9999
 
