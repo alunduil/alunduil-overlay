@@ -22,6 +22,7 @@ IUSE="xen"
 
 DEPEND=""
 RDEPEND="${DEPEND}
+	!app-emulation/openstack-guest-agents
 	dev-python/python-daemon
 	xen? ( app-emulation/xen-tools )
 	"
