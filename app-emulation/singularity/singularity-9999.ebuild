@@ -28,8 +28,6 @@ RDEPEND="${DEPEND}
 
 pkg_setup() {
 	python_pkg_setup
-	enewuser singularity
-	enewgroup singularity
 }
 
 src_install() {
@@ -42,6 +40,5 @@ src_install() {
 	newinitd config/init.gentoo singularity || die "Failed newinitd"
 
 	dodir "/var/cache/singularity" || die "Failed dodir"
-
-	fowners singularity:singularity "/var/cache/singularity" || die "Failed fowners"
+	dodir "/var/run/singularity" || die "Failed dodir"
 }
