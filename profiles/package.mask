@@ -16,6 +16,7 @@
 =app-admin/pmort-9999
 
 =app-emulation/openstack-guest-agents-9999
+=app-emulation/singularity-9999
 
 =net-analyzer/httpry-9999
 
