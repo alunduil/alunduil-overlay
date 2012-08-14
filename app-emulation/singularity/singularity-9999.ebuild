@@ -24,6 +24,9 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	!app-emulation/openstack-guest-agents
 	dev-python/python-daemon
+	sys-apps/net-tools
+	sys-apps/iproute2
+	sys-apps/shadow
 	xen? ( app-emulation/xen-tools )
 	"
 
