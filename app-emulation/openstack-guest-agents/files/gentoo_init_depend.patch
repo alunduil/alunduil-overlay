@@ -1,0 +1,29 @@
+diff --git a/scripts/gentoo/nova-agent.in b/scripts/gentoo/nova-agent.in
+index 0d11ac2..72295d5 100755
+--- a/scripts/gentoo/nova-agent.in
++++ b/scripts/gentoo/nova-agent.in
+@@ -30,12 +30,23 @@ pidfile="/var/run/nova-agent.pid"
+ logfile="/var/log/nova-agent.log"
+ loglevel="info"
+ 
++depend() {
++  before net ssh
++}
++
+ start() {
+     ebegin "Starting nova-agent"
+     start-stop-daemon --start --exec ${nova_agent} \
+         --pidfile ${pidfile} \
+         -- -q -p ${pidfile} -o ${logfile} -l ${loglevel} ${agent_config}
+-    eend $?
++    RET=$?
++    while ! grep eth0 /etc/conf.d/net; do
++        sleep 1
++    done
++    while ! grep eth1 /etc/conf.d/net; do
++        sleep 1
++    done
++    eend $RET
+ }
+ 
+ stop() {

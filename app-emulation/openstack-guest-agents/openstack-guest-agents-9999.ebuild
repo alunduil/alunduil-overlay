@@ -26,6 +26,7 @@ RDEPEND="${DEPEND}"
 src_prepare() {
 	epatch "${FILESDIR}"/gentoo_init.patch || die "epatch failed"
 	epatch "${FILESDIR}"/gentoo_networking.patch || die "epatch failed"
+	epatch "${FILESDIR}"/gentoo_init_depend.patch || die "epatch failed"
 	eautoreconf
 }
 
