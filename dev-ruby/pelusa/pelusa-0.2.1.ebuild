@@ -4,8 +4,7 @@
 
 EAPI=4
 
-USE_RUBY="ruby18 ruby19"
-RUBY_FAKEGEM_TASK_DOC=""
+USE_RUBY="ruby18 ruby19 ree18 jruby rbx"
 
 inherit ruby-fakegem
 
@@ -16,8 +15,3 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
-
-DEPEND=""
-RDEPEND="${DEPEND}
-	dev-lang/rubinius
-	"
