@@ -4,14 +4,14 @@
 
 EAPI=4
 
-USE_RUBY="ruby18 ruby19"
-RUBY_FAKEGEM_TASK_DOC=""
+USE_RUBY="ruby18 ruby19 ree18 jruby"
+RUBY_FAKEGEM_RECIPE_TEST="rspec"
+RUBY_FAKEGEM_RECIPE_DOC="rdoc"
 
 inherit ruby-fakegem
 
 DESCRIPTION="An AOP implementation for ruby."
 HOMEPAGE="http://rubyforge.org/projects/aquarium/"
-SRC_URI="http://rubyforge.org/frs/download.php/76084/${P}.gem"
 
 LICENSE="MIT"
 SLOT="0"
