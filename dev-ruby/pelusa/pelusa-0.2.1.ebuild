@@ -15,3 +15,5 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
+
+RDEPEND="dev-lang/rubinius"
