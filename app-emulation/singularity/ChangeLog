@@ -2,6 +2,9 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Sep 2012; <alunduil@gentoo.org> singularity-9999.ebuild:
+  Removing useless src_prepare from 9999.
+
   13 Sep 2012; <alunduil@gentoo.org> singularity-1.0.0.ebuild:
   Removing useless pkg_setup function from 1.0.0.
 

@@ -31,10 +31,6 @@ RDEPEND="${DEPEND}
 	xen? ( app-emulation/xen-tools )
 	"
 
-pkg_setup() {
-	python_pkg_setup
-}
-
 src_install() {
 	distutils_src_install
 
