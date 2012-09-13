@@ -1,0 +1,7 @@
+# ChangeLog for app-emulation/singularity
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  13 Sep 2012; <alunduil@gentoo.org> singularity-1.0.0.ebuild:
+  Removing useless pkg_setup function from 1.0.0.
+
