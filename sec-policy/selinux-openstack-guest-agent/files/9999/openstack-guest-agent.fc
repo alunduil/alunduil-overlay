@@ -1,0 +1,1 @@
+/var/cache/singularity(/.*)?    gen_context(system_u:object_r:openstack_guest_agent_cache_t,s0)

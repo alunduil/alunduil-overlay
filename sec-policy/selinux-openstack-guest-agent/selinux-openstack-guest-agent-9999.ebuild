@@ -4,13 +4,13 @@
 
 EAPI=4
 
-DESCRIPTION="SELinux policy for singularity"
+DESCRIPTION="SELinux policy for Openstack Guest Agents"
 
 KEYWORDS=""
 IUSE=""
 
-MODS="singularity"
+MODS="openstackguestagents"
 BASEPOL="9999"
-POLICY_FILES="${FILESDIR}/${PV}/${PN}.{te,fc}"
+POLICY_FILES="${FILESDIR}/${PV}/${PN}.te ${FILESDIR}/${PV}/${PN}.fc"
 
 inherit selinux-policy-2
