@@ -2,11 +2,17 @@ policy_module(openstackguestagent, 1.0.0)
 
 type openstack_guest_agent_t;
 type openstack_guest_agent_exec_t;
-application_domain(openstack_guest_agent_t, openstack_guest_agent_exec_t)
+init_daemon_domain(openstack_guest_agent_t, openstack_guest_agent_exec_t)
+
+type openstack_guest_agent_etc_t;
+files_config_file(openstack_guest_agent_etc_t)
+
+type openstack_guest_agent_initrc_exec_t;
+init_script_file(openstack_guest_agent_initrc_exec_t)
+
+type openstack_guest_agent_var_run_t;
+files_pid_file(openstack_guest_agent_var_run_t)
 
 type openstack_guest_agent_cache_t;
 
 allow openstack_guest_agent_t xenfs_t:file { read write open };
-
-noaudit kernel_t cgroup_t:dir { remove_name getattr rmdir };
-

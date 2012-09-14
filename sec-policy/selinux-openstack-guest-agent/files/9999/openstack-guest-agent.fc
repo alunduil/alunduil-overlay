@@ -1,1 +1,7 @@
-/var/cache/singularity(/.*)?    gen_context(system_u:object_r:openstack_guest_agent_cache_t,s0)
+/etc/rc\.d/init\.d/singularity  --      gen_context(system_u:object_r:openstack_guest_agent_initrc_exec_t,s0)
+/etc/singularity(/.*)?                  gen_context(system_u:object_r:openstack_guest_agent_etc_t,s0)
+
+/usr/s?bin/singularity.*        --      gen_context(system_u:object_r:openstack_guest_agent_exec_t,s0)
+
+/var/run/singularity(/.*)?      --      gen_context(system_u:object_r:openstack_guest_agent_var_run_t,s0)
+/var/cache/singularity(/.*)?    --      gen_context(system_u:object_r:openstack_guest_agent_var_cache_t,s0)
