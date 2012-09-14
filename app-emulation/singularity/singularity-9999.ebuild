@@ -29,6 +29,7 @@ RDEPEND="${DEPEND}
 	sys-apps/iproute2
 	sys-apps/shadow
 	xen? ( app-emulation/xen-tools )
+	selinux? ( sec-policy/selinux-openstack-guest-agent )
 	"
 
 src_install() {
