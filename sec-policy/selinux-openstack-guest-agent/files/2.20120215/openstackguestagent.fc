@@ -3,5 +3,5 @@
 
 /usr/s?bin/singularity.*        --      gen_context(system_u:object_r:openstack_guest_agent_exec_t,s0)
 
-/var/run/singularity(/.*)?              gen_context(system_u:object_r:openstack_guest_agent_var_run_t,s0)
+/var/run/singularity(/.*)?      --      gen_context(system_u:object_r:openstack_guest_agent_var_run_t,s0)
 /var/cache/singularity(/.*)?            gen_context(system_u:object_r:openstack_guest_agent_var_cache_t,s0)
