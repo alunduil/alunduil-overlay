@@ -14,3 +14,6 @@ BASEPOL="9999"
 POLICY_FILES="${PV}/${MODS}.te ${PV}/${MODS}.fc"
 
 inherit selinux-policy-2
+
+DEPEND="sec-policy/selinux-xen"
+RDEPEND="${DEPEND}"
