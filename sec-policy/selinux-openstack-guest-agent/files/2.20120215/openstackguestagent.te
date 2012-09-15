@@ -19,6 +19,7 @@ type openstack_guest_agent_var_run_t;
 files_pid_file(openstack_guest_agent_var_run_t)
 
 type openstack_guest_agent_var_cache_t;
+files_type(openstack_guest_agent_var_cache_t)
 
 #######################################
 #
@@ -28,10 +29,14 @@ type openstack_guest_agent_var_cache_t;
 allow openstack_guest_agent_t self:process signal;
 allow openstack_guest_agent_t self:capability { setuid setgid };
 
-kernel_list_proc(openstack_guest_agent_t)
+hostname_exec(openstack_guest_agent_t)
+sysnet_exec_ifconfig(openstack_guest_agent_t)
+
+logging_send_syslog_msg(openstack_quest_agent_t)
 
 optional_policy(`
   require { type xenfs_t; };
-  allow openstack_guest_agent_t xenfs_t:file { read write open };
+  allow openstack_guest_agent_t xenfs_t:dir { getattr };
+  allow openstack_guest_agent_t xenfs_t:file { read write open getattr };
 ')
 
