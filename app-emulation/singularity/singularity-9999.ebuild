@@ -18,7 +18,7 @@ SRC_URI=""
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS=""
-IUSE="xen"
+IUSE="selinux xen"
 
 DEPEND=""
 RDEPEND="${DEPEND}
