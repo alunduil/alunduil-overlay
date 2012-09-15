@@ -9,7 +9,8 @@ DESCRIPTION="SELinux policy for Openstack Guest Agents"
 KEYWORDS=""
 IUSE=""
 
+MODS="openstackguestagent"
 BASEPOL="9999"
-POLICY_FILES="${PV}/${PN}.te ${PV}/${PN}.fc"
+POLICY_FILES="${PV}/${MODS}.te ${PV}/${MODS}.fc"
 
 inherit selinux-policy-2
