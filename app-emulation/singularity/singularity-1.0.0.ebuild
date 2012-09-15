@@ -16,7 +16,7 @@ SRC_URI="https://github.com/alunduil/${PN}/tarball/${PV} -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="xen"
+IUSE="selinux xen"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -27,6 +27,7 @@ RDEPEND="${DEPEND}
 	sys-apps/iproute2
 	sys-apps/shadow
 	xen? ( app-emulation/xen-tools )
+	selinux? ( sec-policy/selinux-openstack-guest-agent )
 	"
 
 src_install() {
