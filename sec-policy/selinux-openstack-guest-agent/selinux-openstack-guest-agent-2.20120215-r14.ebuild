@@ -7,13 +7,13 @@ EAPI=4
 DESCRIPTION="SELinux policy for Openstack Guest Agents"
 
 KEYWORDS=""
-IUSE=""
+IUSE="xen"
 
 MODS="openstackguestagent"
-BASEPOL="9999"
+BASEPOL="${PV}"
 POLICY_FILES="${PV}/${MODS}.te ${PV}/${MODS}.fc"
 
 inherit selinux-policy-2
 
-DEPEND="sec-policy/selinux-xen"
+DEPEND="xen? ( sec-policy/selinux-xen )"
 RDEPEND="${DEPEND}"

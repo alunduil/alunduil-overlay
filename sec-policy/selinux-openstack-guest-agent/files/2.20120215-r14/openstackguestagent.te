@@ -1,9 +1,5 @@
 policy_module(openstackguestagent, 1.0.0)
 
-require {
-  type xenfs_t;
-}
-
 #######################################
 # 
 # Declarations
@@ -22,7 +18,7 @@ init_script_file(openstack_guest_agent_initrc_exec_t)
 type openstack_guest_agent_var_run_t;
 files_pid_file(openstack_guest_agent_var_run_t)
 
-type openstack_guest_agent_cache_t;
+type openstack_guest_agent_var_cache_t;
 
 #######################################
 #
@@ -30,7 +26,12 @@ type openstack_guest_agent_cache_t;
 #
 
 allow openstack_guest_agent_t self:process signal;
-allow openstack_guest_agent_t self:capability2 block_suspend;
+allow openstack_guest_agent_t self:capability { setuid setgid };
 
-allow openstack_guest_agent_t xenfs_t:file { read write open };
+kernel_list_proc(openstack_guest_agent_t)
+
+optional_policy(`
+  require { type xenfs_t; };
+  allow openstack_guest_agent_t xenfs_t:file { read write open };
+')
 
