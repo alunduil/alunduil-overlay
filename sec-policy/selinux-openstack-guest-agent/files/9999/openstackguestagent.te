@@ -14,5 +14,3 @@ type openstack_guest_agent_var_run_t;
 files_pid_file(openstack_guest_agent_var_run_t)
 
 type openstack_guest_agent_cache_t;
-
-allow openstack_guest_agent_t xenfs_t:file { read write open };
