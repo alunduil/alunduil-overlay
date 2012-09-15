@@ -11,6 +11,6 @@ IUSE=""
 
 MODS="openstackguestagents"
 BASEPOL="9999"
-POLICY_FILES="${FILESDIR}/${PV}/${PN}.te ${FILESDIR}/${PV}/${PN}.fc"
+POLICY_FILES="${PV}/${PN}.te ${PV}/${PN}.fc"
 
 inherit selinux-policy-2
