@@ -32,7 +32,7 @@ allow openstack_guest_agent_t self:capability { setuid setgid };
 hostname_exec(openstack_guest_agent_t)
 sysnet_exec_ifconfig(openstack_guest_agent_t)
 
-logging_send_syslog_msg(openstack_quest_agent_t)
+logging_send_syslog_msg(openstack_guest_agent_t)
 
 optional_policy(`
   require { type xenfs_t; };
