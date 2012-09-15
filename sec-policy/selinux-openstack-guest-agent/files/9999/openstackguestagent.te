@@ -1,5 +1,9 @@
 policy_module(openstackguestagent, 1.0.0)
 
+require {
+  type xenfs_t;
+}
+
 #######################################
 # 
 # Declarations
