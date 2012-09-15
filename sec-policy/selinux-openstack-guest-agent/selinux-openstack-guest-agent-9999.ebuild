@@ -9,7 +9,6 @@ DESCRIPTION="SELinux policy for Openstack Guest Agents"
 KEYWORDS=""
 IUSE=""
 
-MODS="openstackguestagents"
 BASEPOL="9999"
 POLICY_FILES="${PV}/${PN}.te ${PV}/${PN}.fc"
 
