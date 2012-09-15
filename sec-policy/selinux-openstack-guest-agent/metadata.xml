@@ -3,5 +3,8 @@
 <pkgmetadata>
 	<longdescription lang="en">
 	</longdescription>
+	<use>
+		<flag name="xen">Adds dependency on xen policy for xen capabilities</flag>
+	</use>
 </pkgmetadata>
 

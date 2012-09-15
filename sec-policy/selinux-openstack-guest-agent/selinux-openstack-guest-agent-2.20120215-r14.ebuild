@@ -10,7 +10,7 @@ KEYWORDS="~amd64"
 IUSE="xen"
 
 MODS="openstackguestagent"
-BASEPOL="${PV}"
+BASEPOL="${PVR}"
 POLICY_FILES="${PV}/${MODS}.te ${PV}/${MODS}.fc"
 
 inherit selinux-policy-2
