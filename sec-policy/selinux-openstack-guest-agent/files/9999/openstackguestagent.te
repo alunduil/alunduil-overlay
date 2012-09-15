@@ -1,9 +1,9 @@
 policy_module(openstackguestagent, 1.0.0)
 
-require {
-  type xenfs_t;
-  class capability2 { block_suspend };
-}
+#######################################
+# 
+# Declarations
+#
 
 type openstack_guest_agent_t;
 type openstack_guest_agent_exec_t;
@@ -19,6 +19,14 @@ type openstack_guest_agent_var_run_t;
 files_pid_file(openstack_guest_agent_var_run_t)
 
 type openstack_guest_agent_cache_t;
+
+#######################################
+#
+# Local Policy
+#
+
+allow openstack_guest_agent_t self:process signal;
+allow openstack_guest_agent_t self:capability2 block_suspend;
 
 allow openstack_guest_agent_t xenfs_t:file { read write open };
 
