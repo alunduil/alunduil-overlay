@@ -26,14 +26,14 @@ files_type(openstack_guest_agent_var_cache_t)
 # Local Policy
 #
 
-allow openstack_guest_agent_t self:process signal;
+allow openstack_guest_agent_t self:process { signal setrlimit };
 allow openstack_guest_agent_t self:capability { setuid setgid };
+allow openstack_guest_agent_t self:fifo_file { read getattr };
 
 allow openstack_guest_agent_t openstack_guest_agent_etc_t:file { read getattr open };
 
 manage_dirs_pattern(openstack_guest_agent_t, openstack_guest_agent_var_cache_t, openstack_guest_agent_var_cache_t)
 manage_files_pattern(openstack_guest_agent_t, openstack_guest_agent_var_cache_t, openstack_guest_agent_var_cache_t)
-
 
 manage_files_pattern(openstack_guest_agent_t, openstack_guest_agent_var_run_t, openstack_guest_agent_var_run_t)
 files_pid_filetrans(openstack_guest_agent_t, openstack_guest_agent_var_run_t, file)
@@ -45,6 +45,10 @@ corecmd_exec_bin(openstack_guest_agent_t)
 corecmd_exec_shell(openstack_guest_agent_t)
 hostname_exec(openstack_guest_agent_t)
 sysnet_exec_ifconfig(openstack_guest_agent_t)
+
+kernel_read_system_state(openstack_guest_agent_t)
+dev_read_sysfs(openstack_guest_agent_t)
+dev_search_sysfs(openstack_guest_agent_t)
 
 logging_send_syslog_msg(openstack_guest_agent_t)
 
