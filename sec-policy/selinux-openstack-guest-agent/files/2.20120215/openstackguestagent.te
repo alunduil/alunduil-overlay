@@ -21,6 +21,9 @@ files_pid_file(openstack_guest_agent_var_run_t)
 type openstack_guest_agent_var_cache_t;
 files_type(openstack_guest_agent_var_cache_t)
 
+type openstack_guest_agent_plugin_t;
+files_type(openstack_guest_agent_plugin_t)
+
 #######################################
 #
 # Local Policy
@@ -35,6 +38,8 @@ allow openstack_guest_agent_t openstack_guest_agent_etc_t:file { read getattr op
 
 manage_dirs_pattern(openstack_guest_agent_t, openstack_guest_agent_var_cache_t, openstack_guest_agent_var_cache_t)
 manage_files_pattern(openstack_guest_agent_t, openstack_guest_agent_var_cache_t, openstack_guest_agent_var_cache_t)
+
+read_files_pattern(openstack_guest_agent_t, openstack_guest_agent_plugin_t, openstack_guest_agent_plugin_t)
 
 manage_files_pattern(openstack_guest_agent_t, openstack_guest_agent_var_run_t, openstack_guest_agent_var_run_t)
 files_pid_filetrans(openstack_guest_agent_t, openstack_guest_agent_var_run_t, file)
