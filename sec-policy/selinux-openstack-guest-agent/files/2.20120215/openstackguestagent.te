@@ -29,6 +29,20 @@ files_type(openstack_guest_agent_var_cache_t)
 allow openstack_guest_agent_t self:process signal;
 allow openstack_guest_agent_t self:capability { setuid setgid };
 
+allow openstack_guest_agent_t openstack_guest_agent_etc_t:file { read getattr open };
+
+manage_dirs_pattern(openstack_guest_agent_t, openstack_guest_agent_var_cache_t, openstack_guest_agent_var_cache_t)
+manage_files_pattern(openstack_guest_agent_t, openstack_guest_agent_var_cache_t, openstack_guest_agent_var_cache_t)
+
+
+manage_files_pattern(openstack_guest_agent_t, openstack_guest_agent_var_run_t, openstack_guest_agent_var_run_t)
+files_pid_filestrans(openstack_guest_agent_t, openstack_guest_agent_var_run_t, openstack_guest_agent_var_run_t)
+
+files_manage_etc_files(openstack_guest_agent_t)
+files_manage_etc_dirs(openstack_guest_agent_t)
+
+corecmd_exec_bin(openstack_guest_agent_t)
+corecmd_exec_shell(openstack_guest_agent_t)
 hostname_exec(openstack_guest_agent_t)
 sysnet_exec_ifconfig(openstack_guest_agent_t)
 
