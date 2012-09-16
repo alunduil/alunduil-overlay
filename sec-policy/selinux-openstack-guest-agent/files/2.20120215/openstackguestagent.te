@@ -54,6 +54,7 @@ corecmd_exec_bin(openstack_guest_agent_t)
 corecmd_exec_shell(openstack_guest_agent_t)
 hostname_exec(openstack_guest_agent_t)
 sysnet_exec_ifconfig(openstack_guest_agent_t)
+nscd_exec(openstack_guest_agent_t)
 
 kernel_read_system_state(openstack_guest_agent_t)
 dev_read_sysfs(openstack_guest_agent_t)
