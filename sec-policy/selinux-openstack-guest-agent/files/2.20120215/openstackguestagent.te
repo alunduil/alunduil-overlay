@@ -36,7 +36,7 @@ manage_files_pattern(openstack_guest_agent_t, openstack_guest_agent_var_cache_t,
 
 
 manage_files_pattern(openstack_guest_agent_t, openstack_guest_agent_var_run_t, openstack_guest_agent_var_run_t)
-files_pid_filestrans(openstack_guest_agent_t, openstack_guest_agent_var_run_t, openstack_guest_agent_var_run_t)
+files_pid_filetrans(openstack_guest_agent_t, openstack_guest_agent_var_run_t, openstack_guest_agent_var_run_t)
 
 files_manage_etc_files(openstack_guest_agent_t)
 files_manage_etc_dirs(openstack_guest_agent_t)
