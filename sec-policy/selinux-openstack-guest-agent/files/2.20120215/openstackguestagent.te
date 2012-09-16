@@ -27,8 +27,8 @@ files_type(openstack_guest_agent_var_cache_t)
 #
 
 allow openstack_guest_agent_t self:process { signal setrlimit };
-allow openstack_guest_agent_t self:capability { setuid setgid };
-allow openstack_guest_agent_t self:fifo_file { read getattr };
+allow openstack_guest_agent_t self:capability { setuid setgid netadmin };
+allow openstack_guest_agent_t self:fifo_file { read getattr write ioctl };
 
 allow openstack_guest_agent_t openstack_guest_agent_etc_t:file { read getattr open };
 
