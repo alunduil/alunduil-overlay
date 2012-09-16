@@ -42,7 +42,7 @@ files_pid_filetrans(openstack_guest_agent_t, openstack_guest_agent_var_run_t, fi
 files_manage_etc_files(openstack_guest_agent_t)
 files_manage_etc_dirs(openstack_guest_agent_t)
 
-files_manage_tmp_files(openstack_guest_agent_t)
+files_manage_generic_tmp_files(openstack_guest_agent_t)
 
 auth_manage_shadow(openstack_guest_agent_t)
 
