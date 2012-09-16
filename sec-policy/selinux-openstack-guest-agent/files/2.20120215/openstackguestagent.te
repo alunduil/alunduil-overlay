@@ -42,6 +42,8 @@ files_pid_filetrans(openstack_guest_agent_t, openstack_guest_agent_var_run_t, fi
 files_manage_etc_files(openstack_guest_agent_t)
 files_manage_etc_dirs(openstack_guest_agent_t)
 
+auth_manage_shadow(openstack_guest_agent_t)
+
 sysnet_manage_config(openstack_guest_agent_t)
 
 corecmd_exec_bin(openstack_guest_agent_t)
