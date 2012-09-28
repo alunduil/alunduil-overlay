@@ -67,9 +67,18 @@ dev_search_sysfs(openstack_guest_agent_t)
 
 logging_send_syslog_msg(openstack_guest_agent_t)
 
+# Not sure why these are required.
+kernel_read_unlabeled_state(openstack_guest_agent_t)
+miscfiles_read_localization(openstack_guest_agent_t)
+
 optional_policy(`
-  require { type xenfs_t; };
+  require {
+    type xenfs_t;
+    type xenstored_var_run_t;
+  };
+
   allow openstack_guest_agent_t xenfs_t:dir { getattr };
   allow openstack_guest_agent_t xenfs_t:file { read write open getattr };
+  allow openstack_guest_agent_t xenstored_var_run_t:dir search;
 ')
 
