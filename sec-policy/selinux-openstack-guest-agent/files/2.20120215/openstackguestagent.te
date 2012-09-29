@@ -80,6 +80,7 @@ optional_policy(`
     type xenstored_var_run_t;
   };
 
+  fs_search_xenfs(openstack_guest_agent_t)
   allow openstack_guest_agent_t xenfs_t:dir { getattr };
   allow openstack_guest_agent_t xenfs_t:file { read write open getattr };
   allow openstack_guest_agent_t xenstored_var_run_t:dir search;
