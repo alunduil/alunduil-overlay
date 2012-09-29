@@ -32,6 +32,7 @@ allow openstack_guest_agent_t self:fifo_file { read getattr write ioctl };
 allow openstack_guest_agent_t self:netlink_route_socket { setopt nlmsg_write read bind create nlmsg_read write getattr };
 
 allow openstack_guest_agent_t openstack_guest_agent_etc_t:file { read getattr open };
+allow openstack_guest_agent_t openstack_guest_agent_etc_t:dir search;
 
 manage_dirs_pattern(openstack_guest_agent_t, openstack_guest_agent_var_cache_t, openstack_guest_agent_var_cache_t)
 manage_files_pattern(openstack_guest_agent_t, openstack_guest_agent_var_cache_t, openstack_guest_agent_var_cache_t)
