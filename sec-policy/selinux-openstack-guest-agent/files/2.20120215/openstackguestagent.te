@@ -43,6 +43,8 @@ files_search_var(openstack_guest_agent_t)
 
 files_manage_etc_files(openstack_guest_agent_t)
 files_manage_etc_dirs(openstack_guest_agent_t)
+
+allow openstack_guest_agent_t etc_runtime_t:dir search;
 files_read_etc_runtime_files(openstack_guest_agent_t)
 
 files_read_usr_files(openstack_guest_agent_t)
@@ -71,6 +73,7 @@ logging_send_syslog_msg(openstack_guest_agent_t)
 kernel_read_unlabeled_state(openstack_guest_agent_t)
 miscfiles_read_localization(openstack_guest_agent_t)
 
+# Xen Interactions
 optional_policy(`
   require {
     type xenfs_t;
