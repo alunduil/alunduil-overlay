@@ -11,6 +11,9 @@
 >=app-backup/holland-lib-lvm-1.0.7
 >=app-backup/holland-lib-mysql-1.0.7
 
+# Prepping for removal
+=app-emulation/singularity-1.0.0
+
 # All live ebuilds provided by this overlay.
 =sys-kernel/upkern-9999
 =app-admin/pmort-9999

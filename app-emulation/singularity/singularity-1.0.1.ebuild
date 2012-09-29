@@ -7,17 +7,15 @@ PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS=""
 
-inherit git-2 distutils eutils
-
-EGIT_REPO_URI="git://github.com/alunduil/singularity.git"
+inherit distutils eutils vcs-snapshot
 
 DESCRIPTION="Openstack Guest Agent"
 HOMEPAGE="http://www.alunduil.com/projects/singularity"
-SRC_URI=""
+SRC_URI="https://github.com/alunduil/${PN}/tarball/${PV} -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64"
 IUSE="selinux xen"
 
 DEPEND=""
