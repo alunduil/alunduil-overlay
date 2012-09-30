@@ -78,6 +78,10 @@ logging_send_syslog_msg(openstack_guest_agent_t)
 kernel_read_unlabeled_state(openstack_guest_agent_t)
 miscfiles_read_localization(openstack_guest_agent_t)
 
+require {
+  type security_t;
+};
+
 allow openstack_guest_agent_t security_t:dir read;
 allow openstack_guest_agent_t security_t:file write;
 allow openstack_guest_agent_t security_t:security compute_av;
