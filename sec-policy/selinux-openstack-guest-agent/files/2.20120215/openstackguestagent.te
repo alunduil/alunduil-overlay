@@ -64,7 +64,7 @@ sysnet_manage_config(openstack_guest_agent_t)
 corecmd_exec_bin(openstack_guest_agent_t)
 corecmd_exec_shell(openstack_guest_agent_t)
 hostname_exec(openstack_guest_agent_t)
-sysnet_run_ifconfig(openstack_guest_agent_t)
+sysnet_domtrans_ifconfig(openstack_guest_agent_t)
 nscd_exec(openstack_guest_agent_t)
 auth_domtrans_chk_passwd(openstack_guest_agent_t)
 
