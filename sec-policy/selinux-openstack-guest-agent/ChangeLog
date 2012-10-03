@@ -1,0 +1,11 @@
+# ChangeLog for sec-policy/selinux-openstack-guest-agent
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*selinux-openstack-guest-agent-2.20120725-r5 (03 Oct 2012)
+
+  03 Oct 2012; <alunduil@gentoo.org> +files/2.20120725/openstackguestagent.fc,
+  +files/2.20120725/openstackguestagent.te,
+  +selinux-openstack-guest-agent-2.20120725-r5.ebuild:
+  Version bump for new policy
+
