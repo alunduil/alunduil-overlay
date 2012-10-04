@@ -2,6 +2,13 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*selinux-openstack-guest-agent-9999 (04 Oct 2012)
+
+  04 Oct 2012; <alunduil@gentoo.org> +files/9999/openstackguestagent.fc,
+  +files/9999/openstackguestagent.te,
+  +selinux-openstack-guest-agent-9999.ebuild:
+  Adding live build
+
 *selinux-openstack-guest-agent-2.20120725-r5 (03 Oct 2012)
 
   03 Oct 2012; <alunduil@gentoo.org> +files/2.20120725/openstackguestagent.fc,

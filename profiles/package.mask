@@ -17,7 +17,7 @@
 
 =app-emulation/openstack-guest-agents-9999
 =app-emulation/singularity-9999
-=sec-policy/selinux-singularity-9999
+=sec-policy/selinux-openstack-guest-agent-9999
 
 =net-analyzer/httpry-9999
 
