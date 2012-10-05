@@ -1,0 +1,17 @@
+policy_module(logsentry, 1.0.0)
+
+#######################################
+# 
+# Declarations
+#
+
+type logsentry_t;
+type logsentry_exec_t;
+application_domain(logsentry_t, logsentry_exec_t)
+role system_r types logsentry_t;
+
+#######################################
+#
+# Local Policy
+#
+

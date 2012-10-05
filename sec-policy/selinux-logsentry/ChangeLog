@@ -1,0 +1,10 @@
+# ChangeLog for sec-policy/selinux-logsentry
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*selinux-logsentry-9999 (05 Oct 2012)
+
+  05 Oct 2012; <alunduil@gentoo.org> +files/9999/logsentry.fc,
+  +files/9999/logsentry.te, +selinux-logsentry-9999.ebuild, +metadata.xml:
+  Adding logsentry policy
+

@@ -19,6 +19,8 @@
 =app-emulation/singularity-9999
 =sec-policy/selinux-openstack-guest-agent-9999
 
+=sec-policy/selinux-logsentry-9999
+
 =net-analyzer/httpry-9999
 
 =dev-python/pycallgraph-9999
