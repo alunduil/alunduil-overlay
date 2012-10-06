@@ -18,3 +18,7 @@ files_tmp_file(logsentry_tmp_t);
 # Local Policy
 #
 
+optional_policy(`
+  cron_system_entry(logsentry_t, logsentry_exec_t)
+')
+
