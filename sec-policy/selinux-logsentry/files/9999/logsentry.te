@@ -10,6 +10,9 @@ type logsentry_exec_t;
 application_domain(logsentry_t, logsentry_exec_t)
 role system_r types logsentry_t;
 
+type logsentry_tmp_t;
+files_tmp_file(logsentry_tmp_t);
+
 #######################################
 #
 # Local Policy
