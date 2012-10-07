@@ -18,5 +18,6 @@ files_tmp_file(logsentry_tmp_t);
 # Local Policy
 #
 
+corecmd_exec_shell(logsentry_t)
 cron_system_entry(logsentry_t, logsentry_exec_t)
 
