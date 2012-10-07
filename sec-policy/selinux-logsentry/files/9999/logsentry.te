@@ -18,15 +18,16 @@ files_tmp_file(logsentry_tmp_t);
 # Local Policy
 #
 
-allow logsentry_t self:fifo_file read;
+allow logsentry_t self:fifo_file { read write getattr };
 
-manage_dirs_pattern(logsentry_t, logsentry_exec_t, logsentry_exec_t)
-manage_files_pattern(logsentry_t, logsentry_exec_t, logsentry_exec_t)
+manage_dirs_pattern(logsentry_t, logsentry_tmp_t, logsentry_tmp_t)
+manage_files_pattern(logsentry_t, logsentry_tmp_t, logsentry_tmp_t)
 
 kernel_read_system_state(logsentry_t)
 
 corecmd_getattr_sbin_files(logsentry_t)
 corecmd_exec_shell(logsentry_t)
+corecmd_mmap_sbin_files(logsentry_t)
 
 miscfiles_read_localization(logsentry_t)
 
