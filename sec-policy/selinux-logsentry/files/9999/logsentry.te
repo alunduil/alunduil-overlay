@@ -27,6 +27,10 @@ allow logsentry_t logsentry_exec_t:file execute_no_trans;
 manage_dirs_pattern(logsentry_t, logsentry_tmp_t, logsentry_tmp_t)
 manage_files_pattern(logsentry_t, logsentry_tmp_t, logsentry_tmp_t)
 
+manage_files_pattern(logsentry_t, logsentry_filter_t, logsentry_filter_t)
+
+files_search_var(logsentry_t)
+
 kernel_read_system_state(logsentry_t)
 
 corecmd_getattr_sbin_files(logsentry_t)
