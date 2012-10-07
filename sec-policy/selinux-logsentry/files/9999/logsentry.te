@@ -21,8 +21,10 @@ files_type(logsentry_filter_t)
 # Local Policy
 #
 
-allow logsentry_t self:fifo_file { read write getattr };
+allow logsentry_t self:fifo_file { read write getattr ioctl };
+allow logsentry_t self:capability { setuid setgid };
 allow logsentry_t logsentry_exec_t:file execute_no_trans;
+
 
 manage_dirs_pattern(logsentry_t, logsentry_tmp_t, logsentry_tmp_t)
 manage_files_pattern(logsentry_t, logsentry_tmp_t, logsentry_tmp_t)
@@ -30,6 +32,9 @@ manage_files_pattern(logsentry_t, logsentry_tmp_t, logsentry_tmp_t)
 manage_files_pattern(logsentry_t, logsentry_filter_t, logsentry_filter_t)
 
 files_search_var(logsentry_t)
+files_read_etc_files(logsentry_t)
+files_search_tmp(logsentry_t)
+logging_search_logs(logsentry_t)
 
 kernel_read_system_state(logsentry_t)
 
