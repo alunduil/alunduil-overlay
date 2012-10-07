@@ -51,7 +51,7 @@ corecmd_exec_ls(logsentry_t)
 
 miscfiles_read_localization(logsentry_t)
 
-mta_sendmail_exec(logsentry_t)
+mta_send_mail(logsentry_t)
 
 userdom_dontaudit_search_user_home_dirs(logsentry_t)
 
