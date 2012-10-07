@@ -18,6 +18,25 @@ files_tmp_file(logsentry_tmp_t);
 # Local Policy
 #
 
+allow logsentry_t self:fifo_file read;
+
+manage_dirs_pattern(logsentry_t, logsentry_exec_t, logsentry_exec_t)
+manage_files_pattern(logsentry_t, logsentry_exec_t, logsentry_exec_t)
+
+kernel_read_system_state(logsentry_t)
+
+corecmd_getattr_sbin_files(logsentry_t)
 corecmd_exec_shell(logsentry_t)
-cron_system_entry(logsentry_t, logsentry_exec_t)
+
+miscfiles_read_localization(logsentry_t)
+
+userdom_dontaudit_search_user_home_dirs(logsentry_t)
+
+optional_policy(`
+  hostname_exec(logsentry_t)
+')
+
+optional_policy(`
+  cron_system_entry(logsentry_t, logsentry_exec_t)
+')
 
