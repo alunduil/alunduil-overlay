@@ -1,8 +1,4 @@
-policy_module(openstackguestagent, 1.0.1)
-
-require { 
-  class capability2 block_suspend;
-};
+policy_module(openstackguestagent, 1.0.2)
 
 #######################################
 # 
