@@ -15,7 +15,7 @@ SRC_URI="https://github.com/alunduil/${PN}/tarball/${PV} -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 IUSE="selinux xen"
 
 DEPEND=""
