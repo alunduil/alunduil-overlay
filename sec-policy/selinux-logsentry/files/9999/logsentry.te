@@ -30,12 +30,10 @@ manage_files_pattern(logsentry_t, logsentry_tmp_t, logsentry_tmp_t)
 
 manage_files_pattern(logsentry_t, logsentry_filter_t, logsentry_filter_t)
 
+files_tmp_filetrans(logsentry_t, logsentry_tmp_t, file)
+
 files_search_var(logsentry_t)
 files_read_etc_files(logsentry_t)
-files_search_tmp(logsentry_t)
-files_delete_tmp_dir_entry(logsentry_t)
-files_manage_generic_tmp_dirs(logsentry_t)
-files_manage_generic_tmp_files(logsentry_t)
 
 logging_search_logs(logsentry_t)
 logging_read_generic_logs(logsentry_t)
@@ -47,8 +45,7 @@ kernel_read_system_state(logsentry_t)
 
 corecmd_getattr_sbin_files(logsentry_t)
 corecmd_exec_shell(logsentry_t)
-corecmd_mmap_sbin_files(logsentry_t)
-corecmd_exec_ls(logsentry_t)
+corecmd_exec_bin(logsentry_t)
 
 miscfiles_read_localization(logsentry_t)
 
