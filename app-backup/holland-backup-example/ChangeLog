@@ -2,41 +2,41 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  14 Jan 2011; <alunduil@gentoo.org> holland-backup-example-1.0.6.ebuild:
+  14 Jan 2011; <alunduil@alunduil.com> holland-backup-example-1.0.6.ebuild:
   Stabilizing holland-backup-example
 
 *holland-backup-example-1.0.6 (12 Jan 2011)
 
-  12 Jan 2011; <alunduil@gentoo.org> +holland-backup-example-1.0.6.ebuild:
+  12 Jan 2011; <alunduil@alunduil.com> +holland-backup-example-1.0.6.ebuild:
   Adding holland 1.0.6
 
-  03 Oct 2010; <alunduil@gentoo.org> holland-backup-example-1.0.4.ebuild,
+  03 Oct 2010; <alunduil@alunduil.com> holland-backup-example-1.0.4.ebuild,
   holland-backup-example-1.0.4-r1.ebuild:
   Fixed typo in LICENSE
 
-  03 Oct 2010; <alunduil@gentoo.org> -holland-backup-example-1.0.2.ebuild,
+  03 Oct 2010; <alunduil@alunduil.com> -holland-backup-example-1.0.2.ebuild,
   -holland-backup-example-1.0.2-r1.ebuild,
   holland-backup-example-1.0.4.ebuild,
   holland-backup-example-1.0.4-r1.ebuild:
   Changing license to GPLv2 per upstream
 
-  03 Oct 2010; <alunduil@gentoo.org> -holland-backup-example-1.0.2.ebuild,
+  03 Oct 2010; <alunduil@alunduil.com> -holland-backup-example-1.0.2.ebuild,
   -holland-backup-example-1.0.2-r1.ebuild,
   holland-backup-example-1.0.4.ebuild,
   holland-backup-example-1.0.4-r1.ebuild:
   Changing license to GPLv2 per upstream
 
-  03 Oct 2010; <alunduil@gentoo.org> -holland-backup-example-1.0.2.ebuild,
+  03 Oct 2010; <alunduil@alunduil.com> -holland-backup-example-1.0.2.ebuild,
   -holland-backup-example-1.0.2-r1.ebuild:
   Removing version 1.0.2
 
 *holland-backup-example-1.0.4-r1 (24 Aug 2010)
 
-  24 Aug 2010; <alunduil@gentoo.org>
+  24 Aug 2010; <alunduil@alunduil.com>
   +holland-backup-example-1.0.4-r1.ebuild:
   Adding the example backupset configuration file
 
-  22 Aug 2010; <alunduil@gentoo.org> holland-backup-example-1.0.2.ebuild,
+  22 Aug 2010; <alunduil@alunduil.com> holland-backup-example-1.0.2.ebuild,
   holland-backup-example-1.0.2-r1.ebuild,
   holland-backup-example-1.0.4.ebuild:
   Adding initial holland ebuilds

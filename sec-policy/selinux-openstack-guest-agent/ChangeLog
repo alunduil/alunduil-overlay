@@ -2,26 +2,26 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  08 Oct 2012; <alunduil@gentoo.org>
+  08 Oct 2012; <alunduil@alunduil.com>
   selinux-openstack-guest-agent-2.20120215-r14.ebuild,
   selinux-openstack-guest-agent-2.20120725-r5.ebuild:
   Stabilizing 2.20120725-r5
 
-  08 Oct 2012; <alunduil@gentoo.org>
+  08 Oct 2012; <alunduil@alunduil.com>
   selinux-openstack-guest-agent-2.20120215-r14.ebuild,
   selinux-openstack-guest-agent-2.20120725-r5.ebuild:
   Stabilizing 2.20120215-r14
 
 *selinux-openstack-guest-agent-9999 (04 Oct 2012)
 
-  04 Oct 2012; <alunduil@gentoo.org> +files/9999/openstackguestagent.fc,
+  04 Oct 2012; <alunduil@alunduil.com> +files/9999/openstackguestagent.fc,
   +files/9999/openstackguestagent.te,
   +selinux-openstack-guest-agent-9999.ebuild:
   Adding live build
 
 *selinux-openstack-guest-agent-2.20120725-r5 (03 Oct 2012)
 
-  03 Oct 2012; <alunduil@gentoo.org> +files/2.20120725/openstackguestagent.fc,
+  03 Oct 2012; <alunduil@alunduil.com> +files/2.20120725/openstackguestagent.fc,
   +files/2.20120725/openstackguestagent.te,
   +selinux-openstack-guest-agent-2.20120725-r5.ebuild:
   Version bump for new policy

@@ -4,21 +4,21 @@
 
 *singularity-1.0.2 (05 Nov 2012)
 
-  05 Nov 2012; <alunduil@gentoo.org> +singularity-1.0.2.ebuild:
+  05 Nov 2012; <alunduil@alunduil.com> +singularity-1.0.2.ebuild:
   Adding singularity 1.0.2
 
-  08 Oct 2012; <alunduil@gentoo.org> singularity-1.0.1.ebuild:
+  08 Oct 2012; <alunduil@alunduil.com> singularity-1.0.1.ebuild:
   Stabilizing 1.0.1
 
 *singularity-1.0.1 (29 Sep 2012)
 
-  29 Sep 2012; <alunduil@gentoo.org> +singularity-1.0.1.ebuild,
+  29 Sep 2012; <alunduil@alunduil.com> +singularity-1.0.1.ebuild,
   singularity-9999.ebuild:
   version bump, removing useless die statements
 
-  13 Sep 2012; <alunduil@gentoo.org> singularity-9999.ebuild:
+  13 Sep 2012; <alunduil@alunduil.com> singularity-9999.ebuild:
   Removing useless src_prepare from 9999.
 
-  13 Sep 2012; <alunduil@gentoo.org> singularity-1.0.0.ebuild:
+  13 Sep 2012; <alunduil@alunduil.com> singularity-1.0.0.ebuild:
   Removing useless pkg_setup function from 1.0.0.
 

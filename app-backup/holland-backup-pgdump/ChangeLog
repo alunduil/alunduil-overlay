@@ -4,38 +4,38 @@
 
 *holland-backup-pgdump-1.0.6-r2 (26 Jan 2011)
 
-  26 Jan 2011; <alunduil@gentoo.org> +holland-backup-pgdump-1.0.6-r2.ebuild:
+  26 Jan 2011; <alunduil@alunduil.com> +holland-backup-pgdump-1.0.6-r2.ebuild:
   Missed a dependency on dev-python/psycopg
 
-  26 Jan 2011; <alunduil@gentoo.org> holland-backup-pgdump-1.0.6-r1.ebuild:
+  26 Jan 2011; <alunduil@alunduil.com> holland-backup-pgdump-1.0.6-r1.ebuild:
   Removing the missing example set
 
 *holland-backup-pgdump-1.0.6-r1 (26 Jan 2011)
 
-  26 Jan 2011; <alunduil@gentoo.org> +holland-backup-pgdump-1.0.6-r1.ebuild:
+  26 Jan 2011; <alunduil@alunduil.com> +holland-backup-pgdump-1.0.6-r1.ebuild:
   Fixing the missing providers configuration
 
-  14 Jan 2011; <alunduil@gentoo.org> holland-backup-pgdump-1.0.6.ebuild:
+  14 Jan 2011; <alunduil@alunduil.com> holland-backup-pgdump-1.0.6.ebuild:
   Stabilizing holland-backup-pgdump
 
 *holland-backup-pgdump-1.0.6 (12 Jan 2011)
 
-  12 Jan 2011; <alunduil@gentoo.org> +holland-backup-pgdump-1.0.6.ebuild:
+  12 Jan 2011; <alunduil@alunduil.com> +holland-backup-pgdump-1.0.6.ebuild:
   Adding holland 1.0.6
 
-  03 Oct 2010; <alunduil@gentoo.org> holland-backup-pgdump-1.0.4.ebuild:
+  03 Oct 2010; <alunduil@alunduil.com> holland-backup-pgdump-1.0.4.ebuild:
   Fixed typo in LICENSE
 
-  03 Oct 2010; <alunduil@gentoo.org> -holland-backup-pgdump-1.0.2.ebuild,
+  03 Oct 2010; <alunduil@alunduil.com> -holland-backup-pgdump-1.0.2.ebuild,
   -holland-backup-pgdump-1.0.2-r1.ebuild,
   holland-backup-pgdump-1.0.4.ebuild:
   Changing license to GPLv2 per upstream
 
-  03 Oct 2010; <alunduil@gentoo.org> -holland-backup-pgdump-1.0.2.ebuild,
+  03 Oct 2010; <alunduil@alunduil.com> -holland-backup-pgdump-1.0.2.ebuild,
   -holland-backup-pgdump-1.0.2-r1.ebuild:
   Removing version 1.0.2
 
-  22 Aug 2010; <alunduil@gentoo.org> holland-backup-pgdump-1.0.2.ebuild,
+  22 Aug 2010; <alunduil@alunduil.com> holland-backup-pgdump-1.0.2.ebuild,
   holland-backup-pgdump-1.0.2-r1.ebuild, holland-backup-pgdump-1.0.4.ebuild:
   Adding initial holland ebuilds
 

@@ -4,87 +4,87 @@
 
 *upkern-4.0.1 (22 May 2012)
 
-  22 May 2012; <alunduil@gentoo.org> +upkern-4.0.1.ebuild:
+  22 May 2012; <alunduil@alunduil.com> +upkern-4.0.1.ebuild:
   Adding 4.0.1 with the new tarball.
 
-  21 May 2012; <alunduil@gentoo.org> upkern-4.0.0.ebuild:
+  21 May 2012; <alunduil@alunduil.com> upkern-4.0.0.ebuild:
   Removed the incorrect git-2 eclass
 
 *upkern-4.0.0 (13 May 2012)
 
-  13 May 2012; <alunduil@gentoo.org> +upkern-4.0.0.ebuild:
+  13 May 2012; <alunduil@alunduil.com> +upkern-4.0.0.ebuild:
   Add upkern-4.0.0 to the tree.
 
-  07 Apr 2012; <alunduil@gentoo.org> upkern-9999.ebuild:
+  07 Apr 2012; <alunduil@alunduil.com> upkern-9999.ebuild:
   Changing DEPEND and RDEPEND to reflect portage defaults.
 
-  04 Apr 2012; <alunduil@gentoo.org> upkern-9999.ebuild:
+  04 Apr 2012; <alunduil@alunduil.com> upkern-9999.ebuild:
   Adding an initrd use flag
 
-  04 Apr 2012; <alunduil@gentoo.org> upkern-9999.ebuild:
+  04 Apr 2012; <alunduil@alunduil.com> upkern-9999.ebuild:
   Adding the man page to upkern.
 
 *upkern-9999 (27 Mar 2012)
 
-  27 Mar 2012; <alunduil@gentoo.org> +upkern-9999.ebuild:
+  27 Mar 2012; <alunduil@alunduil.com> +upkern-9999.ebuild:
   Added a live ebuild for upkern
 
-  27 Mar 2012; <alunduil@gentoo.org> -upkern-2.0.14.ebuild,
+  27 Mar 2012; <alunduil@alunduil.com> -upkern-2.0.14.ebuild,
   -upkern-3.1.6.ebuild, -upkern-3.1.7.ebuild:
   Removed older versions that are no longer or should be no longer in use
 
 *upkern-3.1.9 (23 Jul 2011)
 
-  23 Jul 2011; <alunduil@gentoo.org> +upkern-3.1.9.ebuild:
+  23 Jul 2011; <alunduil@alunduil.com> +upkern-3.1.9.ebuild:
   Adding upkern-3.1.9
 
-  16 Jun 2011; <alunduil@gentoo.org> upkern-3.1.8.ebuild, metadata.xml:
+  16 Jun 2011; <alunduil@alunduil.com> upkern-3.1.8.ebuild, metadata.xml:
   Stable on x86 with gentoolkit 0.3.0.4
 
 *upkern-3.1.8 (12 Dec 2010)
 
-  12 Dec 2010; <alunduil@gentoo.org> +upkern-3.1.8.ebuild:
+  12 Dec 2010; <alunduil@alunduil.com> +upkern-3.1.8.ebuild:
   upkern-3.1.8
 
 *upkern-3.1.7 (12 Dec 2010)
 
-  12 Dec 2010; <alunduil@gentoo.org> -upkern-3.1.2.ebuild,
+  12 Dec 2010; <alunduil@alunduil.com> -upkern-3.1.2.ebuild,
   -upkern-3.1.3.ebuild, -upkern-3.1.4.ebuild, -upkern-3.1.5.ebuild,
   +upkern-3.1.7.ebuild:
   Adding upkern-3.1.7
 
 *upkern-3.1.6 (27 Nov 2010)
 
-  27 Nov 2010; <alunduil@gentoo.org> +upkern-3.1.6.ebuild:
+  27 Nov 2010; <alunduil@alunduil.com> +upkern-3.1.6.ebuild:
   Adding upkern 3.1.6
 
-  07 Nov 2010; <alunduil@gentoo.org> -upkern-2.0.11-r1.ebuild,
+  07 Nov 2010; <alunduil@alunduil.com> -upkern-2.0.11-r1.ebuild,
   -upkern-2.0.12.ebuild, -upkern-2.0.13.ebuild:
   Cleaning out unsupported versions.
 
 *upkern-2.0.14 (24 Oct 2010)
 
-  24 Oct 2010; <alunduil@gentoo.org> +upkern-2.0.14.ebuild:
+  24 Oct 2010; <alunduil@alunduil.com> +upkern-2.0.14.ebuild:
   Adding upkern 2.0.14
 
 *upkern-2.0.13 (24 Oct 2010)
 
-  24 Oct 2010; <alunduil@gentoo.org> +upkern-2.0.13.ebuild:
+  24 Oct 2010; <alunduil@alunduil.com> +upkern-2.0.13.ebuild:
   Adding upkern 2.0.13
 
 *upkern-2.0.12 (24 Oct 2010)
 
-  24 Oct 2010; <alunduil@gentoo.org> +upkern-2.0.12.ebuild:
+  24 Oct 2010; <alunduil@alunduil.com> +upkern-2.0.12.ebuild:
   Adding upkern 2.0.12
 
 *upkern-3.1.5 (22 Oct 2010)
 
-  22 Oct 2010; <alunduil@gentoo.org> +upkern-3.1.5.ebuild:
+  22 Oct 2010; <alunduil@alunduil.com> +upkern-3.1.5.ebuild:
   Adding upkern-3.1.5
 
 *upkern-3.1.4 (22 Oct 2010)
 
-  22 Oct 2010; <alunduil@gentoo.org> +upkern-3.1.4.ebuild:
+  22 Oct 2010; <alunduil@alunduil.com> +upkern-3.1.4.ebuild:
   Adding upkern-3.1.4
 
 *upkern-3.1.3 (15 Oct 2010)
@@ -99,7 +99,7 @@
 
 *upkern-3.1.2 (28 Sep 2010)
 
-  28 Sep 2010; <alunduil@gentoo.org> +upkern-3.1.2.ebuild:
+  28 Sep 2010; <alunduil@alunduil.com> +upkern-3.1.2.ebuild:
   New version of upkern released
 
   07 Jul 2008: Alex Brandt <alunduil@alunduil.com>
