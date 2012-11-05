@@ -2,6 +2,9 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  05 Nov 2012; Alex Brandt <alunduil@alunduil.com> singularity-1.0.2.ebuild:
+  Stabilizing singularity-1.0.2
+
 *singularity-1.0.2 (05 Nov 2012)
 
   05 Nov 2012; <alunduil@alunduil.com> +singularity-1.0.2.ebuild:
