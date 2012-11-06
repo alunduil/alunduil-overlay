@@ -22,6 +22,7 @@ IUSE="module-rebuild initrd"
 
 DEPEND=""
 RDEPEND="${DEPEND}
->=app-portage/gentoolkit-0.3
-module-rebuild? ( sys-kernel/module-rebuild )
-initrd? ( sys-kernel/dracut )"
+	>=app-portage/gentoolkit-0.3.0.7
+	module-rebuild? ( sys-kernel/module-rebuild )
+	initrd? ( sys-kernel/dracut )
+	"

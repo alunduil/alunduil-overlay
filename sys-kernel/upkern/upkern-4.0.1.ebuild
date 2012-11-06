@@ -5,7 +5,7 @@
 EAPI=3
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="*-jython"
+RESTRICT_PYTHON_ABIS="3.*"
 
 inherit distutils
 
@@ -20,7 +20,7 @@ IUSE="module-rebuild initrd"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	>=app-portage/gentoolkit-0.3
+	>=app-portage/gentoolkit-0.3.0.7
 	module-rebuild? ( sys-kernel/module-rebuild )
 	initrd? ( sys-kernel/dracut )"
 
