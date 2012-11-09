@@ -20,7 +20,9 @@
 =app-emulation/cloud-init-9999
 =sec-policy/selinux-openstack-guest-agent-9999
 
+# Live SELinux ebuilds
 =sec-policy/selinux-logsentry-9999
+=sec-policy/selinux-tmpwatch-9999
 
 =net-analyzer/httpry-9999
 
