@@ -41,7 +41,7 @@ kernel_read_system_state(logsentry_t)
 
 #corecmd_getattr_sbin_files(logsentry_t)
 corecmd_exec_shell(logsentry_t) # Execute BASH
-#corecmd_exec_bin(logsentry_t)
+corecmd_exec_bin(logsentry_t)
 
 miscfiles_read_localization(logsentry_t)
 
