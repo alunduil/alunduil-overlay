@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit git-2 autotools
+inherit git-2 autotools flag-o-matic
 
 EGIT_REPO_URI="git://git.carnivore.it/dionaea.git"
 
@@ -40,5 +40,7 @@ src_configure() {
 		$(use_enable gc) \
 		$(use_enable ssl) \
 		$(use_enable nl netfilter_queue) \
-		$(use_enable xmatch)
+		$(use_enable xmatch) \
+		--disable-debug \
+		--disable-werror
 }
