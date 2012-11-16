@@ -15,10 +15,11 @@ SRC_URI=""
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="ev emu cspm udns gc ssl pcap netfilter_queue xmatch cython curl"
+IUSE="ev +emu cspm udns gc ssl pcap netfilter_queue xmatch cython curl"
 
 DEPEND="
 	net-libs/liblcfg
+	emu? ( net-libs/libemu )
 	"
 RDEPEND="${DEPEND}"
 
