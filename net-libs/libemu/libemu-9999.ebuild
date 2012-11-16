@@ -15,11 +15,18 @@ SRC_URI=""
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE=""
+IUSE="lfs python cargos"
 
 DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {
 	eautoreconf
+}
+
+src_configure() {
+	econf \
+		$(use_enable lfs) \
+		$(use_enable python-bindings python) \
+		$(use_enable cargos)
 }
