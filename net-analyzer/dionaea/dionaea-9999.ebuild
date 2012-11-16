@@ -8,21 +8,36 @@ inherit git-2 autotools
 
 EGIT_REPO_URI="git://git.carnivore.it/dionaea.git"
 
-DESCRIPTION="Dionaea is meant to be a nepenthes successor, embedding python as
-scripting language, using libemu to detect shellcodes, supporting ipv6 and tls"
+DESCRIPTION="nepenthes successor"
 HOMEPAGE="http://dionaea.carnivore.it/"
 SRC_URI=""
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE=""
+IUSE="ev emu cspm udns gc ssl pcap netfilter_queue xmatch cython lcfg curl"
 
 DEPEND="
-	net-libs/liblcfg
+	lcfg? ( net-libs/liblcfg )
 	"
 RDEPEND="${DEPEND}"
 
 src_prepare() {
 	eautoreconf
+}
+
+src_configure() {
+	econf \
+		$(use_enable ev) \
+		$(use_enable emu) \
+		$(use_enable cspm) \
+		$(use_enable udns) \
+		$(use_enable gc) \
+		$(use_enable ssl) \
+		$(use_enable pcap) \
+		$(use_enable netfilter_queue) \
+		$(use_enable xmatch) \
+		$(use_enable cython) \
+		$(use_enable lcfg) \
+		$(use_enable curl)
 }
