@@ -15,11 +15,18 @@ SRC_URI=""
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="ev +emu cspm udns gc ssl pcap netfilter_queue xmatch cython curl"
+IUSE="cspm gc ssl +nl xmatch"
 
 DEPEND="
 	net-libs/liblcfg
-	emu? ( net-libs/libemu )
+	net-libs/libemu
+	nl? ( dev-libs/libnl )
+	dev-libs/libev
+	>=dev-python/cython-0.15
+	net-libs/udns
+	net-misc/curl
+	net-libs/libpcap
+	ssl? ( dev-libs/openssl )
 	"
 RDEPEND="${DEPEND}"
 
@@ -29,15 +36,9 @@ src_prepare() {
 
 src_configure() {
 	econf \
-		$(use_enable ev) \
-		$(use_enable emu) \
 		$(use_enable cspm) \
-		$(use_enable udns) \
 		$(use_enable gc) \
 		$(use_enable ssl) \
-		$(use_enable pcap) \
-		$(use_enable netfilter_queue) \
-		$(use_enable xmatch) \
-		$(use_enable cython) \
-		$(use_enable curl)
+		$(use_enable nl netfilter_queue) \
+		$(use_enable xmatch)
 }
