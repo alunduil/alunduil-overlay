@@ -44,3 +44,10 @@ src_configure() {
 		--disable-debug \
 		--disable-werror
 }
+
+src_install() {
+	keepdir /etc/dionaea
+
+	emake DESTDIR="${D}" install
+	dodoc README
+}
