@@ -27,6 +27,6 @@ src_prepare() {
 src_configure() {
 	econf \
 		$(use_enable lfs) \
-		$(use_enable python-bindings python) \
+		$(use_enable python python-bindings) \
 		$(use_enable cargos)
 }
