@@ -15,10 +15,10 @@ SRC_URI=""
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="ev emu cspm udns gc ssl pcap netfilter_queue xmatch cython lcfg curl"
+IUSE="ev emu cspm udns gc ssl pcap netfilter_queue xmatch cython curl"
 
 DEPEND="
-	lcfg? ( net-libs/liblcfg )
+	net-libs/liblcfg
 	"
 RDEPEND="${DEPEND}"
 
@@ -38,6 +38,5 @@ src_configure() {
 		$(use_enable netfilter_queue) \
 		$(use_enable xmatch) \
 		$(use_enable cython) \
-		$(use_enable lcfg) \
 		$(use_enable curl)
 }
