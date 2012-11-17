@@ -23,12 +23,18 @@ DEPEND="
 	nl? ( dev-libs/libnl )
 	dev-libs/libev
 	>=dev-python/cython-0.15
+	dev-lang/python[sqlite]
 	net-libs/udns
 	net-misc/curl
 	net-libs/libpcap
 	ssl? ( dev-libs/openssl )
 	"
 RDEPEND="${DEPEND}"
+
+pkg_setup() {
+	enewuser dionaea
+	enewgroup dionaea
+}
 
 src_prepare() {
 	eautoreconf
