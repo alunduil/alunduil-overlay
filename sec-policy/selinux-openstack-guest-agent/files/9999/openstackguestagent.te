@@ -1,4 +1,4 @@
-policy_module(openstackguestagent, 1.0.2)
+policy_module(openstackguestagent, 1.0.3)
 
 #######################################
 # 
@@ -44,6 +44,8 @@ manage_files_pattern(openstack_guest_agent_t, openstack_guest_agent_var_run_t, o
 files_pid_filetrans(openstack_guest_agent_t, openstack_guest_agent_var_run_t, file)
 
 files_search_var(openstack_guest_agent_t)
+
+init_getattr_script_files(openstack_guest_agent_t)
 
 files_search_etc(openstack_guest_agent_t)
 files_manage_etc_files(openstack_guest_agent_t)
