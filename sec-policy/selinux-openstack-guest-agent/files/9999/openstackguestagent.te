@@ -45,8 +45,6 @@ files_pid_filetrans(openstack_guest_agent_t, openstack_guest_agent_var_run_t, fi
 
 files_search_var(openstack_guest_agent_t)
 
-init_getattr_script_files(openstack_guest_agent_t)
-
 files_search_etc(openstack_guest_agent_t)
 files_manage_etc_files(openstack_guest_agent_t)
 files_manage_etc_dirs(openstack_guest_agent_t)
@@ -79,6 +77,11 @@ logging_send_syslog_msg(openstack_guest_agent_t)
 # Not sure why these are required ...
 kernel_read_unlabeled_state(openstack_guest_agent_t)
 miscfiles_read_localization(openstack_guest_agent_t)
+
+ifdef(`distro_gentoo', `
+  init_getattr_script_files(openstack_guest_agent_t)
+  init_exec_rc(openstack_guest_agent_t)
+')
 
 require {
   type security_t;
