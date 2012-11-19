@@ -19,8 +19,8 @@ IUSE=""
 src_install() {
 	all_ruby_install
 
-	doinitd "${FILESDIR}/unicorn.initd"
-	doconfd "${FILESDIR}/unicorn.confd"
+	newinitd "${FILESDIR}/unicorn.initd" unicorn
+	newconfd "${FILESDIR}/unicorn.confd" unicorn
 }
 
 pkg_postinst() {
