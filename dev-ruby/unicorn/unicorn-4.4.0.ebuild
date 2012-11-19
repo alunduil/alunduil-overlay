@@ -16,6 +16,10 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
+ruby_add_rdepend "
+	dev-ruby/rack
+	"
+
 src_install() {
 	ruby-ng_src_install
 
