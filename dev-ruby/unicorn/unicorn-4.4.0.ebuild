@@ -20,4 +20,12 @@ src_install() {
 	all_ruby_install
 
 	doinitd "${FILES}/unicorn.initd"
+	doconfd "${FILES}/unicorn.confd"
+}
+
+pkg_postinst() {
+	elog "This installation of unicorn supports multiple instances.  To enable"
+	elog "this you should create a symlink in /etc/init.d/ for each instance"
+	elog "to /etc/init.d/unicorn and create the matching conf files in"
+	elog "/etc/conf.d/."
 }
