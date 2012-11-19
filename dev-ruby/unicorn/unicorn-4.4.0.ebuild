@@ -19,6 +19,7 @@ IUSE=""
 ruby_add_rdepend "
 	dev-ruby/rack
 	dev-ruby/kgio
+	dev-ruby/raindrops
 	"
 
 src_install() {
