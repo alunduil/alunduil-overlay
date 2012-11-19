@@ -15,3 +15,9 @@ LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
+
+src_install() {
+	all_ruby_install
+
+	doinitd "${FILES}/unicorn.initd"
+}
