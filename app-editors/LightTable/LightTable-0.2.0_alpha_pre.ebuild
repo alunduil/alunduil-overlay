@@ -4,10 +4,8 @@
 
 EAPI=4
 
-DESCRIPTION="Light Table is a new interactive IDE that lets you modify running
-programs and embed anything from websites to games. It provides the real time
-feedback we need to not only answer questions about our code, but to understand
-how our programs really work."
+DESCRIPTION="IDE that lets you modify running programs and embed anything;
+providing real time feedback"
 HOMEPAGE="http://www.lighttable.com/"
 SRC_URI="http://temp2.kodowa.com.s3.amazonaws.com/playground/bins/${PN}Linux.tar.gz"
 

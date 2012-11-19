@@ -8,7 +8,7 @@ inherit git-2 autotools
 
 EGIT_REPO_URI="git://git.carnivore.it/libemu.git"
 
-DESCRIPTION=""
+DESCRIPTION="Required library for Dionaea"
 HOMEPAGE="http://dionaea.carnivore.it/"
 SRC_URI=""
 

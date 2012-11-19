@@ -3,5 +3,11 @@
 <pkgmetadata>
 	<longdescription lang="en">
 	</longdescription>
+	<use>
+		<flag name="cspm"></flag>
+		<flag name="gc"></flag>
+		<flag name="nl">Include libnl support</flag>
+		<flag name="xmatch"></flag>
+	</use>
 </pkgmetadata>
 
