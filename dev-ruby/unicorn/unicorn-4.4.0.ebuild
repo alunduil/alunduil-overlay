@@ -18,6 +18,7 @@ IUSE=""
 
 ruby_add_rdepend "
 	dev-ruby/rack
+	dev-ruby/kgio
 	"
 
 src_install() {
