@@ -17,7 +17,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 src_install() {
-	all_ruby_install
+	ruby-ng_src_install
 
 	newinitd "${FILESDIR}/unicorn.initd" unicorn
 	newconfd "${FILESDIR}/unicorn.confd" unicorn
