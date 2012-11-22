@@ -15,3 +15,12 @@ LICENSE="LGPL-2+"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
+
+each_ruby_configure() {
+	${RUBY} -Cext/raindrops extconf.rb || die
+}
+
+each_ruby_compile() {
+	emake -Cext/raindrops
+	mv ext/raindrops/raindrops_ext.so lib/ || die
+}
