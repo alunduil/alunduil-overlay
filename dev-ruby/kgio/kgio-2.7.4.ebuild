@@ -23,6 +23,5 @@ each_ruby_configure() {
 
 each_ruby_compile() {
 	emake -Cext/kgio
-	mkdir -p lib/kgio/ || die
-	mv ext/kgio/kgio_ext.so lib/kgio/ || die
+	mv ext/kgio/kgio_ext.so lib/ || die
 }
