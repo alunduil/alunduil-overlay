@@ -22,6 +22,15 @@ ruby_add_rdepend "
 	dev-ruby/raindrops
 	"
 
+each_ruby_configure() {
+	${RUBY} -Cext/unicorn_http extconf.rb || die
+}
+
+each_ruby_compile() {
+	emake -Cext/unicorn_http
+	mv ext/unicorn_http/unicorn_http.so lib/ || die
+}
+
 src_install() {
 	ruby-ng_src_install
 
