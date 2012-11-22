@@ -16,3 +16,13 @@ LICENSE="LGPL-2+"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
+
+each_ruby_configure() {
+	${RUBY} -Cext/kgio extconf.rb || die
+}
+
+each_ruby_compile() {
+	emake -Cext/kgio
+	mkdir -p lib/kgio/ || die
+	mv ext/kgio/kgio_ext.so lib/kgio/ || die
+}
