@@ -43,6 +43,8 @@ manage_files_pattern(openstack_guest_agent_t, openstack_guest_agent_var_cache_t,
 manage_files_pattern(openstack_guest_agent_t, openstack_guest_agent_var_run_t, openstack_guest_agent_var_run_t)
 files_pid_filetrans(openstack_guest_agent_t, openstack_guest_agent_var_run_t, file)
 
+files_create_pid_dirs(openstack_guest_agent_t)
+
 files_search_var(openstack_guest_agent_t)
 
 files_search_etc(openstack_guest_agent_t)

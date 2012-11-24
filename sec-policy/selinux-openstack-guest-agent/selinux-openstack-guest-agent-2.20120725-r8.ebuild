@@ -6,7 +6,7 @@ EAPI=4
 
 DESCRIPTION="SELinux policy for Openstack Guest Agents"
 
-KEYWORDS=""
+KEYWORDS="~amd64"
 IUSE="xen"
 
 MODS="openstackguestagent"
