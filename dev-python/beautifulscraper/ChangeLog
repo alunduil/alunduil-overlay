@@ -1,0 +1,10 @@
+# ChangeLog for dev-python/beautifulscraper
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*beautifulscraper-9999 (03 Dec 2012)
+
+  03 Dec 2012; Alex Brandt <alunduil@alunduil.com>
+  +beautifulscraper-9999.ebuild:
+  Adding beautifulscraper
+
