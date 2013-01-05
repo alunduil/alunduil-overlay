@@ -6,9 +6,7 @@ EAPI=4
 
 USE_RUBY="ruby19"
 
-inherit ruby-fakegem
-
-EGIT_REPO_URI="git://github.rackspace.com/paul-vudmaska/rackspace_ldap.git"
+inherit vcs-snapshot ruby-fakegem 
 
 DESCRIPTION="A modern, simple and fast FreeTDS library for Ruby using DB-Library"
 HOMEPAGE="https://github.com/rails-sqlserver/tiny_tds"
@@ -16,7 +14,7 @@ SRC_URI="https://github.com/rails-sqlserver/tiny_tds/archive/v0.5.1.tar.gz -> ${
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~x86"
 IUSE=""
 
-ruby_add_rdepend dev-db/freetds
+ruby_add_rdepend "dev-db/freetds"
