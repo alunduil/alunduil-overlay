@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<maintainer>
-<email>andrew@aregner.com</email>
-<name>Andrew Regner</name>
-</maintainer>
-<longdescription lang="en">
-</longdescription>
+	<herd>ruby</herd>
+	<longdescription lang="en">
+	</longdescription>
 </pkgmetadata>
 

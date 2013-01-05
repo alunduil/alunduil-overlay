@@ -1,20 +1,20 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=4
 
 USE_RUBY="ruby19"
+RUBY_FAKEGEM_RECIPE_TEST="rspec"
+RUBY_FAKEGEM_RECIPE_DOC="rdoc"
 
-inherit vcs-snapshot ruby-fakegem
+inherit ruby-fakegem
 
 DESCRIPTION="A modern, simple and fast FreeTDS library for Ruby using DB-Library"
-HOMEPAGE="https://github.com/rails-sqlserver/tiny_tds"
-SRC_URI="https://github.com/rails-sqlserver/tiny_tds/archive/v0.5.1.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="http://rubygems.org/gems/tiny_tds/"
+SRC_URI="http://rubygems.org/downloads/tiny_tds-0.5.1.gem"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
-
-ruby_add_rdepend "dev-db/freetds"
