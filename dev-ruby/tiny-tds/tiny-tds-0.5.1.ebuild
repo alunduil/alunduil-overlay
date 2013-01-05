@@ -6,7 +6,7 @@ EAPI=4
 
 USE_RUBY="ruby19"
 
-inherit vcs-snapshot ruby-fakegem 
+inherit vcs-snapshot ruby-fakegem
 
 DESCRIPTION="A modern, simple and fast FreeTDS library for Ruby using DB-Library"
 HOMEPAGE="https://github.com/rails-sqlserver/tiny_tds"
