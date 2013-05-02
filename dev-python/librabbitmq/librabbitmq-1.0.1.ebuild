@@ -9,7 +9,7 @@ inherit distutils-r1
 
 DESCRIPTION="AMQP Client using the rabbitmq-c library."
 HOMEPAGE="python2_://github.com/celery/librabbitmq"
-SRC_URI="https://pypi.python.org/packages/source/${PN:0:1}/${PN}/${PV}.tar.gz"
+SRC_URI="https://pypi.python.org/packages/source/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="MPL-1.0"
 SLOT="0"
@@ -18,4 +18,3 @@ IUSE=""
 
 DEPEND="net-misc/rabbitmq-c"
 RDEPEND="${DEPEND}"
-
