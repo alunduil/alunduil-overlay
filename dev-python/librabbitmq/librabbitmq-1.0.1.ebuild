@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python2_{5,6,7} )
 inherit distutils-r1
 
 DESCRIPTION="AMQP Client using the rabbitmq-c library."
-HOMEPAGE="python2_://github.com/celery/librabbitmq"
+HOMEPAGE="http://github.com/celery/librabbitmq"
 SRC_URI="https://pypi.python.org/packages/source/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="MPL-1.0"
