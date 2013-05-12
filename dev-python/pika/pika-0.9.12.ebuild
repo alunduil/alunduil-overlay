@@ -16,15 +16,17 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="doc test"
 
-DEPEND="
-	test? (
-		dev-python/nose
-		dev-python/mock
-		dev-python/pyyaml
-		)
+RDEPEND="
 	doc? (
 		dev-python/twisted
 		www-servers/tornado
 		)
 	"
-RDEPEND=""
+DEPEND="
+	${RDEPEND}
+	test? (
+		dev-python/nose
+		dev-python/mock
+		dev-python/pyyaml
+		)
+	"

@@ -2,12 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
-PYTHON_DEPEND="2"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3*"
+EAPI=5
+PYTHON_COMPAT=( python2_7 python3_2 )
 
-inherit distutils
+inherit distutils-r1
 
 DESCRIPTION="BDD tool for python, 100% inspired by cucumber; BDD with elegance
 and joy"
@@ -20,4 +18,9 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="
+	${DEPEND}
+	dev-python/sure
+	dev-python/fuzzywuzzy
+	dev-python/ipdb
+	"
