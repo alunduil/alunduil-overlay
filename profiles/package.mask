@@ -47,3 +47,6 @@
 =app-backup/holland-lib-common-9999
 =app-backup/holland-backup-mysql-lvm-9999
 =app-backup/holland-backup-mysqldump-9999
+
+# pika-0.9.13 shouldn't be used
+=dev-python/pika-0.9.13
