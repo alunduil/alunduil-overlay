@@ -4,7 +4,7 @@
 
 EAPI=5
 
-USE_RUBY="ruby18 ruby19 ruby20 ree18 jruby"
+USE_RUBY="ruby18 ruby19 ree18 jruby"
 RUBY_FAKEGEM_RECIPE_DOC="rdoc"
 
 inherit ruby-fakegem
