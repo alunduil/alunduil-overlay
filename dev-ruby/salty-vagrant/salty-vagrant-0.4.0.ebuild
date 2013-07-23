@@ -3,9 +3,10 @@
 # $Header: $
 
 EAPI=5
+USE_RUBY="ruby19"
 
-USE_RUBY="ruby18 ruby19 ree18 jruby"
 RUBY_FAKEGEM_RECIPE_DOC="rdoc"
+RUBY_FAKEGEM_GEMSPEC="vagrant-salt.gemspec"
 
 inherit ruby-fakegem
 
