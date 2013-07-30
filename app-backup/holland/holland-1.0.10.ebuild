@@ -17,7 +17,8 @@ KEYWORDS="~amd64"
 IUSE="doc examples lvm maatkit +mysql postgresql sqlite"
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND=""
+PDEPEND=""
 
 python_install() {
 	distutils-r1_python_install
