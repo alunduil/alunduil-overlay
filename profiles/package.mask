@@ -1,16 +1,3 @@
-# Holland mask non-released upstream versions.
->=app-backup/holland-1.0.7
->=app-backup/holland-backup-example-1.0.7
->=app-backup/holland-backup-maatkit-1.0.7
->=app-backup/holland-backup-mysql-lvm-1.0.7
->=app-backup/holland-backup-mysqldump-1.0.7
->=app-backup/holland-backup-pgdump-1.0.7
->=app-backup/holland-backup-random-1.0.7
->=app-backup/holland-backup-sqlite-1.0.7
->=app-backup/holland-lib-common-1.0.7
->=app-backup/holland-lib-lvm-1.0.7
->=app-backup/holland-lib-mysql-1.0.7
-
 # All live ebuilds provided by this overlay.
 =sys-kernel/upkern-9999
 =app-admin/pmort-9999
