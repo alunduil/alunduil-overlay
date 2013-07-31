@@ -10,6 +10,6 @@ Vagrant.configure("2") do |config|
     holland.vm.synced_folder ".", "/var/lib/layman/alunduil-overlay"
 
     holland.vm.provision "shell", inline: "echo app-backup/holland ~amd64 >> /etc/portage/package.accept_keywords"
-    holland.vm.provision "shell", inline: "emerge -v app-backup/holland"
+    holland.vm.provision "shell", inline: "ACCEPT_KEYWORDS=~amd64 emerge -v app-backup/holland"
   end
 end
