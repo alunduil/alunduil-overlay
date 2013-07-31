@@ -48,3 +48,16 @@ python_install() {
 
 	keepdir /etc/holland/providers
 }
+
+pkg_postinst() {
+	if use mysql; then
+		elog "It is recommended to setup a ~/.my.cnf configuration for the user that holland"
+		elog "will be running as.  This will remove the need to ocnfigure a username and "
+		elog "password in the holland configuration itself."
+		elog ""
+		elog "The structure of the .my.cnf file should resemble the following:"
+		elog "[client]"
+		elog "user=root"
+		elog "password=ROOT_MYSQL_PASSWORD"
+	fi
+}

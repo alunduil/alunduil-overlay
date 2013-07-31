@@ -10,6 +10,10 @@ Vagrant.configure("2") do |config|
   config.vm.define "holland" do |holland|
     holland.vm.hostname = "holland.alunduil.com"
 
+    holland.vm.provider :virtualbox do |vb|
+      vb.customize [ "modifyvm", :id, "--memory", 1024 ]
+    end
+
     holland.vm.provision "shell", inline: "ACCEPT_KEYWORDS=~amd64 emerge -v app-backup/holland"
   end
 end
