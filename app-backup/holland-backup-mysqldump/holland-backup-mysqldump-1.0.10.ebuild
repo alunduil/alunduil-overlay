@@ -19,10 +19,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="examples lvm"
 
-DEPEND="
-	app-backup/holland[examples=]
-	app-backup/holland[lvm=]
-	"
+DEPEND="app-backup/holland[examples=]"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}/plugins/$(echo ${PN} | tr '-' '.')"
