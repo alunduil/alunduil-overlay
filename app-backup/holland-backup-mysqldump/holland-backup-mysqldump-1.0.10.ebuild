@@ -17,10 +17,14 @@ SRC_URI="http://hollandbackup.org/releases/stable/${PV%.*}/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="examples lvm"
+IUSE="examples"
 
 DEPEND="app-backup/holland[examples=]"
-RDEPEND="${DEPEND}"
+RDEPEND="
+	${DEPEND}
+	app-backup/holland-lib-common
+	app-backup/holland-lib-mysql
+	"
 
 S="${WORKDIR}/${MY_P}/plugins/$(echo ${PN} | tr '-' '.')"
 
@@ -35,9 +39,5 @@ python_install() {
 	if use examples; then
 		insinto /etc/holland/backupsets/examples
 		doins config/backupsets/examples/mysqldump.conf
-
-		if use lvm; then
-			doins config/backupsets/examples/mysqldump-lvm.conf
-		fi
 	fi
 }
