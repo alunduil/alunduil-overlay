@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.synced_folder ".", "/var/lib/layman/alunduil-overlay"
 
-  config.vm.synced_folder "salt/roots/", "/srv/salt"
+  config.vm.synced_folder "salt/root/", "/srv/salt"
 
   config.vm.provision :salt do |salt|
     salt.minion_config = "salt/minion"
