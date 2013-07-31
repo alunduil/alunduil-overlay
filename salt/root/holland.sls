@@ -1,3 +1,1 @@
-holland:
-  pkg:
-    - installed
+holland: pkg.installed

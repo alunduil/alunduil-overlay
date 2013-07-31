@@ -1,3 +1,3 @@
 base:
-  '*':
+  'holland-default.*':
     - holland
