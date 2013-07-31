@@ -25,18 +25,12 @@ DEPEND="
 	"
 RDEPEND="${DEPEND}"
 
-MY_DIR="$(echo ${PN} | tr '-' '.')"
-
-python_compile() {
-	cd ${MY_P}/plugins/${MY_DIR}
-	distutils-r1_python_compile
-}
+S="${WORKDIR}/${MY_P}/plugins/$(echo ${PN} | tr '-' '.')"
 
 python_install() {
-	cd ${MY_P}/plugins/${MY_DIR}
 	distutils-r1_python_install
 
-	cd "${WORKDIR}/${MY_P}"
+	cd "../.." || die
 
 	insinto /etc/holland/providers
 	doins config/providers/mysqldump.conf
