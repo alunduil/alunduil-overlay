@@ -24,6 +24,7 @@ RDEPEND="
 	${DEPEND}
 	app-backup/holland-lib-common
 	app-backup/holland-lib-mysql
+	dev-python/mysql-python
 	"
 
 S="${WORKDIR}/${MY_P}/plugins/$(echo ${PN} | tr '-' '.')"

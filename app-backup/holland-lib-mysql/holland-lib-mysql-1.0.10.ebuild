@@ -20,6 +20,9 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND="app-backup/holland"
-RDEPEND="${DEPEND}"
+RDEPEND="
+	${DEPEND}
+	dev-python/mysql-python
+	"
 
 S="${WORKDIR}/${MY_P}/plugins/$(echo ${PN} | tr '-' '.')"
