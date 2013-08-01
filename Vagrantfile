@@ -12,6 +12,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :salt do |salt|
     salt.minion_config = "salt/minion"
     salt.run_highstate = true
+    salt.bootstrap_script = "salt/bootstrap-salt.sh"
   end
 
   config.vm.provider :virtualbox do |vb|
