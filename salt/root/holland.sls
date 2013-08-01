@@ -1,1 +1,3 @@
-holland: pkg.installed
+app-backup/holland:
+  pkg:
+    - installed
