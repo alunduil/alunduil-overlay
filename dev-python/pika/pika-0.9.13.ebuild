@@ -18,7 +18,7 @@ IUSE="doc test"
 
 RDEPEND="
 	doc? (
-		dev-python/twisted
+		dev-python/twisted-core
 		www-servers/tornado
 		)
 	"
