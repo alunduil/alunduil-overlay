@@ -1,3 +1,18 @@
+node holland-examples inherits holland-default {
+  exec { 'holland use examples':
+    command => 'echo app-backup/holland examples >> package.use',
+    cwd => '/etc/portage',
+    unless => 'grep "holland examples" package.use',
+    path => [ '/bin', '/usr/bin' ],
+  }
+
+  Package['app-backup/holland'] {
+    require +> [
+      Exec['holland use examples'],
+      ]
+  }
+}
+
 node holland-pgdump inherits holland-default {
   exec { 'holland use -mysql':
     command => 'echo app-backup/holland -mysql >> package.use',

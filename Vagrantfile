@@ -26,4 +26,9 @@ Vagrant.configure('2') do |config|
     holland.vm.hostname = 'holland-pgdump.alunduil.com'
     holland.vm.provision 'shell', inline: 'holland backup'
   end
+
+  config.vm.define 'holland-examples' do |holland|
+    holland.vm.hostname = 'holland-examples.alunduil.com'
+    holland.vm.provision 'shell', inline: 'holland backup'
+  end
 end
