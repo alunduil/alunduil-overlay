@@ -17,8 +17,8 @@ Vagrant.configure('2') do |config|
     vb.customize [ 'modifyvm', :id, '--memory', 1024 ]
   end
     
-  config.vm.define 'holland-default' do |holland|
-    holland.vm.hostname = 'holland-default.alunduil.com'
+  config.vm.define 'holland-mysqldump' do |holland|
+    holland.vm.hostname = 'holland-mysqldump.alunduil.com'
     holland.vm.provision 'shell', inline: 'holland backup'
   end
 

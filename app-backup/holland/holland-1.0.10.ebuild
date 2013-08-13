@@ -20,6 +20,7 @@ DEPEND=""
 RDEPEND=""
 PDEPEND="
 	mysql? ( app-backup/holland-backup-mysqldump )
+	examples? ( app-backup/holland-backup-example )
 	"
 
 python_install() {
