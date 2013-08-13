@@ -16,7 +16,9 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="examples +mysql"
 
-DEPEND=""
+DEPEND="
+	dev-python/setuptools[${PYTHON_USEDEP}]
+	"
 RDEPEND=""
 PDEPEND="
 	mysql? ( app-backup/holland-backup-mysqldump )
