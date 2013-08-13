@@ -34,6 +34,23 @@ node holland-pgdump inherits holland-default {
       Exec['holland use postgresql'],
       ],
   }
+
+  file { '/etc/holland/backupsets/default.conf':
+    content => "
+               [holland:backup]\n
+               plugin = pgdump\n
+               \n
+               [pgdump]\n
+               role = postgres\n
+               \n
+               [pgauth]\n
+               username = postgres\n
+               ",
+    group => 'root',
+    mode => 0644,
+    owner => 'root',
+    require => Package['app-backup/holland'],
+  }
 }
 
 node holland-mysqldump inherits holland-default {
