@@ -1,12 +1,23 @@
+node /holland.*((mysql|lvm).*){2}/ inherits /holland.*/ {
+  exec { 'holland use mysql':
+    command => 'echo app-backup/holland mysql >> package.use',
+    cwd => '/etc/portage',
+    unless => 'grep "holland mysql" package.use',
+    path => [ '/bin', '/usr/bin' ],
+  }
+
+  Package['app-backup/holland'] {
+    require +> [
+      Exec['holland use mysql'],
+      ],
+  }
+}
+
 node /holland.*/ inherits default {
   exec { 'keyword holland':
     command => 'echo app-backup/holland"*" ~amd64 >> package.accept_keywords',
     cwd => '/etc/portage',
     unless => 'grep holland package.accept_keywords',
-    path => [ '/bin', '/usr/bin' ],
-  }
-
-  exec { 'eix-sync':
     path => [ '/bin', '/usr/bin' ],
   }
 
@@ -45,4 +56,7 @@ node /holland.*/ inherits default {
 }  
 
 node default {
+  exec { 'eix-sync':
+    path => [ '/bin', '/usr/bin' ],
+  }
 }
