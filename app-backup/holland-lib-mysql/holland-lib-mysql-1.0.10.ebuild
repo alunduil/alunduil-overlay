@@ -25,4 +25,4 @@ RDEPEND="
 	dev-python/mysql-python
 	"
 
-S="${WORKDIR}/${MY_P}/plugins/$(echo ${PN} | tr '-' '.')"
+S="${WORKDIR}/${MY_P}/plugins/${PN//-/.}"
