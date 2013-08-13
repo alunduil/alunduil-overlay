@@ -21,4 +21,9 @@ Vagrant.configure('2') do |config|
     holland.vm.hostname = 'holland-default.alunduil.com'
     holland.vm.provision 'shell', inline: 'holland backup'
   end
+
+  config.vm.define 'holland-mysql-lvm' do |holland|
+    holland.vm.hostname = 'holland-mysql-lvm.alunduil.com'
+    holland.vm.provision 'shell', inline: 'holland backup'
+  end
 end
