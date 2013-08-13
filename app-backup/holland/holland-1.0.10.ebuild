@@ -14,13 +14,14 @@ SRC_URI="http://hollandbackup.org/releases/stable/${PV%.*}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="doc examples +mysql"
+IUSE="doc examples +mysql postgresql"
 
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	"
 RDEPEND=""
 PDEPEND="
+    postgresql? ( app-backup/holland-backup-pgdump )
 	mysql? ( app-backup/holland-backup-mysqldump )
 	examples? ( app-backup/holland-backup-example )
 	"
