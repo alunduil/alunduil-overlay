@@ -22,4 +22,4 @@ IUSE=""
 DEPEND="app-backup/holland"
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${MY_P}/plugins/$(echo ${PN} | tr '-' '.')"
+S="${WORKDIR}/${MY_P}/plugins/${PN//-/.}"
