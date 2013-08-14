@@ -11,7 +11,7 @@ SRC_URI=""
 LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="xtrabackup hotcopy +dump"
+IUSE="xtrabackup hotcopy +dump lvm"
 
 DEPEND=""
 RDEPEND="
@@ -19,4 +19,5 @@ RDEPEND="
 	xtrabackup? ( app-backup/holland-backup-xtrabackup )
 	hotcopy? ( app-backup/holland-backup-mysqlhotcopy )
 	dump? ( app-backup/holland-backup-mysqldump )
+	lvm? ( app-backup/holland-backup-mysql-lvm )
 	"
