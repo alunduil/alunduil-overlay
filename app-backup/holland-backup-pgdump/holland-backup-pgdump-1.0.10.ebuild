@@ -22,6 +22,7 @@ IUSE="examples"
 DEPEND="app-backup/holland[examples=]"
 RDEPEND="
 	${DEPEND}
+	app-backup/holland-lib-common
 	dev-db/postgresql-base
 	dev-python/psycopg
 	"

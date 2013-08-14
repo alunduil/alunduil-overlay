@@ -17,7 +17,7 @@ node holland-pgdump inherits holland-default {
   exec { 'holland use -mysql':
     command => 'echo app-backup/holland -mysql >> package.use',
     cwd => '/etc/portage',
-    unless => 'grep "holland mysql" package.use',
+    unless => 'grep "holland -mysql" package.use',
     path => [ '/bin', '/usr/bin' ],
   }
 
@@ -95,13 +95,13 @@ node holland-default inherits default {
     ensure => 'latest',
     require => [ 
       Exec['keyword holland'],
-      Exec['eix-sync'],
+      Exec['eix-update'],
       ],
   }
 }  
 
 node default {
-  exec { 'eix-sync':
+  exec { 'eix-update':
     path => [ '/bin', '/usr/bin' ],
   }
 }
