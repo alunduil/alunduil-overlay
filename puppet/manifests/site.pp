@@ -28,8 +28,8 @@ node holland-pgdump inherits holland-default {
     path => [ '/bin', '/usr/bin' ],
   }
 
-  exec { 'holland use postgresql':
-    command => 'echo app-backup/holland postgresql >> package.use',
+  exec { 'holland use postgres':
+    command => 'echo app-backup/holland postgres >> package.use',
     cwd => '/etc/portage',
     unless => 'grep "holland postgres" package.use',
     path => [ '/bin', '/usr/bin' ],
@@ -38,7 +38,7 @@ node holland-pgdump inherits holland-default {
   Package['app-backup/holland'] {
     require +> [
       Exec['holland use -mysql'],
-      Exec['holland use postgresql'],
+      Exec['holland use postgres'],
       ],
   }
 
