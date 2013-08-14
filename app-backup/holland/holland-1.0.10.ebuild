@@ -14,13 +14,17 @@ SRC_URI="http://hollandbackup.org/releases/stable/${PV%.*}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="doc examples +mysql postgresql"
+IUSE="doc examples +mysql postgresql sqlite"
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="
+	sqlite? ( >=app-backup/holland-backup-sqlite-1.0.10 )
     postgresql? ( >=app-backup/holland-backup-pgdump-1.0.10 )
-	mysql? ( >=app-backup/holland-backup-mysqldump-1.0.10 )
-	examples? ( >=app-backup/holland-backup-example-1.0.10 )
+	mysql? ( >=virtual/holland-mysql-1.0.10 )
+	examples? ( 
+	  >=app-backup/holland-backup-example-1.0.10
+	  >=app-backup/holland-backup-random-1.0.10
+	  )
 	"
 
 python_install() {
