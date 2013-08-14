@@ -51,6 +51,24 @@ node holland-pgdump inherits holland-default {
     owner => 'root',
     require => Package['app-backup/holland'],
   }
+
+  package { 'dev-db/postgresql-server':
+    # TODO Add slot 9.2.
+    ensure => 'latest',
+  }
+
+  exec { 'config postgresql-server':
+    command => 'yes | emerge --config postgresql-server',
+    unless => 'test -d /var/lib/postgresql/9.2/data',
+    path => [ '/bin', '/usr/bin' ],
+    require => Package['dev-db/postgresql-server'],
+  }
+
+  service { 'postgresql-9.2':
+    ensure => 'running',
+    hasrestart => true,
+    require => Exec['config postgresql-server'],
+  }
 }
 
 node holland-mysqldump inherits holland-default {
