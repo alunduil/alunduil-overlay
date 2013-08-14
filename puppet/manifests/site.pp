@@ -6,6 +6,13 @@ node holland-examples inherits holland-default {
     path => [ '/bin', '/usr/bin' ],
   }
 
+  exec { 'holland-backup-mysqldump use examples':
+    command => 'echo app-backup/holland-backup-mysqldump examples >> package.use',
+    cwd => '/etc/portage',
+    unless => 'grep "holland-backup-mysqldump examples" package.use',
+    path => [ '/bin', '/usr/bin' ],
+  }
+
   Package['app-backup/holland'] {
     require +> [
       Exec['holland use examples'],
