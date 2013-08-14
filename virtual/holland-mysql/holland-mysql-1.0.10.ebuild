@@ -11,10 +11,11 @@ SRC_URI=""
 LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="xtrabackup"
+IUSE="xtrabackup hotcopy"
 
 DEPEND=""
 RDEPEND="
 	${DEPEND}
 	xtrabackup? ( app-backup/holland-backup-xtrabackup )
+	hotcopy? ( app-backup/holland-backup-mysqlhotcopy )
 	"
