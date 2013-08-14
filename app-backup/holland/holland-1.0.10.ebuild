@@ -16,9 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="doc examples +mysql postgresql"
 
-DEPEND="
-	dev-python/setuptools[${PYTHON_USEDEP}]
-	"
+DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="
     postgresql? ( app-backup/holland-backup-pgdump )
 	mysql? ( app-backup/holland-backup-mysqldump )

@@ -19,8 +19,9 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="examples"
 
-DEPEND="app-backup/holland[examples=]"
+DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}"
+PDEPEND="app-backup/holland[examples=]"
 
 S="${WORKDIR}/${MY_P}/plugins/${PN//-/.}"
 

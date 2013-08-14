@@ -19,13 +19,14 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="examples"
 
-DEPEND="app-backup/holland[examples=]"
+DEPEND="dev-python/setuptools[${PYTHON_USEDEPS}]"
 RDEPEND="
 	${DEPEND}
 	app-backup/holland-lib-common
 	app-backup/holland-lib-mysql
 	dev-python/mysql-python
 	"
+PDEPEND="app-backup/holland[examples=]"
 
 S="${WORKDIR}/${MY_P}/plugins/${PN//-/.}"
 
