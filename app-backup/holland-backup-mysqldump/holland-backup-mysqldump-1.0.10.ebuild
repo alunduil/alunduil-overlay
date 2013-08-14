@@ -19,7 +19,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="examples"
 
-DEPEND="dev-python/setuptools[${PYTHON_USEDEPS}]"
+DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="
 	${DEPEND}
 	app-backup/holland-lib-common
