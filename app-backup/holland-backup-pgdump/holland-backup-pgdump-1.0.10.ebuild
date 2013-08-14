@@ -19,13 +19,14 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="examples"
 
-DEPEND="app-backup/holland[examples=]"
+DEPEND=""
 RDEPEND="
 	${DEPEND}
 	app-backup/holland-lib-common
 	dev-db/postgresql-base
 	dev-python/psycopg
 	"
+PDEPEND="app-backup/holland[examples=]"
 
 S="${WORKDIR}/${MY_P}/plugins/${PN//-/.}"
 
