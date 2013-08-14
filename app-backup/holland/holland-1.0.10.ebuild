@@ -18,9 +18,9 @@ IUSE="doc examples +mysql postgresql"
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="
-    postgresql? ( app-backup/holland-backup-pgdump )
-	mysql? ( app-backup/holland-backup-mysqldump )
-	examples? ( app-backup/holland-backup-example )
+    postgresql? ( >=app-backup/holland-backup-pgdump-1.0.10 )
+	mysql? ( >=app-backup/holland-backup-mysqldump-1.0.10 )
+	examples? ( >=app-backup/holland-backup-example-1.0.10 )
 	"
 
 python_install() {
