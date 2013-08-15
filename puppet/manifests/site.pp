@@ -112,7 +112,14 @@ node holland-default inherits default {
   exec { 'keyword holland':
     command => 'echo app-backup/holland"*" ~amd64 >> package.accept_keywords',
     cwd => '/etc/portage',
-    unless => 'grep holland package.accept_keywords',
+    unless => 'grep app-backup/holland package.accept_keywords',
+    path => [ '/bin', '/usr/bin' ],
+  }
+
+  exec { 'keyword holland virtual':
+    command => 'echo virtual/holland"*" ~amd64 >> package.accept_keywords',
+    cwd => '/etc/portage',
+    unless => 'grep virtual/holland package.accept_keywords',
     path => [ '/bin', '/usr/bin' ],
   }
 
