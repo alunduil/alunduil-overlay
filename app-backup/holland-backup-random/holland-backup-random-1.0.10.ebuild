@@ -17,7 +17,7 @@ SRC_URI="http://hollandbackup.org/releases/stable/${PV%.*}/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="examples"
+IUSE="+examples"
 
 DEPEND="app-backup/holland[examples=]"
 RDEPEND="${DEPEND}"
