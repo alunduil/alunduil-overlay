@@ -19,7 +19,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="app-backup/holland"
+DEPEND=""
 RDEPEND="${DEPEND}"
+PDEPEND="app-backup/holland"
 
 S="${WORKDIR}/${MY_P}/plugins/${PN//-/.}"
