@@ -22,6 +22,10 @@ IUSE="examples"
 DEPEND="app-backup/holland[examples=]"
 RDEPEND="
 	${DEPEND}
+	app-backup/holland-lib-common
+	app-backup/holland-lib-mysql
+	app-backup/holland-lib-lvm
+	app-backup/holland-lib-mysqldump
 	"
 
 S="${WORKDIR}/${MY_P}/plugins/${PN//-/.}"
