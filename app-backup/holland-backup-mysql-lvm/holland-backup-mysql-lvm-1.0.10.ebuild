@@ -19,7 +19,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="examples"
 
-DEPEND="app-backup/holland[examples=]"
+DEPEND=""
 RDEPEND="
 	${DEPEND}
 	app-backup/holland-lib-common
@@ -27,6 +27,7 @@ RDEPEND="
 	app-backup/holland-lib-lvm
 	app-backup/holland-lib-mysqldump
 	"
+PDEPEND="app-backup/holland[examples=]"
 
 S="${WORKDIR}/${MY_P}/plugins/${PN//-/.}"
 S="${S/.lvm/_lvm}"
