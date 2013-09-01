@@ -23,7 +23,6 @@ DEPEND=""
 RDEPEND="
 	${DEPEND}
 	app-backup/holland-lib-common
-	dev-db/postgresql-base
 	dev-python/psycopg
 	"
 PDEPEND="app-backup/holland[examples=]"
