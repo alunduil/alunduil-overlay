@@ -11,13 +11,12 @@ SRC_URI=""
 LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="xtrabackup hotcopy +dump lvm"
+IUSE="xtrabackup +mysqldump lvm"
 
 DEPEND=""
 RDEPEND="
 	${DEPEND}
 	xtrabackup? ( app-backup/holland-backup-xtrabackup )
-	hotcopy? ( app-backup/holland-backup-mysqlhotcopy )
 	dump? ( app-backup/holland-backup-mysqldump )
 	lvm? ( app-backup/holland-backup-mysql-lvm )
 	"
