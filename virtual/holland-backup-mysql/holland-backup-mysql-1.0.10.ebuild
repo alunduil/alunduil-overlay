@@ -17,6 +17,6 @@ DEPEND=""
 RDEPEND="
 	${DEPEND}
 	xtrabackup? ( app-backup/holland-backup-xtrabackup )
-	dump? ( app-backup/holland-backup-mysqldump )
+	mysqldump? ( app-backup/holland-backup-mysqldump )
 	lvm? ( app-backup/holland-backup-mysql-lvm )
 	"
