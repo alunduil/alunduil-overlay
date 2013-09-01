@@ -20,7 +20,7 @@ DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="
 	sqlite? ( >=app-backup/holland-backup-sqlite-1.0.10 )
     postgres? ( >=app-backup/holland-backup-pgdump-1.0.10 )
-	mysql? ( >=virtual/holland-mysql-1.0.10 )
+	mysql? ( >=virtual/holland-backup-mysql-1.0.10 )
 	examples? ( 
 	  >=app-backup/holland-backup-example-1.0.10
 	  >=app-backup/holland-backup-random-1.0.10
