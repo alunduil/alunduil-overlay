@@ -21,19 +21,5 @@
 =dev-python/pyxenstore-9999
 =dev-python/fuzzywuzzy-9999
 
-=app-backup/holland-backup-random-9999
-=app-backup/holland-backup-maatkit-9999
-=app-backup/holland-lib-lvm-9999
-=app-backup/holland-backup-example-9999
-=app-backup/holland-backup-xtrabackup-9999
-=app-backup/holland-lib-mysql-9999
-=app-backup/holland-backup-pgdump-9999
-=app-backup/holland-backup-mysqlhotcopy-9999
-=app-backup/holland-backup-sqlite-9999
-=app-backup/holland-9999
-=app-backup/holland-lib-common-9999
-=app-backup/holland-backup-mysql-lvm-9999
-=app-backup/holland-backup-mysqldump-9999
-
 # pika-0.9.13 shouldn't be used
 =dev-python/pika-0.9.13

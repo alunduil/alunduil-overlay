@@ -14,10 +14,18 @@ SRC_URI="http://hollandbackup.org/releases/stable/${PV%.*}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="doc examples lvm maatkit +mysql postgresql sqlite"
+IUSE="doc examples +mysql postgres sqlite"
 
-DEPEND=""
-RDEPEND="${DEPEND}"
+DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
+RDEPEND="
+	sqlite? ( >=app-backup/holland-backup-sqlite-1.0.10 )
+    postgres? ( >=app-backup/holland-backup-pgdump-1.0.10 )
+	mysql? ( >=virtual/holland-backup-mysql-1.0.10 )
+	examples? ( 
+	  >=app-backup/holland-backup-example-1.0.10
+	  >=app-backup/holland-backup-random-1.0.10
+	  )
+	"
 
 python_install() {
 	distutils-r1_python_install
@@ -44,4 +52,17 @@ python_install() {
 	fi
 
 	keepdir /etc/holland/providers
+}
+
+pkg_postinst() {
+	if use mysql; then
+		elog "It is recommended to setup a ~/.my.cnf configuration for the user that holland"
+		elog "will be running as.  This will remove the need to ocnfigure a username and "
+		elog "password in the holland configuration itself."
+		elog ""
+		elog "The structure of the .my.cnf file should resemble the following:"
+		elog "[client]"
+		elog "user=root"
+		elog "password=ROOT_MYSQL_PASSWORD"
+	fi
 }
