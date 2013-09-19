@@ -19,5 +19,5 @@ IUSE=""
 DEPEND=""
 RDEPEND="
 	${DEPEND}
-	dev-python/python-argparse
+	virtual/python-argparse[${PYTHON_USEDEP}]
 	"
