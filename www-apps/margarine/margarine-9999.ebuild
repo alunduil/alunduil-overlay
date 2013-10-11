@@ -8,7 +8,6 @@ PYTHON_COMPAT=( python2_7 )
 inherit distutils-r1 git-2
 
 EGIT_REPO_URI="git://github.com/raxsavvy/margarine.git"
-EGIT_BRANCH="issues/23"
 
 DESCRIPTION="Butter than web browsing and bookmarking."
 HOMEPAGE="https://github.com/raxsavvy/margarine"
@@ -46,4 +45,8 @@ python_install() {
 	doins conf/margarine.ini
 	doins conf/logging.ini
 	doins conf/pyrax.ini
+}
+
+python_test() {
+	nosetests || die
 }
