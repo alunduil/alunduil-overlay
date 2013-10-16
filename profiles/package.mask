@@ -13,7 +13,6 @@
 
 =net-libs/liblcfg-9999
 =net-libs/libemu-9999
-=net-analyzer/dionaea-9999
 
 =net-analyzer/httpry-9999
 
