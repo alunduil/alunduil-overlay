@@ -19,7 +19,6 @@
 
 =dev-python/pycallgraph-9999
 =dev-python/pyxenstore-9999
-=dev-python/fuzzywuzzy-9999
 
 # pika-0.9.13 shouldn't be used
 =dev-python/pika-0.9.13
