@@ -9,7 +9,7 @@ inherit distutils-r1
 
 DESCRIPTION="Pika Python AMQP Client Library"
 HOMEPAGE="https://github.com/pika"
-SRC_URI="https://pypi.python.org/packages/source/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="MPL-1.1 GPL-2"
 SLOT="0"
