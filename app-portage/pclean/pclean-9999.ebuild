@@ -25,9 +25,7 @@ DEPEND="
 		dev-python/mock[${PYTHON_USEDEP}]
 		)
 	"
-RDEPEND="
-	${DEPEND}
-	"
+RDEPEND=""
 
 python_test() {
 	nosetests || die
