@@ -1,6 +1,5 @@
 # All live ebuilds provided by this overlay.
 =sys-kernel/upkern-9999
-=app-admin/pmort-9999
 =app-portage/pclean-9999
 
 =app-emulation/openstack-guest-agents-9999
