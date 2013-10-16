@@ -11,11 +11,6 @@
 =sec-policy/selinux-logsentry-9999
 =sec-policy/selinux-tmpwatch-9999
 
-=net-libs/liblcfg-9999
-=net-libs/libemu-9999
-
-=net-analyzer/httpry-9999
-
 =dev-python/pycallgraph-9999
 =dev-python/pyxenstore-9999
 
