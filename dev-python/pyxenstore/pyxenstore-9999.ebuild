@@ -2,12 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
-PYTHON_DEPEND="2"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS=""
+EAPI=5
+PYTHON_COMPAT=( python2_7 )
 
-inherit distutils bzr
+inherit distutils-r1 bzr
 
 EBZR_REPO_URI="https://code.launchpad.net/~cbehrens/pyxenstore/trunk"
 
