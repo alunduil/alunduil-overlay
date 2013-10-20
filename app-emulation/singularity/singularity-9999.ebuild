@@ -2,12 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
-PYTHON_DEPEND="2"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS=""
+EAPI=5
+PYTHON_COMPAT=( python2_7 )
 
-inherit git-2 distutils eutils
+inherit git-2 distutils-r1 eutils
 
 EGIT_REPO_URI="git://github.com/alunduil/singularity.git"
 
@@ -21,7 +19,8 @@ KEYWORDS=""
 IUSE="selinux xen"
 
 DEPEND=""
-RDEPEND="${DEPEND}
+RDEPEND="
+	${DEPEND}
 	!app-emulation/openstack-guest-agents
 	dev-python/python-daemon
 	dev-python/pycrypto
