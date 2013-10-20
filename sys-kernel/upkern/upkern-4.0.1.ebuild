@@ -1,11 +1,11 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
 
-inherit distutils-r1
+inherit distutils-r1 vcs-snapshot
 
 DESCRIPTION="Automated Gentoo kernel updater."
 HOMEPAGE="https://github.com/alunduil/upkern"
@@ -23,5 +23,3 @@ RDEPEND="
 	module-rebuild? ( sys-kernel/module-rebuild )
 	initrd? ( sys-kernel/dracut )
 	"
-
-RESTRICT="mirror"
