@@ -10,5 +10,6 @@
 	<use>
 		<flag name="lvm">Require appropriate holland plugins for LVM snapshot backups</flag>
 		<flag name="mysqldump">Require appropriate holland plugins for mysqldump backups</flag>
+		<flag name="xtrabackup">Rquire appropriate holland plugins for xtrabackup support</flag>
 	</use>
 </pkgmetadata>
