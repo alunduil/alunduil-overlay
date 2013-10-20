@@ -26,7 +26,6 @@ DEPEND="
 		)
 	"
 RDEPEND="
-	${DEPEND}
 	dev-python/flask[${PYTHON_USEDEP}]
 	=dev-python/pika-0.9.12[${PYTHON_USEDEP}]
 	dev-python/pymongo[${PYTHON_USEDEP}]
