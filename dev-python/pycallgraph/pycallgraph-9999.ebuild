@@ -2,12 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
-PYTHON_DEPEND="2"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS=""
+EAPI=5
+PYTHON_COMPAT=( python2_7 )
 
-inherit git-2 distutils
+inherit git-2 distutils-r1
 
 EGIT_REPO_URI="git://github.com/gak/pycallgraph.git"
 
