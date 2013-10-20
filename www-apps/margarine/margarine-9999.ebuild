@@ -27,7 +27,7 @@ DEPEND="
 	"
 RDEPEND="
 	dev-python/flask[${PYTHON_USEDEP}]
-	=dev-python/pika-0.9.12[${PYTHON_USEDEP}]
+	~dev-python/pika-0.9.12[${PYTHON_USEDEP}]
 	dev-python/pymongo[${PYTHON_USEDEP}]
 	=dev-python/redis-py-2.7.6[${PYTHON_USEDEP}]
 	dev-python/pyrax[${PYTHON_USEDEP}]
