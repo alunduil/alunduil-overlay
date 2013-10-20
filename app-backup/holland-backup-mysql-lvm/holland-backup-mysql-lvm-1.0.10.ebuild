@@ -25,7 +25,7 @@ RDEPEND="
 	app-backup/holland-lib-common
 	app-backup/holland-lib-mysql
 	app-backup/holland-lib-lvm
-	app-backup/holland-lib-mysqldump
+	app-backup/holland-backup-mysqldump
 	"
 PDEPEND="app-backup/holland[examples=]"
 
