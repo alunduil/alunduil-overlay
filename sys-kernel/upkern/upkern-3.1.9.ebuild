@@ -27,7 +27,7 @@ RESTRICT="mirror"
 
 src_install() {
 	distutils_src_install
-	
+
 	rm "${D}"/usr/bin/upkern.py || die "rm failed"
 	rm "${D}"/usr/COPYING || die "rm failed"
 	rmdir "${D}"/usr/bin
