@@ -13,7 +13,7 @@ SRC_URI="http://hollandbackup.org/releases/stable/${PV%.*}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="doc examples +mysql postgres sqlite"
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
