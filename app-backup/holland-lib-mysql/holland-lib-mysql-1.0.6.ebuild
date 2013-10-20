@@ -2,16 +2,17 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="3"
+EAPI=5
+PYTHON_COMPAT=( python2_7 )
 
-inherit distutils
+inherit distutils-r1
 
 DESCRIPTION="Provides convenience methods for MySQL with Holland."
 HOMEPAGE="http://hollandbackup.org/"
 
 IUSE=""
 
-KEYWORDS="-* amd64 x86"
+KEYWORDS="amd64 x86"
 LICENSE="GPL-2"
 SLOT="0"
 
@@ -25,7 +26,8 @@ DEPEND="
 	app-backup/holland
 	dev-python/mysql-python
 	"
-RDEPEND="${DEPEND}
+RDEPEND="
+	${DEPEND}
 	"
 PDEPEND=""
 
