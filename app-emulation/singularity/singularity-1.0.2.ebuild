@@ -2,12 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
-PYTHON_DEPEND="2"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS=""
+EAPI=5
+PYTHON_COMPAT=( python2_7 )
 
-inherit distutils eutils vcs-snapshot
+inherit distutils-r1 eutils vcs-snapshot
 
 DESCRIPTION="Openstack Guest Agent"
 HOMEPAGE="http://www.alunduil.com/projects/singularity"
@@ -21,7 +19,8 @@ IUSE="selinux xen"
 RESTRICT="mirror"
 
 DEPEND=""
-RDEPEND="${DEPEND}
+RDEPEND="
+	${DEPEND}
 	!app-emulation/openstack-guest-agents
 	dev-python/python-daemon
 	dev-python/pycrypto
