@@ -2,40 +2,38 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=5
+PYTHON_COMPAT=( python2_6 python2_7 )
 
-SUPPORT_PYTHON_ABIS="2.7 2.6"
-
-inherit distutils
+inherit distutils-r1
 
 DESCRIPTION="Automated Gentoo kernel updater."
-HOMEPAGE="http://www.alunduil.com/programs/upkern/"
+HOMEPAGE="https://github.com/alunduil/upkern"
+SRC_URI="https://github.com/alunduil/${PN}/tarball/${PV} -> ${P}.tar.gz"
 
-IUSE="module-rebuild"
-
-KEYWORDS="-* amd64 x86"
 LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS="amd64 x86"
+IUSE="module-rebuild"
 
-SRC_URI="http://www.alunduil.com/svn/distfiles/upkern/${P}.tar.gz"
-
-DEPEND="dev-lang/python
+DEPEND=""
+RDEPEND="
+	${DEPEND}
 	>=app-portage/gentoolkit-0.3
+	module-rebuild? ( sys-kernel/module-rebuild )
 	"
-RDEPEND="${DEPEND}"
-PDEPEND="module-rebuild? ( sys-kernel/module-rebuild )"
 
 RESTRICT="mirror"
-PROPERTIES=""
 
 src_install() {
 	distutils_src_install
-	rm "${D}"/usr/bin/upkern.py
-	rm "${D}"/usr/COPYING
+	
+	rm "${D}"/usr/bin/upkern.py || die "rm failed"
+	rm "${D}"/usr/COPYING || die "rm failed"
 	rmdir "${D}"/usr/bin
 
-	doman "${D}"/usr/doc/man/upkern.8 || die "doman upkern.8 failed"
+	doman "${D}"/usr/doc/man/upkern.8
 	rmdir "${D}"/usr/doc
 
-	newsbin upkern.py upkern || die "newsbin upkern.py upkern failed"
+	newsbin upkern.py upkern
 }
