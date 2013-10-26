@@ -7,7 +7,7 @@ PYTHON_COMPAT=( python2_7 python3_2 python3_3 )
 
 inherit distutils-r1 git-2
 
-EGIT_REPO_URI="git://github.com/alunduil/upkern.git"
+EGIT_REPO_URI="git://github.com/alunduil/crumbs.git"
 
 DESCRIPTION="Generalized all-in-one parameters module"
 HOMEPAGE="https://github.com/alunduil/crumbs"
