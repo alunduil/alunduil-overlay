@@ -5,27 +5,25 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
 
-inherit eutils git-2 distutils-r1
-
-EGIT_REPO_URI="git://github.com/alunduil/singularity.git"
+inherit eutils distutils-r1 vcs-snapshot
 
 DESCRIPTION="Openstack Guest Agent"
-HOMEPAGE="http://www.alunduil.com/projects/singularity"
-SRC_URI=""
+HOMEPAGE="https://github.com/alunduil/singularity"
+SRC_URI="https://github.com/alunduil/${PN}/tarball/${PV} -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64"
 IUSE="selinux xen"
 
 DEPEND=""
 RDEPEND="
 	${DEPEND}
 	!app-emulation/openstack-guest-agents
-	dev-python/python-daemon
 	dev-python/pycrypto
-	sys-apps/net-tools
+	dev-python/python-daemon
 	sys-apps/iproute2
+	sys-apps/net-tools
 	sys-apps/shadow
 	xen? ( app-emulation/xen-tools )
 	selinux? ( sec-policy/selinux-openstack-guest-agent )
