@@ -22,3 +22,20 @@ RDEPEND="
 	dev-python/pyyaml
 	dev-python/libcloud
 	"
+
+python_install() {
+	distutils-r1_python_install "${@}"
+
+	keepdir /etc/salt
+	insinto /etc/salt
+
+	doins conf/cloud
+	doins conf/cloud.profiles
+
+	keepdir /etc/salt/cloud.profiles.d
+	insinto /etc/salt/cloud.profiles.d
+
+	newins conf/EC2-us-east-1.profiles EC2-us-east-1.conf
+	newins conf/EC2-us-west-1.profiles EC2-us-west-1.conf
+	newins conf/EC2-us-west-2.profiles EC2-us-west-2.conf
+}
