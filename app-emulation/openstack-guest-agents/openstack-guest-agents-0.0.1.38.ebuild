@@ -2,19 +2,17 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
+EAPI=5
 
-inherit autotools eutils git-2
-
-EGIT_REPO_URI="https://github.com/rackerlabs/openstack-guest-agents-unix.git"
+inherit eutils vcs-snapshot
 
 DESCRIPTION="Openstack Unix Guest Agent"
 HOMEPAGE="https://github.com/rackerlabs/openstack-guest-agents-unix"
-SRC_URI=""
+SRC_URI="https://github.com/rackerlabs/${PN}-unix/tarball/v${PV} -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND="
@@ -24,7 +22,7 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 src_install() {
-	emake DESTDIR="${D}" install || die "Install failed"
+	emake DESTDIR="${D}" install
 
-	doinitd scripts/gentoo/nova-agent || die "doinitd failed"
+	doinitd scripts/gentoo/nova-agent
 }
