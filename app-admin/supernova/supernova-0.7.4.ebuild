@@ -18,6 +18,7 @@ IUSE=""
 
 COMMON_DEPEND="
 	>dev-python/keyring-0.9.2[${PYTHON_USEDEP}]
+	<dev-python/keyring-2[${PYTHON_USEDEP}]
 	"
 DEPEND="
 	${COMMON_DEPEND}
