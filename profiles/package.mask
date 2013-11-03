@@ -3,9 +3,8 @@
 =app-portage/pclean-9999
 
 =app-emulation/openstack-guest-agents-9999
-=app-emulation/singularity-9999
-=app-emulation/cloud-init-9999
 =sec-policy/selinux-openstack-guest-agent-9999
+=app-emulation/singularity-9999
 
 # Live SELinux ebuilds
 =sec-policy/selinux-logsentry-9999
