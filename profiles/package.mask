@@ -3,6 +3,7 @@
 =app-portage/pclean-9999
 
 =app-emulation/openstack-guest-agents-9999
+=app-emulation/openstack-guest-agents-0.0.1.38
 =sec-policy/selinux-openstack-guest-agent-9999
 =app-emulation/singularity-9999
 
