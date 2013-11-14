@@ -21,6 +21,7 @@ RDEPEND="
 	app-admin/salt
 	dev-python/pyyaml
 	dev-python/libcloud
+	net-misc/sshpass
 	"
 
 python_install() {
