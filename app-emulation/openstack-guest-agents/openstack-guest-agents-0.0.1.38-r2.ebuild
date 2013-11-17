@@ -17,6 +17,7 @@ IUSE=""
 
 DEPEND="
 	dev-util/patchelf
+	dev-python/pycrypto
 	dev-python/pyxenstore
 	"
 RDEPEND="${DEPEND}"
