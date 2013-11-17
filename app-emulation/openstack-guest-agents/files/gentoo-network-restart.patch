@@ -1,0 +1,33 @@
+diff --git a/commands/gentoo/network.py b/commands/gentoo/network.py
+index d7c2f2d..6bbb391 100644
+--- a/commands/gentoo/network.py
++++ b/commands/gentoo/network.py
+@@ -101,8 +101,10 @@ def configure_network(hostname, interfaces):
+ 
+     # Restart network
+     for ifname in ifaces:
+-        scriptpath = '/etc/init.d/net.%s' % ifname
++        if not _clean_assigned_ip(ifname):
++            return (500, "Couldn't flush network %s: %d" % (ifname, status))
+ 
++        scriptpath = '/etc/init.d/net.%s' % ifname
+         if not os.path.exists(scriptpath):
+             # Gentoo won't create these symlinks automatically
+             os.symlink('net.lo', scriptpath)
+@@ -253,3 +255,16 @@ def get_interface_files(interfaces, version):
+         data, ifaces = _confd_net_file_legacy(interfaces)
+ 
+     return {'net': data}
++
++
++def _clean_assigned_ip(ifname):
++    logging.debug("cleaning up current ip assigned to %s" % ifname)
++    ip_proc = subprocess.Popen(["ip", "address", "flush", "dev", ifname],
++                                stdin=pipe, stdout=pipe, stderr=pipe, env={})
++    logging.debug('waiting on pid %d' % ip_proc.pid)
++    status = os.waitpid(ip_proc.pid, 0)[1]
++    logging.debug('status = %d' % status)
++
++    if status != 0:
++        return False
++    return True
