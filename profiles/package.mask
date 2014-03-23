@@ -1,5 +1,4 @@
 # All live ebuilds provided by this overlay.
-=sys-kernel/upkern-9999
 =app-portage/pclean-9999
 
 =app-emulation/openstack-guest-agents-9999
@@ -17,3 +16,6 @@
 
 # pika-0.9.13 shouldn't be used
 =dev-python/pika-0.9.13
+
+# Replaced with genkernel practices.
+sys-kernel/upkern
