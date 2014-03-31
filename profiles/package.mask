@@ -16,6 +16,3 @@
 
 # pika-0.9.13 shouldn't be used
 =dev-python/pika-0.9.13
-
-# Replaced with genkernel practices.
-sys-kernel/upkern
