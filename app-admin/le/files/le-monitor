@@ -18,7 +18,7 @@ start() {
 	eend $?
 }
 
-stop() {
+stop() { 
 	ebegin "Stopping ${SVCNAME}"
 	start-stop-daemon --stop --interpreted \
 		--exec "${LE_MONITOR_BINARY}" \
