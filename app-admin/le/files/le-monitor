@@ -4,13 +4,13 @@
 # $Header: $
 
 LE_MONITOR_LOGFILE=${LE_MONITOR_LOGFILE:-/var/log/${SVCNAME}.log}
-LE_MONITOR_PIDFILE=${LE_MONITOR_PIDFILE:-/run/${SVCNAME}.pid}
+LE_MONITOR_PIDFILE=${LE_MONITOR_PIDFILE:-/var/run/logentries.pid}
 LE_MONITOR_BINARY=${LE_MONITOR_BINARY:-/usr/bin/le-monitor}
 LE_MONITOR_OPTS=${LE_MONITOR_OPTS:-}
 
 start() {
 	ebegin "Starting ${SVCNAME}"
-	start-stop-daemon --start --background \
+	start-stop-daemon --start --interpreted \
 		--exec "${LE_MONITOR_BINARY}" \
 		--pidfile "${LE_MONITOR_PIDFILE}" \
 		--stdout "${LE_MONITOR_LOGFILE}" \
@@ -20,7 +20,7 @@ start() {
 
 stop() {
 	ebegin "Stopping ${SVCNAME}"
-	start-stop-daemon --stop \
+	start-stop-daemon --stop --interpreted \
 		--exec "${LE_MONITOR_BINARY}" \
 		--pidfile "${LE_MONITOR_PIDFILE}"
 	eend $?
