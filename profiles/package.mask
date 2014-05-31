@@ -14,5 +14,7 @@
 =dev-python/pyxenstore-9999
 =dev-python/crumbs-9999
 
+=app-admin/fleet-9999
+
 # pika-0.9.13 shouldn't be used
 =dev-python/pika-0.9.13
