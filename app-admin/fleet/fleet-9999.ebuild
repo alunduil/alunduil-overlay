@@ -14,7 +14,7 @@ if [[ "${PV}" == 9999 ]]; then
 	KEYWORDS="~amd64"
 else
 	CROS_WORKON_COMMIT="75088f5846670db7d5bc26d25e655712f5280f42"  # tag v0.4.0
-	KEYWORDS="amd64"
+	KEYWORDS="~amd64"
 fi
 
 inherit cros-workon systemd
