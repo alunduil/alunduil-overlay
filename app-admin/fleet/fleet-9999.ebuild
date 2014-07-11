@@ -6,7 +6,7 @@ EAPI=5
 
 inherit git-2 systemd
 
-EGIT_REPO_URL="git://github.com/coreos/fleet.git"
+EGIT_REPO_URI="git://github.com/coreos/fleet.git"
 
 DESCRIPTION="A Distributed init System"
 HOMEPAGE="https://github.com/coreos/fleet"
