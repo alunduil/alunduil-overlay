@@ -4,21 +4,18 @@
 
 EAPI=5
 
-inherit git-2 systemd
-
-EGIT_REPO_URL="git://github.com/coreos/fleet.git"
+inherit systemd vcs-snapshot
 
 DESCRIPTION="A Distributed init System"
 HOMEPAGE="https://github.com/coreos/fleet"
-SRC_URI=""
+SRC_URI="https://github.com/coreos/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND=">=dev-lang/go-1.2"
-RDEPEND=""
 
 src_compile() {
 	./build || die
