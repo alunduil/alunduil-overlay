@@ -1,4 +1,0 @@
-=app-emulation/openstack-guest-agents-0.0.1.38
-
-# pika-0.9.13 shouldn't be used
-=dev-python/pika-0.9.13
