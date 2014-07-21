@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=5
-PYTHON_COMPAT=( python2_6 python2_7 python3_3 )
+PYTHON_COMPAT=( python2_7 )
 
 inherit distutils-r1
 
@@ -22,5 +22,5 @@ DEPEND="${PYTHON_DEPS}"
 RDEPEND="
 	${PYTHON_DEPS}
 	>=dev-python/keyring-0.9.2[${PYTHON_USEDEP}]
-	dev-python/rackspace-novaclient
+	dev-python/rackspace-novaclient[${PYTHON_USEDEP}]
 "
