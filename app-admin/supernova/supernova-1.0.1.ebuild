@@ -14,7 +14,7 @@ SRC_URI="https://github.com/major/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="doc examples"
+IUSE="bash-completion doc examples"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
@@ -38,5 +38,5 @@ python_install_all() {
 
 	distutils-r1_python_install_all
 
-	newbashcomp "${S}"/contrib/${PN}-completion.bash ${PN}
+	use bash-completion && newbashcomp "${S}"/contrib/${PN}-completion.bash ${PN}
 }
