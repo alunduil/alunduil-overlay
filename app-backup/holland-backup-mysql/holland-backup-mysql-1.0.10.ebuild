@@ -11,10 +11,11 @@ SRC_URI=""
 LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+mysqldump"
+IUSE="+mysqldump mysqlhotcopy"
 
 CDEPEND="
 	mysqldump? ( app-backup/holland-backup-mysqldump )
+	mysqlhotcopy? ( app-backup/holland-backup-mysqlhotcopy )
 "
 DEPEND="
 	${CDEPEND}
