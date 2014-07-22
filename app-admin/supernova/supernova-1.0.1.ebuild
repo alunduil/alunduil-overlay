@@ -21,7 +21,7 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 DEPEND="
 	${PYTHON_DEPS}
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	"
+"
 RDEPEND="
 	${PYTHON_DEPS}
 	>=dev-python/keyring-0.9.2[${PYTHON_USEDEP}]
@@ -29,14 +29,14 @@ RDEPEND="
 "
 
 python_compile_all() {
-	use doc && emake -C "${S}"/docs html
+	use doc && emake -C docs html
 }
 
 python_install_all() {
-	use doc && local HTML_DOCS=( "${S}"/docs/_build/html/. )
-	use examples && local EXAMPLES=( "${S}"/example_configs/. )
+	use doc && local HTML_DOCS=( docs/_build/html/. )
+	use examples && local EXAMPLES=( example_configs/. )
 
 	distutils-r1_python_install_all
 
-	use bash-completion && newbashcomp "${S}"/contrib/${PN}-completion.bash ${PN}
+	use bash-completion && newbashcomp contrib/${PN}-completion.bash ${PN}
 }
