@@ -2,14 +2,12 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<email>alunduil@alunduil.com</email>
+		<email>alunduil@gentoo.org</email>
 		<name>Alex Brandt</name>
 	</maintainer>
 	<longdescription lang="en">
 	</longdescription>
 	<use>
-		<flag name="lvm">Require appropriate holland plugins for LVM snapshot backups</flag>
-		<flag name="mysqldump">Require appropriate holland plugins for mysqldump backups</flag>
-		<flag name="xtrabackup">Rquire appropriate holland plugins for xtrabackup support</flag>
+		<flag name="mysqldump">Install Holland mysqldump Plugin</flag>
 	</use>
 </pkgmetadata>
