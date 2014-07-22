@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -7,8 +7,8 @@ PYTHON_COMPAT=( python2_7 )
 
 inherit distutils-r1
 
-DESCRIPTION="Backup Framework"
-HOMEPAGE="http://hollandbackup.org/"
+DESCRIPTION="Holland Core Plugins"
+HOMEPAGE="http://www.hollandbackup.org/"
 SRC_URI="http://hollandbackup.org/releases/stable/${PV%.*}/${P}.tar.gz"
 
 LICENSE="BSD"
@@ -16,53 +16,48 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc examples +mysql postgres sqlite"
 
-DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
-RDEPEND="
-	sqlite? ( >=app-backup/holland-backup-sqlite-1.0.10 )
-	postgres? ( >=app-backup/holland-backup-pgdump-1.0.10 )
-	mysql? ( >=virtual/holland-backup-mysql-1.0.10 )
-	examples? (
-	  >=app-backup/holland-backup-example-1.0.10
-	  >=app-backup/holland-backup-random-1.0.10
-	  )
-	"
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
-python_install() {
-	distutils-r1_python_install
+CDEPEND="
+	mysql? ( =app-backup/holland-backup-mysql-${PV}[${PYTHON_USEDEP}] )
+	postgres? ( =app-backup/holland-backup-pgdump-${PV}[${PYTHON_USEDEP}] )
+	sqlite? ( =app-backup/holland-backup-sqlite-${PV}[${PYTHON_USEDEP}] )
+	examples? (
+		=app-backup/holland-backup-example-${PV}[${PYTHON_USEDEP}]
+		=app-backup/holland-backup-random-${PV}[${PYTHON_USEDEP}]
+	)
+"
+DEPEND="
+	${PYTHON_DEPS}
+	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+	${CDEPEND}
+"
+RDEPEND="
+	${PYTHON_DEPS}
+	${CDEPEND}
+"
+
+python_compile_all() {
+	use doc && emake -C docs html
+}
+
+python_install_all() {
+	use doc && local DOCS=( README config/README config/providers/README docs/man/README docs/man/holland.rst )
+	use doc && local HTML_DOCS=( docs/build/html/. )
+
+	distutils-r1_python_install_all
 
 	keepdir /var/log/holland
 
 	keepdir /etc/holland
+	keepdir /etc/holland/backupsets
+	keepdir /etc/holland/providers
+
 	insinto /etc/holland
 	doins config/holland.conf
 
-	keepdir /etc/holland/backupsets
 	insinto /etc/holland/backupsets
 	doins config/backupsets/default.conf
 
-	if use examples; then
-		dodir /etc/holland/backupsets/examples
-		doins config/backupsets/default.conf
-	fi
-
 	doman docs/man/holland.1
-
-	if use doc; then
-		dodoc docs/man/README
-	fi
-
-	keepdir /etc/holland/providers
-}
-
-pkg_postinst() {
-	if use mysql; then
-		elog "It is recommended to setup a ~/.my.cnf configuration for the user that holland"
-		elog "will be running as.  This will remove the need to ocnfigure a username and "
-		elog "password in the holland configuration itself."
-		elog ""
-		elog "The structure of the .my.cnf file should resemble the following:"
-		elog "[client]"
-		elog "user=root"
-		elog "password=ROOT_MYSQL_PASSWORD"
-	fi
 }
