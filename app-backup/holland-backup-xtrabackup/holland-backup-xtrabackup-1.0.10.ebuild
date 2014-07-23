@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -7,8 +7,8 @@ PYTHON_COMPAT=( python2_7 )
 
 inherit distutils-r1
 
-DESCRIPTION="Holland plugin for xtrabackup"
-HOMEPAGE="http://hollandbackup.org/"
+DESCRIPTION="Holland xtrabackup Plugin"
+HOMEPAGE="http://www.hollandbackup.org/"
 
 MY_P="${P%%-*}-${P##*-}"
 
@@ -17,28 +17,26 @@ SRC_URI="http://hollandbackup.org/releases/stable/${PV%.*}/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples"
+IUSE=""
 
-DEPEND=""
-RDEPEND="
-	${DEPEND}
-	app-backup/holland-lib-common
-	app-backup/holland-lib-mysql
-	"
-PDEPEND="app-backup/holland[examples=]"
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
+
+DEPEND="${PYTHON_DEPS}"
+RDEPEND="${PYTHON_DEPS}"
+PDEPEND="=app-backup/holland-${PV}[${PYTHON_USEDEP}]"
 
 S="${WORKDIR}/${MY_P}/plugins/${PN//-/.}"
 
-python_install() {
-	distutils-r1_python_install
+python_install_all() {
+	distutils-r1_python_install_all
 
-	cd "../.." || die
+	keepdir /etc/holland
+	keepdir /etc/holland/backupsets
+	keepdir /etc/holland/providers
+
+	insinto /etc/holland/backupsets
+	doins "${S}"/../../config/backupsets/examples/${PN##*-}.conf
 
 	insinto /etc/holland/providers
-	doins config/providers/xtrabackup.conf
-
-	if use examples; then
-		insinto /etc/holland/backupsets/examples
-		doins config/backupsets/examples/xtrabackup.conf
-	fi
+	doins "${S}"/../../config/providers/${PN##*-}.conf
 }
