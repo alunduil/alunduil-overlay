@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python2_7 )
 inherit distutils-r1
 
 DESCRIPTION="Holland MySQL"
-HOMEPAGE="http://www.hollandbackup.org/"
+HOMEPAGE=""
 SRC_URI=""
 
 LICENSE=""

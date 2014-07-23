@@ -19,7 +19,7 @@ IUSE="doc examples +mysql postgres sqlite"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 CDEPEND="
-	mysql? ( =app-backup/holland-backup-mysql-${PV}[${PYTHON_USEDEP}] )
+	mysql? ( =virtual/holland-backup-mysql-${PV}[${PYTHON_USEDEP}] )
 	postgres? ( =app-backup/holland-backup-pgdump-${PV}[${PYTHON_USEDEP}] )
 	sqlite? ( =app-backup/holland-backup-sqlite-${PV}[${PYTHON_USEDEP}] )
 	examples? (

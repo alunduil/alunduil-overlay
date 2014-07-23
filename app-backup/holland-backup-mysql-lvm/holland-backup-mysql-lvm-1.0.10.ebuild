@@ -25,8 +25,8 @@ DEPEND="${PYTHON_DEPS}"
 RDEPEND="${PYTHON_DEPS}"
 PDEPEND="
 	=app-backup/holland-${PV}[${PYTHON_USEDEP}]
-	=app-backup/holland-backup-mysql-${PV}[${PYTHON_USEDEP}]
-	=app-backup/holland-backup-mysql-${PV}[mysqldump]
+	=virtual/holland-backup-mysql-${PV}[${PYTHON_USEDEP}]
+	=virtual/holland-backup-mysql-${PV}[mysqldump]
 "
 
 S="${WORKDIR}/${MY_P}/plugins/${PN//-/.}"
