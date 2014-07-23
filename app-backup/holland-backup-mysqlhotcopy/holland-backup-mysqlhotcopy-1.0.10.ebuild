@@ -17,7 +17,7 @@ SRC_URI="http://hollandbackup.org/releases/stable/${PV%.*}/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="doc"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 

@@ -40,8 +40,10 @@ python_install_all() {
 	keepdir /etc/holland/providers
 
 	insinto /etc/holland/backupsets
-	doins "${S}"/../../config/backupsets/examples/${PN##*-}.conf
+	doins "${S}"/../../config/backupsets/examples/mysql-lvm.conf
+	doins "${S}"/../../config/backupsets/examples/mysqldump-lvm.conf
 
 	insinto /etc/holland/providers
-	doins "${S}"/../../config/providers/${PN##*-}.conf
+	doins "${S}"/../../config/providers/mysql-lvm.conf
+	doins "${S}"/../../config/providers/mysqldump-lvm.conf
 }
