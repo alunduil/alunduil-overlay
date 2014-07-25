@@ -22,7 +22,10 @@ IUSE=""
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 DEPEND="${PYTHON_DEPS}"
-RDEPEND="${PYTHON_DEPS}"
+RDEPEND="
+	${PYTHON_DEPS}
+	=app-backup/holland-lib-common-${PV}[${PYTHON_USEDEP}]
+"
 PDEPEND="=app-backup/holland-${PV}[${PYTHON_USEDEP}]"
 
 S="${WORKDIR}/${MY_P}/plugins/${PN//-/.}"

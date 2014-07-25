@@ -18,7 +18,12 @@ IUSE="doc examples +mysql postgres sqlite"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
-CDEPEND="
+DEPEND="
+	${PYTHON_DEPS}
+	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+"
+RDEPEND="
+	${PYTHON_DEPS}
 	mysql? ( =virtual/holland-backup-mysql-${PV}[${PYTHON_USEDEP}] )
 	postgres? ( =app-backup/holland-backup-pgdump-${PV}[${PYTHON_USEDEP}] )
 	sqlite? ( =app-backup/holland-backup-sqlite-${PV}[${PYTHON_USEDEP}] )
@@ -26,15 +31,6 @@ CDEPEND="
 		=app-backup/holland-backup-example-${PV}[${PYTHON_USEDEP}]
 		=app-backup/holland-backup-random-${PV}[${PYTHON_USEDEP}]
 	)
-"
-DEPEND="
-	${PYTHON_DEPS}
-	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	${CDEPEND}
-"
-RDEPEND="
-	${PYTHON_DEPS}
-	${CDEPEND}
 "
 
 python_compile_all() {

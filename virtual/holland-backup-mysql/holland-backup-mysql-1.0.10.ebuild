@@ -19,9 +19,9 @@ IUSE="lvm +mysqldump mysqlhotcopy"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 CDEPEND="
-	lvm? ( app-backup/holland-backup-mysql-lvm[${PYTHON_USEDEP}] )
-	mysqldump? ( app-backup/holland-backup-mysqldump[${PYTHON_USEDEP}] )
-	mysqlhotcopy? ( app-backup/holland-backup-mysqlhotcopy[${PYTHON_USEDEP}] )
+	lvm? ( =app-backup/holland-backup-mysql-lvm-${PV}[${PYTHON_USEDEP}] )
+	mysqldump? ( =app-backup/holland-backup-mysqldump-${PV}[${PYTHON_USEDEP}] )
+	mysqlhotcopy? ( =app-backup/holland-backup-mysqlhotcopy-${PV}[${PYTHON_USEDEP}] )
 "
 DEPEND="
 	${CDEPEND}
