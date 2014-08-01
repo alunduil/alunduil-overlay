@@ -1,4 +1,4 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,18 +16,24 @@ SRC_URI=""
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS=""
-IUSE="doc test"
+IUSE="inotify test"
+
+REQUIRED_USE="${PTYHON_REQUIRED_USE}"
 
 DEPEND="
+	${PYTHON_DEPS}
 	test? (
-		dev-python/nose[coverage]
-		dev-python/mock
-		)
-	"
+		dev-python/coverage[${PYTHON_USEDEP}]
+		dev-python/mock[${PYTHON_USEDEP}]
+		dev-python/nose[${PYTHON_USEDEP}]
+	)
+"
 RDEPEND="
-	virtual/python-argparse
-	"
+	${PYTHON_DEPS}
+	inotify? ( dev-python/pyinotify[${PYTHON_USEDEP}] )
+"
 
 python_test() {
-	nosetests || die
+	flake8 || die 'flake8'
+	nosetests || die 'nosetests'
 }
