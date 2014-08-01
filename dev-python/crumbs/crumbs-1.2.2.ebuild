@@ -5,17 +5,15 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 python3_2 python3_3 )
 
-inherit distutils-r1 git-2
-
-EGIT_REPO_URI="git://github.com/alunduil/crumbs.git"
+inherit distutils-r1
 
 DESCRIPTION="Generalized all-in-one parameters module"
 HOMEPAGE="https://github.com/alunduil/crumbs"
-SRC_URI=""
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64"
 IUSE="inotify test"
 
 REQUIRED_USE="${PTYHON_REQUIRED_USE}"
