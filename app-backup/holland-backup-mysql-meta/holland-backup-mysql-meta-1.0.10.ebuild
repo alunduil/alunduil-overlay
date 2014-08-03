@@ -8,10 +8,10 @@ PYTHON_COMPAT=( python2_7 )
 inherit python-r1
 
 DESCRIPTION="Holland MySQL"
-HOMEPAGE=""
+HOMEPAGE="http://www.hollandbackup.org/"
 SRC_URI=""
 
-LICENSE=""
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="lvm +mysqldump mysqlhotcopy"
@@ -29,3 +29,4 @@ DEPEND="
 RDEPEND="
 	${CDEPEND}
 "
+PDEPEND="=app-backup/holland-${PV}[${PYTHON_USEDEP}]"
