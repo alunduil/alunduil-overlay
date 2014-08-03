@@ -24,7 +24,7 @@ DEPEND="
 "
 RDEPEND="
 	${PYTHON_DEPS}
-	mysql? ( =virtual/holland-backup-mysql-${PV}[${PYTHON_USEDEP}] )
+	mysql? ( =app-backup/holland-backup-mysql-meta-${PV}[${PYTHON_USEDEP}] )
 	postgres? ( =app-backup/holland-backup-pgdump-${PV}[${PYTHON_USEDEP}] )
 	sqlite? ( =app-backup/holland-backup-sqlite-${PV}[${PYTHON_USEDEP}] )
 	examples? (
