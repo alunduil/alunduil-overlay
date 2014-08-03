@@ -15,7 +15,7 @@ SRC_URI=""
 
 LICENSE="MPL-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
 IUSE="doc examples libev test tornado twisted"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
@@ -24,6 +24,7 @@ DEPEND="
 	${PYTHON_DEPS}
 	doc? (
 		dev-python/pyev[${PYTHON_USEDEP}]
+		dev-python/sphinx[${PYTHON_USEDEP}]
 		dev-python/twisted-core[${PYTHON_USEDEP}]
 		www-servers/tornado[${PYTHON_USEDEP}]
 	)

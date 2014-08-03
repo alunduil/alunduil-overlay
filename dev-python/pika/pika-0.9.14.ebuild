@@ -22,6 +22,7 @@ DEPEND="
 	${PYTHON_DEPS}
 	doc? (
 		dev-python/pyev[${PYTHON_USEDEP}]
+		dev-python/sphinx[${PYTHON_USEDEP}]
 		dev-python/twisted-core[${PYTHON_USEDEP}]
 		www-servers/tornado[${PYTHON_USEDEP}]
 	)
