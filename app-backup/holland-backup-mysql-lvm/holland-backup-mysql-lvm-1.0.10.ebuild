@@ -31,8 +31,8 @@ RDEPEND="
 "
 PDEPEND="
 	=app-backup/holland-${PV}[${PYTHON_USEDEP}]
-	=virtual/holland-backup-mysql-${PV}[${PYTHON_USEDEP}]
-	=virtual/holland-backup-mysql-${PV}[mysqldump]
+	=app-backup/holland-backup-mysql-meta-${PV}[${PYTHON_USEDEP}]
+	=app-backup/holland-backup-mysql-meta-${PV}[mysqldump]
 "
 
 S="${WORKDIR}/${MY_P}/plugins/${PN//-/.}"
