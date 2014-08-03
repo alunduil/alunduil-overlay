@@ -42,6 +42,13 @@ RDEPEND="
 	tornado? ( www-servers/tornado[${PYTHON_USEDEP}] )
 	twisted? ( dev-python/twisted-core[${PYTHON_USEDEP}] )
 "
+PDEPEND="
+	doc? (
+		dev-python/pika[libev]
+		dev-python/pika[tornado]
+		dev-python/pika[twisted]
+	)
+"
 
 python_compile_all() {
 	use doc && emake -C docs html
