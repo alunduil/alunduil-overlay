@@ -36,9 +36,6 @@ python_install_all() {
 
 	keepdir /etc/singularity
 
-	dodir /var/cache/singularity
-	dodir /var/run/singularity
-
 	insinto /etc/singularity
 	doins config/singularity.conf
 
