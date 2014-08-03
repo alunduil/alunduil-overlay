@@ -1,45 +1,46 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python2_7 python3_2 python3_3 )
+DISTUTILS_SINGLE_IMPL=TRUE
 
-inherit distutils-r1 eutils vcs-snapshot
+inherit distutils-r1 vcs-snapshot
 
-DESCRIPTION="Openstack Guest Agent"
-HOMEPAGE="http://www.alunduil.com/projects/singularity"
-SRC_URI="https://github.com/alunduil/${PN}/tarball/${PV} -> ${P}.tar.gz"
+DESCRIPTION="Alternative Openstack Guest Agent"
+HOMEPAGE="https://github.com/alunduil/singularity"
+SRC_URI="https://github.com/alunduil/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="amd64"
-IUSE="selinux xen"
+KEYWORDS="~amd64"
+IUSE="xen"
 
-RESTRICT="mirror"
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
-DEPEND=""
+DEPEND="${PYTHON_DEPS}"
 RDEPEND="
-	${DEPEND}
-	!app-emulation/openstack-guest-agents
-	dev-python/python-daemon
+	${PYTHON_DEPS}
+	!app-emulation/openstack-guest-agents-unix
 	dev-python/pycrypto
-	sys-apps/net-tools
+	dev-python/python-daemon
 	sys-apps/iproute2
+	sys-apps/net-tools
 	sys-apps/shadow
 	xen? ( app-emulation/xen-tools )
-	selinux? ( sec-policy/selinux-openstack-guest-agent )
-	"
+"
 
-src_install() {
-	distutils_src_install
+python_install_all() {
+	distutils-r1_python_install_all
 
 	keepdir /etc/singularity
+
+	dodir /var/cache/singularity
+	dodir /var/run/singularity
+
 	insinto /etc/singularity
-	newins config/singularity.conf singularity.conf
+	doins config/singularity.conf
 
 	newinitd config/init.gentoo singularity
-
-	dodir "/var/cache/singularity"
-	dodir "/var/run/singularity"
 }
