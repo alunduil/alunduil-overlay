@@ -45,7 +45,7 @@ DEPEND="
 RDEPEND="
 	${PYTHON_DEPS}
 	${CDEPEND}
-	virtual/syslog
+	virtual/logger
 "
 
 python_prepare_all() {
@@ -69,7 +69,7 @@ python_test() {
 
 python_install_all() {
 	distutils-r1_python_install_all
-	
+
 	doinitd "${S}"/sysvinit/gentoo/cloud-config
 	doinitd "${S}"/sysvinit/gentoo/cloud-final
 	doinitd "${S}"/sysvinit/gentoo/cloud-init
