@@ -6,7 +6,7 @@ EAPI=5
 PYTHON_COMPAT=( python2_7 )
 DISTUTILS_SINGLE_IMPL=TRUE
 
-inherit distutils-r1 eutils multilib
+inherit distutils-r1 eutils multilib systemd
 
 DESCRIPTION="Cloud instance initialization"
 HOMEPAGE="http://launchpad.net/cloud-init"
@@ -15,7 +15,7 @@ SRC_URI="http://launchpad.net/${PN}/trunk/${PV}/+download/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="syslog test"
+IUSE="test"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
@@ -45,13 +45,16 @@ DEPEND="
 RDEPEND="
 	${PYTHON_DEPS}
 	${CDEPEND}
+	virtual/syslog
 "
 
-PATCHES=( "${FILESDIR}"/${P}-tests-exclude.patch )
+python_prepare_all() {
+	local PATCHES=(
+		"${FILESDIR}"/${P}-tests-exclude.patch
+	)
 
-#python_prepare_all() {
-#	distutils-r_python_prepare_all
-#}
+	distutils-r1_python_prepare_all
+}
 
 python_test() {
 	# These tests are not broken but expect to locate an installed exe file
@@ -60,12 +63,21 @@ python_test() {
 	sed -e 's:test_hostname:_&:' \
 		-e 's:test_network_interfaces:_&:' \
 		-i tests/unittests/test_datasource/test_opennebula.py
-	emake test
+
+	nosetests tests/ || die 'nosetests'
 }
 
-python_install() {
-	distutils-r1_python_install
-	for svc in config final init init-local; do
-		newinitd "${WORKDIR}/${P}/sysvinit/gentoo/cloud-${svc}" "cloud-${svc}"
-	done
+python_install_all() {
+	distutils-r1_python_install_all
+	
+	doinitd "${S}"/sysvinit/gentoo/cloud-config
+	doinitd "${S}"/sysvinit/gentoo/cloud-final
+	doinitd "${S}"/sysvinit/gentoo/cloud-init
+	doinitd "${S}"/sysvinit/gentoo/cloud-init-local
+
+	systemd_dounit "${S}"/systemd/cloud-config.service
+	systemd_dounit "${S}"/systemd/cloud-config.target
+	systemd_dounit "${S}"/systemd/cloud-final.service
+	systemd_dounit "${S}"/systemd/cloud-init-local.service
+	systemd_dounit "${S}"/systemd/cloud-init.service
 }
