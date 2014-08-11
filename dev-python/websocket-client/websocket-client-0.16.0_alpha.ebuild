@@ -7,7 +7,7 @@ PYTHON_COMPAT=( python2_7 python3_3 )
 
 inherit distutils-r1
 
-DESCRIPTION="WebSocket client for python. hybi13 is supported."
+DESCRIPTION="WebSocket client for python. hybi13 is supported"
 HOMEPAGE="https://github.com/liris/websocket-client"
 
 MY_P="${P/_alpha/a}"
