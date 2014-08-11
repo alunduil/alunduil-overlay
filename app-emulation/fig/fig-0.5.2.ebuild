@@ -4,6 +4,7 @@
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
+DISTUTILS_SINGLE_IMPL=TRUE
 
 inherit distutils-r1 vcs-snapshot
 
@@ -40,6 +41,16 @@ RDEPEND="
 	${PYTHON_DEPS}
 	${CDEPEND}
 "
+
+python_prepare_all() {
+	ebegin 'patching setup.py'
+	sed \
+		-e 's/packages=find_packages(/&exclude=["tests.*", "tests"]/' \
+		-i setup.py || die 'sed'
+	eend $?
+
+	distutils-r1_python_prepare_all
+}
 
 python_test() {
 	flake8 fig || die 'flake8'
