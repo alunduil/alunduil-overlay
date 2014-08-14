@@ -17,8 +17,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-
 CDEPEND="
 	dev-python/cheetah[${PYTHON_USEDEP}]
 	dev-python/configobj[${PYTHON_USEDEP}]
@@ -30,7 +28,6 @@ CDEPEND="
 	dev-python/requests[${PYTHON_USEDEP}]
 "
 DEPEND="
-	${PYTHON_DEPS}
 	test? (
 		${CDEPEND}
 		>=dev-python/httpretty-0.7.1[${PYTHON_USEDEP}]
@@ -43,7 +40,6 @@ DEPEND="
 	)
 "
 RDEPEND="
-	${PYTHON_DEPS}
 	${CDEPEND}
 	virtual/logger
 "
@@ -60,7 +56,8 @@ python_test() {
 	# These tests are not broken but expect to locate an installed exe file
 	# other than where a gentoo system installs it;  (/bin/ip sought in /sbin)
 	# See cloudinit/sources/DataSourceOpenNebula.py for possible patching
-	sed -e 's:test_hostname:_&:' \
+	sed \
+		-e 's:test_hostname:_&:' \
 		-e 's:test_network_interfaces:_&:' \
 		-i tests/unittests/test_datasource/test_opennebula.py
 
