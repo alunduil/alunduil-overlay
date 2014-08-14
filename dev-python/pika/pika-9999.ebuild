@@ -18,10 +18,7 @@ SLOT="0"
 KEYWORDS=""
 IUSE="doc examples libev test tornado twisted"
 
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-
 DEPEND="
-	${PYTHON_DEPS}
 	doc? (
 		dev-python/pyev[${PYTHON_USEDEP}]
 		dev-python/sphinx[${PYTHON_USEDEP}]

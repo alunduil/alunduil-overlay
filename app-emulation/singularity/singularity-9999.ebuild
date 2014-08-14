@@ -19,11 +19,8 @@ SLOT="0"
 KEYWORDS=""
 IUSE="xen"
 
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-
-DEPEND="${PYTHON_DEPS}"
+DEPEND=""
 RDEPEND="
-	${PYTHON_DEPS}
 	!app-emulation/openstack-guest-agents-unix
 	dev-python/pycrypto
 	dev-python/python-daemon

@@ -4,6 +4,7 @@
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 python3_3 )
+DISTUTILS_SINGLE_IMPL=TRUE
 
 inherit distutils-r1 git-2
 
@@ -18,10 +19,7 @@ SLOT="0"
 KEYWORDS=""
 IUSE="doc examples test"
 
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-
 DEPEND="
-	${PYTHON_DEPS}
 	doc? (
 		dev-python/sphinx[${PYTHON_USEDEP}]
 	)
@@ -31,7 +29,7 @@ DEPEND="
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
 	)
 "
-RDEPEND="${PYTHON_DEPS}"
+RDEPEND=""
 
 python_compile_all() {
 	if use examples; then
@@ -68,6 +66,6 @@ python_install_all() {
 
 pkg_postinst() {
 	elog "${PN} requires one of these viewers:"
-	elog " * graphviz: media-gfx/graphviz (recommended)"
-	elog " * gephi: not yet in portage"
+	elog "  media-gfx/graphviz (recommended)"
+	elog "  gephi: not yet in portage"
 }

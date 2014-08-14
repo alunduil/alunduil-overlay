@@ -18,10 +18,7 @@ SLOT="0"
 KEYWORDS=""
 IUSE="inotify test"
 
-REQUIRED_USE="${PTYHON_REQUIRED_USE}"
-
 DEPEND="
-	${PYTHON_DEPS}
 	test? (
 		dev-python/coverage[${PYTHON_USEDEP}]
 		dev-python/flake8[${PYTHON_USEDEP}]
@@ -29,10 +26,7 @@ DEPEND="
 		dev-python/nose[${PYTHON_USEDEP}]
 	)
 "
-RDEPEND="
-	${PYTHON_DEPS}
-	inotify? ( dev-python/pyinotify[${PYTHON_USEDEP}] )
-"
+RDEPEND="inotify? ( dev-python/pyinotify[${PYTHON_USEDEP}] )"
 
 python_test() {
 	flake8 || die 'flake8'

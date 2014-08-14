@@ -4,6 +4,7 @@
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
+DISTUTILS_SINGLE_IMPL=TRUE
 
 inherit distutils-r1
 
@@ -19,11 +20,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-
-DEPEND="${PYTHON_DEPS}"
+DEPEND=""
 RDEPEND="
-	${PYTHON_DEPS}
 	app-arch/gzip
 	=app-backup/holland-lib-common-${PV}[${PYTHON_USEDEP}]
 	=app-backup/holland-lib-mysql-${PV}[${PYTHON_USEDEP}]
@@ -48,10 +46,9 @@ python_install_all() {
 }
 
 pkg_postinst() {
-	einfo "Inline-compression is performed by default."
-	einfo "gzip is used by default but any of the following can be used if installed:"
-	einfo ""
-	einfo "* app-arch/gzip"
-	einfo "* app-arch/bzip2"
-	einfo "* app-arch/xz-utils"
+	elog "Inline-compression is performed by default."
+	elog "compression packages:"
+	elog "  app-arch/gzip (default)"
+	elog "  app-arch/bzip2"
+	elog "  app-arch/xz-utils"
 }
