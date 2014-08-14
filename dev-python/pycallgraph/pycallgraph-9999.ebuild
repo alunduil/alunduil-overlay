@@ -20,13 +20,11 @@ KEYWORDS=""
 IUSE="doc examples test"
 
 DEPEND="
-	doc? (
-		dev-python/sphinx[${PYTHON_USEDEP}]
-	)
+	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	test? (
 		dev-python/flake8[${PYTHON_USEDEP}]
-		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
 	)
 "
 RDEPEND=""
