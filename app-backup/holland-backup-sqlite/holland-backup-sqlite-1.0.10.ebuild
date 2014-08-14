@@ -4,6 +4,7 @@
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
+DISTUTILS_SINGLE_IMPL=TRUE
 
 inherit distutils-r1
 
@@ -19,13 +20,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-
-DEPEND="${PYTHON_DEPS}"
-RDEPEND="
-	${PYTHON_DEPS}
-	=app-backup/holland-lib-common-${PV}[${PYTHON_USEDEP}]
-"
+DEPEND=""
+RDEPEND="=app-backup/holland-lib-common-${PV}[${PYTHON_USEDEP}]"
 PDEPEND="=app-backup/holland-${PV}[${PYTHON_USEDEP}]"
 
 S="${WORKDIR}/${MY_P}/plugins/${PN//-/.}"
