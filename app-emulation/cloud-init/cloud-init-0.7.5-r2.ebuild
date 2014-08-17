@@ -61,7 +61,7 @@ python_test() {
 		-e 's:test_network_interfaces:_&:' \
 		-i tests/unittests/test_datasource/test_opennebula.py
 
-	nosetests tests/ || die 'nosetests'
+	emake test
 }
 
 python_install_all() {
