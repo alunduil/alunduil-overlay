@@ -50,6 +50,10 @@ python_prepare_all() {
 	)
 
 	distutils-r1_python_prepare_all
+
+	# Skip SmartOS tests since they don't generally apply and don't skip based
+	# on environment.  Documented in bug #511384.
+	rm tests/unittests/test_datasource/test_smartos.py
 }
 
 python_test() {
