@@ -4,6 +4,7 @@
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
+DISTUTILS_SINGLE_IMPL=TRUE
 
 inherit distutils-r1
 
@@ -16,14 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc examples +mysql postgres sqlite"
 
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-
-DEPEND="
-	${PYTHON_DEPS}
-	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-"
+DEPEND="doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )"
 RDEPEND="
-	${PYTHON_DEPS}
 	mysql? ( =app-backup/holland-backup-mysql-meta-${PV}[${PYTHON_USEDEP}] )
 	postgres? ( =app-backup/holland-backup-pgdump-${PV}[${PYTHON_USEDEP}] )
 	sqlite? ( =app-backup/holland-backup-sqlite-${PV}[${PYTHON_USEDEP}] )

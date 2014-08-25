@@ -4,6 +4,7 @@
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
+DISTUTILS_SINGLE_IMPL=TRUE
 
 inherit python-r1
 
@@ -15,8 +16,6 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="lvm +mysqldump mysqlhotcopy"
-
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 DEPEND=""
 RDEPEND="
