@@ -17,8 +17,6 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="test"
 
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-
 CDEPEND="
 	~dev-python/dockerpty-0.2.3[${PYTHON_USEDEP}]
 	~dev-python/docopt-0.6.1[${PYTHON_USEDEP}]
@@ -28,7 +26,6 @@ CDEPEND="
 	~dev-python/websocket-client-0.11.0[${PYTHON_USEDEP}]
 "
 DEPEND="
-	${PYTHON_DEPS}
 	test? (
 		dev-python/flake8[${PYTHON_USEDEP}]
 		~dev-python/mock-1.0.1[${PYTHON_USEDEP}]
@@ -37,10 +34,7 @@ DEPEND="
 	)
 	${CDEPEND}
 "
-RDEPEND="
-	${PYTHON_DEPS}
-	${CDEPEND}
-"
+RDEPEND="${CDEPEND}"
 
 python_prepare_all() {
 	ebegin 'patching setup.py'
