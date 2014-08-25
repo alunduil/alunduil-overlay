@@ -33,7 +33,7 @@ python_test() {
 	docker info
 	DOCKER_FOUND=$?
 	eend ${DOCKER_FOUND}
-	
+
 	[[ ${DOCKER_FOUND} -eq 0 ]] && behave features/ || die 'behave'
 
 	py.test tests/ || die 'py.test'
