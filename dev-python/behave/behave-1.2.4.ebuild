@@ -16,10 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="doc test"
 
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-
 DEPEND="
-	${PYTHON_DEPS}
 	doc? (
 		>=dev-python/sphinx-1.2.2[${PYTHON_USEDEP}]
 		>=dev-python/sphinxcontrib-cheeseshop-0.2[${PYTHON_USEDEP}]
@@ -31,7 +28,6 @@ DEPEND="
 	)
 "
 RDEPEND="
-	${PYTHON_DEPS}
 	>=dev-python/parse-1.6.3[${PYTHON_USEDEP}]
 	>=dev-python/parse-type-0.3.4[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
