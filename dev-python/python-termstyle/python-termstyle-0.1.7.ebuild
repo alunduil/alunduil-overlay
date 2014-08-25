@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=5
-PYTHON_COMPAT=( python3_3 )
+PYTHON_COMPAT=( python2_7 python3_3 )
 
 inherit distutils-r1
 
@@ -16,10 +16,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-
-DEPEND="${PYTHON_DEPS}"
-RDEPEND="${PYTHON_DEPS}"
+DEPEND="dev-python/setuptools"
+RDEPEND=""
 
 python_test() {
 	./test2.py || die 'test2.py'
