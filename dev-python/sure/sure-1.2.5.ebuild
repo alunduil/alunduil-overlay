@@ -16,20 +16,12 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="test"
 
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-
 CDEPEND="
 	~dev-python/nose-1.3.0[${PYTHON_USEDEP}]
 	~dev-python/rednose-0.4.1[${PYTHON_USEDEP}]
 "
-DEPEND="
-	${PYTHON_DEPS}
-	test? ( ${CDEPEND} )
-"
-RDEPEND="
-	${PYTHON_DEPS}
-	${CDEPEND}
-"
+DEPEND="test? ( ${CDEPEND} )"
+RDEPEND="${CDEPEND}"
 
 python_test() {
 	nosetests -s tests --rednose || die 'nosetests tests'

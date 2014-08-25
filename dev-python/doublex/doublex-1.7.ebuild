@@ -16,16 +16,13 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="test"
 
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-
 DEPEND="
-	${PYTHON_DEPS}
 	test? (
 		dev-python/nose[${PYTHON_USEDEP}]
 		$(python_gen_cond_dep 'dev-python/unittest2[${PYTHON_USEDEP}]' 'python2*')
 	)
 "
-RDEPEND="${PYTHON_DEPS}"
+RDEPEND=""
 
 python_test() {
 	nosetests || die 'nosetests'

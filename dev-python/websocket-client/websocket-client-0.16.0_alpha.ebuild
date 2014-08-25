@@ -18,11 +18,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="examples test"
 
-REQURIED_USE="${PYTHON_REQUIRED_USE}"
-
-DEPEND="${PYTHON_DEPS}"
+DEPEND=""
 RDEPEND="
-	${PYTHON_DEPS}
 	dev-python/six[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep 'dev-python/backports-ssl-match-hostname[${PYTHON_USEDEP}]' 'python2*' )
 "

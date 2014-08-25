@@ -16,10 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="test"
 
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-
 DEPEND="
-	${PYTHON_DEPS}
 	test? (
 		~dev-python/sure-1.2.1[${PYTHON_USEDEP}]
 		~dev-python/doublex-1.7[${PYTHON_USEDEP}]
@@ -27,7 +24,6 @@ DEPEND="
 	)
 "
 RDEPEND="
-	${PYTHON_DEPS}
 	~dev-python/clint-0.3.1[${PYTHON_USEDEP}]
 	~dev-python/coverage-3.7[${PYTHON_USEDEP}]
 	~dev-python/watchdog-0.6.0[${PYTHON_USEDEP}]

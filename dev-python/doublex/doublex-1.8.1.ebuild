@@ -16,11 +16,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="doc test"
 
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-
 CDEPEND="dev-python/PyHamcrest[${PYTHON_USEDEP}]"
 DEPEND="
-	${PYTHON_DEPS}
 	${CDEPEND}
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	test? (
@@ -28,10 +25,7 @@ DEPEND="
 		$(python_gen_cond_dep 'dev-python/unittest2[${PYTHON_USEDEP}]' 'python2*')
 	)
 "
-RDEPEND="
-	${PYTHON_DEPS}
-	${CDEPEND}
-"
+RDEPEND="${CDEPEND}"
 
 python_compile_all() {
 	use doc && emake -C docs

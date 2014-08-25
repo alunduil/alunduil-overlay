@@ -16,10 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="test"
 
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-
 DEPEND="
-	${PYTHON_DEPS}
 	test? (
 		app-emulation/docker
 		>=dev-python/docker-py-0.3.2[${PYTHON_USEDEP}]
@@ -28,10 +25,7 @@ DEPEND="
 		>=dev-python/expects-0.2.3[${PYTHON_USEDEP}]
 	)
 "
-RDEPEND="
-	${PYTHON_DEPS}
-	>=dev-python/docker-py-0.3.2[${PYTHON_USEDEP}]
-"
+RDEPEND=">=dev-python/docker-py-0.3.2[${PYTHON_USEDEP}]"
 
 python_test() {
 	ewarn "${PN} tests require a running docker service!"

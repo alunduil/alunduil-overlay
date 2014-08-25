@@ -19,10 +19,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="doc test"
 
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-
 DEPEND="
-	${PYTHON_DEPS}
 	doc? ( >=dev-python/sphinx-1.1[${PYTHON_USEDEP}] )
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
@@ -30,7 +27,6 @@ DEPEND="
 	)
 "
 RDEPEND="
-	${PYTHON_DEPS}
 	>=dev-python/parse-1.6[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep 'dev-python/enum34[${PYTHON_USEDEP}]' 'python2* python3_3')

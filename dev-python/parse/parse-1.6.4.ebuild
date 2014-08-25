@@ -16,10 +16,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-
-DEPEND="${PYTHON_DEPS}"
-RDEPEND="${PYTHON_DEPS}"
+DEPEND=""
+RDEPEND=""
 
 python_test() {
 	./test_parse.py || 'test_parse.py'

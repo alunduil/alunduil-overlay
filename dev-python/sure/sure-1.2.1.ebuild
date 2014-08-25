@@ -16,14 +16,9 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="test"
 
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-
 CDEPEND=">=dev-python/nose-1.1.2[${PYTHON_USEDEP}]"
-DEPEND="
-	${PYTHON_DEPS}
-	test? ( ${CDEPEND} )
-"
-RDEPEND="${PYTHON_DEPS}"
+DEPEND="test? ( ${CDEPEND} )"
+RDEPEND=""
 
 python_test() {
 	nosetests -s tests || die 'nosetests tests'

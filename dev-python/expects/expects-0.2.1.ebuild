@@ -16,14 +16,11 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="doc test"
 
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-
 DEPEND="
-	${PYTHON_DEPS}
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	test? ( ~dev-python/mamba-0.6[${PYTHON_USEDEP}] )
 "
-RDEPEND="${PYTHON_DEPS}"
+RDEPEND=""
 
 python_compile_all() {
 	use doc && emake -C docs html
