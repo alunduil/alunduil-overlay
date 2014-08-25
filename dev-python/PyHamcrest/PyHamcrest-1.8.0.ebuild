@@ -16,11 +16,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="examples numpy test"
 
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-
 CDEPEND="$(python_gen_cond_dep 'numpy? ( dev-python/numpy[${PYTHON_USEDEP}] )' 'python*')"
 DEPEND="
-	${PYTHON_DEPS}
 	${CDEPEND}
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
@@ -28,10 +25,7 @@ DEPEND="
 		$(python_gen_cond_dep 'dev-python/unittest2[${PYTHON_USEDEP}]' 'python2* pypy')
 	)
 "
-RDEPEND="
-	${PYTHON_DEPS}
-	${CDEPEND}
-"
+RDEPEND="${CDEPEND}"
 
 python_compile_all() {
 	use doc && emake -C docs html
