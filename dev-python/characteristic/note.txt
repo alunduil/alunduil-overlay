@@ -1,0 +1,9 @@
+Once transferred to this overlay, repoman f groans over pytest-cov in service_identity and pyasn1-modules in 
+charcteristic.   They PASS FINE in my local portage tree.
+Something to do with portage accesses eclasses of something beyond which either interests me or I care 
+about.
+The other way of doing this is for me to git push them in my pverlay which is called
+improvise.
+I pondered terrorise but decided to go 'nice'.
+The final test is to pass repoman full in the local portage tree so these groans to me are
+nothing but a nuisance, brown noise.
