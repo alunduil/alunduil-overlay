@@ -14,7 +14,7 @@ SRC_URI="https://github.com/liris/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="examples test"
+IUSE="examples"
 
 DEPEND=""
 RDEPEND=""
