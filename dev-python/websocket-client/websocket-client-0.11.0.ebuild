@@ -20,7 +20,7 @@ DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND=""
 
 python_test() {
-	./test_websocket.py || die 'test_websocket'
+	python test_websocket.py || die 'test_websocket'
 }
 
 python_install_all() {
