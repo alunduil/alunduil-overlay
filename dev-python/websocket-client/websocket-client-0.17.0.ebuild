@@ -35,7 +35,7 @@ python_prepare_all() {
 }
 
 python_test() {
-	tests/test_websocket.py || die 'test_websocket'
+	python tests/test_websocket.py || die 'test_websocket'
 }
 
 python_install_all() {
