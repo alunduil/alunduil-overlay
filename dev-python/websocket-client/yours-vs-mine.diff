@@ -1,0 +1,52 @@
+This is def'ly underdone.  The "file collisions at install" simply isn't accounted for, I think you just 
+haven't got there yet.
+DEPEND="" \ RDEPEND=""; ditto???
+The die 'msg' 'test_websocket' to me doesn't say anything.  I have utilsed
+"Tests failed under ${EPYTHON}" in dozens of packages in python herd.
+--- ./dev-python/websocket-client/websocket-client-0.11.0.ebuild	2014-08-29 10:16:42.468209187 +0800
++++ /home/testuser/improvise/dev-python/websocket-client/websocket-client-0.17.0.ebuild	2014-08-27 12:37:29.835211777 +0800
+@@ -3,28 +3,35 @@
+ # $Header: $
+ 
+ EAPI=5
+-PYTHON_COMPAT=( python2_7 )
++PYTHON_COMPAT=( python{2_7,3_3,3_4} pypy )
+ 
+-inherit distutils-r1 vcs-snapshot
++inherit distutils-r1
+ 
+-DESCRIPTION="WebSocket client for python. hybi13 is supported"
+-HOMEPAGE="https://github.com/liris/websocket-client"
++DESCRIPTION="A WebSocket client for python that provides the low level APIs for WebSocket"
++HOMEPAGE="https://github.com/liris/websocket-client https://pypi.python.org/pypi/websocket-client"
+ SRC_URI="https://github.com/liris/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+ 
+ LICENSE="LGPL-2.1"
+ SLOT="0"
+-KEYWORDS="~amd64"
++KEYWORDS="~amd64 ~x86"
+ IUSE="examples test"
+ 
+-DEPEND=""
+-RDEPEND=""
++RDEPEND="dev-python/six[${PYTHON_USEDEP}]"
++DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
++	test? (	${RDEPEND}
++		dev-python/nose[${PYTHON_USEDEP}] )"
++
++python_prepare_all() {
++        # Required to avoid file collisions at install
++        sed -e 's:"tests", ::' -i setup.py || die
++        distutils-r1_python_prepare_all
++}
+ 
+ python_test() {
+-	./test_websocket.py || die 'test_websocket'
++	"${PYTHON}" tests/test_websocket.py || die "Tests failed under ${EPYTHON}"
+ }
+ 
+ python_install_all() {
+ 	use examples && local EXAMPLES=( examples/. )
+-
+ 	distutils-r1_python_install_all
+ }

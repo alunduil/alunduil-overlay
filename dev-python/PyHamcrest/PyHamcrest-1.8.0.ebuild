@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 python3_3 pypy )
+PYTHON_COMPAT=( python{2_7,3_3,3_4} )
 
 inherit distutils-r1
 
@@ -14,30 +14,28 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="examples numpy test"
+IUSE="examples test"
 
-CDEPEND="$(python_gen_cond_dep 'numpy? ( dev-python/numpy[${PYTHON_USEDEP}] )' 'python*')"
+CDEPEND="dev-python/numpy[${PYTHON_USEDEP}]"
 DEPEND="
 	${CDEPEND}
 	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/six[${PYTHON_USEDEP}]
-		$(python_gen_cond_dep 'dev-python/unittest2[${PYTHON_USEDEP}]' 'python2* pypy')
-	)
-"
+	)"
+# $(python_gen_cond_dep 'dev-python/unittest2[${PYTHON_USEDEP}]' 'python2* pypy')
+# unittest is bundled default in py2.7 py3s
 RDEPEND="${CDEPEND}"
-
-python_compile_all() {
-	use doc && emake -C docs html
-}
+# I'd also refrain from CDEPEND in this case. It's rarely really needed.
 
 python_test() {
-	py.text -v || die 'py.test'
+	py.test -v || die 'py.test'
 }
 
 python_install_all() {
-	use doc && local HTML_DOCS=( docs/_build/html/. )
 	use examples && local EXAMPLES=( examples/. )
 
 	distutils-r1_python_install_all
 }
+# Nomenclature convention is to use lower case.  Use the MY_PN vars to insert 
+# into SRC_UR with -> ${P}.tar.gz
