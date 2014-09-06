@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 python3_3 pypy )
+PYTHON_COMPAT=( python2_7 python3_3 python3_4 pypy )
 
 inherit distutils-r1
 
@@ -18,11 +18,10 @@ IUSE="examples numpy test"
 
 CDEPEND="$(python_gen_cond_dep 'numpy? ( dev-python/numpy[${PYTHON_USEDEP}] )' 'python*')"
 DEPEND="
-	${CDEPEND}
 	test? (
+		${CDEPEND}
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/six[${PYTHON_USEDEP}]
-		$(python_gen_cond_dep 'dev-python/unittest2[${PYTHON_USEDEP}]' 'python2* pypy')
 	)
 "
 RDEPEND="${CDEPEND}"
@@ -32,7 +31,7 @@ python_compile_all() {
 }
 
 python_test() {
-	py.text -v || die 'py.test'
+	py.test -v || die 'py.test'
 }
 
 python_install_all() {
