@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-python/mox3/mox3-0.7.0.ebuild,v 1.2 2014/08/01 05:59:05 prometheanfire Exp $
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
+PYTHON_COMPAT=( python2_7 python3_3 )
 DISTUTILS_IN_SOURCE_BUILD=TRUE
 
 inherit distutils-r1
