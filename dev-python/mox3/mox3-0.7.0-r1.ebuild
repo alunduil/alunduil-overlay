@@ -27,13 +27,13 @@ DEPEND="
 	${CDEPEND}
 	test? (
 		${CRDEPEND}
-		~dev-python/pep8-1.4.5[${PYTHON_USEDEP}]
-		~dev-python/pyflakes-0.7.2[${PYTHON_USEDEP}]
+		>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
+		dev-python/discover[${PYTHON_USEDEP}]
 		~dev-python/flake8-2.0[${PYTHON_USEDEP}]
 		>=dev-python/hacking-0.5.6[${PYTHON_USEDEP}]
 		<dev-python/hacking-0.7[${PYTHON_USEDEP}]
-		>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
-		dev-python/discover[${PYTHON_USEDEP}]
+		~dev-python/pep8-1.4.5[${PYTHON_USEDEP}]
+		~dev-python/pyflakes-0.7.2[${PYTHON_USEDEP}]
 		dev-python/subunit[${PYTHON_USEDEP}]
 		>=dev-python/testrepository-0.0.17[${PYTHON_USEDEP}]
 		>=dev-python/testtools-0.9.32[${PYTHON_USEDEP}]
