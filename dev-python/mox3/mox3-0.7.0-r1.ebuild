@@ -28,7 +28,6 @@ DEPEND="
 	test? (
 		${CRDEPEND}
 		>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
-		dev-python/discover[${PYTHON_USEDEP}]
 		~dev-python/flake8-2.0[${PYTHON_USEDEP}]
 		>=dev-python/hacking-0.5.6[${PYTHON_USEDEP}]
 		<dev-python/hacking-0.7[${PYTHON_USEDEP}]
