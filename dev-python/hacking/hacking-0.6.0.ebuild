@@ -63,7 +63,7 @@ python_compile_all() {
 }
 
 python_test() {
-	"${PYTHON}" setup.py testr || die "Tests failed for ${EPYTHON}"
+	esetup.py testr || die "Tests failed for ${EPYTHON}"
 }
 
 python_install_all() {
