@@ -19,12 +19,12 @@ IUSE="doc examples +mysql postgres sqlite"
 
 DEPEND="doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )"
 RDEPEND="
-	mysql? ( =app-backup/holland-backup-mysql-meta-${PV}[${PYTHON_USEDEP}] )
-	postgres? ( =app-backup/holland-backup-pgdump-${PV}[${PYTHON_USEDEP}] )
-	sqlite? ( =app-backup/holland-backup-sqlite-${PV}[${PYTHON_USEDEP}] )
+	mysql? ( ~app-backup/holland-backup-mysql-meta-${PV}[${PYTHON_USEDEP}] )
+	postgres? ( ~app-backup/holland-backup-pgdump-${PV}[${PYTHON_USEDEP}] )
+	sqlite? ( ~app-backup/holland-backup-sqlite-${PV}[${PYTHON_USEDEP}] )
 	examples? (
-		=app-backup/holland-backup-example-${PV}[${PYTHON_USEDEP}]
-		=app-backup/holland-backup-random-${PV}[${PYTHON_USEDEP}]
+		~app-backup/holland-backup-example-${PV}[${PYTHON_USEDEP}]
+		~app-backup/holland-backup-random-${PV}[${PYTHON_USEDEP}]
 	)
 "
 

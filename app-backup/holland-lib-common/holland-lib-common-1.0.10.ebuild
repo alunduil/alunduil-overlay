@@ -22,6 +22,6 @@ IUSE=""
 
 DEPEND=""
 RDEPEND=""
-PDEPEND="=app-backup/holland-${PV}[${PYTHON_USEDEP}]"
+PDEPEND="~app-backup/holland-${PV}[${PYTHON_USEDEP}]"
 
 S="${WORKDIR}/${MY_P}/plugins/${PN//-/.}"

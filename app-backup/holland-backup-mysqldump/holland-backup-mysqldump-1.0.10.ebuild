@@ -23,11 +23,11 @@ IUSE=""
 DEPEND=""
 RDEPEND="
 	app-arch/gzip
-	=app-backup/holland-lib-common-${PV}[${PYTHON_USEDEP}]
-	=app-backup/holland-lib-mysql-${PV}[${PYTHON_USEDEP}]
+	~app-backup/holland-lib-common-${PV}[${PYTHON_USEDEP}]
+	~app-backup/holland-lib-mysql-${PV}[${PYTHON_USEDEP}]
 	dev-python/iniparse[${PYTHON_USEDEP}]
 "
-PDEPEND="=app-backup/holland-${PV}[${PYTHON_USEDEP}]"
+PDEPEND="~app-backup/holland-${PV}[${PYTHON_USEDEP}]"
 
 S="${WORKDIR}/${MY_P}/plugins/${PN//-/.}"
 

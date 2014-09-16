@@ -22,15 +22,15 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="
-	=app-backup/holland-backup-mysqldump-${PV}[${PYTHON_USEDEP}]
-	=app-backup/holland-lib-common-${PV}[${PYTHON_USEDEP}]
-	=app-backup/holland-lib-lvm-${PV}[${PYTHON_USEDEP}]
-	=app-backup/holland-lib-mysql-${PV}[${PYTHON_USEDEP}]
+	~app-backup/holland-backup-mysqldump-${PV}[${PYTHON_USEDEP}]
+	~app-backup/holland-lib-common-${PV}[${PYTHON_USEDEP}]
+	~app-backup/holland-lib-lvm-${PV}[${PYTHON_USEDEP}]
+	~app-backup/holland-lib-mysql-${PV}[${PYTHON_USEDEP}]
 "
 PDEPEND="
-	=app-backup/holland-${PV}[${PYTHON_USEDEP}]
-	=app-backup/holland-backup-mysql-meta-${PV}[${PYTHON_USEDEP}]
-	=app-backup/holland-backup-mysql-meta-${PV}[mysqldump]
+	~app-backup/holland-${PV}[${PYTHON_USEDEP}]
+	~app-backup/holland-backup-mysql-meta-${PV}[${PYTHON_USEDEP}]
+	~app-backup/holland-backup-mysql-meta-${PV}[mysqldump]
 "
 
 S="${WORKDIR}/${MY_P}/plugins/${PN//-/.}"
