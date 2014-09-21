@@ -4,7 +4,6 @@
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
-DISTUTILS_SINGLE_IMPL=TRUE
 
 inherit distutils-r1
 
@@ -20,14 +19,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
+DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="
 	app-arch/gzip
-	=app-backup/holland-lib-common-${PV}[${PYTHON_USEDEP}]
-	=app-backup/holland-lib-mysql-${PV}[${PYTHON_USEDEP}]
+	~app-backup/holland-lib-common-${PV}[${PYTHON_USEDEP}]
+	~app-backup/holland-lib-mysql-${PV}[${PYTHON_USEDEP}]
 	dev-python/iniparse[${PYTHON_USEDEP}]
 "
-PDEPEND="=app-backup/holland-${PV}[${PYTHON_USEDEP}]"
+PDEPEND="~app-backup/holland-${PV}[${PYTHON_USEDEP}]"
 
 S="${WORKDIR}/${MY_P}/plugins/${PN//-/.}"
 
