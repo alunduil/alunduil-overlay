@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 python3_3 )
+PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
 
 inherit distutils-r1
 
@@ -17,11 +17,9 @@ KEYWORDS="~amd64"
 IUSE="doc test"
 
 DEPEND="
+	dev-python/setuptools[${PYTHON_USEDEP}]
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	test? (
-		>=dev-python/mamba-0.8[${PYTHON_USEDEP}]
-		<dev-python/mamba-0.9[${PYTHON_USEDEP}]
-	)
+	test? ( dev-python/mamba[${PYTHON_USEDEP}] )
 "
 RDEPEND=""
 
