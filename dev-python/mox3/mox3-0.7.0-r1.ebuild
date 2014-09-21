@@ -44,5 +44,5 @@ RDEPEND="
 "
 
 python_test() {
-	"${PYTHON}" setup.py testr || die "Tests failed under ${EPYTHON}"
+	esetup.py testr || die "Tests failed under ${EPYTHON}"
 }
