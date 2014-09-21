@@ -34,6 +34,7 @@ DEPEND="
 	test? (
 		${CRDEPEND}
 		>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
+		dev-python/discover[${PYTHON_USEDEP}]
 		>=dev-python/fixtures-0.3.12[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-1.1.2[${PYTHON_USEDEP}]
 		dev-python/subunit[${PYTHON_USEDEP}]
