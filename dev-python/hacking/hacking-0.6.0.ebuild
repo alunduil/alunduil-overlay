@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-python/hacking/hacking-0.8.1.ebuild,v 1.1 2014/04/19 02:30:43 idella4 Exp $
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
+PYTHON_COMPAT=( python2_7 python3_3 )
 DISTUTILS_IN_SOURCE_BUILD=TRUE
 
 inherit distutils-r1
