@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-python/python-keystoneclient/python-keystoneclient-0.11.0.ebuild,v 1.1 2014/09/21 21:26:32 prometheanfire Exp $
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
+PYTHON_COMPAT=( python2_7 python3_3 )
 
 inherit distutils-r1
 
