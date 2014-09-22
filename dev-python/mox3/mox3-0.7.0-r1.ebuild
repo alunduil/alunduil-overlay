@@ -49,6 +49,9 @@ RDEPEND="
 "
 
 python_prepare() {
+	# This single test fails on python3.4.
+	# I speculate this is due to the old style classes going away but have not
+	# verified this in any way.
 	if [[ "${EPYTHON}" = "python3.4" ]]; then
 		ebegin "patching mox3/tests/test_mox.py for ${EPYTHON}"
 		sed \
