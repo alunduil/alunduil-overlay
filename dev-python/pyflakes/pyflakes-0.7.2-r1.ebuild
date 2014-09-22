@@ -28,7 +28,7 @@ python_prepare_all() {
 	# remove this known failure for this version
 	ebegin 'patching pyflakes/test/test_api.py'
 	sed \
-		-e '/def test_invalidEscape(self):/,/def/ d'
+		-e '/def test_invalidEscape(self):/,/def/ d' \
 		-i pyflakes/test/test_api.py || die 'sed'
 	eend $?
 
