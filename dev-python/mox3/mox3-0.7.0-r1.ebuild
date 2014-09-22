@@ -22,6 +22,11 @@ CDEPEND="
 	<dev-python/pbr-1.0[${PYTHON_USEDEP}]
 "
 CRDEPEND=">=dev-python/fixtures-0.3.12[${PYTHON_USEDEP}]"
+
+# NOTE dev-python/hacking isn't actually required for tests
+# >=dev-python/hacking-0.5.6[${PYTHON_USEDEP}]
+# <dev-python/hacking-0.7[${PYTHON_USEDEP}]
+
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	${CDEPEND}
@@ -29,8 +34,6 @@ DEPEND="
 		${CRDEPEND}
 		>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
 		~dev-python/flake8-2.0[${PYTHON_USEDEP}]
-		>=dev-python/hacking-0.5.6[${PYTHON_USEDEP}]
-		<dev-python/hacking-0.7[${PYTHON_USEDEP}]
 		~dev-python/pep8-1.4.5[${PYTHON_USEDEP}]
 		~dev-python/pyflakes-0.7.2[${PYTHON_USEDEP}]
 		dev-python/subunit[${PYTHON_USEDEP}]
