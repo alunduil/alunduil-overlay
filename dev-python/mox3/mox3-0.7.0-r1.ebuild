@@ -27,6 +27,9 @@ CRDEPEND=">=dev-python/fixtures-0.3.12[${PYTHON_USEDEP}]"
 # >=dev-python/hacking-0.5.6[${PYTHON_USEDEP}]
 # <dev-python/hacking-0.7[${PYTHON_USEDEP}]
 
+# NOTE dev-python/pyflakes isn't actually required for tests
+# ~dev-python/pyflakes-0.7.2[${PYTHON_USEDEP}]
+
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	${CDEPEND}
@@ -35,7 +38,6 @@ DEPEND="
 		>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
 		~dev-python/flake8-2.0[${PYTHON_USEDEP}]
 		~dev-python/pep8-1.4.5[${PYTHON_USEDEP}]
-		~dev-python/pyflakes-0.7.2[${PYTHON_USEDEP}]
 		dev-python/subunit[${PYTHON_USEDEP}]
 		>=dev-python/testrepository-0.0.17[${PYTHON_USEDEP}]
 		>=dev-python/testtools-0.9.32[${PYTHON_USEDEP}]
@@ -46,6 +48,19 @@ RDEPEND="
 	${CRDEPEND}
 "
 
+python_prepare() {
+	if [[ "${EPYTHON}" = "python3.4" ]]; then
+		ebegin "patching mox3/tests/test_mox.py for ${EPYTHON}"
+		sed \
+			-e '/def testStubOutClass_OldStyle(self):/,/def/ d' \
+			-i mox3/tests/test_mox.py || die 'sed'
+		eend $?
+	fi
+
+	distutils-r1_python_prepare
+}
+
 python_test() {
-	esetup.py testr || die "Tests failed under ${EPYTHON}"
+	testr init || die "testr init failed under ${EPYTHON}"
+	testr run || die "testr run failed under ${EPYTHON}"
 }
