@@ -20,5 +20,5 @@ DEPEND=""
 RDEPEND=""
 
 python_test() {
-	./test_parse.py || 'test_parse.py'
+	"${PYTHON}" test_parse.py || die "Tests failed under ${EPYTHON}"
 }
