@@ -70,7 +70,6 @@ python_compile_all() {
 }
 
 python_test() {
-	# https://bugs.launchpad.net/python-keystoneclient/+bug/1243528
 	testr init || die "testr init failed under ${EPYTHON}"
 	testr run || die "testr run failed under ${EPYTHON}"
 }

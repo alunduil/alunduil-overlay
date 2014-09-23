@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~amd64-linux ~x86 ~x86-linux"
 IUSE="doc examples test"
 
-# dev-python/discover not actually used
+# NOTE: dev-python/discover not actually used
 # dev-python/discover[${PYTHON_USEDEP}]
 
 CDEPEND="
@@ -42,7 +42,6 @@ DEPEND="
 		>=dev-python/mox3-0.7.0[${PYTHON_USEDEP}]
 		>=dev-python/oauthlib-0.6[${PYTHON_USEDEP}]
 		>=dev-python/oslosphinx-2.2.0[${PYTHON_USEDEP}]
-		>=dev-python/pycrypto-2.6[${PYTHON_USEDEP}]
 		>=dev-python/pycrypto-2.6[${PYTHON_USEDEP}]
 		>=dev-python/requests-mock-0.4.0[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-1.1.2[${PYTHON_USEDEP}]
@@ -73,7 +72,6 @@ python_compile_all() {
 }
 
 python_test() {
-	# https://bugs.launchpad.net/python-keystoneclient/+bug/1243528
 	testr init || die "testr init failed under ${EPYTHON}"
 	testr run || die "testr run failed under ${EPYTHON}"
 }
