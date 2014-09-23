@@ -4,7 +4,6 @@
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
-DISTUTILS_SINGLE_IMPL=TRUE
 
 inherit distutils-r1 vcs-snapshot
 
@@ -40,13 +39,14 @@ python_prepare_all() {
 	ebegin 'patching setup.py'
 	sed \
 		-e 's/packages=find_packages(/&exclude=["tests.*", "tests"]/' \
-		-i setup.py || die 'sed'
-	eend $?
+		-i setup.py
+	STATUS=$?
+	eend $STATUS
+	[[ ${STATUS} -gt 0 ]] && die
 
 	distutils-r1_python_prepare_all
 }
 
 python_test() {
-	flake8 fig || die 'flake8'
-	nosetests tests/unit || die 'nosetests'
+	nosetests tests/unit || die "Tests failed under ${EPYTHON}"
 }
