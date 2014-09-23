@@ -48,7 +48,7 @@ RDEPEND="
 	${CRDEPEND}
 "
 
-python_prepare() {
+python_test() {
 	# This single test fails on python3.4.
 	# I speculate this is due to the old style classes going away but have not
 	# verified this in any way.
@@ -56,14 +56,12 @@ python_prepare() {
 		ebegin "patching mox3/tests/test_mox.py for ${EPYTHON}"
 		sed \
 			-e '/def testStubOutClass_OldStyle(self):/,/def/ d' \
-			-i mox3/tests/test_mox.py || die 'sed'
+			-i mox3/tests/test_mox.py
+		STATUS=$?
 		eend $?
+		[[ ${STATUS} -gt 0 ]] && die
 	fi
 
-	distutils-r1_python_prepare
-}
-
-python_test() {
 	testr init || die "testr init failed under ${EPYTHON}"
 	testr run || die "testr run failed under ${EPYTHON}"
 }
