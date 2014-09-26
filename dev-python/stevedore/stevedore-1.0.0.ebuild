@@ -20,12 +20,14 @@ DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-python/pbr[${PYTHON_USEDEP}]
 	test? (
+		>=dev-python/mock-1.0[${PYTHON_USEDEP}]
+		dev-python/nose[${PYTHON_USEDEP}]
+	)
+	doc? (
 		~dev-python/pillow-2.4.0[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-1.1.2[${PYTHON_USEDEP}]
 		!~dev-python/sphinx-1.2.0[${PYTHON_USEDEP}]
 		<dev-python/sphinx-1.3[${PYTHON_USEDEP}]
-		dev-python/nose[${PYTHON_USEDEP}]
-		>=dev-python/mock-1.0[${PYTHON_USEDEP}]
 	)
 "
 RDEPEND=">=dev-python/six-1.7.0[${PYTHON_USEDEP}]"
@@ -39,7 +41,7 @@ python_test() {
 }
 
 python_install_all() {
-	use doc && local HTML_DOCS=( docs/source/build/. )
+	use doc && local HTML_DOCS=( docs/build/. )
 
 	distutils-r1_python_install_all
 }
