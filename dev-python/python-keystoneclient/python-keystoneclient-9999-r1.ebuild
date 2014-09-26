@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-python/python-keystoneclient/python-keystoneclient-9999.ebuild,v 1.12 2014/09/21 21:26:32 prometheanfire Exp $
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
+PYTHON_COMPAT=( python2_7 python3_3 )
 
 inherit distutils-r1 git-2
 
@@ -31,9 +31,6 @@ DEPEND="
 		>=dev-python/fixtures-0.3.14[${PYTHON_USEDEP}]
 		>=dev-python/hacking-0.8[${PYTHON_USEDEP}]
 		<dev-python/hacking-0.9[${PYTHON_USEDEP}]
-		>=dev-python/httpretty-0.8.0[${PYTHON_USEDEP}]
-		!~dev-python/httpretty-0.8.1[${PYTHON_USEDEP}]
-		!~dev-python/httpretty-0.8.2[${PYTHON_USEDEP}]
 		>=dev-python/keyring-2.1[${PYTHON_USEDEP}]
 		>=dev-python/lxml-2.3[${PYTHON_USEDEP}]
 		>=dev-python/mock-1.0[${PYTHON_USEDEP}]
