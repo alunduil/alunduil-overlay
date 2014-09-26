@@ -14,7 +14,9 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc test"
+IUSE="test"
+
+# NOTE: docs do not install due to pbr configuration issues
 
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
@@ -31,17 +33,7 @@ RDEPEND="
 	dev-python/six[${PYTHON_USEDEP}]
 "
 
-python_compile_all() {
-	use doc && emake -C docs html
-}
-
 python_test() {
 	testr init || die "testr init failed under ${EPYTHON}"
 	testr run || die "testr run failed under ${EPYTHON}"
-}
-
-python_install_all() {
-	use doc && local HTML_DOCS=( docs/_build/html/. )
-
-	distutils-r1_python_install_all
 }
