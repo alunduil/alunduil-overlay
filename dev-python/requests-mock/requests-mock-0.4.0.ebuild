@@ -32,7 +32,7 @@ RDEPEND="
 "
 
 python_compile_all() {
-	use doc && emeke -C docs html
+	use doc && emake -C docs html
 }
 
 python_test() {
