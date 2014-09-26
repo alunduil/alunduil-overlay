@@ -10,7 +10,7 @@ inherit distutils-r1
 DESCRIPTION="OpenStack Sphinx Extensions"
 HOMEPAGE="http://www.openstack.org/"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN//-/}/${PN//-/}-${PV}.tar.gz"
-S="${WORKDIR}/oslo.sphinx-${PV}"
+S="${WORKDIR}/oslosphinx-${PV}"
 
 LICENSE="Apache-2.0"
 SLOT="0"
