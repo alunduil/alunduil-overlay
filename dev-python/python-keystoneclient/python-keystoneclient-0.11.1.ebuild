@@ -14,7 +14,9 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~amd64-linux ~x86 ~x86-linux"
-IUSE="doc examples test"
+IUSE="examples test"
+
+# NOTE: docs to not install due to pbr configuration issues
 
 # NOTE: dev-python/discover not actually used
 # dev-python/discover[${PYTHON_USEDEP}]
@@ -64,10 +66,6 @@ RDEPEND="
 	>=dev-python/stevedore-1.0.0[${PYTHON_USEDEP}]
 "
 
-python_compile_all() {
-	use doc && emake -C doc html
-}
-
 python_test() {
 	rm -rf .testrepository || die "couldn't remove '.testrepository' under ${EPYTHON}"
 
@@ -76,7 +74,6 @@ python_test() {
 }
 
 python_install_all() {
-	use doc && local HTML_DOCS=( doc/build/html/. )
 	use examples && local EXAMPLES=( examples/.)
 
 	distutils-r1_python_install_all
