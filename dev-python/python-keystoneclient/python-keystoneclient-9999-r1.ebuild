@@ -67,6 +67,8 @@ python_compile_all() {
 }
 
 python_test() {
+	rm -rf .testrepository || die "couldn't remove '.testrepository' under ${EPYTHON}"
+
 	testr init || die "testr init failed under ${EPYTHON}"
 	testr run || die "testr run failed under ${EPYTHON}"
 }
