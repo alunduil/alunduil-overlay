@@ -16,6 +16,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
+# The usual; req'd for mutiple impl test runs
+DISTUTILS_IN_SOURCE_BUILD=1
+
 # NOTE: docs do not install due to pbr configuration issues
 
 DEPEND="
@@ -34,8 +37,6 @@ RDEPEND="
 "
 
 python_test() {
-	rm -rf .testrepository || die "couldn't remove '.testrepository' under ${EPYTHON}"
-
 	testr init || die "testr init failed under ${EPYTHON}"
 	testr run || die "testr run failed under ${EPYTHON}"
 }
