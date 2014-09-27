@@ -45,6 +45,8 @@ RDEPEND="
 # This time half the doc files are missing; Do you want them?
 
 python_test() {
+	rm -rf .testrepository || die "couldn't remove '.testrepository' under ${EPTYHON}"
+
 	testr init || die "testr init failed under ${EPYTHON}"
 	testr run || die "testr run failed under ${EPYTHON}"
 }
