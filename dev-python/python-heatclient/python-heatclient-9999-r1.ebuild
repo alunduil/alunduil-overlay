@@ -49,6 +49,7 @@ DEPEND="
 		!~dev-python/httpretty-0.8.3[${PYTHON_USEDEP}]
 		>=dev-python/mock-1.0[${PYTHON_USEDEP}]
 		>=dev-python/mox3-0.7.0[${PYTHON_USEDEP}]
+		>=dev-python/oslo-sphinx-2.2.0[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-1.1.2[${PYTHON_USEDEP}]
 		!~dev-python/sphinx-1.2.0[${PYTHON_USEDEP}]
 		<dev-python/sphinx-1.3[${PYTHON_USEDEP}]
@@ -74,7 +75,7 @@ python_test() {
 }
 
 python_install_all() {
-	use doc && local HTML_DOCS=( docs/build/html/. )
+	use doc && local HTML_DOCS=( doc/build/html/. )
 
 	distutils-r1_python_install_all
 }
