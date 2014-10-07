@@ -5,11 +5,11 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 python3_3 )
 
-inherit distutils-r1
+inherit distutils-r1 vcs-snapshot
 
 DESCRIPTION="Python Command-line Application Tools"
 HOMEPAGE="https://github.com/kennethreitz/clint"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="https://github.com/kennethreitz/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="ISC"
 SLOT="0"
@@ -27,7 +27,7 @@ python_compile_all() {
 }
 
 python_test() {
-	py.test || die 'py.test'
+	py.test || die "Tests failed under ${EPYTHON}"
 }
 
 python_install_all() {
