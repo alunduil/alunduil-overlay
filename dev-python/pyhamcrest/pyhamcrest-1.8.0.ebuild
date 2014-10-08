@@ -7,9 +7,11 @@ PYTHON_COMPAT=( python2_7 python3_3 python3_4 pypy )
 
 inherit distutils-r1
 
+MY_PN="PyHamcrest"
+
 DESCRIPTION="Hamcrest framework for matcher objects"
 HOMEPAGE="https://github.com/hamcrest/PyHamcrest"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_PN}-${PV}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -31,7 +33,7 @@ python_compile_all() {
 }
 
 python_test() {
-	py.test -v || die 'py.test'
+	py.test -v || die "Tests failed under ${EPYTHON}"
 }
 
 python_install_all() {
