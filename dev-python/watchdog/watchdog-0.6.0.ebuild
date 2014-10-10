@@ -36,7 +36,7 @@ python_compile_all() {
 }
 
 python_test() {
-	./run_tests.py || die 'run_tests.py'
+	"${PYTHON}" run_tests.py || die "Tests failed under ${EPYTHON}"
 }
 
 python_install_all() {
