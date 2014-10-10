@@ -5,21 +5,24 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 python3_3 python3_4 pypy )
 
-inherit distutils-r1
+inherit distutils-r1 vcs-snapshot
 
 MY_PN="PyHamcrest"
 
 DESCRIPTION="Hamcrest framework for matcher objects"
 HOMEPAGE="https://github.com/hamcrest/PyHamcrest"
-SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_PN}-${PV}.tar.gz"
+SRC_URI="https://github.com/hamcrest/${MY_PN}/archive/V${PV}.tar.gz -> ${MY_PN}-${PV}.tar.gz"
+
+S="${WORKDIR}/${MY_PN}-${PV}"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="examples numpy test"
+IUSE="doc examples numpy test"
 
 CDEPEND="$(python_gen_cond_dep 'numpy? ( dev-python/numpy[${PYTHON_USEDEP}] )' 'python*')"
 DEPEND="
+	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	test? (
 		${CDEPEND}
 		dev-python/pytest[${PYTHON_USEDEP}]
@@ -29,7 +32,7 @@ DEPEND="
 RDEPEND="${CDEPEND}"
 
 python_compile_all() {
-	use doc && emake -C docs html
+	use doc && emake -C doc html
 }
 
 python_test() {
@@ -37,7 +40,7 @@ python_test() {
 }
 
 python_install_all() {
-	use doc && local HTML_DOCS=( docs/_build/html/. )
+	use doc && local HTML_DOCS=( doc/_build/html/. )
 	use examples && local EXAMPLES=( examples/. )
 
 	distutils-r1_python_install_all
