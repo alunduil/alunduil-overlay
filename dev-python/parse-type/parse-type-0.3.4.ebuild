@@ -12,7 +12,9 @@ HOMEPAGE="https://github.com/jenisys/parse_type"
 
 MY_PN="${PN/-/_}"
 MY_P="${MY_PN}-${PV}"
-SRC_URI="mirror://pypi/${PN:0:1}/${MY_PN}/${MY_P}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://pypi/${PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
+
+S="${WORKDIR}/${MY_P}"
 
 LICENSE="BSD"
 SLOT="0"
@@ -33,6 +35,6 @@ RDEPEND="
 "
 
 python_test() {
-	py.test || die 'py.test'
-	py.test --doctest-modules -v parse_type || die 'py.test doctest'
+	py.test || die "py.test failed under ${EPYTHON}"
+	py.test --doctest-modules -v parse_type || die "py.test doctest failed under ${EPYTHON}"
 }
