@@ -39,4 +39,6 @@ python_install_all() {
 	use doc && local HTML_DOCS=( docs/_build/html/. )
 
 	distutils-r1_python_install_all
+
+	rm "${D}"/usr/README.rst || die "Couldn't remove spurious README.rst"
 }

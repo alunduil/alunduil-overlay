@@ -27,3 +27,9 @@ RDEPEND=""
 python_test() {
 	esetup.py test || die "Tests failed under ${EPYTHON}"
 }
+
+python_install_all() {
+	distutils-r1_python_install_all
+
+	rm "${D}"/usr/README.rst || die "Couldn't remove spurious README.rst"
+}
