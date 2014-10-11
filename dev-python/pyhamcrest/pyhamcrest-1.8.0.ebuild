@@ -36,6 +36,16 @@ python_compile_all() {
 }
 
 python_test() {
+	if [[ "${EPYTHON}" = "python2.7" ]]; then
+		ebegin 'patching tests/hamcrest_unit_test/text/stringcontains_test.py'
+		sed \
+			-e "63s/'EXCERPT'/u&/" \
+			-i tests/hamcrest_unit_test/text/stringcontains_test.py
+		STATUS=$?
+		eend ${STATUS}
+		[[ ${STATUS} -gt 0 ]] && die
+	fi
+
 	py.test -v || die "Tests failed under ${EPYTHON}"
 }
 
