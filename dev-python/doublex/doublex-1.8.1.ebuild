@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="doc test"
 
-CDEPEND="dev-python/PyHamcrest[${PYTHON_USEDEP}]"
+CDEPEND="dev-python/pyhamcrest[${PYTHON_USEDEP}]"
 DEPEND="
 	${CDEPEND}
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
