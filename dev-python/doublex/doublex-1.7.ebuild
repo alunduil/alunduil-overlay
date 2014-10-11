@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 python3_3 )
+PYTHON_COMPAT=( python2_7 )
 
 inherit distutils-r1
 
@@ -25,5 +25,5 @@ DEPEND="
 RDEPEND=""
 
 python_test() {
-	nosetests || die 'nosetests'
+	esetup.py test || die "Tests failed under ${EPYTHON}"
 }

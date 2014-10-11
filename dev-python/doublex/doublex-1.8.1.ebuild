@@ -32,7 +32,7 @@ python_compile_all() {
 }
 
 python_test() {
-	nosetests || die "Tests failed under ${EPYTHON}"
+	esetup.py test || die "Tests failed under ${EPYTHON}"
 }
 
 python_install_all() {
