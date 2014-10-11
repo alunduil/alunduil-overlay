@@ -7,9 +7,9 @@ PYTHON_COMPAT=( python2_7 )
 
 inherit distutils-r1 vcs-snapshot
 
-DESCRIPTION="Fast, isolated development environments using Docker"
-HOMEPAGE="http://orchardup.github.io/fig/"
-SRC_URI="https://github.com/orchardup/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+DESCRIPTION="Punctual, lightweight development environments using Docker"
+HOMEPAGE="http://www.fig.sh/"
+SRC_URI="https://github.com/docker/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -41,7 +41,15 @@ python_prepare_all() {
 		-e 's/packages=find_packages(/&exclude=["tests.*", "tests"]/' \
 		-i setup.py
 	STATUS=$?
-	eend $STATUS
+	eend ${STATUS}
+	[[ ${STATUS} -gt 0 ]] && die
+
+	ebegin 'patching requirements.txt'
+	sed \
+		-e '3s/==/>=/' \
+		-i requirements.txt
+	STATUS=$?
+	eend ${STATUS}
 	[[ ${STATUS} -gt 0 ]] && die
 
 	distutils-r1_python_prepare_all
