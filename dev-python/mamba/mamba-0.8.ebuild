@@ -26,7 +26,7 @@ DEPEND="
 RDEPEND="
 	~dev-python/clint-0.3.1[${PYTHON_USEDEP}]
 	~dev-python/coverage-3.7[${PYTHON_USEDEP}]
-	~dev-python/watchdog-0.6.0[${PYTHON_USEDEP}]
+	>=dev-python/watchdog-0.6.0[${PYTHON_USEDEP}]
 "
 
 python_test() {
