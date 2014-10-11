@@ -20,7 +20,7 @@ DEPEND="
 	test? (
 		~dev-python/expects-0.2.1[${PYTHON_USEDEP}]
 		~dev-python/doublex-1.8.1[${PYTHON_USEDEP}]
-		~dev-python/PyHamcrest-1.8.0[${PYTHON_USEDEP}]
+		>=dev-python/pyhamcrest-1.8.0[${PYTHON_USEDEP}]
 	)
 "
 RDEPEND="
@@ -30,5 +30,5 @@ RDEPEND="
 "
 
 python_test() {
-	mamba || die 'mamba'
+	mamba || die "Tests failed under ${EPYTHON}"
 }
