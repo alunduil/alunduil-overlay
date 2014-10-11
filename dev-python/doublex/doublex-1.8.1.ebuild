@@ -5,11 +5,11 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 python3_3 )
 
-inherit distutils-r1
+inherit distutils-r1 vcs-snapshot
 
 DESCRIPTION="Python test doubles"
 HOMEPAGE="https://bitbucket.org/DavidVilla/python-doublex"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="https://bitbucket.org/DavidVilla/python-${PN}/get/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -32,7 +32,7 @@ python_compile_all() {
 }
 
 python_test() {
-	nosetests || die 'nosetests'
+	nosetests || die "Tests failed under ${EPYTHON}"
 }
 
 python_install_all() {
