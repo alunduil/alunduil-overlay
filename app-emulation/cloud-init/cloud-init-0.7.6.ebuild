@@ -46,10 +46,10 @@ RDEPEND="
 
 python_test() {
 	# Note: Gentoo places ip in /sbin/ not /bin/
-	ebegin 'patching lib/cloudinit/sources/DataSourceOpenNebula.py'
+	ebegin 'patching cloudinit/sources/DataSourceOpenNebula.py'
 	sed \
 		-e '438s/sbin/bin/' \
-		-i lib/cloudinit/sources/DataSourceOpenNebula.py
+		-i cloudinit/sources/DataSourceOpenNebula.py
 	STATUS=$?
 	eend ${STATUS}
 	[[ ${STATUS} -gt 0 ]] && die
