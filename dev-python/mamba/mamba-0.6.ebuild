@@ -19,7 +19,7 @@ IUSE="test"
 DEPEND="
 	test? (
 		~dev-python/sure-1.2.1[${PYTHON_USEDEP}]
-		~dev-python/doublex-1.7[${PYTHON_USEDEP}]
+		>=dev-python/doublex-1.7[${PYTHON_USEDEP}]
 		>=dev-python/pyhamcrest-1.8.0[${PYTHON_USEDEP}]
 	)
 "
