@@ -13,9 +13,9 @@ SRC_URI="https://github.com/coreos/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="doc"
+IUSE="doc examples"
 
-DEPEND=">=dev-lang/go-1.2"
+DEPEND=">=dev-lang/go-1.3"
 RDEPEND=""
 
 src_compile() {
@@ -23,24 +23,28 @@ src_compile() {
 }
 
 src_test() {
-	./test || die 'Test failed'
+	# Tests fail due to Gentoo bug #500452
+	./test || die 'Tests failed'
 }
 
 src_install() {
 	dobin "${S}"/bin/fleetd
 	dobin "${S}"/bin/fleetctl
+
 	systemd_dounit "${FILESDIR}"/fleetd.service
 
+	dodoc README.md
+	use doc && dodoc -r Documentation
+	use examples && dodoc -r examples
+
+	keepdir /etc/${PN}
 	insinto /etc/${PN}
 	newins "${PN}".conf.sample "${PN}".conf
-
-	dodoc README.md
-	use doc && dodoc -r Documentation/*
 }
 
 pkg_postinst() {
-	ewarn "If you're upgrading from a version < 0.8.0 please read this!"
-	elog "The fleet systemd service and the binary changed their name to fleetd."
-	elog "If your using systemd to start fleet automatically, please update your configuration:"
+	ewarn "If you're upgrading from a version less than 0.8.0, please read the messages!"
+	elog "The fleet binary name changed to fleetd."
+	elog "If you're using systemd, update your configuration:"
 	elog "  systemctl disable fleet && systemctl enable fleetd"
 }

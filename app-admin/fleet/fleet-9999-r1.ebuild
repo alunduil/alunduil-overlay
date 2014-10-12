@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit git-2 systemd
+inherit git-r3 systemd
 
 EGIT_REPO_URI="git://github.com/coreos/fleet.git"
 
@@ -17,37 +17,36 @@ SLOT="0"
 KEYWORDS=""
 IUSE="doc examples"
 
-DEPEND=">=dev-lang/go-1.2"
+DEPEND=">=dev-lang/go-1.3"
 RDEPEND=""
 
 src_compile() {
 	./build || die 'Build failed'
 }
 
-# Will abort with following error:
-# go tool: no such tool "cover"; to install:
-# 	go get code.google.com/p/go.tools/cmd/cover
-#src_test() {
-#	./test || die 'Test failed'
-#}
+src_test() {
+	# Tests fail due to Gentoo bug #500452
+	./test || die 'Tests failed'
+}
 
 src_install() {
 	dobin "${S}"/bin/fleetd
 	dobin "${S}"/bin/fleetctl
+
 	systemd_dounit "${FILESDIR}"/fleetd.service
 
+	dodoc README.md
+	use doc && dodoc -r Documentation
+	use examples && dodoc -r examples
+
+	keepdir /etc/${PN}
 	insinto /etc/${PN}
 	newins "${PN}".conf.sample "${PN}".conf
-
-	dodoc README.md
-	use doc && dodoc Documentation/*.*
-	use examples && dodoc -r Documentation/examples
 }
 
 pkg_postinst() {
-	ewarn "If you're upgrading from a version < 0.8.0 please read the messages!"
-	elog ""
-	elog "The fleet systemd service and the binary changed their name to fleetd."
-	elog "If your using systemd to start fleet automatically, please update your configuration:"
+	ewarn "If you're upgrading from a version less than 0.8.0, please read the messages!"
+	elog "The fleet binary name changed to fleetd."
+	elog "If you're using systemd, update your configuration:"
 	elog "  systemctl disable fleet; systemctl enable fleetd"
 }
