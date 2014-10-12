@@ -24,5 +24,5 @@ DEPEND="test? ( ${CDEPEND} )"
 RDEPEND="${CDEPEND}"
 
 python_test() {
-	nosetests -s tests --rednose || die 'nosetests tests'
+	nosetests -s tests --rednose || die "Tests failed under ${EPYTHON}"
 }
