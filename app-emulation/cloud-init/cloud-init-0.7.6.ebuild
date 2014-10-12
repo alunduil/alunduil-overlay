@@ -57,7 +57,7 @@ python_prepare_all() {
 	# https://bugs.launchpad.net/cloud-init/+bug/1380424
 	ebegin 'patching tests/unittests/test_distros/test_netconfig.py'
 	sed \
-		-e '230s/test_simple_write_freebsd/_&/' \
+		-e '177s/test_simple_write_freebsd/_&/' \
 		-i tests/unittests/test_distros/test_netconfig.py
 	STATUS=$?
 	eend ${STATUS}
