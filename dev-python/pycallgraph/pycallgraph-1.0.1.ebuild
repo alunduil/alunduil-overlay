@@ -5,15 +5,15 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 python3_3 )
 
-inherit distutils-r1
+inherit distutils-r1 vcs-snapshot
 
 DESCRIPTION="library and command line tool to visualise the flow of Python applications"
 HOMEPAGE="http://pycallgraph.slowchop.com/"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="https://github.com/gak/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64"
 IUSE="doc examples test"
 
 DEPEND="
