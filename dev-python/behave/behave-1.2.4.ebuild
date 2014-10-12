@@ -24,7 +24,7 @@ DEPEND="
 	test? (
 		>=dev-python/mock-1.0[${PYTHON_USEDEP}]
 		>=dev-python/nose-1.1[${PYTHON_USEDEP}]
-		>=dev-python/PyHamcrest-1.8[${PYTHON_USEDEP}]
+		>=dev-python/pyhamcrest-1.8[${PYTHON_USEDEP}]
 	)
 "
 RDEPEND="
