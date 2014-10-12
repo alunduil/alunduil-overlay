@@ -18,7 +18,7 @@ IUSE="doc examples test"
 
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
-	doc? ( 
+	doc? (
 		dev-python/pyyaml[${PYTHON_USEDEP}]
 		dev-python/sphinx[${PYTHON_USEDEP}]
 	)
@@ -43,7 +43,7 @@ python_compile_all() {
 }
 
 python_test() {
-	py.test --pep8 --ignore=pycallgraph/memory_profiler.py test pycallgraph examples || die "Tests failed under ${EPYTHON}"
+	py.test --ignore=pycallgraph/memory_profiler.py test pycallgraph examples || die "Tests failed under ${EPYTHON}"
 }
 
 python_install_all() {
