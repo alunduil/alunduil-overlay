@@ -63,6 +63,16 @@ python_prepare_all() {
 	eend ${STATUS}
 	[[ ${STATUS} -gt 0 ]] && die
 
+	# Note Gentoo installs its own RC files
+	ebegin 'patching setup.py'
+	sed \
+		-e "144 s/'tests'/'tests.*', &/" \
+		-e '163,167 d' \
+		-i setup.py
+	STATUS=$?
+	eend ${STATUS}
+	[[ ${STATUS} -gt 0 ]] && die
+
 	distutils-r1_python_prepare_all
 }
 
@@ -71,6 +81,8 @@ python_test() {
 }
 
 python_install_all() {
+	keepdir /etc/cloud
+
 	distutils-r1_python_install_all
 
 	doinitd "${S}"/sysvinit/gentoo/cloud-config
@@ -83,6 +95,4 @@ python_install_all() {
 	systemd_dounit "${S}"/systemd/cloud-final.service
 	systemd_dounit "${S}"/systemd/cloud-init-local.service
 	systemd_dounit "${S}"/systemd/cloud-init.service
-
-	#use doc && dodoc -r doc
 }
