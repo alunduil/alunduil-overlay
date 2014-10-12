@@ -40,13 +40,13 @@ python_prepare_all() {
 
 python_compile_all() {
 	if use examples; then
-		cd docs/examples
+		cd docs/examples || die "Couldn't change to docs/examples"
 		"${PYTHON}" generate.py || die "Couldn't generate examples"
-		cd -
+		cd - || die "Couldn't return to previous directory"
 
-		cd docs/guide/filtering
+		cd docs/guide/filtering || die "Couldn't change to docs/guide/filtering"
 		"${PYTHON}" generate.py || die "Couldn't generate filtering examples"
-		cd -
+		cd - || die "Couldn't return to previous directory"
 	fi
 
 	use doc && emake -C docs html
