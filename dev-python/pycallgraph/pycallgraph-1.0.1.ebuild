@@ -56,7 +56,7 @@ python_compile_all() {
 
 python_test() {
 	# gephi is not in portage; thus, skip the gephi tests
-	rm test/test_gephi.py
+	rm -f test/test_gephi.py || die "Couldn't remove gephi tests"
 
 	py.test --ignore=pycallgraph/memory_profiler.py test pycallgraph examples || die "Tests failed under ${EPYTHON}"
 }
