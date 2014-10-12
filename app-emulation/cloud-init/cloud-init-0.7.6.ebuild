@@ -44,7 +44,7 @@ RDEPEND="
 	virtual/logger
 "
 
-python_test() {
+python_prepare_all() {
 	# Note: Gentoo places ip in /sbin/ not /bin/
 	ebegin 'patching cloudinit/sources/DataSourceOpenNebula.py'
 	sed \
@@ -54,6 +54,19 @@ python_test() {
 	eend ${STATUS}
 	[[ ${STATUS} -gt 0 ]] && die
 
+	# https://bugs.launchpad.net/cloud-init/+bug/1380424
+	ebegin 'patching tests/unittests/test_distros/test_netconfig.py'
+	sed \
+		-e '230s/test_simple_write_freebsd/_&/' \
+		-i tests/unittests/test_distros/test_netconfig.py
+	STATUS=$?
+	eend ${STATUS}
+	[[ ${STATUS} -gt 0 ]] && die
+
+	distutils-r1_python_prepare_all
+}
+
+python_test() {
 	emake test
 }
 
