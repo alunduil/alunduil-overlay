@@ -18,7 +18,10 @@ IUSE="doc examples test"
 
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
-	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+	doc? ( 
+		dev-python/pyyaml[${PYTHON_USEDEP}]
+		dev-python/sphinx[${PYTHON_USEDEP}]
+	)
 	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
 "
 RDEPEND=""
