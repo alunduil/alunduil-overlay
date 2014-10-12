@@ -12,9 +12,18 @@ index 5911fef..e3492c1 100755
          self.create_parser()
  
 diff --git a/pycallgraph/output/graphviz.py b/pycallgraph/output/graphviz.py
-index 6f10049..3f50dbc 100644
+index 6f10049..d130d65 100644
 --- a/pycallgraph/output/graphviz.py
 +++ b/pycallgraph/output/graphviz.py
+@@ -148,7 +148,7 @@ class GraphvizOutput(Output):
+ 
+     def attrs_from_dict(self, d):
+         output = []
+-        for attr, val in d.iteritems():
++        for attr, val in d.items():
+             output.append('%s = "%s"' % (attr, val))
+         return ', '.join(output)
+ 
 @@ -164,7 +164,7 @@ class GraphvizOutput(Output):
  
      def generate_attributes(self):
