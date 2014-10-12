@@ -55,9 +55,18 @@ index 9660d58..48eef49 100644
                  continue
              setattr(self, k, v)
 diff --git a/pycallgraph/tracer.py b/pycallgraph/tracer.py
-index 17e9286..91cd7fd 100644
+index 17e9286..74a1477 100644
 --- a/pycallgraph/tracer.py
 +++ b/pycallgraph/tracer.py
+@@ -297,7 +297,7 @@ class TraceProcessor(Thread):
+         grp = defaultdict(list)
+         for node in self.nodes():
+             grp[self.group(node.name)].append(node)
+-        for g in grp.iteritems():
++        for g in grp.items():
+             yield g
+ 
+     def stat_group_from_func(self, func, calls):
 @@ -315,14 +315,14 @@ class TraceProcessor(Thread):
          return stat_group
  

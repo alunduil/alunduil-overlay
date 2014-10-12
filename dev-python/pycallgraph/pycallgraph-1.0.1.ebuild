@@ -16,6 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="doc examples test"
 
+CDEPEND="media-gfx/graphviz"
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	doc? (
@@ -23,11 +24,11 @@ DEPEND="
 		dev-python/sphinx[${PYTHON_USEDEP}]
 	)
 	test? (
+		${CDEPEND}
 		dev-python/pytest[${PYTHON_USEDEP}]
-		media-gfx/graphviz
 	)
 "
-RDEPEND=""
+RDEPEND="${CDEPEND}"
 
 python_prepare_all() {
 	local PATCHES=(
@@ -67,10 +68,4 @@ python_install_all() {
 	distutils-r1_python_install_all
 
 	doman docs/_build/man/pycallgraph.1
-}
-
-pkg_postinst() {
-	elog "${PN} requires one of these viewers:"
-	elog "  media-gfx/graphviz (recommended)"
-	elog "  gephi: not yet in portage"
 }
