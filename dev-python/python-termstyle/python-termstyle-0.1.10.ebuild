@@ -19,6 +19,14 @@ IUSE=""
 DEPEND="dev-python/setuptools"
 RDEPEND=""
 
+python_prepare_all() {
+	local PATCHES=(
+		"${FILESDIR}"/tests-unicode.patch
+	)
+
+	distutils-r1_python_prepare_all
+}
+
 python_test() {
 	if [[ "${EPYTHON}" = "python2.7" ]]; then
 		"${PYTHON}" test2.py || die "test2.py failed under ${EPYTHON}"
