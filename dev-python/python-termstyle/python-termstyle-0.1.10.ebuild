@@ -20,6 +20,9 @@ DEPEND="dev-python/setuptools"
 RDEPEND=""
 
 python_test() {
-	"${PYTHON}" test2.py || die "test2.py failed under ${EPYTHON}"
-	"${PYTHON}" test3.py || die "test3.py failed under ${EPYTHON}"
+	if [[ "${EPYTHON}" = "python2.7" ]]; then
+		"${PYTHON}" test2.py || die "test2.py failed under ${EPYTHON}"
+	else
+		"${PYTHON}" test3.py || die "test3.py failed under ${EPYTHON}"
+	fi
 }
