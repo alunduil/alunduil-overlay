@@ -22,9 +22,20 @@ DEPEND="
 		dev-python/pyyaml[${PYTHON_USEDEP}]
 		dev-python/sphinx[${PYTHON_USEDEP}]
 	)
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+		media-gfx/graphviz
+	)
 "
 RDEPEND=""
+
+python_prepare_all() {
+	local PATCHES=(
+		"${FILESDIR}"/python3.3-tests.patch
+	)
+
+	distutils-r1_python_prepare_all
+}
 
 python_compile_all() {
 	if use examples; then
@@ -43,6 +54,9 @@ python_compile_all() {
 }
 
 python_test() {
+	# gephi is not in portage; thus, skip the gephi tests
+	rm test/test_gephi.py
+
 	py.test --ignore=pycallgraph/memory_profiler.py test pycallgraph examples || die "Tests failed under ${EPYTHON}"
 }
 
