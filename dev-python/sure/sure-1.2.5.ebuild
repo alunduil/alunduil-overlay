@@ -23,6 +23,14 @@ CDEPEND="
 DEPEND="test? ( ${CDEPEND} )"
 RDEPEND="${CDEPEND}"
 
+python_prepare_all() {
+	local PATCHES=(
+		"${FILESDIR}"/setup-unicode.patch
+	)
+
+	distutils-r1_python_prepare_all
+}
+
 python_test() {
 	nosetests -s tests --rednose || die "Tests failed under ${EPYTHON}"
 }
