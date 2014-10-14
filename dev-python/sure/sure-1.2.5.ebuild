@@ -24,9 +24,13 @@ DEPEND="test? ( ${CDEPEND} )"
 RDEPEND="${CDEPEND}"
 
 python_prepare_all() {
-	local PATCHES=(
-		"${FILESDIR}"/setup-unicode.patch
-	)
+	ebegin 'patching setup.py'
+	sed \
+		-e "82s/read_version()/'${PV}'/" \
+		-i setup.py
+	STATUS=$?
+	eend ${STATUS}
+	[[ ${STATUS} -gt 0 ]] && die
 
 	distutils-r1_python_prepare_all
 }
