@@ -5,11 +5,13 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 python3_3 )
 
-inherit distutils-r1
+inherit distutils-r1 vcs-snapshot
+
+EGIT_REPO_URI="https://github.com/nestorsalceda/mamba.git"
 
 DESCRIPTION="The definitive testing tool for Python. Born under the banner of Behavior Driven Development"
 HOMEPAGE="http://nestorsalceda.github.io/mamba"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="https://github.com/nestorsalceda/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -30,9 +32,9 @@ RDEPEND="
 "
 
 python_test() {
+	rm -f "${HOME}"/.pydistutils.cfg || die "Couldn't remove pydistutils.cfg"
+
 	distutils_install_for_testing
 
-	elog "TEST_DIR: ${TEST_DIR}"
-
-	mamba || die "Tests failed under ${EPYTHON}"
+	"${TEST_DIR}"/scripts/mamba || die "Tests failed under ${EPYTHON}"
 }
