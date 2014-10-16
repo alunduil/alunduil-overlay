@@ -31,6 +31,18 @@ RDEPEND="
 	>=dev-python/watchdog-0.6.0[${PYTHON_USEDEP}]
 "
 
+python_prepare_all() {
+	ebegin 'patching requirements.txt'
+	sed \
+		-e '3s/==/>=/' \
+		-i requirements.txt
+	STATUS=$?
+	eend ${STATUS}
+	[[ ${STATUS} -gt 0 ]] && die
+
+	distutils-r1_python_prepare_all
+}
+
 python_test() {
 	local DISTUTILS_NO_PARALLEL_BUILD=TRUE
 
