@@ -27,7 +27,7 @@ python_compile_all() {
 }
 
 python_test() {
-	mamba || die 'mamba'
+	mamba || die "Tests failed under ${EPYTHON}"
 }
 
 python_install_all() {
