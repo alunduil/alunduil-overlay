@@ -30,5 +30,9 @@ RDEPEND="
 "
 
 python_test() {
+	distutils_install_for_testing
+
+	elog "TEST_DIR: ${TEST_DIR}"
+
 	mamba || die "Tests failed under ${EPYTHON}"
 }
