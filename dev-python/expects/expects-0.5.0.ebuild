@@ -28,11 +28,11 @@ python_compile_all() {
 }
 
 python_test() {
-	mamba || die 'mamba'
+	mamba || die "Tests failed under ${EPYTHON}"
 }
 
 python_install_all() {
-	use doc && local HTML_DOCS=( build/docs/html/. )
+	use doc && local HTML_DOCS=( docs/_build/html/. )
 
 	distutils-r1_python_install_all
 }
