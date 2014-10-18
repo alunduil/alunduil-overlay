@@ -5,11 +5,11 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 python3_3 )
 
-inherit distutils-r1
+inherit distutils-r1 vcs-snapshot
 
 DESCRIPTION="Expressive and extensible TDD/BDD assertion library for Python"
 HOMEPAGE="https://github.com/jaimegildesagredo/expects"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="https://github.com/jaimegildesagredo/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -19,7 +19,7 @@ IUSE="doc test"
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	test? ( dev-python/mamba[${PYTHON_USEDEP}] )
+	test? ( >=dev-python/mamba-0.8[${PYTHON_USEDEP}] )
 "
 RDEPEND=""
 
