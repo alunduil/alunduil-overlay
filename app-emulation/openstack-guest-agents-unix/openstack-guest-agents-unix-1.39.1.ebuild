@@ -37,3 +37,9 @@ src_install() {
 
 	doinitd scripts/gentoo/nova-agent
 }
+
+pkg_postinst() {
+	elog "If you would like to utilize openstack-guest-agents-unix, add 'nova-agent' to"
+	elog "your 'default' runlevel:"
+	elog "  rc-update add nova-agent default"
+}
