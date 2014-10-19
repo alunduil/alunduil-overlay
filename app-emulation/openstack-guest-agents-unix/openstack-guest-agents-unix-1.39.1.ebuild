@@ -21,6 +21,7 @@ DEPEND="
 	dev-python/pyxenstore[${PYTHON_USEDEP}]
 	dev-util/patchelf
 	${PYTHON_DEPS}
+	test? ( dev-python/unittest2 )
 "
 RDEPEND="${DEPEND}"
 
