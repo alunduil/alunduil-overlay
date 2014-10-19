@@ -22,11 +22,9 @@ KEYWORDS="~amd64"
 IUSE="doc test"
 
 DEPEND="
+	dev-python/setuptools[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/sphinx-1.1[${PYTHON_USEDEP}] )
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-		$(python_gen_cond_dep 'dev-python/unittest2[${PYTHON_USEDEP}]' 'python2*')
-	)
+	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
 "
 RDEPEND="
 	>=dev-python/parse-1.6[${PYTHON_USEDEP}]
@@ -34,7 +32,16 @@ RDEPEND="
 	$(python_gen_cond_dep 'dev-python/enum34[${PYTHON_USEDEP}]' 'python2* python3_3')
 "
 
+python_prepare_all() {
+	esetup.py build_sphinx || "Building documentation failed under ${PYTHON}"
+}
+
 python_test() {
-	py.test || die "py.test failed under ${EPYTHON}"
-	py.test --doctest-modules -v parse_type || die "py.test doctest failed under ${EPYTHON}"
+	esetup.py test || "Tests failed under ${EPYTHON}"
+}
+
+python_install_all() {
+	local HTML_DOCS=( build/docs/html/. )
+
+	distutils-r1_python_install_all
 }
