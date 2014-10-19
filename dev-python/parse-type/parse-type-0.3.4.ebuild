@@ -19,12 +19,11 @@ S="${WORKDIR}/${MY_P}"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="doc test"
+IUSE="test"
 
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
-	doc? ( >=dev-python/sphinx-1.1[${PYTHON_USEDEP}] )
-	test? ( 
+	test? (
 		dev-python/pytest[${PYTHON_USEDEP}]
 		dev-python/pytest-runner[${PYTHON_USEDEP}]
 	)
@@ -32,19 +31,9 @@ DEPEND="
 RDEPEND="
 	>=dev-python/parse-1.6[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep 'dev-python/enum34[${PYTHON_USEDEP}]' 'python2* python3_3')
+	$(python_gen_cond_dep 'dev-python/enum34[${PYTHON_USEDEP}]' 'python2*' 'python3_3')
 "
 
-python_prepare_all() {
-	esetup.py build_sphinx || "Building documentation failed under ${PYTHON}"
-}
-
 python_test() {
-	esetup.py test || "Tests failed under ${EPYTHON}"
-}
-
-python_install_all() {
-	local HTML_DOCS=( build/docs/html/. )
-
-	distutils-r1_python_install_all
+	py.test tests || "Tests failed under ${EPYTHON}"
 }
