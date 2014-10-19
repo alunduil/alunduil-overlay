@@ -38,10 +38,13 @@ python_compile_all() {
 }
 
 python_test() {
-	nosetests || die 'nosetests'
-	behave -f progress --junit --tags=~@xfail features/ || die 'behave features'
-	behave -f progress --junit --tags=~@xfail tools/test-features/ || die 'behave test-festures'
-	behave -f progress --junit --tags=~@xfail issue.features/ || die 'behave issue.features'
+	nosetests || die "nosetests failed under ${EPYTHON}"
+
+	distutils_install_for_testing
+
+	behave -f progress --junit --tags=~@xfail features/ || die "behave features failed under ${EPYTHON}"
+	behave -f progress --junit --tags=~@xfail tools/test-features/ || die "behave test-festures failed under ${EPYTHON}"
+	behave -f progress --junit --tags=~@xfail issue.features/ || die "behave issue.features failed under ${EPYTHON}"
 }
 
 python_install_all() {
