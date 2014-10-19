@@ -24,7 +24,10 @@ IUSE="doc test"
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/sphinx-1.1[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
+	test? ( 
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-runner[${PYTHON_USEDEP}]
+	)
 "
 RDEPEND="
 	>=dev-python/parse-1.6[${PYTHON_USEDEP}]
