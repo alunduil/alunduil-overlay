@@ -24,7 +24,10 @@ CDEPEND="
 "
 DEPEND="
 	${CDEPEND}
-	test? ( dev-python/unittest2 )
+	test? (
+		dev-python/mox[${PYTHON_USEDEP}]
+		dev-python/unittest2[${PYTHON_USEDEP}]
+	)
 "
 RDEPEND="${CDEPEND}"
 
@@ -33,6 +36,9 @@ pkg_setup() {
 }
 
 src_prepare() {
+	epatch \
+		"${FILESDIR}"/4453b4773688eef6c60736d9cf07100716308a5e.patch
+
 	eautoreconf
 }
 
