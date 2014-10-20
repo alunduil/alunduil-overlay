@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 python3_3 pypy)
+PYTHON_COMPAT=( python2_7 python3_3 python3_4 pypy)
 
 inherit distutils-r1
 
@@ -23,8 +23,10 @@ python_prepare_all() {
 	ebegin 'patching setup.py'
 	sed \
 		-e 's:\(long_desc = \)file:\1open:' \
-		-i setup.py || die 'sed'
-	eend $?
+		-i setup.py
+	STATUS=$?
+	eend ${STATUS}
+	[[ ${STATUS} -gt 0 ]] || die
 
 	distutils-r1_python_prepare_all
 }
