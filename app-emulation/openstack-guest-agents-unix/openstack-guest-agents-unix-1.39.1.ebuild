@@ -5,7 +5,7 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
 
-inherit autotools python-single-r1 vcs-snapshot
+inherit autotools eutils python-single-r1 vcs-snapshot
 
 DESCRIPTION="Openstack Unix Guest Agent"
 HOMEPAGE="http://github.com/rackerlabs/openstack-guest-agents-unix"
