@@ -38,6 +38,7 @@ pkg_setup() {
 src_prepare() {
 	epatch \
 		"${FILESDIR}"/4453b4773688eef6c60736d9cf07100716308a5e.patch
+		"${FILESDIR}"/0513f013625b6a652d7dcb663eb396b9b5bb924e.patch
 
 	eautoreconf
 }
