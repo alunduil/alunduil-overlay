@@ -37,8 +37,16 @@ pkg_setup() {
 
 src_prepare() {
 	epatch \
-		"${FILESDIR}"/4453b4773688eef6c60736d9cf07100716308a5e.patch
+		"${FILESDIR}"/4453b4773688eef6c60736d9cf07100716308a5e.patch \
 		"${FILESDIR}"/0513f013625b6a652d7dcb663eb396b9b5bb924e.patch
+
+	ebegin 'patching tests/test_injectfile.py'
+	sed \
+		-e '97,127 d' \
+		-i tests/test_injectfile.py
+	STATUS=$?
+	eend ${STATUS}
+	[[ ${STATUS} -gt 0 ]] && die
 
 	eautoreconf
 }
