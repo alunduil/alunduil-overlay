@@ -19,7 +19,7 @@ IUSE="doc test"
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	test? ( >=dev-python/mamba-0.8[${PYTHON_USEDEP}] )
+	test? ( >=dev-python/mamba-0.8.2[${PYTHON_USEDEP}] )
 "
 RDEPEND=""
 
