@@ -17,7 +17,7 @@ KEYWORDS="~amd64"
 IUSE="test"
 
 CDEPEND="
-	~dev-python/dockerpty-0.2.3[${PYTHON_USEDEP}]
+	>=dev-python/dockerpty-0.2.3[${PYTHON_USEDEP}]
 	~dev-python/docopt-0.6.1[${PYTHON_USEDEP}]
 	~dev-python/pyyaml-3.10[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.2.1[${PYTHON_USEDEP}]
