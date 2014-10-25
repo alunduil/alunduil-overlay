@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-python/mamba/mamba-0.8.ebuild,v 1.1 2014/10/18 14:58:21 alunduil Exp $
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
+PYTHON_COMPAT=( python2_7 python3_3 )
 
 inherit distutils-r1
 
