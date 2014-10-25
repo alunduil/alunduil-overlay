@@ -19,22 +19,22 @@ IUSE="test"
 DEPEND="
 	test? (
 		app-emulation/docker
-		>=dev-python/docker-py-0.3.2[${PYTHON_USEDEP}]
-		>=dev-python/pytest-2.5.2[${PYTHON_USEDEP}]
 		>=dev-python/behave-1.2.4[${PYTHON_USEDEP}]
+		>=dev-python/docker-py-0.3.2[${PYTHON_USEDEP}]
 		>=dev-python/expects-0.2.3[${PYTHON_USEDEP}]
+		>=dev-python/pytest-2.5.2[${PYTHON_USEDEP}]
 	)
 "
 RDEPEND=">=dev-python/docker-py-0.3.2[${PYTHON_USEDEP}]"
 
 python_test() {
 	ewarn "${PN} tests require a running docker service!"
-	ebegin "Checking for docker access"
+	ebegin "checking that docker is running"
 	docker info
 	DOCKER_FOUND=$?
 	eend ${DOCKER_FOUND}
 
-	[[ ${DOCKER_FOUND} -eq 0 ]] && behave features/ || die 'behave'
+	[[ ${DOCKER_FOUND} -eq 0 ]] && behave features/ || die "Feature tests failed under ${EPYTHON}"
 
-	py.test tests/ || die 'py.test'
+	py.test tests/ || die "Tests failed under ${EPYTHON}"
 }
