@@ -5,11 +5,11 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
 
-inherit distutils-r1
+inherit distutils-r1 vcs-snapshot
 
 DESCRIPTION="Python library to use the pseudo-tty of a docker container"
 HOMEPAGE="https://github.com/d11wtq/dockerpty"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="https://github.com/d11wtq/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -19,7 +19,6 @@ IUSE="test"
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	test? (
-		app-emulation/docker
 		>=dev-python/behave-1.2.4[${PYTHON_USEDEP}]
 		>=dev-python/docker-py-0.3.2[${PYTHON_USEDEP}]
 		>=dev-python/expects-0.4[${PYTHON_USEDEP}]
@@ -30,12 +29,9 @@ RDEPEND=">=dev-python/docker-py-0.3.2[${PYTHON_USEDEP}]"
 
 python_test() {
 	ewarn "${PN} tests require a running docker service!"
-	ebegin "checking that docker is running"
-	docker info
-	DOCKER_FOUND=$?
-	eend ${DOCKER_FOUND}
-
-	[[ ${DOCKER_FOUND} -eq 0 ]] && behave || die "Feature tests failed under ${EPYTHON}"
+	if which docker; then
+		docker info && behave || die "Feature tests failed under ${EPYTHON}"
+	fi
 
 	py.test tests || die "Tests failed under ${EPYTHON}"
 }
