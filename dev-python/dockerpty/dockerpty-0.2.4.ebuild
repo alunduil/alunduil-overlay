@@ -27,11 +27,24 @@ DEPEND="
 "
 RDEPEND=">=dev-python/docker-py-0.3.2[${PYTHON_USEDEP}]"
 
+python_prepare_all() {
+	# Note: https://github.com/d11wtq/dockerpty/issues/20
+	ebegin 'patching features/interactive_terminal.feature'
+	sed \
+		-e '100,119d' \
+		-i features/interactive_terminal.feature
+	STATUS=$?
+	eend ${STATUS}
+	[[ ${STATUS} -gt 0 ]] && die
+
+	distutils-r1_python_prepare_all
+}
+
 python_test() {
 	ewarn "${PN} tests require a running docker service!"
 	if which docker; then
 		gpasswd -a portage docker
-		docker info && behave || die "Feature tests failed under ${EPYTHON}"
+		docker info 1>/dev/null 2>&1 && behave || die "Feature tests failed under ${EPYTHON}"
 		gpasswd -d portage docker
 	fi
 
