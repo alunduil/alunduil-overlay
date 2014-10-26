@@ -5,11 +5,11 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
 
-inherit distutils-r1
+inherit distutils-r1 vcs-snapshot
 
 DESCRIPTION="Punctual, lightweight development environments using Docker"
 HOMEPAGE="http://www.fig.sh/"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="https://github.com/docker/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
