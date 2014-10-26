@@ -30,7 +30,9 @@ RDEPEND=">=dev-python/docker-py-0.3.2[${PYTHON_USEDEP}]"
 python_test() {
 	ewarn "${PN} tests require a running docker service!"
 	if which docker; then
+		gpasswd -a portage docker
 		docker info && behave || die "Feature tests failed under ${EPYTHON}"
+		gpasswd -d portage docker
 	fi
 
 	py.test tests || die "Tests failed under ${EPYTHON}"
