@@ -25,13 +25,13 @@ CDEPEND="
 	~dev-python/websocket-client-0.11.0[${PYTHON_USEDEP}]
 "
 DEPEND="
+	dev-python/setuptools[${PYTHON_USEDEP}]
 	test? (
-		dev-python/flake8[${PYTHON_USEDEP}]
+		${CDEPEND}
 		~dev-python/mock-1.0.1[${PYTHON_USEDEP}]
 		~dev-python/nose-1.3.0[${PYTHON_USEDEP}]
 		dev-python/unittest2[${PYTHON_USEDEP}]
 	)
-	${CDEPEND}
 "
 RDEPEND="${CDEPEND}"
 
