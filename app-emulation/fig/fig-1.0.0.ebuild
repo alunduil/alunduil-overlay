@@ -45,6 +45,7 @@ DEPEND="
 RDEPEND="${CDEPEND}"
 
 python_prepare_all() {
+	# Note: patch is 22KiB but should be removed next release.
 	local PATCHES=(
 		"${FILESDIR}"/1.0.0-unvendorize-dockerpty.patch
 	)
