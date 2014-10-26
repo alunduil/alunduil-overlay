@@ -44,6 +44,13 @@ DEPEND="
 "
 RDEPEND="${CDEPEND}"
 
+python_prepare_all() {
+	local PATCHES=(
+		"${FILESDIR}"/1.0.0-unvendorize-dockerpty.patch
+	)
+	distutils-r1_python_prepare_all
+}
+
 python_test() {
 	nosetests tests/unit || die "Tests failed under ${EPYTHON}"
 }
