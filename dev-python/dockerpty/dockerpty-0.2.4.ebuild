@@ -44,11 +44,11 @@ python_test() {
 	local RUN_FEATURES=0
 
 	ewarn "${PN} tests require portage to be in the docker group!"
-	getent group docker | grep portage
+	getent group docker |& grep portage 1>/dev/null 2>&1
 	RUN_FEATURES+=$?
 
 	ewarn "${PN} tests require a running docker service!"
-	which docker && docker info 1>/dev/null 2>&1
+	which docker 1>/dev/null 2>&1 && docker info 1>/dev/null 2>&1
 	RUN_FEATURES+=$?
 
 	if [[ ${RUN_FEATURES} -eq 0 ]]; then
