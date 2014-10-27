@@ -41,11 +41,19 @@ python_prepare_all() {
 }
 
 python_test() {
+	local RUN_FEATURES=0
+
+	ewarn "${PN} tests require portage to be in the docker group!"
+	getent group docker | grep portage
+	RUN_FEATURES+=$?
+
 	ewarn "${PN} tests require a running docker service!"
-	if which docker; then
-		gpasswd -a portage docker
-		docker info 1>/dev/null 2>&1 && behave || die "Feature tests failed under ${EPYTHON}"
-		gpasswd -d portage docker
+	which docker && docker info 1>/dev/null 2>&1
+	RUN_FEATURES+=$?
+
+	if [[ ${RUN_FEATURES} -eq 0 ]]; then
+		behave || die "Feature tests failed under ${EPYTHON}"
+
 	fi
 
 	py.test tests || die "Tests failed under ${EPYTHON}"
