@@ -9,8 +9,7 @@ inherit bash-completion-r1 distutils-r1 vcs-snapshot
 
 DESCRIPTION="novaclient wrapper for multiple nova environments"
 HOMEPAGE="https://github.com/rackerhacker/supernova"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
-#SRC_URI="https://github.com/major/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/major/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
