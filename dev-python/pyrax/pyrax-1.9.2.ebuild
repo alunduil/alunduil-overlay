@@ -35,6 +35,18 @@ DEPEND="
 "
 RDEPEND="${CDEPEND}"
 
+python_prepare_all() {
+	ebegin 'patching tests/unit/test_util.py'
+	sed \
+		-e '92,100d' \
+		-i tests/unit/test_util.py
+	STATUS=$?
+	eend ${STATUS}
+	[[ ${STATUS} -gt 0 ]] && die
+
+	distutils-r1_python_prepare_all
+}
+
 python_test() {
 	nosetests tests/unit || die "Tests failed under ${EPYTHON}"
 }
