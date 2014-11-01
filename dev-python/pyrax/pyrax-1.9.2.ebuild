@@ -14,7 +14,7 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc examples test"
+IUSE="examples test"
 
 CDEPEND="
 	dev-python/httplib2[${PYTHON_USEDEP}]
@@ -35,24 +35,19 @@ DEPEND="
 "
 RDEPEND="${CDEPEND}"
 
-python_prepare_all() {
-	ebegin 'patching tests/unit/test_util.py'
+python_test() {
+	ebegin 'patching tests/unit/test_utils.py'
 	sed \
 		-e '92,100d' \
-		-i tests/unit/test_util.py
+		-i tests/unit/test_utils.py
 	STATUS=$?
 	eend ${STATUS}
 	[[ ${STATUS} -gt 0 ]] && die
 
-	distutils-r1_python_prepare_all
-}
-
-python_test() {
 	nosetests tests/unit || die "Tests failed under ${EPYTHON}"
 }
 
 python_install_all() {
-	use doc && local HTML_DOCS=( docs/html/. )
 	use examples && local EXAMPLES=( samples/. )
 
 	distutils-r1_python_install_all
