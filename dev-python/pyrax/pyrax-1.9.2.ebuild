@@ -21,7 +21,6 @@ CDEPEND="
 	dev-python/keyring[${PYTHON_USEDEP}]
 	dev-python/mock[${PYTHON_USEDEP}]
 	>=dev-python/python-novaclient-2.13.0[${PYTHON_USEDEP}]
-	>=dev-python/python-swiftclient-1.5.0[${PYTHON_USEDEP}]
 	dev-python/rackspace-novaclient[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.2.1[${PYTHON_USEDEP}]
 	>=dev-python/six-1.5.2[${PYTHON_USEDEP}]
