@@ -30,12 +30,13 @@ DEPEND="
 	test? (
 		${CDEPEND}
 		dev-python/nose[${PYTHON_USEDEP}]
+		dev-python/rax-scheduled-images-python-novaclient-ext[${PYTHON_USEDEP}]
 	)
 "
 RDEPEND="${CDEPEND}"
 
 python_test() {
-	nosetests -v tests/unit || die "Tests failed under ${EPYTHON}"
+	nosetests tests/unit || die "Tests failed under ${EPYTHON}"
 }
 
 python_install_all() {
