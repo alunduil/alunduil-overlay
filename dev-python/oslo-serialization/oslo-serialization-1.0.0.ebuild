@@ -17,7 +17,7 @@ S="${WORKDIR}/${MY_PN}-${PV}"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
+IUSE="doc test"
 
 # Note: not in tree
 #test? ( <dev-python/hacking-0.8[${PYTHON_USEDEP}] )
@@ -30,9 +30,11 @@ DEPEND="
 		>=dev-python/mock-1.0[${PYTHON_USEDEP}]
 		>=dev-python/netaddr-0.7.12[${PYTHON_USEDEP}]
 		>=dev-python/oslo-i18n-0.3.0[${PYTHON_USEDEP}]
-		>=dev-python/oslo-sphinx-2.2.0[${PYTHON_USEDEP}]
 		>=dev-python/oslotest-1.1[${PYTHON_USEDEP}]
 		>=dev-python/simplejson-2.2.0[${PYTHON_USEDEP}]
+	)
+	doc? (
+		>=dev-python/oslo-sphinx-2.2.0[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-1.1.2[${PYTHON_USEDEP}]
 		!~dev-python/sphinx-1.2.0[${PYTHON_USEDEP}]
 		<dev-python/sphinx-1.3[${PYTHON_USEDEP}]
