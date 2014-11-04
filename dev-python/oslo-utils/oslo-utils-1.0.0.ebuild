@@ -4,6 +4,7 @@
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 python3_3 )
+DISTUTILS_IN_SOURCE_BUILD=TRUE
 
 inherit distutils-r1
 
@@ -49,18 +50,11 @@ RDEPEND="
 
 python_prepare_all() {
 	use doc && esetup.py build_sphinx
+
+	distutils-r1_python_prepare_all
 }
 
 python_test() {
-	local DISTUTILS_IN_SOURCE_BUILD=TRUE
-	#local DISTUTILS_NO_PARALLEL_BUILD=TRUE
-
-	#rm -f "${HOME}"/.pydistutils.cfg || die "Couldn't remove pydistutils.cfg"
-
-	#distutils_install_for_testing
-
-	#PYTHONPATH="${TEST_DIR}/lib:${PYTHONPATH}"
-
 	rm -rf .testrepository || die "couldn't remove '.testrepository' under ${EPTYHON}"
 
 	testr init || die "testr init failed under ${EPYTHON}"
