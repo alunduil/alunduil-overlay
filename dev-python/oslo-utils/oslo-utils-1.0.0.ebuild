@@ -48,13 +48,13 @@ RDEPEND="
 	>=dev-python/six-1.7.0[${PYTHON_USEDEP}]
 "
 
-python_prepare_all() {
+python_compile_all() {
 	use doc && esetup.py build_sphinx
-
-	distutils-r1_python_prepare_all
 }
 
 python_test() {
+	distutils_install_for_testing
+
 	rm -rf .testrepository || die "couldn't remove '.testrepository' under ${EPTYHON}"
 
 	testr init || die "testr init failed under ${EPYTHON}"
