@@ -52,9 +52,14 @@ python_prepare_all() {
 }
 
 python_test() {
-	distutils_install_for_testing
+	local DISTUTILS_IN_SOURCE_BUILD=TRUE
+	#local DISTUTILS_NO_PARALLEL_BUILD=TRUE
 
-	cd "${TEST_DIR}"/lib || die "Couldn't change to test directory"
+	#rm -f "${HOME}"/.pydistutils.cfg || die "Couldn't remove pydistutils.cfg"
+
+	#distutils_install_for_testing
+
+	#PYTHONPATH="${TEST_DIR}/lib:${PYTHONPATH}"
 
 	rm -rf .testrepository || die "couldn't remove '.testrepository' under ${EPTYHON}"
 
