@@ -51,7 +51,17 @@ python_prepare_all() {
 	use doc && esetup.py build_sphinx
 }
 
+# Note: Tests fail due to requiring installation.
+#
+# Installation appears to fail due ot the use of namespace packages but root
+# cause was never truly established.
+RESTRICT="test"
+
 python_test() {
+	distutils_install_for_testing
+
+	PYTHONPATH="${TEST_DIR}/lib:${PYTHONPATH}"
+
 	rm -rf .testrepository || die "couldn't remove '.testrepository' under ${EPTYHON}"
 
 	testr init || die "testr init failed under ${EPYTHON}"
