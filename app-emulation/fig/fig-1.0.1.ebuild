@@ -46,5 +46,5 @@ DEPEND="
 RDEPEND="${CDEPEND}"
 
 python_test() {
-	nosetests || die "Tests failed under ${EPYTHON}"
+	nosetests tests/unit || die "Tests failed under ${EPYTHON}"
 }
