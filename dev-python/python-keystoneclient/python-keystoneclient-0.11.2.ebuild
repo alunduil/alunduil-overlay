@@ -24,28 +24,32 @@ CDEPEND="
 	!~dev-python/pbr-0.7[${PYTHON_USEDEP}]
 	<dev-python/pbr-1.0[${PYTHON_USEDEP}]
 "
+TCDEPEND="
+	>=dev-python/lxml-2.3[${PYTHON_USEDEP}]
+	>=dev-python/mock-1.0[${PYTHON_USEDEP}]
+	>=dev-python/mox3-0.7.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-mock-0.4.0[${PYTHON_USEDEP}]
+	>=dev-python/testresources-0.2.4[${PYTHON_USEDEP}]
+	>=dev-python/webob-1.2.3[${PYTHON_USEDEP}]
+"
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	test? (
 		${CDEPEND}
+		${TCDEPEND}
 		>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
-		>=dev-python/fixtures-0.3.14[${PYTHON_USEDEP}]
 		<dev-python/hacking-0.10[${PYTHON_USEDEP}]
 		>=dev-python/hacking-0.9.2[${PYTHON_USEDEP}]
 		>=dev-python/keyring-2.1[${PYTHON_USEDEP}]
 		!~dev-python/keyring-3.3[${PYTHON_USEDEP}]
-		>=dev-python/lxml-2.3[${PYTHON_USEDEP}]
-		>=dev-python/mock-1.0[${PYTHON_USEDEP}]
-		>=dev-python/mox3-0.7.0[${PYTHON_USEDEP}]
 		>=dev-python/oauthlib-0.6[${PYTHON_USEDEP}]
 		>=dev-python/pycrypto-2.6[${PYTHON_USEDEP}]
-		>=dev-python/requests-mock-0.4.0[${PYTHON_USEDEP}]
 		>=dev-python/testrepository-0.0.18[${PYTHON_USEDEP}]
-		>=dev-python/testresources-0.2.4[${PYTHON_USEDEP}]
 		>=dev-python/testtools-0.9.34[${PYTHON_USEDEP}]
-		>=dev-python/webob-1.2.3[${PYTHON_USEDEP}]
 	)
 	doc? (
+		${TCDEPEND}
+		>=dev-python/fixtures-0.3.14[${PYTHON_USEDEP}]
 		>=dev-python/oslo-sphinx-2.2.0[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-1.1.2[${PYTHON_USEDEP}]
 		!~dev-python/sphinx-1.2.0[${PYTHON_USEDEP}]
