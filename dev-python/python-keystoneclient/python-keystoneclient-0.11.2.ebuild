@@ -38,16 +38,18 @@ DEPEND="
 		>=dev-python/mock-1.0[${PYTHON_USEDEP}]
 		>=dev-python/mox3-0.7.0[${PYTHON_USEDEP}]
 		>=dev-python/oauthlib-0.6[${PYTHON_USEDEP}]
-		>=dev-python/oslo-sphinx-2.2.0[${PYTHON_USEDEP}]
 		>=dev-python/pycrypto-2.6[${PYTHON_USEDEP}]
 		>=dev-python/requests-mock-0.4.0[${PYTHON_USEDEP}]
-		>=dev-python/sphinx-1.1.2[${PYTHON_USEDEP}]
-		!~dev-python/sphinx-1.2.0[${PYTHON_USEDEP}]
-		<dev-python/sphinx-1.3[${PYTHON_USEDEP}]
 		>=dev-python/testrepository-0.0.18[${PYTHON_USEDEP}]
 		>=dev-python/testresources-0.2.4[${PYTHON_USEDEP}]
 		>=dev-python/testtools-0.9.34[${PYTHON_USEDEP}]
 		>=dev-python/webob-1.2.3[${PYTHON_USEDEP}]
+	)
+	doc? (
+		>=dev-python/oslo-sphinx-2.2.0[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-1.1.2[${PYTHON_USEDEP}]
+		!~dev-python/sphinx-1.2.0[${PYTHON_USEDEP}]
+		<dev-python/sphinx-1.3[${PYTHON_USEDEP}]
 	)
 "
 RDEPEND="
