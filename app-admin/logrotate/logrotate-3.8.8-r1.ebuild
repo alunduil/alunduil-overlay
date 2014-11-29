@@ -55,7 +55,7 @@ src_install() {
 	exeinto /etc/cron.daily
 	newexe "${S}"/examples/logrotate.cron "${PN}"
 
-	use systemd && fperms -x /etc/cron.daily/logrotate.cron
+	use systemd && fperms -x /etc/cron.daily/logrotate
 
 	insinto /etc
 	doins "${FILESDIR}"/logrotate.conf
