@@ -62,7 +62,6 @@ src_install() {
 
 	systemd_dounit "${FILESDIR}"/logrotate.service
 	systemd_dounit "${FILESDIR}"/logrotate.timer
-	systemd_enable_service multi-user logrotate.timer
 }
 
 pkg_postinst() {
