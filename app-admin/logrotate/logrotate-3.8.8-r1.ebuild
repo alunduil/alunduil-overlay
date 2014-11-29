@@ -13,7 +13,7 @@ SRC_URI="https://fedorahosted.org/releases/l/o/logrotate/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd"
-IUSE="acl selinux"
+IUSE="acl selinux systemd"
 
 CDEPEND="
 	>=dev-libs/popt-1.5
@@ -54,6 +54,8 @@ src_install() {
 
 	exeinto /etc/cron.daily
 	newexe "${S}"/examples/logrotate.cron "${PN}"
+
+	use systemd && fperms -x /etc/cron.daily/logrotate.cron
 
 	insinto /etc
 	doins "${FILESDIR}"/logrotate.conf
