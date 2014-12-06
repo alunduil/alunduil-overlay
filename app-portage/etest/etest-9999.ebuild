@@ -31,6 +31,12 @@ RDEPEND="
 	dev-python/ply[${PYTHON_USEDEP}]
 "
 
+python_prepare_all() {
+	[[ "${LANG}" = *.utf8 ]] || ewarn "etest requires a utf8 locale"
+
+	distutils-r1_python_prepare_all
+}
+
 python_test() {
 	nosetests test_etest/test_unit || die "Tests failed under ${EPYTHON}"
 }
