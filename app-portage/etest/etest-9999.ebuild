@@ -34,3 +34,10 @@ RDEPEND="
 python_test() {
 	nosetests test_etest/test_unit || die "Tests failed under ${EPYTHON}"
 }
+
+pkg_postinst() {
+	elog "etest uses docker to run isolated test environments."
+	elog "etest does _not_ explicitly depend on docker."
+	elog "If you want to use a local docker instance; please, ensure that it has been"
+	elog "installed and started."
+}
