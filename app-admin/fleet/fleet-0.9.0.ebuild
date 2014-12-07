@@ -22,8 +22,8 @@ src_compile() {
 	./build || die 'Build failed'
 }
 
+RESTRICT="test"  # Tests fail due to Gentoo bug #500452
 src_test() {
-	# Tests fail due to Gentoo bug #500452
 	./test || die 'Tests failed'
 }
 
