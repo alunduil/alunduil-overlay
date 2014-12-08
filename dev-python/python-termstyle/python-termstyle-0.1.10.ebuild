@@ -28,9 +28,7 @@ python_prepare_all() {
 }
 
 python_test() {
-	if [[ "${LC_ALL}" = "C" ]]; then
-		ewarn "skipping tests due to:"
-		ewarn "LC_ALL=C"
+	if [[ "${LANG}" != *.utf8 ]]; then
 		ewarn "tests require a UTF8 locale (i.e. en_US.utf8)"
 	else
 		if [[ "${EPYTHON}" = "python2.7" ]]; then
