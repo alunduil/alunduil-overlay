@@ -31,19 +31,15 @@ RDEPEND="
 	dev-python/ply[${PYTHON_USEDEP}]
 "
 
-python_prepare_all() {
-	[[ "${LANG}" = *.utf8 ]] || ewarn "etest requires a utf8 locale"
-
-	distutils-r1_python_prepare_all
-}
-
 python_test() {
 	nosetests test_etest/test_unit || die "Tests failed under ${EPYTHON}"
 }
 
 pkg_postinst() {
+	[[ "${LANG}" = *.utf8 ]] || ewarn "etest requires a utf8 locale to run"
 	elog "etest uses docker to run isolated test environments."
 	elog "etest does _not_ explicitly depend on docker."
 	elog "If you want to use a local docker instance; please, ensure that it has been"
 	elog "installed and started."
+	ewarn "etest does not currently work with =app-emulation/docker-1.4.0"
 }
