@@ -63,6 +63,9 @@ python_compile_all() {
 #
 # Installation appears to fail due to the use of namespace packages but root
 # cause was never truly established.
+#
+# Tests fail with:
+# ImportError: No module named 'oslo.utils
 
 RESTRICT="test"
 
