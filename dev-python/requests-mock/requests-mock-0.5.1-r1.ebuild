@@ -19,6 +19,7 @@ IUSE="doc test"
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-python/pbr[${PYTHON_USEDEP}]
+	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	test? (
 		dev-python/fixtures[${PYTHON_USEDEP}]
 		dev-python/mock[${PYTHON_USEDEP}]
@@ -32,7 +33,7 @@ RDEPEND="
 "
 
 python_compile_all() {
-	use doc && esetup.py build_sphinx
+	use doc && emake -C doc html
 }
 
 python_test() {
@@ -45,7 +46,7 @@ python_test() {
 }
 
 python_install_all() {
-	use doc && local HTML_DOCS=( doc/build/html/. )
+	use doc && local HTML_DOCS=( doc/_build/html/. )
 
 	distutils-r1_python_install_all
 }
