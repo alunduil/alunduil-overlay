@@ -90,7 +90,7 @@ python_test() {
 
 python_install_all() {
 	use doc && local HTML_DOCS=( doc/build/html/. )
-	use examples && local EXAMPLES=( examples/.)
+	use examples && local EXAMPLES=( examples/. )
 
 	distutils-r1_python_install_all
 }
