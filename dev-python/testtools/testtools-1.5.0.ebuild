@@ -25,10 +25,7 @@ CDEPEND="
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	${CDEPEND}
-	doc? (
-		dev-python/sphinx[${PYTHON_USEDEP}]
-		$(python_gen_cond_dep '<dev-python/jinja2-2.7[${PYTHON_USEDEP}]' 'python3_2')
-	)
+	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 "
 RDEPEND="${CDEPEND}"
 
