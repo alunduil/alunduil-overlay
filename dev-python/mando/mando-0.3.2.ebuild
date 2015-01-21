@@ -5,11 +5,11 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
 
-inherit distutils-r1
+inherit distutils-r1 vcs-snapshot
 
 DESCRIPTION="Create Python CLI apps with little to no effort at all!"
 HOMEPAGE="https://mando.readthedocs.org/"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="https://github.com/rubik/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -32,7 +32,7 @@ python_test() {
 }
 
 python_install_all() {
-	use doc && local HTML_DOCS=( doc/_build/html/. )
+	use doc && local HTML_DOCS=( docs/_build/html/. )
 	use examples && local EXAMPLES=( examples/. )
 
 	distutils-r1_python_install_all
