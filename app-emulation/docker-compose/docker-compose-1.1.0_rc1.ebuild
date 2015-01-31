@@ -11,7 +11,7 @@ MY_PV="${PV//_/-}"
 
 DESCRIPTION="Multi-container orchestration for Docker"
 HOMEPAGE="https://www.docker.com/"
-SRC_URI="https://github.com/docker/${PN}/archive/${MY_PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/docker/fig/archive/${MY_PV}.tar.gz -> ${P}.tar.gz"  # still called fig on github
 
 LICENSE="Apache-2.0"
 SLOT="0"
