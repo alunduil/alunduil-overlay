@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-python/mamba/mamba-0.8.2.ebuild,v 1.2 2014/11/28 10:25:16 pacho Exp $
 
@@ -37,7 +37,7 @@ python_prepare_all() {
 	sed \
 		-e '2s/==/>=/' \
 		-i requirements.txt
-	STATUS=$?
+	STATUS=${?}
 	eend ${STATUS}
 	[[ ${STATUS} -gt 0 ]] && die
 
