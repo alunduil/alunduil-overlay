@@ -21,12 +21,12 @@ DEPEND="
 	test? ( dev-python/nose[${PYTHON_USEDEP}] )
 "
 RDEPEND="
-	>=dev-python/jinja2-2.7.1[${PYTHON_USEDEP}]
+	>=dev-python/jinja-2.7.1[${PYTHON_USEDEP}]
 	>=dev-python/markdown-2.3.1[${PYTHON_USEDEP}]
 	<dev-python/markdown-2.5[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.10[${PYTHON_USEDEP}]
 	>=dev-python/watchdog-0.7.0[${PYTHON_USEDEP}]
-	>=dev-python/ghp-import-0.4.1[${PYTHNON_USEDEP}]
+	>=dev-python/ghp-import-0.4.1[${PYTHON_USEDEP}]
 "
 
 #python_compile_all() {
