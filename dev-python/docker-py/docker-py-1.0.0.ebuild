@@ -31,6 +31,7 @@ RDEPEND="
 python_compile_all() {
 	use doc && mkdocs build
 }
+
 python_test() {
 	"${PYTHON}" tests/test.py || die "tests failed under ${EPYTHON}"
 }
