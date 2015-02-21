@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-python/behave/behave-1.2.4.ebuild,v 1.1 2014/10/22 01:12:16 alunduil Exp $
 
@@ -40,10 +40,6 @@ python_compile_all() {
 
 python_test() {
 	nosetests || die "nosetests failed under ${EPYTHON}"
-
-	local DISTUTILS_NO_PARALLEL_BUILD=TRUE
-
-	rm -f "${HOME}"/.pydistutils.cfg || die "Couldn't remove pydistutils.cfg"
 
 	distutils_install_for_testing
 
