@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-python/python-heatclient/python-heatclient-0.2.9.ebuild,v 1.2 2014/07/06 12:47:58 mgorny Exp $
 
@@ -66,6 +66,17 @@ python_compile_all() {
 }
 
 python_test() {
+	# BUG: https://bugs.launchpad.net/python-heatclient/+bug/1313257
+	ebegin 'patching heatclient/tests/test_common_http.py'
+	sed \
+		-e '651,/def/ d' \
+		-i heatclient/tests/test_common_http.py
+	STATUS=${?}
+	eend ${STATUS}
+	[[ ${STATUS} -gt 0 ]] && die
+
+	rm -rf .testrepository || die "couldn't remove '.testrepository' under ${EPYTHON}"
+
 	testr init
 	testr run || die "testsuite failed under ${EPYTHON}"
 }
