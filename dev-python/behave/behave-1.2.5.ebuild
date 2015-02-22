@@ -41,11 +41,9 @@ python_compile_all() {
 python_test() {
 	nosetests || die "nosetests failed under ${EPYTHON}"
 
-	distutils_install_for_testing
-
-	${TEST_DIR}/scripts/behave --tags='~@xfail' features/ || die "behave features failed under ${EPYTHON}"
-	${TEST_DIR}/scripts/behave --tags='~@xfail' tools/test-features/ || die "behave test-festures failed under ${EPYTHON}"
-	${TEST_DIR}/scripts/behave --tags='~@xfail' issue.features/ || die "behave issue.features failed under ${EPYTHON}"
+	${PYTHON} -m behave --tags='~@xfail' features/ || die "behave features failed under ${EPYTHON}"
+	${PYTHON} -m behave --tags='~@xfail' tools/test-features/ || die "behave test-festures failed under ${EPYTHON}"
+	${PYTHON} -m behave --tags='~@xfail' issue.features/ || die "behave issue.features failed under ${EPYTHON}"
 }
 
 python_install_all() {
