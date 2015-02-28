@@ -5,13 +5,11 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
 
-inherit distutils-r1 vcs-snapshot
-
-MY_PV="${PV//_/-}"
+inherit bash-completion-r1 distutils-r1
 
 DESCRIPTION="Multi-container orchestration for Docker"
 HOMEPAGE="https://www.docker.com/"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${PN}-${MY_PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -28,7 +26,7 @@ CDEPEND="
 	>=dev-python/pyyaml-3.10[${PYTHON_USEDEP}]
 	<dev-python/pyyaml-4[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.2.1[${PYTHON_USEDEP}]
-	<dev-python/requests-3[${PYTHON_USEDEP}]
+	<dev-python/requests-2.5.0[${PYTHON_USEDEP}]
 	>=dev-python/six-1.3.0[${PYTHON_USEDEP}]
 	<dev-python/six-2[${PYTHON_USEDEP}]
 	>=dev-python/texttable-0.8.1[${PYTHON_USEDEP}]
@@ -48,4 +46,10 @@ RDEPEND="${CDEPEND}"
 
 python_test() {
 	nosetests tests/unit || die "Tests failed under ${EPYTHON}"
+}
+
+python_install_all() {
+	dobashcomp contrib/completion/bash/${PN}
+
+	distutils-r1_python_install_all
 }
