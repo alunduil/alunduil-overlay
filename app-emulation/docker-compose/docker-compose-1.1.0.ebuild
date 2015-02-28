@@ -5,7 +5,7 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
 
-inherit bash-completion-r1 distutils-r1
+inherit distutils-r1
 
 DESCRIPTION="Multi-container orchestration for Docker"
 HOMEPAGE="https://www.docker.com/"
@@ -46,10 +46,4 @@ RDEPEND="${CDEPEND}"
 
 python_test() {
 	nosetests tests/unit || die "Tests failed under ${EPYTHON}"
-}
-
-python_install_all() {
-	dobashcomp contrib/completion/bash/${PN}
-
-	distutils-r1_python_install_all
 }
