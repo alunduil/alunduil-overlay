@@ -13,7 +13,7 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos"
+KEYWORDS="~amd64"
 IUSE=""
 
 CDEPEND="
@@ -22,13 +22,22 @@ CDEPEND="
 "
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
+	dev-python/linecache2[${PYTHON_USEDEP}]
 	${CDEPEND}
 "
 RDEPEND="${CDEPEND}"
 
-PATCHES=(
-	"${FILESDIR}/unittest2-0.8.0-argparse.patch"
-)
+python_prepare_all() {
+	ebegin 'patching setup.py'
+	sed \
+		-e "60 s/'argparse', //" \
+		-i setup.py
+	STATUS=${?}
+	eend ${STATUS}
+	[[ ${STATUS} -gt 0 ]] && die
+
+	distutils-r1_python_prepare_all
+}
 
 python_test() {
 	"${PYTHON}" -m unittest2 discover || die "tests failed under ${EPYTHON}"
