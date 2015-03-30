@@ -58,7 +58,7 @@ python_test() {
 python_install_all() {
 	use doc && local HTML_DOCS=( site/. )
 
-	bashcomp contrib/completion/bash/docker-compose
+	newbashcomp contrib/completion/bash/docker-compose ${PN}
 
 	distutils-r1_python_install_all
 }
