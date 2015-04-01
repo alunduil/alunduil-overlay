@@ -23,6 +23,7 @@ python_prepare_all() {
 	ebegin 'patching setup.py'
 	sed \
 		-e '4ifrom codecs import open\n' \
+		-e '11s/))/), encoding = "utf-8")/' \
 		-i setup.py
 	STATUS=${?}
 	eend ${STATUS}
