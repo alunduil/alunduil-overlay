@@ -5,11 +5,11 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
 
-inherit distutils-r1
+inherit distutils-r1 vcs-snapshot
 
 DESCRIPTION="Manage dynamic plugins for Python applications"
 HOMEPAGE="https://github.com/dreamhost/stevedore https://pypi.python.org/pypi/stevedore"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="https://github.com/openstack/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
