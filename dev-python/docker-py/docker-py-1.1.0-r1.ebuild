@@ -11,6 +11,8 @@ DESCRIPTION="Python client for Docker."
 HOMEPAGE="https://github.com/docker/docker-py"
 SRC_URI="https://github.com/docker/${PN}/archive/${PV}.tar.gz -> ${P}-r1.tar.gz"
 
+S="${S}-r1"
+
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
