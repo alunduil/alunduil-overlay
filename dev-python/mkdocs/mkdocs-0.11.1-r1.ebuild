@@ -32,7 +32,7 @@ RDEPEND="
 python_prepare_all() {
 	ebegin 'patching setup.py'
 	sed \
-		-e "/Markdown/s/,[^']*//" \
+		-e "20s/,[^']*//" \
 		-i setup.py
 	STATUS=${?}
 	eend ${STATUS}
