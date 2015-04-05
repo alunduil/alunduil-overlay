@@ -11,7 +11,7 @@ MY_PV="${PV//_/}"
 
 DESCRIPTION="Multi-container orchestration for Docker"
 HOMEPAGE="https://www.docker.com/"
-SRC_URI="https://github.com/docker/compose/archive/${MY_PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/docker/compose/archive/${MY_PV}.tar.gz -> ${PN}-${MY_PV}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -48,7 +48,7 @@ DEPEND="
 RDEPEND="${CDEPEND}"
 
 python_compile_all() {
-	use doc && mkdocs build
+	use doc && mkdocs build || die "docs failed to build"
 }
 
 python_test() {
