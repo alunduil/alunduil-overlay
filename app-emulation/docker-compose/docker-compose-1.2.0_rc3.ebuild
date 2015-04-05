@@ -5,18 +5,18 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
 
-inherit bash-completion-r1 distutils-r1 vcs-snapshot
+inherit bash-completion-r1 distutils-r1
 
 MY_PV="${PV//_/}"
 
 DESCRIPTION="Multi-container orchestration for Docker"
 HOMEPAGE="https://www.docker.com/"
-SRC_URI="https://github.com/docker/compose/archive/${MY_PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${PN}-${MY_PV}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="doc test"
+IUSE="test"
 
 CDEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
@@ -38,7 +38,6 @@ CDEPEND="
 	<dev-python/websocket-client-1.0[${PYTHON_USEDEP}]
 "
 DEPEND="
-	doc? ( dev-python/mkdocs[${PYTHON_USEDEP}] )
 	test? (
 		${CDEPEND}
 		>=dev-python/mock-1.0.1[${PYTHON_USEDEP}]
@@ -47,17 +46,11 @@ DEPEND="
 "
 RDEPEND="${CDEPEND}"
 
-python_compile_all() {
-	use doc && mkdocs build || die "docs failed to build"
-}
-
 python_test() {
-	nosetests tests/unit || die "Tests failed under ${EPYTHON}"
+	nosetests tests/unit || die "tests failed under ${EPYTHON}"
 }
 
 python_install_all() {
-	use doc && local HTML_DOCS=( site/. )
-
 	newbashcomp contrib/completion/bash/docker-compose ${PN}
 
 	distutils-r1_python_install_all
