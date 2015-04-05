@@ -34,7 +34,7 @@ RDEPEND="
 "
 
 python_compile_all() {
-	use doc && mkdocs build
+	use doc && mkdocs build || die "docs failed to build"
 }
 
 python_test() {
