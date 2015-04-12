@@ -26,7 +26,10 @@ CDEPEND="
 "
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
-	doc? ( >=dev-python/sphinx-1.2.2[${PYTHON_USEDEP}] )
+	doc? (
+		>=dev-python/sphinx-1.2.2[${PYTHON_USEDEP}]
+		dev-python/sphinx_rtd_theme[${PYTHON_USEDEP}]
+	)
 	test? (
 		${CDEPEND}
 		>=dev-python/pytest-2.6[${PYTHON_USEDEP}]
@@ -35,7 +38,8 @@ DEPEND="
 RDEPEND="${CDEPEND}"
 
 python_compile_all() {
-	use doc && emake -C doc html
+	use doc && esetup.py build_sphinx
+	#use doc && emake -C doc html
 }
 
 python_test() {
