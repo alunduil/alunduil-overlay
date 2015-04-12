@@ -37,6 +37,14 @@ DEPEND="
 "
 RDEPEND="${CDEPEND}"
 
+python_prepare_all() {
+	local PATCHES=(
+		"${FILESDIR}"/sphinx-rtd.patch
+	)
+
+	distutils-r1_python_prepare_all
+}
+
 python_compile_all() {
 	use doc && esetup.py build_sphinx
 	#use doc && emake -C doc html
