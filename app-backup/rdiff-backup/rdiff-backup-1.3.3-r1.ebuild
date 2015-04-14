@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/app-backup/rdiff-backup/rdiff-backup-1.3.3.ebuild,v 1.11 2014/08/10 01:54:02 patrick Exp $
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
+PYTHON_COMPAT=( python2_7 )
 
 inherit distutils-r1
 
