@@ -17,7 +17,7 @@ KEYWORDS="~amd64"
 IUSE="doc examples"
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
-RDEPEND="dev-python/tornado[${PYTHON_USEDEP}]"
+RDEPEND="www-servers/tornado[${PYTHON_USEDEP}]"
 
 python_compile_all() {
 	use doc && emake -C docs html
