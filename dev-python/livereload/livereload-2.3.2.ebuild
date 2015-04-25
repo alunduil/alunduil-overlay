@@ -4,6 +4,7 @@
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
+DISUTILS_IN_SOURCE_BUILD=true
 
 inherit distutils-r1 vcs-snapshot
 
@@ -18,6 +19,7 @@ IUSE="doc examples test"
 
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
+	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	test? ( dev-python/nose[${PYTHON_USEDEP}] )
 "
 
