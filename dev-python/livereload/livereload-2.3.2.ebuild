@@ -4,7 +4,6 @@
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
-DISUTILS_IN_SOURCE_BUILD=true
 
 inherit distutils-r1 vcs-snapshot
 
@@ -15,18 +14,21 @@ SRC_URI="https://github.com/lepture/python-${PN}/archive/v${PV}.tar.gz -> ${P}.t
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="doc examples test"
+IUSE="examples test"
 
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
-	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	test? ( dev-python/nose[${PYTHON_USEDEP}] )
 "
 
 RDEPEND="www-servers/tornado[${PYTHON_USEDEP}]"
 
-python_compile_all() {
-	use doc && emake -C docs html
+python_prepare_all() {
+	local PATCHES=(
+		"${FILESDIR}"/fix-tests.patch
+	)
+
+	distutils-r1_python_prepare_all
 }
 
 python_test() {
@@ -34,7 +36,6 @@ python_test() {
 }
 
 python_install_all() {
-	use doc && local HTML_DOCS=( docs/_build/html/. )
 	use examples && local EXAMPLES=( example/. )
 
 	distutils-r1_python_install_all
