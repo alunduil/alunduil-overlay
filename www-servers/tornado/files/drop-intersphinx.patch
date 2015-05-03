@@ -1,0 +1,11 @@
+diff --git a/tornado/docs/conf.py b/tornado/docs/conf.py
+index bb77f28..3e8deac 100644
+--- a/tornado/docs/conf.py
++++ b/tornado/docs/conf.py
+@@ -16,7 +16,6 @@
+     "sphinx.ext.coverage",
+     "sphinx.ext.doctest",
+     "sphinx.ext.extlinks",
+-    "sphinx.ext.intersphinx",
+     "sphinx.ext.viewcode",
+     ]
