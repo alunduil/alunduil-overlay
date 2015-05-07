@@ -37,6 +37,10 @@ RDEPEND="
 	$(python_gen_cond_dep 'dev-python/backports-ssl-match-hostname[${PYTHON_USEDEP}]' python2_7 pypy)
 "
 
+pkg_setup() {
+	use doc && export DISTUTILS_ALL_SUBPHASE_IMPLS=( 'python3*' )
+}
+
 python_prepare_all() {
 	local PATCHES=(
 		"${FILESDIR}"/drop-intersphinx.patch
@@ -47,7 +51,6 @@ python_prepare_all() {
 
 python_compile_all() {
 	if use doc; then
-		python_setup 'python3*'
 		emake -C docs sphinx
 	fi
 }
