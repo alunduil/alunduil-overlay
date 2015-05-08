@@ -16,14 +16,12 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="curl doc examples test"
-REQUIRED_USE="doc? ( || ( $(python_gen_useflags 'python3*') ) )"
 
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	doc? (
 		dev-python/sphinx[${PYTHON_USEDEP}]
 		dev-python/sphinx_rtd_theme[${PYTHON_USEDEP}]
-		$(python_gen_cond_dep 'dev-python/asyncio[${PYTHON_USEDEP}]' 'python3_3')
 	)
 	test? ( ${RDEPEND}
 		$(python_gen_cond_dep 'dev-python/mock[${PYTHON_USEDEP}]' python2_7 pypy)
@@ -36,10 +34,6 @@ RDEPEND="
 	dev-python/certifi[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep 'dev-python/backports-ssl-match-hostname[${PYTHON_USEDEP}]' python2_7 pypy)
 "
-
-pkg_setup() {
-	use doc && export DISTUTILS_ALL_SUBPHASE_IMPLS=( 'python3*' )
-}
 
 python_prepare_all() {
 	local PATCHES=(
