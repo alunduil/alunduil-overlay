@@ -71,8 +71,6 @@ RDEPEND="
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
 	>=dev-python/stevedore-1.3.0[${PYTHON_USEDEP}]
 "
-PATCHES=(
-)
 
 python_prepare_all() {
 	rm requirements.txt || die "couldn't remove requirements.txt"
