@@ -52,6 +52,7 @@ python_prepare_all() {
 	distutils-r1_python_prepare_all
 }
 
+RESTRICT=test  # needs local installation that is namespace friendly
 python_test() {
 	rm -rf .testrepository || die "could not remove '.testrepository' under ${EPTYHON}"
 
