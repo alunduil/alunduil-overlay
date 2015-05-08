@@ -17,23 +17,24 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="curl doc examples test"
 
+CDEPEND="
+	dev-python/certifi[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep 'curl? ( dev-python/pycurl[${PYTHON_USEDEP}] )' python2_7)
+	$(python_gen_cond_dep 'dev-python/backports-ssl-match-hostname[${PYTHON_USEDEP}]' python2_7 pypy)
+	$(python_gen_cond_dep 'dev-python/twisted-names[${PYTHON_USEDEP}]' python2_7)
+"  # dev-python/twisted-names only supports python2_7 currently
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	doc? (
 		dev-python/sphinx[${PYTHON_USEDEP}]
 		dev-python/sphinx_rtd_theme[${PYTHON_USEDEP}]
 	)
-	test? ( ${RDEPEND}
-		$(python_gen_cond_dep 'dev-python/mock[${PYTHON_USEDEP}]' python2_7 pypy)
-		$(python_gen_cond_dep 'dev-python/twisted-names[${PYTHON_USEDEP}]' python2_7)
-		dev-python/service_identity[${PYTHON_USEDEP}]
+	test? (
+		${CDEPEND}
+		dev-python/mock[${PYTHON_USEDEP}]
 	)
 "
-RDEPEND="
-	curl? ( $(python_gen_cond_dep 'dev-python/pycurl[${PYTHON_USEDEP}]' python2_7) )
-	dev-python/certifi[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep 'dev-python/backports-ssl-match-hostname[${PYTHON_USEDEP}]' python2_7 pypy)
-"
+RDEPEND="${CDEPEND}"
 
 python_prepare_all() {
 	local PATCHES=(
@@ -44,9 +45,7 @@ python_prepare_all() {
 }
 
 python_compile_all() {
-	if use doc; then
-		emake -C docs sphinx
-	fi
+	use doc && emake -C docs sphinx
 }
 
 python_test() {
