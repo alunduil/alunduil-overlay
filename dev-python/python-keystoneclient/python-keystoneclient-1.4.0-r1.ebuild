@@ -73,6 +73,10 @@ RDEPEND="
 "
 
 python_prepare_all() {
+	local PATCHES=(
+		"${FILESDIR}"/drop-intersphinx.patch
+	)
+
 	rm requirements.txt || die "couldn't remove requirements.txt"
 
 	use doc && esetup.py build_sphinx
