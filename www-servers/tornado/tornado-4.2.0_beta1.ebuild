@@ -8,9 +8,11 @@ PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
 
 inherit distutils-r1 vcs-snapshot
 
+MY_PV=${PV/.0_beta/b}
+
 DESCRIPTION="Tornado is a Python web framework and asynchronous networking library, ... ."
 HOMEPAGE="http://www.tornadoweb.org/"
-SRC_URI="https://github.com/tornadoweb/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${PN}-${MY_PV}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -19,7 +21,7 @@ IUSE="doc examples test"
 
 CDEPEND="
 	dev-python/certifi[${PYTHON_USEDEP}]
-	dev-python/pycurl[${PYTHON_USEDEP}]
+	>=dev-python/pycurl-7.18.2[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep 'dev-python/asyncio[${PYTHON_USEDEP}]' 'python3_3')
 	$(python_gen_cond_dep 'dev-python/backports-ssl-match-hostname[${PYTHON_USEDEP}]' 'python2_7 pypy')
 	$(python_gen_cond_dep 'dev-python/futures[${PYTHON_USEDEP}]' 'python2_7 pypy')
