@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/app-emulation/docker-compose/docker-compose-1.2.0-r1.ebuild,v 1.1 2015/05/02 15:59:55 alunduil Exp $
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
+PYTHON_COMPAT=( python2_7 )
 
 inherit bash-completion-r1 distutils-r1 vcs-snapshot
 
