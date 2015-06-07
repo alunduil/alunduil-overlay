@@ -47,6 +47,7 @@ DEPEND="
 	)
 "
 RDEPEND="
+	${CDEPEND}
 	>=dev-python/Babel-1.3[${PYTHON_USEDEP}]
 	>=dev-python/debtcollector-0.3.0[${PYTHON_USEDEP}]
 	>=dev-python/iso8601-0.1.9[${PYTHON_USEDEP}]
