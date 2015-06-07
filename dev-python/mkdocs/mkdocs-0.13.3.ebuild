@@ -13,7 +13,7 @@ SRC_URI="https://github.com/tomchristie/${PN}/archive/${PV}.tar.gz -> ${P}.tar.g
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="amd64"
+KEYWORDS="~amd64"
 IUSE="doc test"
 
 CDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
