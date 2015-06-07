@@ -53,7 +53,7 @@ RDEPEND="
 	>=dev-python/netaddr-0.7.12[${PYTHON_USEDEP}]
 	>=dev-python/netifaces-0.10.4[${PYTHON_USEDEP}]
 	>=dev-python/oslo-i18n-1.5.0[${PYTHON_USEDEP}]
-	>=dev-python/pytz-2013.6[${PYTYHON_USEDEP}]
+	>=dev-python/pytz-2013.6[${PYTHON_USEDEP}]
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
 "
 
