@@ -14,7 +14,7 @@ SRC_URI="https://github.com/tomchristie/${PN}/archive/${PV}.tar.gz -> ${P}.tar.g
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="doc test"
+IUSE="test"
 
 CDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 DEPEND="
@@ -44,18 +44,6 @@ RDEPEND="
 #	distutils-r1_python_prepare_all
 #}
 
-python_compile_all() {
-	if use doc; then
-		"${PYTHON}" -m mkdocs.main build || die "failed to build documentation"
-	fi
-}
-
 python_test() {
 	nosetests mkdocs/tests || die "tests failed under ${EPYTHON}"
-}
-
-python_install_all() {
-	use doc && local HTML_DOCS=( site/. )
-
-	distutils-r1_python_install_all
 }
