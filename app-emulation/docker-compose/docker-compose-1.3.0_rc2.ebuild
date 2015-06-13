@@ -20,7 +20,7 @@ IUSE="test"
 
 CDEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
-	>=dev-python/dockerpty-0.3.3[${PYTHON_USEDEP}]
+	>=dev-python/dockerpty-0.3.4[${PYTHON_USEDEP}]
 	<dev-python/dockerpty-0.4[${PYTHON_USEDEP}]
 	>=dev-python/docker-py-1.2.2[${PYTHON_USEDEP}]
 	<dev-python/docker-py-1.3[${PYTHON_USEDEP}]
@@ -45,10 +45,6 @@ DEPEND="
 	)
 "
 RDEPEND="${CDEPEND}"
-
-python_prepare_all() {
-	distutils-r1_python_prepare_all
-}
 
 python_test() {
 	nosetests tests/unit || die "tests failed under ${EPYTHON}"
