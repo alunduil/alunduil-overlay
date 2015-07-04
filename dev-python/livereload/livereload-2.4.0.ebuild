@@ -28,13 +28,13 @@ RDEPEND="
 	www-servers/tornado[${PYTHON_USEDEP}]
 "
 
-python_prepare_all() {
-	local PATCHES=(
-		"${FILESDIR}"/fix-tests.patch
-	)
-
-	distutils-r1_python_prepare_all
-}
+#python_prepare_all() {
+#	local PATCHES=(
+#		"${FILESDIR}"/fix-tests.patch
+#	)
+#
+#	distutils-r1_python_prepare_all
+#}
 
 python_test() {
 	nosetests || die "tests failed under ${EPYTHON}"
