@@ -26,8 +26,8 @@ DEPEND="
 	test? (
 		dev-python/extras[${PYTHON_USEDEP}]
 		>=dev-python/fixtures-0.3.14[${PYTHON_USEDEP}]
-		>=dev-python/hacking-0.10[${PYTHON_USEDEP}]
-		<dev-python/hacking-0.11[${PYTHON_USEDEP}]
+		>=dev-python/hacking-0.9.2[${PYTHON_USEDEP}]
+		<dev-python/hacking-0.10[${PYTHON_USEDEP}]
 		>=dev-python/oslotest-1.5.1[${PYTHON_USEDEP}]
 		<dev-python/oslotest-1.6.0[${PYTHON_USEDEP}]
 		>=dev-python/python-keystoneclient-1.1.0[${PYTHON_USEDEP}]
