@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>sci</herd>
+	<maintainer>
+		<email>cjk34@cam.ac.uk</email>
+		<name>Chris Kerr</name>
+	</maintainer>
+	<maintainer>
+		<email>erikmack@gmail.com</email>
+		<name>Erik Mackdanz</name>
+	</maintainer>
+	<maintainer>
+		<email>alunduil@gentoo.org</email>
+		<name>Alex Brandt</name>
+	</maintainer>
+	<longdescription>
+		Mini-XML is a lightweight, ultra-portable XML library
+		that requires only an ANSI C compiler and a 'make'
+		program.
+	</longdescription>
+</pkgmetadata>
