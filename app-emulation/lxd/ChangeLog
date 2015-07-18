@@ -1,0 +1,20 @@
+# ChangeLog for app-emulation/lxd
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*lxd-0.13 (08 Jul 2015)
+
+  08 Jul 2015; <erik@gentoo.org> +lxd-0.13.ebuild, files/lxd.confd,
+  files/lxd.service, metadata.xml:
+  Version upgrade to 0.13. Adds lxd group, creates lxcbr0 bridge.
+
+*lxd-0.12 (28 Jun 2015)
+
+  28 Jun 2015; <erikmack@gmail.com> +lxd-0.12.ebuild:
+  Add version 0.12, includes new german translation, more docs, and bash
+  completion
+
+  18 Jun 2015; <erikmack@gmail.com> +lxd-0.11.ebuild, +files/lxd.confd,
+  +files/lxd.initd, +files/lxd-0.11-nc-impl-with-unix-sockets.patch,
+  +metadata.xml:
+  New ebuild for app-emulation/lxd

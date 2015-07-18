@@ -1,0 +1,11 @@
+# ChangeLog for media-sound/forked-daapd
+# Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*forked-daapd-23.2 (09 Jul 2015)
+
+  09 Jul 2015; <erik@gentoo.org> +forked-daapd-23.2.ebuild, +files/daapd.confd,
+  +files/daapd.initd, +metadata.xml:
+  New ebuild with openrc service submitted by Erik Mackdanz
+  <erikmack@gmail.com>
+
