@@ -20,8 +20,8 @@ CDEPEND="dev-python/mypy[${PYTHON_USEDEP}]"
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	doc? (
-		dev-python/sphinx[${PTYHON_USEDEP}]
-		dev-python/sphinx_rtd_theme[${PYTYHON_USEDEP}]
+		dev-python/sphinx[${PYTHON_USEDEP}]
+		dev-python/sphinx_rtd_theme[${PYTHON_USEDEP}]
 	)
 	test? (
 		${CDEPEND}
