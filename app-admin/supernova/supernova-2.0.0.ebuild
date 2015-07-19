@@ -31,7 +31,7 @@ RDEPEND="
 "
 
 python_test() {
-	pytest || die "tests failed under ${EPYTYHON}"
+	py.test || die "tests failed under ${EPYTHON}"
 }
 
 python_install_all() {
