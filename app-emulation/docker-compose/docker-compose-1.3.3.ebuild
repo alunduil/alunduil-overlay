@@ -20,8 +20,8 @@ CDEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	>=dev-python/dockerpty-0.3.4[${PYTHON_USEDEP}]
 	<dev-python/dockerpty-0.4[${PYTHON_USEDEP}]
-	>=dev-python/docker-py-1.2.3[${PYTHON_USEDEP}]
-	<dev-python/docker-py-1.3[${PYTHON_USEDEP}]
+	>=dev-python/docker-py-1.3.0[${PYTHON_USEDEP}]
+	<dev-python/docker-py-1.4[${PYTHON_USEDEP}]
 	>=dev-python/docopt-0.6.1[${PYTHON_USEDEP}]
 	<dev-python/docopt-0.7[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.10[${PYTHON_USEDEP}]
@@ -50,6 +50,9 @@ python_test() {
 
 python_install_all() {
 	newbashcomp contrib/completion/bash/docker-compose ${PN}
+
+	insinto /usr/share/zsh/site-functions
+	doins contrib/completion/zsh/*
 
 	distutils-r1_python_install_all
 }
