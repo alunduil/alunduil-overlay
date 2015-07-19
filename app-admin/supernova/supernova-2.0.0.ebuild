@@ -14,12 +14,11 @@ SRC_URI="https://github.com/major/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="doc examples test"
+IUSE="examples test"
 
 CDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 DEPEND="
 	${CDEPEND}
-	doc? ( dev-python/mkdocs[${PYTHON_USEDEP}] )
 	test? ( dev-python/pytest[${PYTHON_USEDEP}] )
 "
 RDEPEND="
@@ -31,18 +30,11 @@ RDEPEND="
 	dev-python/six[${PYTHON_USEDEP}]
 "
 
-python_compile_all() {
-	if use doc; then
-		mkdocs build || die "docs failed to build"
-	fi
-}
-
 python_test() {
 	pytest || die "tests failed under ${EPYTYHON}"
 }
 
 python_install_all() {
-	use doc && local HTML_DOCS=( site/. )
 	use examples && local EXAMPLES=( example_configs/. )
 
 	distutils-r1_python_install_all
