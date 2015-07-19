@@ -28,10 +28,10 @@ DEPEND="
 	${CDEPEND}
 	test? (
 		>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
-		>=dev-python/fixtures-0.3.14[${PYTHON_USEDEP}]
+		>=dev-python/fixtures-1.3.1[${PYTHON_USEDEP}]
 		>=dev-python/hacking-0.10[${PYTHON_USEDEP}]
 		<dev-python/hacking-0.11[${PYTHON_USEDEP}]
-		>=dev-python/mock-1.0[${PYTHON_USEDEP}]
+		>=dev-python/mock-1.1[${PYTHON_USEDEP}]
 		>=dev-python/oslotest-1.5.1[${PYTHON_USEDEP}]
 		>=dev-python/subunit-0.0.18[${PYTHON_USEDEP}]
 		>=dev-python/testrepository-0.0.18[${PYTHON_USEDEP}]
@@ -50,6 +50,7 @@ RDEPEND="
 	>=dev-python/Babel-1.3[${PYTHON_USEDEP}]
 	>=dev-python/debtcollector-0.3.0[${PYTHON_USEDEP}]
 	>=dev-python/iso8601-0.1.9[${PYTHON_USEDEP}]
+	>=dev-python/monotonic-0.1[${PYTHON_USEDEP}]
 	>=dev-python/netaddr-0.7.12[${PYTHON_USEDEP}]
 	>=dev-python/netifaces-0.10.4[${PYTHON_USEDEP}]
 	>=dev-python/oslo-i18n-1.5.0[${PYTHON_USEDEP}]
