@@ -21,7 +21,7 @@ DEPEND="
 	>=dev-python/pbr-1.3[${PYTHON_USEDEP}]
 	test? (
 		dev-python/nose[${PYTHON_USEDEP}]
-		$(python_gen_cond_dep '>=dev-python/unittest2-1.1.0[${PYTHON_USEDEP}]' 'python2_7 python3_3')
+		$(python_gen_cond_dep '>=dev-python/unittest2-1.1.0[${PYTHON_USEDEP}]' 'python2_7' 'python3_3')
 	)"
 RDEPEND=">=dev-python/six-1.7[${PYTHON_USEDEP}]"
 
