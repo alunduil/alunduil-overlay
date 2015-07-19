@@ -25,7 +25,7 @@ DEPEND="
 RDEPEND="
 	${CDEPEND}
 	dev-python/click[${PYTHON_USEDEP}]
-	dev-pythonconfigobj[${PYTHON_USEDEP}]
+	dev-python/configobj[${PYTHON_USEDEP}]
 	>=dev-python/keyring-0.9.2[${PYTHON_USEDEP}]
 	dev-python/python-novaclient[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
