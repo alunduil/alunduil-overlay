@@ -49,6 +49,9 @@ pkg_setup() {
 }
 
 src_prepare() {
+	# Required until upstream accepts https://github.com/ejurgensen/forked-daapd/pull/179
+	epatch "${FILESDIR}/${P}-fix-arg-enable.patch"
+
 	eautoreconf
 }
 
@@ -70,7 +73,7 @@ src_install() {
 
 	# dodir by itself fails in the likely case of /srv/music having a
 	# volume mounted already.
-	test -d /srv/music || dodir /srv/music
+	[ -d /srv/music ] || dodir /srv/music
 
 	fowners -R daapd:daapd /var/lib/cache/forked-daapd
 }
