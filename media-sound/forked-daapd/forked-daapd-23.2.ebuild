@@ -49,6 +49,9 @@ pkg_setup() {
 }
 
 src_prepare() {
+	# Required until upstream accepts https://github.com/ejurgensen/forked-daapd/pull/179
+	epatch "${FILESDIR}/${P}-fix-arg-enable.patch"
+
 	eautoreconf
 }
 
