@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~m68k ~mips ~ppc64 ~s390 ~sh ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~x64-macos"
 IUSE="doc test"
 
-CDEPEND="$(python_gen_cond_dep '>=dev-python/unittest2-1.1.0[${PYTHON_USEDEP}]' 'python2_7')"
+CDEPEND="$(python_gen_cond_dep '>=dev-python/funcsigs[${PYTHON_USEDEP}]' 'python2_7')"
 DEPEND="
 	>=dev-python/setuptools-17.1[${PYTHON_USEDEP}]
 	>=dev-python/pbr-1.3[${PYTHON_USEDEP}]
