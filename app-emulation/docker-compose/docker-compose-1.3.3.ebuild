@@ -51,8 +51,9 @@ python_test() {
 python_install_all() {
 	newbashcomp contrib/completion/bash/docker-compose ${PN}
 
-	insinto /usr/share/zsh/site-functions
-	doins contrib/completion/zsh/*
+	# TODO add in next release
+	# insinto /usr/share/zsh/site-functions
+	# doins contrib/completion/zsh/*
 
 	distutils-r1_python_install_all
 }
