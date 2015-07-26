@@ -16,10 +16,8 @@ S="${WORKDIR}/${MY_PN}-${PV}"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="amd64 ~arm ~hppa ~ppc64 x86"
-IUSE=""
-
-# NOTE: dev-python/hacking is unecessary as there are no tests
+KEYWORDS="~amd64 ~arm ~hppa ~ppc64 ~x86"
+IUSE="doc"
 
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
