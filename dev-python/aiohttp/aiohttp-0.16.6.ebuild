@@ -23,7 +23,7 @@ CDEPEND="
 "
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
-	doc? ( 
+	doc? (
 		>=dev-python/alabaster-0.6.2[${PYTHON_USEDEP}]
 		dev-python/sphinx[${PYTHON_USEDEP}]
 	)
@@ -40,6 +40,8 @@ python_compile_all() {
 }
 
 python_test() {
+	distutils_install_for_testing
+	cd "${TEST_DIR}"/lib || die
 	nosetests ./tests/|| die "Tests failed under ${EPYTHON}"
 }
 
