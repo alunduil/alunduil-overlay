@@ -23,7 +23,10 @@ CDEPEND="
 "
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
-	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+	doc? ( 
+		>=dev-python/alabaster-0.6.2[${PYTHON_USEDEP}]
+		dev-python/sphinx[${PYTHON_USEDEP}]
+	)
 	test? (
 		${CDEPEND}
 		dev-python/nose[${PYTHON_USEDEP}]
