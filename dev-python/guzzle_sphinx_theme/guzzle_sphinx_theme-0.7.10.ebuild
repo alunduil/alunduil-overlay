@@ -14,13 +14,7 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="examples"
+IUSE=""
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND=">=dev-python/sphinx-1.2[${PYTHON_USEDEP}]"
-
-python_install_all() {
-	use examples && local EXAMPLES=( demo/. )
-
-	distutils-r1_python_install_all
-}
