@@ -5,14 +5,13 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
 
-inherit distutils-r1
+inherit distutils-r1 vcs-snapshot
 
 MY_PN=${PN/-/.}
 
 DESCRIPTION="Oslo Utility library"
 HOMEPAGE="http://launchpad.net/oslo"
-SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_PN}-${PV}.tar.gz"
-S="${WORKDIR}/${MY_PN}-${PV}"
+SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_PN}-${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -31,8 +30,7 @@ DEPEND="
 		>=dev-python/fixtures-1.3.1[${PYTHON_USEDEP}]
 		>=dev-python/hacking-0.10[${PYTHON_USEDEP}]
 		<dev-python/hacking-0.11[${PYTHON_USEDEP}]
-		!~dev-python/mock-1.1.4[${PYTHON_USEDEP}]
-		>=dev-python/mock-1.1[${PYTHON_USEDEP}]
+		>=dev-python/mock-1.2[${PYTHON_USEDEP}]
 		>=dev-python/oslo-config-1.11.0[${PYTHON_USEDEP}]
 		>=dev-python/oslotest-1.7.0[${PYTHON_USEDEP}]
 		>=dev-python/subunit-0.0.18[${PYTHON_USEDEP}]
@@ -72,10 +70,12 @@ python_compile_all() {
 # Tests fail with:
 # ImportError: No module named 'oslo.utils
 
-RESTRICT="test"
+#RESTRICT="test"
 
 python_test() {
 	distutils_install_for_testing
+
+	cd "${TEST_DIR}"/lib || die
 
 	rm -rf .testrepository || die "couldn't remove '.testrepository' under ${EPTYHON}"
 
