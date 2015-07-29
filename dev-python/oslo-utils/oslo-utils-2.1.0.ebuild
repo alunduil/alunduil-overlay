@@ -22,14 +22,14 @@ CDEPEND="
 	>=dev-python/pbr-1.3[${PYTHON_USEDEP}]
 	<dev-python/pbr-2.0[${PYTHON_USEDEP}]
 "
+#		>=dev-python/hacking-0.10[${PYTHON_USEDEP}]
+#		<dev-python/hacking-0.11[${PYTHON_USEDEP}]
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	${CDEPEND}
 	test? (
 		>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
 		>=dev-python/fixtures-1.3.1[${PYTHON_USEDEP}]
-		>=dev-python/hacking-0.10[${PYTHON_USEDEP}]
-		<dev-python/hacking-0.11[${PYTHON_USEDEP}]
 		>=dev-python/mock-1.2[${PYTHON_USEDEP}]
 		>=dev-python/oslo-config-1.11.0[${PYTHON_USEDEP}]
 		>=dev-python/oslotest-1.7.0[${PYTHON_USEDEP}]
