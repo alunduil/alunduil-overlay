@@ -20,7 +20,7 @@ DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	doc? (
 		>=dev-python/mkdocs-0.9[${PYTHON_USEDEP}]
-		<dev-python/mkdocs-0.14.0[${PYTHON_USEDEP}]
+		<dev-python/mkdocs-0.12.2[${PYTHON_USEDEP}]
 	)
 	test? ( >=dev-python/mock-1.0.1[${PYTHON_USEDEP}] )
 "
@@ -32,7 +32,7 @@ RDEPEND="
 
 python_compile_all() {
 	if use doc; then
-		mkdocs build || die "docs failes to build"
+		mkdocs build || die "docs failed to build"
 	fi
 }
 
