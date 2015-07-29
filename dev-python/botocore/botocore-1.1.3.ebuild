@@ -14,7 +14,8 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="doc test"
+#IUSE="doc test"
+IUSE="test"
 
 CDEPEND="
 	>=dev-python/docutils-0.10[${PYTHON_USEDEP}]
@@ -22,14 +23,14 @@ CDEPEND="
 	>=dev-python/python-dateutil-2.1[${PYTHON_USEDEP}]
 	<dev-python/python-dateutil-3.0.0[${PYTHON_USEDEP}]
 "
+#	doc? (
+#		>=dev-python/guzzle_sphinx_theme-0.7.10[${PYTHON_USEDEP}]
+#		<dev-python/guzzle_sphinx_theme-0.8[${PYTHON_USEDEP}]
+#		>=dev-python/sphinx-1.1.3[${PYTHON_USEDEP}]
+#		<dev-python/sphinx-1.3[${PYTHON_USEDEP}]
+#	)
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
-	doc? (
-		>=dev-python/guzzle_sphinx_theme-0.7.10[${PYTHON_USEDEP}]
-		<dev-python/guzzle_sphinx_theme-0.8[${PYTHON_USEDEP}]
-		>=dev-python/sphinx-1.1.3[${PYTHON_USEDEP}]
-		<dev-python/sphinx-1.3[${PYTHON_USEDEP}]
-	)
 	test? (
 		${CDEPEND}
 		dev-python/mock[${PYTHON_USEDEP}]
@@ -38,16 +39,16 @@ DEPEND="
 "
 RDEPEND="${CDEPEND}"
 
-python_compile_all() {
-	use doc && emake -C docs html
-}
+#python_compile_all() {
+#	use doc && emake -C docs html
+#}
 
 python_test() {
 	nosetests tests/unit || die "tests failed under ${EPYTHON}"
 }
 
-python_install_all() {
-	use doc && local HTML_DOCS=( docs/build/html/. )
-
-	distutils-r1_python_install_all
-}
+#python_install_all() {
+#	use doc && local HTML_DOCS=( docs/build/html/. )
+#
+#	distutils-r1_python_install_all
+#}
