@@ -24,15 +24,17 @@ CDEPEND="
 	$(python_gen_cond_dep '=dev-python/futures-2.2.0[${PYTHON_USEDEP}]' 'python2_7')
 "
 DEPEND="
+	dev-python/setuptools[${PYTHON_USEDEP}]
 	doc? (
-		>=dev-python/sphinx-1.1.3[${PYTHON_USEDEP}]
-		<dev-python/sphinx-1.3[${PYTHON_USEDEP}]
 		>=dev-python/guzzle_sphinx_theme-0.7.10[${PYTHON_USEDEP}]
 		<dev-python/guzzle_sphinx_theme-0.8[${PYTHON_USEDEP}]
+		>=dev-python/sphinx-1.1.3[${PYTHON_USEDEP}]
+		<dev-python/sphinx-1.3[${PYTHON_USEDEP}]
 	)
 	test? (
-		dev-python/nose[${PYTHON_USEDEP}]
+		${CDEPEND}
 		dev-python/mock[${PYTHON_USEDEP}]
+		dev-python/nose[${PYTHON_USEDEP}]
 	)
 "
 RDEPEND="${CDEPEND}"
