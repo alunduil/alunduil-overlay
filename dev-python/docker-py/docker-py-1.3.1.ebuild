@@ -20,7 +20,7 @@ DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	doc? (
 		>=dev-python/mkdocs-0.9[${PYTHON_USEDEP}]
-		<dev-python/mkdocs-0.12.2[${PYTHON_USEDEP}]
+		<dev-python/mkdocs-0.11.1-r1[${PYTHON_USEDEP}]
 	)
 	test? ( >=dev-python/mock-1.0.1[${PYTHON_USEDEP}] )
 "
