@@ -35,7 +35,7 @@ DISTUTILS_IN_SOURCE_BUILD=1
 
 python_compile_all() {
 	# selection of straight html triggers a trivial annoying bug, we skirt it
-	use doc && PYTHONPATH="$(pwd)" emake -C doc singlehtml
+	use doc && PYTHONPATH="${S}" emake  -e -C doc singlehtml
 }
 
 python_test() {
