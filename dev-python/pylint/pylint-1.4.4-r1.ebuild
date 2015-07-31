@@ -34,12 +34,8 @@ DEPEND="
 DISTUTILS_IN_SOURCE_BUILD=1
 
 python_compile_all() {
-	if use doc; then
-		distutils_install_for_testing
-
-		# selection of straight html triggers a trivial annoying bug, we skirt it
-		PYTHONPATH="${TEST_DIR}/lib:${PYTHONPATH}" emake -C doc singlehtml
-	fi
+	# selection of straight html triggers a trivial annoying bug, we skirt it
+	use doc && PYTHONPATH="$(pwd)" emake -C doc singlehtml
 }
 
 python_test() {
