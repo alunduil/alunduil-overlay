@@ -16,18 +16,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~amd64-linux ~x86-linux"
 IUSE="doc test"
 
-CDEPEND="
-	>=dev-python/pbr-0.6[${PYTHON_USEDEP}]
-	!~dev-python/pbr-0.7[${PYTHON_USEDEP}]
-	<dev-python/pbr-1.0[${PYTHON_USEDEP}]
-"
+CDEPEND="dev-python/pbr[${PYTHON_USEDEP}]"
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	${CDEPEND}
-	test? (
-		<dev-python/hacking-0.11[${PYTHON_USEDEP}]
-		>=dev-python/hacking-0.10.0[${PYTHON_USEDEP}]
-	)
 	doc? (
 		>=dev-python/oslo-sphinx-2.5.0[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-1.1.2[${PYTHON_USEDEP}]
@@ -48,7 +40,11 @@ RDEPEND="
 "
 
 python_compile_all() {
-	use doc && esetup.py build_sphinx
+	if use doc; then
+	 	esetup.py build_sphinx
+	else
+		esetup.py build_sphinx -b man
+	fi
 }
 
 python_test() {
@@ -59,12 +55,8 @@ python_test() {
 }
 
 python_install_all() {
+	doman doc/build/man/oslotest.1
 	use doc && local HTML_DOCS=( doc/build/html/. )
-	use doc && doman doc/build/man/oslotest.1
 
 	distutils-r1_python_install_all
-}
-
-pkg_postinst() {
-	elog "man page installation requires USE=doc"
 }
