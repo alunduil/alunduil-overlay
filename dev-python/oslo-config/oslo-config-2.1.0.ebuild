@@ -23,10 +23,7 @@ DEPEND="
 	test? (
 		${RDEPEND}
 		>=dev-python/fixtures-1.3.1[${PYTHON_USEDEP}]
-		>=dev-python/hacking-0.10.0[${PYTHON_USEDEP}]
-		<dev-python/hacking-0.11[${PYTHON_USEDEP}]
-		!~dev-python/mock-1.1.4[${PYTHON_USEDEP}]
-		>=dev-python/mock-1.1[${PYTHON_USEDEP}]
+		>=dev-python/mock-1.2[${PYTHON_USEDEP}]
 		>=dev-python/oslo-i18n-1.5.0[${PYTHON_USEDEP}]
 		>=dev-python/oslotest-1.7.0[${PYTHON_USEDEP}]
 		>=dev-python/subunit-0.0.18[${PYTHON_USEDEP}]
