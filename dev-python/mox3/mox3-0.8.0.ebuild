@@ -33,7 +33,7 @@ DEPEND="
 		!~dev-python/testtools-1.2.0[${PYTHON_USEDEP}]
 	)
 	doc? (
-		>=dev-python/oslosphinx-2.5.0[${PYTHON_USEDEP}]
+		>=dev-python/oslo-sphinx-2.5.0[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-1.1.2[${PYTHON_USEDEP}]
 		!~dev-python/sphinx-1.2.0[${PYTHON_USEDEP}]
 		<dev-python/sphinx-1.3[${PYTHON_USEDEP}]
