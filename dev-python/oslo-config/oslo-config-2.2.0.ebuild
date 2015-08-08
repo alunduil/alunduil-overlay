@@ -5,27 +5,28 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
 
-inherit distutils-r1
+inherit distutils-r1 vcs-snapshot
+
+MY_PN=${PN/-/.}
 
 DESCRIPTION="Oslo Configuration API"
 HOMEPAGE="https://launchpad.net/oslo"
-SRC_URI="mirror://pypi/${PN:0:1}/oslo.config/oslo.config-${PV}.tar.gz"
-S="${WORKDIR}/oslo.config-${PV}"
+SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_PN}-${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~amd64-linux ~x86-linux"
 IUSE="doc test"
 
+CDEPEND=">=dev-python/pbr-1.3[${PYTHON_USEDEP}]"
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
-	>=dev-python/pbr-1.3[${PYTHON_USEDEP}]
+	${CDEPEND}
 	test? (
-		${RDEPEND}
 		>=dev-python/fixtures-1.3.1[${PYTHON_USEDEP}]
 		>=dev-python/mock-1.2[${PYTHON_USEDEP}]
 		>=dev-python/oslo-i18n-1.5.0[${PYTHON_USEDEP}]
-		>=dev-python/oslotest-1.7.0[${PYTHON_USEDEP}]
+		>=dev-python/oslotest-1.9.0[${PYTHON_USEDEP}]
 		>=dev-python/subunit-0.0.18[${PYTHON_USEDEP}]
 		>=dev-python/testrepository-0.0.18[${PYTHON_USEDEP}]
 		>=dev-python/testscenarios-0.4[${PYTHON_USEDEP}]
@@ -39,6 +40,7 @@ DEPEND="
 	)
 "
 RDEPEND="
+	${CDEPEND}
 	>=dev-python/netaddr-0.7.12[${PYTHON_USEDEP}]
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
 	>=dev-python/stevedore-1.5.0[${PYTHON_USEDEP}]
