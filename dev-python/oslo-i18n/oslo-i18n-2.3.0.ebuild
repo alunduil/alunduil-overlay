@@ -18,25 +18,29 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="doc test"
 
-DEPEND="
+CDEPEND=">=dev-python/oslotest-1.9.0[${PYTHON_USEDEP}]"
+CRDEPEND="
 	>=dev-python/pbr-1.3[${PYTHON_USEDEP}]
 	<dev-python/pbr-2.0[${PYTHON_USEDEP}]
+"
+DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
+	${CRDEPEND}
 	test? (
-		>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
+		${CDEPEND}
 		>=dev-python/mock-1.2[${PYTHON_USEDEP}]
 		>=dev-python/oslo-config-1.11.0[${PYTHON_USEDEP}]
-		>=dev-python/oslotest-1.7.0[${PYTHON_USEDEP}]
 	)
 	doc? (
+		${CDEPEND}
 		>=dev-python/oslo-sphinx-2.5.0[${PYTHON_USEDEP}]
-		>=dev-python/oslotest-1.5.1[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-1.1.2[${PYTHON_USEDEP}]
 		!~dev-python/sphinx-1.2.0[${PYTHON_USEDEP}]
 		<dev-python/sphinx-1.3[${PYTHON_USEDEP}]
 	)
 "
 RDEPEND="
+	${CRDEPEND}
 	>=dev-python/Babel-1.3[${PYTHON_USEDEP}]
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
 "
