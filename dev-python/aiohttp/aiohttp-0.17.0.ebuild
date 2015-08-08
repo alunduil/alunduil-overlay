@@ -20,6 +20,7 @@ IUSE="doc examples test"
 CDEPEND="
 	dev-python/chardet[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep 'dev-python/asyncio[${PYTHON_USEDEP}]' 'python3_3')
+	$(python_gen_cond_dep 'dev-python/enum34[${PYTHON_USEDEP}]' 'python3_3')
 "
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
