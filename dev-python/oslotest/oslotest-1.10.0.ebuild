@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~amd64-linux ~x86-linux"
 IUSE="doc test"
 
-CDEPEND="dev-python/pbr[${PYTHON_USEDEP}]"
+CDEPEND=">=dev-python/pbr-1.3[${PYTHON_USEDEP}]"
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	${CDEPEND}
@@ -29,7 +29,7 @@ DEPEND="
 "
 RDEPEND="
 	>=dev-python/fixtures-1.3.1[${PYTHON_USEDEP}]
-	>=dev-python/mock-1.1[${PYTHON_USEDEP}]
+	>=dev-python/mock-1.2[${PYTHON_USEDEP}]
 	>=dev-python/mox3-0.7.0[${PYTHON_USEDEP}]
 	>=dev-python/os-client-config-1.4.0[${PYTHON_USEDEP}]
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
