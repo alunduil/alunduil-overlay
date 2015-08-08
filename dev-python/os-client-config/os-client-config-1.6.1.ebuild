@@ -46,6 +46,14 @@ RDEPEND="
 	>=dev-python/pyyaml-3.1.0[${PYTHON_USEDEP}]
 "
 
+python_prepare_all() {
+	local PATCHES=(
+		"${FILESDIR}"/test_get_all_clouds.patch
+	)
+
+	distutils-r1_python_prepare_all
+}
+
 python_compile_all() {
 	use doc && esetup.py build_sphinx
 }
