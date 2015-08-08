@@ -17,10 +17,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc test"
 
 CDEPEND="
-	>=dev-python/pbr-0.11[${PYTHON_USEDEP}]
+	>=dev-python/pbr-1.3[${PYTHON_USEDEP}]
 	<dev-python/pbr-2.0[${PYTHON_USEDEP}]
 "
-CRDEPEND=">=dev-python/fixtures-0.3.14[${PYTHON_USEDEP}]"
+CRDEPEND=">=dev-python/fixtures-1.3.1[${PYTHON_USEDEP}]"
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	${CDEPEND}
@@ -29,8 +29,7 @@ DEPEND="
 		>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
 		>=dev-python/subunit-0.0.18[${PYTHON_USEDEP}]
 		>=dev-python/testrepository-0.0.18[${PYTHON_USEDEP}]
-		>=dev-python/testtools-0.9.36[${PYTHON_USEDEP}]
-		!~dev-python/testtools-1.2.0[${PYTHON_USEDEP}]
+		>=dev-python/testtools-1.4.0[${PYTHON_USEDEP}]
 	)
 	doc? (
 		>=dev-python/oslo-sphinx-2.5.0[${PYTHON_USEDEP}]
