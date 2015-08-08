@@ -19,19 +19,19 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="doc test"
 
+CDEPEND="
+	>=dev-python/pbr-1.3[${PYTHON_USEDEP}]
+	<dev-python/pbr-2.0[${PYTHON_USEDEP}]
+"
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
-	>=dev-python/pbr-0.11[${PYTHON_USEDEP}]
-	<dev-python/pbr-2.0[${PYTHON_USEDEP}]
+	${CDEPEND}
 	test? (
-		>=dev-python/hacking-0.10.0[${PYTHON_USEDEP}]
-		<dev-python/hacking-0.11.0[${PYTHON_USEDEP}]
-		>=dev-python/mock-1.0[${PYTHON_USEDEP}]
+		>=dev-python/mock-1.2[${PYTHON_USEDEP}]
 		>=dev-python/netaddr-0.7.12[${PYTHON_USEDEP}]
-		>=dev-python/oslotest-1.5.1[${PYTHON_USEDEP}]
-		>=dev-python/simplejson-2.2.0[${PYTHON_USEDEP}]
 		>=dev-python/oslo-i18n-1.5.0[${PYTHON_USEDEP}]
-		>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
+		>=dev-python/oslotest-1.9.0[${PYTHON_USEDEP}]
+		>=dev-python/simplejson-2.2.0[${PYTHON_USEDEP}]
 	)
 	doc? (
 		>=dev-python/oslo-sphinx-2.5.0[${PYTHON_USEDEP}]
@@ -41,11 +41,12 @@ DEPEND="
 	)
 "
 RDEPEND="
+	${CDEPEND}
 	>=dev-python/Babel-1.3[${PYTHON_USEDEP}]
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
 	>=dev-python/msgpack-0.4.0[${PYTHON_USEDEP}]
 	>=dev-python/iso8601-0.1.9[${PYTHON_USEDEP}]
-	>=dev-python/oslo-utils-1.6.0[${PYTHON_USEDEP}]
+	>=dev-python/oslo-utils-1.9.0[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2013.6[${PYTHON_USEDEP}]
 "
 
