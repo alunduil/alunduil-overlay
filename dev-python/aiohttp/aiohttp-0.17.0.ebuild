@@ -42,9 +42,7 @@ python_compile_all() {
 }
 
 python_test() {
-	distutils_install_for_testing
-	cd "${TEST_DIR}"/lib || die
-	nosetests ./tests/|| die "Tests failed under ${EPYTHON}"
+	nosetests tests/ || die "Tests failed under ${EPYTHON}"
 }
 
 python_install_all() {
