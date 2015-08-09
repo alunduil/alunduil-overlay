@@ -26,6 +26,7 @@ DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	doc? (
 		>=dev-python/alabaster-0.6.2[${PYTHON_USEDEP}]
+		dev-python/sphinxcontrib-spelling[${PYTHON_USEDEP}]
 		dev-python/sphinx[${PYTHON_USEDEP}]
 	)
 	test? (
