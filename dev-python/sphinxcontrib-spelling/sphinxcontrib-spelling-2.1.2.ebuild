@@ -33,9 +33,7 @@ DEPEND="
 RDEPEND="${CDEPEND}"
 
 python_compile_all() {
-	elog "pwd: $(pwd)"
-
-	use doc && esetup.py build_sphinx
+	use doc && emake -C docs html
 }
 
 python_test() {
@@ -43,9 +41,7 @@ python_test() {
 }
 
 python_install_all() {
-	elog "pwd: $(pwd)"
-
-	use doc && local HTML_DOCS=( sphinx/html/. )
+	use doc && local HTML_DOCS=( docs/build/html/. )
 
 	distutils-r1_python_install_all
 }
