@@ -14,7 +14,7 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="test"
+IUSE="doc test"
 
 CDEPEND="
 	dev-python/pbr[${PYTHON_USEDEP}]
@@ -24,6 +24,7 @@ CDEPEND="
 "
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
+	doc? ( >=dev-python/sphinx-0.6[${PYTHON_USEDEP}] )
 	test? (
 		${CDEPEND}
 		dev-python/nose[${PYTHON_USEDEP}]
