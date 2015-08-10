@@ -41,6 +41,12 @@ python_test() {
 	esetup.py test || die "tests failed under ${EPYTYHON}"
 }
 
+python_install() {
+	distutils-r1_python_install
+
+	rm -rf "${D}/_${EPYTHON}/tests" || die "could not purge tests from installation under ${EPYTHON}"
+}
+
 python_install_all() {
 	use doc && local HTML_DOCS=( docs/_build/html/. )
 
