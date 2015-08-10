@@ -18,6 +18,9 @@ IUSE="doc test"
 
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
+	doc? (
+		dev-python/sphinx[${PYTHON_USEDEP}]
+	)
 	test? (
 		dev-python/mock[${PYTHON_USEDEP}]
 		dev-python/pytest-cov[${PYTHON_USEDEP}]
