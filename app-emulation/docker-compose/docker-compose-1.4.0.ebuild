@@ -43,6 +43,14 @@ DEPEND="
 "
 RDEPEND="${CDEPEND}"
 
+python_prepare_all() {
+	local PATCHES=(
+		"${FILESDIR}"/expand-request-versions.patch
+	)
+
+	distutils-r1_python_prepare_all
+}
+
 python_test() {
 	nosetests tests/unit || die "tests failed under ${EPYTHON}"
 }
