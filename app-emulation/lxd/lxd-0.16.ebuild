@@ -170,7 +170,7 @@ pkg_postinst() {
 	einfo "This ebuild has added the bridge but it's not permanent.  To make the"
 	einfo "bridge survive a reboot, it should be configured in /etc/conf.d/net"
 
-	if [ -n "${REPLACING_VERSIONS}" ]; then
+	if test -n "${REPLACING_VERSIONS}"; then
 		einfo
 		einfo "If you are upgrading from version 0.14 or older, note that the --tcp"
 		einfo "is no longer available in /etc/conf.d/lxd.  Instead, configure the"
