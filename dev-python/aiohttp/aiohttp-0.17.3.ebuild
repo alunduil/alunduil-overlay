@@ -5,6 +5,7 @@
 EAPI="5"
 
 PYTHON_COMPAT=( python3_3 python3_4 )
+DISTUTILS_IN_SOURCE_BUILD=true
 
 inherit distutils-r1
 
