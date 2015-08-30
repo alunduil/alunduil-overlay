@@ -43,7 +43,8 @@ python_compile_all() {
 }
 
 python_test() {
-	PYTHONPATH=$(PWD) nosetests tests/ || die "Tests failed under ${EPYTHON}"
+	elog "PYTHONPATH=${PYTHONPATH}"
+	PYTHONPATH="$(PWD):${PYTHONPATH}" nosetests tests/ || die "Tests failed under ${EPYTHON}"
 }
 
 python_install_all() {
