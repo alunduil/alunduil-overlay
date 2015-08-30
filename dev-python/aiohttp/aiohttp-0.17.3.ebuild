@@ -5,7 +5,6 @@
 EAPI="5"
 
 PYTHON_COMPAT=( python3_3 python3_4 )
-DISTUTILS_IN_SOURCE_BUILD=true
 
 inherit distutils-r1
 
@@ -44,7 +43,7 @@ python_compile_all() {
 }
 
 python_test() {
-	nosetests tests/ || die "Tests failed under ${EPYTHON}"
+	PYTHONPATH=$(PWD) nosetests tests/ || die "Tests failed under ${EPYTHON}"
 }
 
 python_install_all() {
