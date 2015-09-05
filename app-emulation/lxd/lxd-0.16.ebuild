@@ -67,6 +67,8 @@ RDEPEND="
 src_prepare() {
 	cd "${S}/src/${EGO_PN}"
 
+	epatch "${FILESDIR}/${P}-dont-go-get.patch"
+
 	if use daemon; then
 		# Upstream requires the openbsd flavor of netcat (with -U), but
 		# Gentoo installs that with a renamed binary
@@ -139,36 +141,19 @@ src_install() {
 	dodoc specs/*
 }
 
-pkg_config() {
-	if use daemon; then
-		if brctl show lxcbr0 2>&1 | grep "No such device" >/dev/null; then
-			brctl addbr lxcbr0
-		fi
-	fi
-}
-
 pkg_postinst() {
+	einfo
+	einfo "Consult https://wiki.gentoo.org/wiki/LXD for more information,"
+	einfo "including a Quick Start."
+
 	# The messaging below only applies to daemon installs
-	use daemon || exit 0
+	use daemon || return 0
 
 	# The control socket will be owned by (and writeable by) this group.
 	enewgroup lxd
 
 	# Ubuntu also defines an lxd user but it appears unused (the daemon
 	# must run as root)
-
-	einfo
-	einfo "To interact with the local  service as a non-root user, add yourself"
-	einfo "to the lxd group.  This requires you to log out and log in again."
-
-	# Configure the package as if 'emerge --config lxd' was run.
-	# precedent: sys-libs/timezone-data
-	pkg_config
-
-	einfo
-	einfo "The default profile wants to add containers to a bridge called lxcbr0."
-	einfo "This ebuild has added the bridge but it's not permanent.  To make the"
-	einfo "bridge survive a reboot, it should be configured in /etc/conf.d/net"
 
 	if test -n "${REPLACING_VERSIONS}"; then
 		einfo
