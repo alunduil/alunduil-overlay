@@ -34,7 +34,6 @@ DEPEND="
 	<dev-python/pbr-2.0[${PYTHON_USEDEP}]
 	test? (
 		${TCDEPEND}
-		>=dev-python/bandit-0.13.2[${PYTHON_USEDEP}]
 		>=dev-python/keyring-2.1[${PYTHON_USEDEP}]
 		!~dev-python/keyring-3.3[${PYTHON_USEDEP}]
 		>=dev-python/oauthlib-0.6[${PYTHON_USEDEP}]
