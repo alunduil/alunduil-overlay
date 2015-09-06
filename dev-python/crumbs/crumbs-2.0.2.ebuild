@@ -14,9 +14,9 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64"
-IUSE="doc inotify test"
+IUSE="doc test"
 
-CDEPEND="inotify? ( dev-python/pyinotify[${PYTHON_USEDEP}] )"
+CDEPEND="dev-python/pyinotify[${PYTHON_USEDEP}]"
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	doc? ( dev-python/sphinx_rtd_theme[${PYTHON_USEDEP}] )
@@ -29,7 +29,7 @@ DEPEND="
 RDEPEND="${CDEPEND}"
 
 python_compile_all() {
-	esetup.py build_sphinx
+	use doc && esetup.py build_sphinx
 
 	distutils-r1_python_compile_all
 }
