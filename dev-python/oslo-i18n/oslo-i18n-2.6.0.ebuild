@@ -18,9 +18,9 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="doc test"
 
-CDEPEND=">=dev-python/oslotest-1.9.0[${PYTHON_USEDEP}]"
+CDEPEND=">=dev-python/oslotest-1.10.0[${PYTHON_USEDEP}]"
 CRDEPEND="
-	>=dev-python/pbr-1.4[${PYTHON_USEDEP}]
+	>=dev-python/pbr-1.6[${PYTHON_USEDEP}]
 	<dev-python/pbr-2.0[${PYTHON_USEDEP}]
 "
 DEPEND="
@@ -29,8 +29,7 @@ DEPEND="
 	test? (
 		${CDEPEND}
 		>=dev-python/mock-1.2[${PYTHON_USEDEP}]
-		>=dev-python/oslo-config-2.1.0[${PYTHON_USEDEP}]
-		>=dev-python/oslotest-1.10.0[${PYTHON_USEDEP}]
+		>=dev-python/oslo-config-2.3.0[${PYTHON_USEDEP}]
 	)
 	doc? (
 		${CDEPEND}
