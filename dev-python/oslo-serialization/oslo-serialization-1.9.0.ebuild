@@ -29,8 +29,9 @@ DEPEND="
 	test? (
 		>=dev-python/mock-1.2[${PYTHON_USEDEP}]
 		>=dev-python/netaddr-0.7.12[${PYTHON_USEDEP}]
+		!~dev-python/netaddr-0.7.16[${PYTHON_USEDEP}]
 		>=dev-python/oslo-i18n-1.5.0[${PYTHON_USEDEP}]
-		>=dev-python/oslotest-1.9.0[${PYTHON_USEDEP}]
+		>=dev-python/oslotest-1.10.0[${PYTHON_USEDEP}]
 		>=dev-python/simplejson-2.2.0[${PYTHON_USEDEP}]
 	)
 	doc? (
@@ -46,7 +47,7 @@ RDEPEND="
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
 	>=dev-python/msgpack-0.4.0[${PYTHON_USEDEP}]
 	>=dev-python/iso8601-0.1.9[${PYTHON_USEDEP}]
-	>=dev-python/oslo-utils-1.9.0[${PYTHON_USEDEP}]
+	>=dev-python/oslo-utils-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2013.6[${PYTHON_USEDEP}]
 "
 
