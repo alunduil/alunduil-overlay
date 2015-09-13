@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc test"
 
 CDEPEND="
-	>=dev-python/pbr-1.3[${PYTHON_USEDEP}]
+	>=dev-python/pbr-1.6[${PYTHON_USEDEP}]
 	<dev-python/pbr-2.0[${PYTHON_USEDEP}]
 "
 CRDEPEND=">=dev-python/fixtures-1.3.1[${PYTHON_USEDEP}]"
