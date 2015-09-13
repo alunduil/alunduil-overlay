@@ -9,7 +9,7 @@ inherit distutils-r1 vcs-snapshot
 
 DESCRIPTION="The AWS SDK for Python"
 HOMEPAGE="https://github.com/boto/boto3"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="https://github.com/boto/${PN}/archive/${PV}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
