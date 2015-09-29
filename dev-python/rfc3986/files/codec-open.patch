@@ -1,0 +1,26 @@
+diff --git a/setup.py b/setup.py
+index 28a4e26..22350fa 100755
+--- a/setup.py
++++ b/setup.py
+@@ -3,6 +3,8 @@
+ import os
+ import sys
+ 
++from codecs import open
++
+ import rfc3986
+ 
+ try:
+@@ -18,10 +20,10 @@ packages = [
+     'rfc3986',
+ ]
+ 
+-with open('README.rst') as f:
++with open('README.rst', encoding = 'utf-8') as f:
+     readme = f.read()
+ 
+-with open('HISTORY.rst') as f:
++with open('HISTORY.rst', encoding = 'utf-8') as f:
+     history = f.read()
+ 
+ setup(
