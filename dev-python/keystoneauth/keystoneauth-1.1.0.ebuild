@@ -23,7 +23,7 @@ DEPEND="
 		>=dev-python/fixtures-1.3.1[${PYTHON_USEDEP}]
 		>=dev-python/keyring-2.1[${PYTHON_USEDEP}]
 		!~dev-python/keyring-3.3[${PYTHON_USEDEP}]
-		>=dev-python/mock-1.2[${PYTHON_USDEP}]
+		>=dev-python/mock-1.2[${PYTHON_USEDEP}]
 		>=dev-python/mox3-0.7.0[${PYTHON_USEDEP}]
 		>=dev-python/oauthlib-0.6[${PYTHON_USEDEP}]
 		>=dev-python/oslo-config-2.3.0[${PYTHON_USEDEP}]
