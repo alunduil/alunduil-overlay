@@ -46,7 +46,7 @@ DEPEND="
 "
 RDEPEND="
 	>=dev-python/iso8601-0.1.9[${PYTHON_USEDEP}]
-	>=dev-python/requests-2.5.2[${PTYHON_USEDEP}]
+	>=dev-python/requests-2.5.2[${PYTHON_USEDEP}]
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
 	>=dev-python/stevedore-1.5.0[${PYTHON_USEDEP}]
 "
