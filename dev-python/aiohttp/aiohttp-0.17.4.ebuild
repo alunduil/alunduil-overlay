@@ -24,6 +24,7 @@ CDEPEND="
 "
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
+	dev-python/cython[${PYTHON_USEDEP}]
 	doc? (
 		>=dev-python/alabaster-0.6.2[${PYTHON_USEDEP}]
 		dev-python/sphinxcontrib-newsfeed[${PYTHON_USEDEP}]
@@ -43,7 +44,6 @@ python_compile_all() {
 }
 
 python_test() {
-	elog "PYTHONPATH=${PYTHONPATH}"
 	PYTHONPATH="$(PWD):${PYTHONPATH}" nosetests tests/ || die "Tests failed under ${EPYTHON}"
 }
 
