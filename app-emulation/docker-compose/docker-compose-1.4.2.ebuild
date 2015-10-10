@@ -17,18 +17,16 @@ KEYWORDS="~amd64"
 IUSE="test"
 
 CDEPEND="
+	dev-python/setuptools[${PYTHON_USEDEP}]
 	>=dev-python/dockerpty-0.3.4[${PYTHON_USEDEP}]
 	<dev-python/dockerpty-0.4[${PYTHON_USEDEP}]
 	>=dev-python/docker-py-1.3.1[${PYTHON_USEDEP}]
 	<dev-python/docker-py-1.4[${PYTHON_USEDEP}]
 	>=dev-python/docopt-0.6.1[${PYTHON_USEDEP}]
 	<dev-python/docopt-0.7[${PYTHON_USEDEP}]
-	>=dev-python/jsonschema-2.5.1[${PYTHON_USEDEP}]
-	<dev-python/jsonschema-3[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.10[${PYTHON_USEDEP}]
 	<dev-python/pyyaml-4[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.6.1[${PYTHON_USEDEP}]
-	dev-python/setuptools[${PYTHON_USEDEP}]
 	>=dev-python/six-1.3.0[${PYTHON_USEDEP}]
 	<dev-python/six-2[${PYTHON_USEDEP}]
 	>=dev-python/texttable-0.8.1[${PYTHON_USEDEP}]
