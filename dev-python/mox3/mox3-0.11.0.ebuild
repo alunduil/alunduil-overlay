@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-python/mox3/mox3-0.7.0-r1.ebuild,v 1.3 2015/03/09 00:04:31 pacho Exp $
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
+PYTHON_COMPAT=( python2_7 python3_4 )
 
 inherit distutils-r1
 
@@ -16,10 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc test"
 
-CDEPEND="
-	>=dev-python/pbr-1.6[${PYTHON_USEDEP}]
-	<dev-python/pbr-2.0[${PYTHON_USEDEP}]
-"
+CDEPEND=">=dev-python/pbr-1.8[${PYTHON_USEDEP}]"
 CRDEPEND=">=dev-python/fixtures-1.3.1[${PYTHON_USEDEP}]"
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
