@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-python/oslo-serialization/oslo-serialization-1.5.0.ebuild,v 1.1 2015/04/22 20:04:44 prometheanfire Exp $
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 python3_4 python3_5 )
+PYTHON_COMPAT=( python2_7 python3_4 )
 
 inherit distutils-r1
 
