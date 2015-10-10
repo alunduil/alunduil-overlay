@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-python/oslo-i18n/oslo-i18n-1.6.0.ebuild,v 1.1 2015/04/22 20:35:11 prometheanfire Exp $
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
+PYTHON_COMPAT=( python2_7 python3_4 )
 
 inherit distutils-r1 vcs-snapshot
 
