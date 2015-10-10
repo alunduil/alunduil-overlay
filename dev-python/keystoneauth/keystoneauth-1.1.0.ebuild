@@ -7,9 +7,11 @@ PYTHON_COMPAT=( python2_7 python3_4 )
 
 inherit distutils-r1 vcs-snapshot
 
+MY_PN="${PN}1"
+
 DESCRIPTION="Authentication Library for OpenStack Identity"
 HOMEPAGE="http://www.openstack.org/"
-SRC_URI="https://github.com/openstack/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_PN}-${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
