@@ -30,10 +30,10 @@ DEPEND="
 		>=dev-python/oauthlib-0.6[${PYTHON_USEDEP}]
 		>=dev-python/oslo-config-2.3.0[${PYTHON_USEDEP}]
 		>=dev-python/oslotest-1.10.0[${PYTHON_USEDEP}]
-		>=dev-python/os-testr-0.1.0[${PYTHON_USEDEP}]
+		>=dev-python/os-testr-0.4.1[${PYTHON_USEDEP}]
 		>=dev-python/pycrypto-2.6[${PYTHON_USEDEP}]
 		>=dev-python/requests-mock-0.6.0[${PYTHON_USEDEP}]
-		>=dev-python/tempest-lib-0.6.1[${PYTHON_USEDEP}]
+		>=dev-python/tempest-lib-0.10.0[${PYTHON_USEDEP}]
 		>=dev-python/testrepository-0.0.18[${PYTHON_USEDEP}]
 		>=dev-python/testresources-0.2.4[${PYTHON_USEDEP}]
 		>=dev-python/testtools-1.4.0[${PYTHON_USEDEP}]
@@ -49,6 +49,7 @@ DEPEND="
 RDEPEND="
 	>=dev-python/iso8601-0.1.9[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.5.2[${PYTHON_USEDEP}]
+	!~dev-python/requests-2.8.0[${PYTHON_USEDEP}]
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
 	>=dev-python/stevedore-1.5.0[${PYTHON_USEDEP}]
 "
