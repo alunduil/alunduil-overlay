@@ -3,16 +3,15 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-python/oslo-serialization/oslo-serialization-1.5.0.ebuild,v 1.1 2015/04/22 20:04:44 prometheanfire Exp $
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 python3_4 )
+PYTHON_COMPAT=( python2_7 python3_4 python3_5 )
 
-inherit distutils-r1
+inherit distutils-r1 vcs-snapshot
 
 MY_PN=${PN/-/.}
 
 DESCRIPTION="Oslo Serialization library"
 HOMEPAGE="https://launchpad.net/oslo"
-SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_PN}-${PV}.tar.gz"
-S="${WORKDIR}/${MY_PN}-${PV}"
+SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_PN}-${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -44,7 +43,7 @@ RDEPEND="
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
 	>=dev-python/msgpack-0.4.0[${PYTHON_USEDEP}]
 	>=dev-python/iso8601-0.1.9[${PYTHON_USEDEP}]
-	>=dev-python/oslo-utils-2.0.0[${PYTHON_USEDEP}]
+	>=dev-python/oslo-utils-2.4.0[${PYTHON_USEDEP}]
 	>=dev-python/pytz-2013.6[${PYTHON_USEDEP}]
 "
 
