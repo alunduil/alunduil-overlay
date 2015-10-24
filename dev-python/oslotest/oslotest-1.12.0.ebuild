@@ -3,7 +3,7 @@
 # $Id$
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
+PYTHON_COMPAT=( python2_7 python3_4 )
 
 inherit distutils-r1
 
@@ -16,10 +16,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="doc test"
 
-CDEPEND=">=dev-python/pbr-1.3[${PYTHON_USEDEP}]"
+CDEPEND=">=dev-python/pbr-1.8[${PYTHON_USEDEP}]"
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	${CDEPEND}
+	test? ( >=dev-python/oslo-config-2.3.0[${PYTHON_USEDEP}] )
 	doc? (
 		>=dev-python/oslo-sphinx-2.5.0[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-1.1.2[${PYTHON_USEDEP}]
