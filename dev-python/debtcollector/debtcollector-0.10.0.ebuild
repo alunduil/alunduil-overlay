@@ -21,7 +21,7 @@ DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	${CDEPEND}
 	test? (
-		>=dev-python/fixtures[${PYTHON_USEDEP}]
+		>=dev-python/fixtures-1.3.1[${PYTHON_USEDEP}]
 		>=dev-python/oslotest-1.10.0[${PYTHON_USEDEP}]
 		>=dev-python/subunit-0.0.18[${PYTHON_USEDEP}]
 		>=dev-python/testrepository-0.0.18[${PYTHON_USEDEP}]
