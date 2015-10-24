@@ -16,16 +16,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc test"
 
-CDEPEND="
-	>=dev-python/pbr-1.6[${PYTHON_USEDEP}]
-	<dev-python/pbr-2.0[${PYTHON_USEDEP}]
-"
+CDEPEND=">=dev-python/pbr-1.8[${PYTHON_USEDEP}]"
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	${CDEPEND}
 	test? (
-		>=dev-python/subunit-0.0.18[${PYTHON_USEDEP}]
+		>=dev-python/fixtures[${PYTHON_USEDEP}]
 		>=dev-python/oslotest-1.10.0[${PYTHON_USEDEP}]
+		>=dev-python/subunit-0.0.18[${PYTHON_USEDEP}]
 		>=dev-python/testrepository-0.0.18[${PYTHON_USEDEP}]
 		>=dev-python/testscenarios-0.4[${PYTHON_USEDEP}]
 		!~dev-python/testtools-1.4.0[${PYTHON_USEDEP}]
