@@ -3,7 +3,7 @@
 # $Id$
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python2_7 python3_4 python3_5 )
 
 inherit bash-completion-r1 distutils-r1 vcs-snapshot
 
@@ -19,6 +19,7 @@ KEYWORDS="~amd64"
 IUSE="test"
 
 CDEPEND="
+	dev-python/setuptools[${PYTHON_USEDEP}]
 	>=dev-python/dockerpty-0.3.4[${PYTHON_USEDEP}]
 	<dev-python/dockerpty-0.4[${PYTHON_USEDEP}]
 	>=dev-python/docker-py-1.5.0[${PYTHON_USEDEP}]
@@ -30,7 +31,7 @@ CDEPEND="
 	>=dev-python/pyyaml-3.10[${PYTHON_USEDEP}]
 	<dev-python/pyyaml-4[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.6.1[${PYTHON_USEDEP}]
-	dev-python/setuptools[${PYTHON_USEDEP}]
+	<dev-python/requests-2.8[${PYTHON_USEDEP}]
 	>=dev-python/six-1.3.0[${PYTHON_USEDEP}]
 	<dev-python/six-2[${PYTHON_USEDEP}]
 	>=dev-python/texttable-0.8.1[${PYTHON_USEDEP}]
@@ -41,19 +42,13 @@ CDEPEND="
 DEPEND="
 	test? (
 		${CDEPEND}
-	    >=dev-python/mock-1.0.1[${PYTHON_USEDEP}]
-		dev-python/nose[${PYTHON_USEDEP}]
+		dev-python/pytest[${PYTHON_USEDEP}]
+		$(python_gen_cond_dep '>=dev-python/enum34-1.0.4[${PYTHON_USEDEP}]' 'python2_7' )
+		$(python_gen_cond_dep '<dev-python/enum34-2[${PYTHON_USEDEP}]' 'python2_7' )
+		$(python_gen_cond_dep '>=dev-python/mock-1.0.1[${PYTHON_USEDEP}]' 'python2_7' )
 	)
 "
 RDEPEND="${CDEPEND}"
-
-python_prepare_all() {
-	local PATCHES=(
-		"${FILESDIR}"/expand-request-versions.patch
-	)
-
-	distutils-r1_python_prepare_all
-}
 
 python_test() {
 	nosetests tests/unit || die "tests failed under ${EPYTHON}"
