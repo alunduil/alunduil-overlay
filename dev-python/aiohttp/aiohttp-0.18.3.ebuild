@@ -30,6 +30,7 @@ DEPEND="
 	test? (
 		${CDEPEND}
 		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/pytest-raisesregexp[${PYTHON_USEDEP}]
 		www-servers/gunicorn[${PYTHON_USEDEP}]
 	)
 "
