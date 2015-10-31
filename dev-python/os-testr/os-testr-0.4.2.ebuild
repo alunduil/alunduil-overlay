@@ -29,7 +29,7 @@ CRDEPEND="
 "
 DEPEND="
 	${CDEPEND}
-	test? ( 
+	test? (
 		${CRDEPEND}
 		>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
 		>=dev-python/ddt-0.4.0[${PYTHON_USEDEP}]
