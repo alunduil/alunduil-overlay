@@ -17,10 +17,14 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
+CDEPEND="dev-python/pytest[${PYTHON_USEDEP}]"
+DEPEND="
+	dev-python/setuptools[${PYTHON_USEDEP}]
+	test? ( ${CDEPEND} )
+"
 RDEPEND="
+	${CDEPEND}
 	dev-python/py[${PYTHON_USEDEP}]
-	dev-python/pytest[${PYTHON_USEDEP}]
 "
 
 python_test() {
