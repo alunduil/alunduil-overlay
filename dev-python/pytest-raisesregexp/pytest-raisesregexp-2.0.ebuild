@@ -28,5 +28,5 @@ RDEPEND="
 "
 
 python_test() {
-	pytest || die "Tests failed under ${EPYTHON}"
+	${PYTHON} -m pytest || die "Tests failed under ${EPYTHON}"
 }
