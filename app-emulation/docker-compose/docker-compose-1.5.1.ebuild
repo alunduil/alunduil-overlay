@@ -49,7 +49,7 @@ DEPEND="
 RDEPEND="${CDEPEND}"
 
 python_test() {
-	nosetests tests/unit || die "tests failed under ${EPYTHON}"
+	${PYTHON} -m pytest tests/unit || die "tests failed under ${EPYTHON}"
 }
 
 python_install_all() {
