@@ -23,8 +23,13 @@ DEPEND="
 	test? (
 		dev-python/extras[${PYTHON_USEDEP}]
 		>=dev-python/fixtures-0.3.14[${PYTHON_USEDEP}]
+		>=dev-python/jsonschema-2.0.0[${PYTHON_USEDEP}]
+		!~dev-python/jsonschema-2.5.0[${PYTHON_USEDEP}]
+		<dev-python/jsonschema-3.0.0[${PYTHON_USEDEP}]
+		>=dev-python/mock-1.2[${PYTHON_USEDEP}]
 		>=dev-python/oslotest-1.5.1[${PYTHON_USEDEP}]
 		<dev-python/oslotest-1.6.0[${PYTHON_USEDEP}]
+		>=dev-python/python-glanceclient-0.18.0[${PYTHON_USEDEP}]
 		>=dev-python/python-keystoneclient-1.1.0[${PYTHON_USEDEP}]
 		>=dev-python/subunit-0.0.18[${PYTHON_USEDEP}]
 		>=dev-python/testrepository-0.0.18[${PYTHON_USEDEP}]
