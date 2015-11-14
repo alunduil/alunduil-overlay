@@ -69,8 +69,6 @@ RDEPEND="
 	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
 	>=dev-python/stevedore-1.5.0[${PYTHON_USEDEP}]
 "
-PATCHES=(
-)
 
 python_prepare_all() {
 	use doc && esetup.py build_sphinx
