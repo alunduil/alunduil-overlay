@@ -21,12 +21,10 @@ DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	${CDEPEND}
 	test? ( >=dev-python/oslo-config-2.3.0[${PYTHON_USEDEP}] )
-	doc? (
-		>=dev-python/oslo-sphinx-2.5.0[${PYTHON_USEDEP}]
-		>=dev-python/sphinx-1.1.2[${PYTHON_USEDEP}]
-		!~dev-python/sphinx-1.2.0[${PYTHON_USEDEP}]
-		<dev-python/sphinx-1.3[${PYTHON_USEDEP}]
-	)
+	>=dev-python/oslo-sphinx-2.5.0[${PYTHON_USEDEP}]
+	>=dev-python/sphinx-1.1.2[${PYTHON_USEDEP}]
+	!~dev-python/sphinx-1.2.0[${PYTHON_USEDEP}]
+	<dev-python/sphinx-1.3[${PYTHON_USEDEP}]
 "
 RDEPEND="
 	>=dev-python/fixtures-1.3.1[${PYTHON_USEDEP}]
