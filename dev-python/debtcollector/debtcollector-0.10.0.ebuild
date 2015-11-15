@@ -7,7 +7,7 @@ PYTHON_COMPAT=( python2_7 python3_4 )
 
 inherit distutils-r1
 
-DESCRIPTION="... Python deprecation patterns and strategies that help collect technical debt ...."
+DESCRIPTION="... Python deprecation patterns and strategies that collect technical debt ...."
 HOMEPAGE="http://www.openstack.org/"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
