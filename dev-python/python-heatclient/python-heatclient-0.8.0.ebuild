@@ -69,15 +69,6 @@ python_compile_all() {
 }
 
 python_test() {
-	# BUG: https://bugs.launchpad.net/python-heatclient/+bug/1313257
-	ebegin 'patching heatclient/tests/test_common_http.py'
-	sed \
-		-e '645,/def/ d' \
-		-i heatclient/tests/test_common_http.py
-	STATUS=${?}
-	eend ${STATUS}
-	[[ ${STATUS} -gt 0 ]] && die
-
 	# BUG: https://bugs.launchpad.net/python-heatclient/+bug/1375035
 	ebegin 'patching heatclient/tests/test_shell.py'
 	sed \
