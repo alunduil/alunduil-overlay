@@ -69,15 +69,6 @@ python_compile_all() {
 }
 
 python_test() {
-	# BUG: https://bugs.launchpad.net/python-heatclient/+bug/1375035
-	ebegin 'patching heatclient/tests/test_shell.py'
-	sed \
-		-e '2116,/def|@/ d' \
-		-i heatclient/tests/test_shell.py
-	STATUS=${?}
-	eend ${STATUS}
-	[[ ${STATUS} -gt 0 ]] && die
-
 	rm -rf .testrepository || die "couldn't remove '.testrepository' under ${EPYTHON}"
 
 	testr init
