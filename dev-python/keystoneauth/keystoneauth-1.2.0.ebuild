@@ -22,6 +22,7 @@ DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	>=dev-python/pbr-1.8[${PYTHON_USEDEP}]
 	test? (
+		dev-python/pep8[${PYTHON_USEDEP}]
 		>=dev-python/fixtures-1.3.1[${PYTHON_USEDEP}]
 		>=dev-python/keyring-2.1[${PYTHON_USEDEP}]
 		!~dev-python/keyring-3.3[${PYTHON_USEDEP}]
