@@ -25,7 +25,7 @@ DEPEND="
 	test? (
 		>=dev-python/fixtures-1.3.1[${PYTHON_USEDEP}]
 		>=dev-python/mock-1.2[${PYTHON_USEDEP}]
-		>=dev-python/oslo-config-2.3.0[${PYTHON_USEDEP}]
+		>=dev-python/oslo-config-2.6.0[${PYTHON_USEDEP}]
 		>=dev-python/oslotest-1.10.0[${PYTHON_USEDEP}]
 		>=dev-python/subunit-0.0.18[${PYTHON_USEDEP}]
 		>=dev-python/testrepository-0.0.18[${PYTHON_USEDEP}]
@@ -42,15 +42,15 @@ DEPEND="
 RDEPEND="
 	${CDEPEND}
 	>=dev-python/Babel-1.3[${PYTHON_USEDEP}]
-	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
+	>=dev-python/debtcollector-0.3.0[${PYTHON_USEDEP}]
 	>=dev-python/iso8601-0.1.9[${PYTHON_USEDEP}]
-	>=dev-python/oslo-i18n-1.5.0[${PYTHON_USEDEP}]
 	>=dev-python/monotonic-0.3[${PYTHON_USEDEP}]
-	>=dev-python/pytz-2013.6[${PYTHON_USEDEP}]
 	>=dev-python/netaddr-0.7.12[${PYTHON_USEDEP}]
 	!~dev-python/netaddr-0.7.16[${PYTHON_USEDEP}]
 	>=dev-python/netifaces-0.10.4[${PYTHON_USEDEP}]
-	>=dev-python/debtcollector-0.3.0[${PYTHON_USEDEP}]
+	>=dev-python/oslo-i18n-1.5.0[${PYTHON_USEDEP}]
+	>=dev-python/pytz-2013.6[${PYTHON_USEDEP}]
+	>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
 "
 
 python_compile_all() {
