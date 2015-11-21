@@ -59,8 +59,13 @@ RDEPEND="
 "
 
 python_prepare_all() {
+	local PATCHES=(
+		"${FILESDIR}"/remove-unmaintained-tests.patch
+	)
+
 	sed -i '/^argparse/d' requirements.txt || die
 	sed -i '/^hacking/d' test-requirements.txt || die
+
 	distutils-r1_python_prepare_all
 }
 
