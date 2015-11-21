@@ -50,6 +50,7 @@ RDEPEND="
 	>=dev-python/appdirs-1.3.0[${PYTHON_USEDEP}]
 	>=dev-python/keystoneauth-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/pyyaml-3.1.0[${PYTHON_USEDEP}]
+	>=dev-python/requestsexceptions-1.1.1[${PYTHON_USEDEP}]
 "
 
 python_prepare_all() {
