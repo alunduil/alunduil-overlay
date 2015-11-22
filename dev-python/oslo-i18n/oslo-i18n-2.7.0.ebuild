@@ -18,7 +18,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="doc test"
 
-CDEPEND=">=dev-python/oslotest-1.10.0[${PYTHON_USEDEP}]"
+CDEPEND=">dev-python/oslotest-1.10.0[${PYTHON_USEDEP}]"
 CRDEPEND=">=dev-python/pbr-1.8[${PYTHON_USEDEP}]"
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
