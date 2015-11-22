@@ -3,7 +3,7 @@
 # $Id$
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 python3_4 )
+PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
 
 inherit distutils-r1 vcs-snapshot
 
@@ -30,7 +30,7 @@ DEPEND="
 		>=dev-python/mox3-0.7.0[${PYTHON_USEDEP}]
 		>=dev-python/oauthlib-0.6[${PYTHON_USEDEP}]
 		>=dev-python/oslo-config-2.3.0[${PYTHON_USEDEP}]
-		>=dev-python/oslotest-1.10.0[${PYTHON_USEDEP}]
+		>dev-python/oslotest-1.10.0[${PYTHON_USEDEP}]
 		>=dev-python/os-testr-0.4.1[${PYTHON_USEDEP}]
 		>=dev-python/pycrypto-2.6[${PYTHON_USEDEP}]
 		>=dev-python/requests-mock-0.6.0[${PYTHON_USEDEP}]
