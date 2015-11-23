@@ -16,9 +16,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~amd64-linux ~x86 ~x86-linux"
 IUSE="doc examples test"
 
-# Note: blacklist version not in portage:
-#doc? ( !~dev-python/sphinx-1.3_preb1[${PYTHON_USEDEP}] )
-
 CDEPEND=">=dev-python/pbr-1.8[${PYTHON_USEDEP}]"
 TCDEPEND="
 	>=dev-python/lxml-2.3[${PYTHON_USEDEP}]
@@ -38,6 +35,7 @@ DEPEND="
 		!~dev-python/keyring-3.3[${PYTHON_USEDEP}]
 		>=dev-python/oauthlib-0.6[${PYTHON_USEDEP}]
 		>=dev-python/oslotest-1.10.0[${PYTHON_USEDEP}]
+		dev-python/pep8[${PYTHON_USEDEP}]
 		>=dev-python/pycrypto-2.6[${PYTHON_USEDEP}]
 		>=dev-python/testrepository-0.0.18[${PYTHON_USEDEP}]
 		>=dev-python/testtools-1.4.0[${PYTHON_USEDEP}]
