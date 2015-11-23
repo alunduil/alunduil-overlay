@@ -34,7 +34,7 @@ DEPEND="
 		>=dev-python/keyring-2.1[${PYTHON_USEDEP}]
 		!~dev-python/keyring-3.3[${PYTHON_USEDEP}]
 		>=dev-python/oauthlib-0.6[${PYTHON_USEDEP}]
-		>=dev-python/oslotest-1.10.0[${PYTHON_USEDEP}]
+		>dev-python/oslotest-1.10.0[${PYTHON_USEDEP}]
 		dev-python/pep8[${PYTHON_USEDEP}]
 		>=dev-python/pycrypto-2.6[${PYTHON_USEDEP}]
 		>=dev-python/testrepository-0.0.18[${PYTHON_USEDEP}]
