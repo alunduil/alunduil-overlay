@@ -56,6 +56,8 @@ python_compile_all() {
 python_test() {
 	distutils_install_for_testing
 
+	elog "pwd: $(pwd)"
+
 	local PATH="${TEST_DIR}/scripts:${PATH}"
 
 	rm -rf .testrepository || die "couldn't remove '.testrepository' under ${EPYTHON}"
