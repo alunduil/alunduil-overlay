@@ -31,7 +31,7 @@ python_compile_all() {
 }
 
 python_test() {
-	"${PYTHON}" tests.py || die "tests failed under ${EPYTHON}"
+	"${PYTHON}" runtests.py || die "tests failed under ${EPYTHON}"
 }
 
 python_install_all() {
