@@ -27,6 +27,14 @@ DEPEND="
 "
 RDEPEND=""
 
+python_prepare_all() {
+	local PATCHES=(
+		"${FILESDIR}"/use-which.patch
+	)
+
+	distutils-r1_python_prepare_all
+}
+
 python_compile_all() {
 	use doc && emake -C docs html
 }
