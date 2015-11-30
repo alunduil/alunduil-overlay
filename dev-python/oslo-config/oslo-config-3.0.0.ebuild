@@ -34,6 +34,7 @@ DEPEND="
 	)
 	doc? (
 		>=dev-python/oslo-sphinx-2.5.0[${PYTHON_USEDEP}]
+		!~dev-python/oslo-sphinx-3.4.0[${PYTHON_USEDEP}]
 		>=dev-python/sphinx-1.1.2[${PYTHON_USEDEP}]
 		!~dev-python/sphinx-1.2.0[${PYTHON_USEDEP}]
 		<dev-python/sphinx-1.3[${PYTHON_USEDEP}]
