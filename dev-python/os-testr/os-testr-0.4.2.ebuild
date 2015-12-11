@@ -58,6 +58,12 @@ python_test() {
 
 	elog "pwd: $(pwd)"
 
+	echo
+	echo
+	ls -l "${TEST_DIR}"
+	echo
+	echo
+
 	local PATH="${TEST_DIR}/scripts:${PATH}"
 
 	rm -rf .testrepository || die "couldn't remove '.testrepository' under ${EPYTHON}"
