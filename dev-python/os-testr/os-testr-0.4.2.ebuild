@@ -33,6 +33,7 @@ DEPEND="
 		${CRDEPEND}
 		>=dev-python/coverage-3.6[${PYTHON_USEDEP}]
 		>=dev-python/ddt-0.4.0[${PYTHON_USEDEP}]
+		!~dev-python/oslotest-1.10.0[${PYTHON_USEDEP}]
 		>=dev-python/oslotest-1.2.0[${PYTHON_USEDEP}]
 		>=dev-python/six-1.9.0[${PYTHON_USEDEP}]
 		>=dev-python/testscenarios-0.4[${PYTHON_USEDEP}]
