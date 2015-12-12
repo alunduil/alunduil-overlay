@@ -38,7 +38,7 @@ python_compile_all() {
 }
 
 python_test() {
-	py.test tests/test.py tests/utils_test.py || die "tests failed under ${EPYTHON}"
+	py.test tests/unit/ | die "tests failed under ${EPYTHON}"
 }
 
 python_install_all() {
