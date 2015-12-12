@@ -19,7 +19,10 @@ IUSE="doc test"
 CDEPEND="dev-python/pyinotify[${PYTHON_USEDEP}]"
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
-	doc? ( dev-python/sphinx_rtd_theme[${PYTHON_USEDEP}] )
+	doc? (
+		dev-python/sphinx[${PYTHON_USEDEP}]
+		dev-python/sphinx_rtd_theme[${PYTHON_USEDEP}]
+	)
 	test? (
 		${CDEPEND}
 		dev-python/coverage[${PYTHON_USEDEP}]
