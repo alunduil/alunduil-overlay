@@ -11,6 +11,7 @@ inherit distutils-r1 vcs-snapshot
 DESCRIPTION="Module for decorators, wrappers and monkey patching"
 HOMEPAGE="https://github.com/GrahamDumpleton/wrapt"
 SRC_URI="https://github.com/GrahamDumpleton/${PN}/archive/${PV}.tar.gz -> ${P}-r1.tar.gz"
+S="${S}-r1"
 
 LICENSE="BSD"
 SLOT="0"
