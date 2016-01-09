@@ -7,7 +7,7 @@ PYTHON_COMPAT=( python2_7 python3_4 )
 
 inherit distutils-r1
 
-DESCRIPTION="The definitive testing tool for Python. Born under the banner of Behavior Driven Development"
+DESCRIPTION="The ... testing tool for Python. Born under the banner of Behavior Driven Development"
 HOMEPAGE="http://nestorsalceda.github.io/mamba"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
