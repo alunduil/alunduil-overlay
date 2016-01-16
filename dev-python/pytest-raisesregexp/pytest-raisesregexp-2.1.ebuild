@@ -28,5 +28,7 @@ RDEPEND="
 "
 
 python_test() {
+	distutils_install_for_testing
+	cd "${TEST_DIR}"/lib || die
 	${PYTHON} -m pytest || die "Tests failed under ${EPYTHON}"
 }
