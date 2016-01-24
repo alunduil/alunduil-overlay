@@ -7,9 +7,11 @@ PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
 
 inherit distutils-r1 vcs-snapshot
 
+MY_PV=${PV//_/}
+
 DESCRIPTION="Python client for Docker"
 HOMEPAGE="https://github.com/docker/docker-py"
-SRC_URI="https://github.com/docker/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/docker/${PN}/archive/${MY_PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -20,9 +22,9 @@ DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/mkdocs-0.14.0[${PYTHON_USEDEP}] )
 	test? (
-		>=dev-python/mock-1.0.1[${PYTHON_USEDEP}]
-		>=dev-python/pytest-2.7.2[${PYTHON_USEDEP}]
-		>=dev-python/pytest-cov-2.1.0[${PYTHON_USEDEP}]
+		~dev-python/mock-1.0.1[${PYTHON_USEDEP}]
+		~dev-python/pytest-2.7.2[${PYTHON_USEDEP}]
+		~dev-python/pytest-cov-2.1.0[${PYTHON_USEDEP}]
 	)
 "
 RDEPEND="
