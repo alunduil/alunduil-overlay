@@ -7,7 +7,7 @@ PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
 
 inherit distutils-r1 vcs-snapshot
 
-MY_PV=${PV//_/}
+MY_PV=${PV//_/-}
 
 DESCRIPTION="Python client for Docker"
 HOMEPAGE="https://github.com/docker/docker-py"
