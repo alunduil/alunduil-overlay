@@ -26,7 +26,7 @@ DEPEND="
 "
 RDEPEND="
 	${CDEPEND}
-	>=dev-python/click-4.0[${PYTHON_USEDEP}]
+	>=dev-python/click-3.3[${PYTHON_USEDEP}]
 	>=dev-python/jinja-2.7.1[${PYTHON_USEDEP}]
 	>=dev-python/livereload-2.3.2[${PYTHON_USEDEP}]
 	>=dev-python/markdown-2.3.1[${PYTHON_USEDEP}]
@@ -35,14 +35,6 @@ RDEPEND="
 	>=dev-python/pyyaml-3.10[${PYTHON_USEDEP}]
 	>=www-servers/tornado-4.1[${PYTHON_USEDEP}]
 "
-
-python_prepare_all() {
-	local PATCHES=(
-		"${FILESDIR}"/skip-invalid-test.patch
-	)
-
-	distutils-r1_python_prepare_all
-}
 
 python_test() {
 	nosetests mkdocs/tests || die "tests failed under ${EPYTHON}"
