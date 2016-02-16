@@ -6,11 +6,11 @@ EAPI=5
 
 PYTHON_COMPAT=( python3_4 python3_5 )
 
-inherit distutils-r1
+inherit distutils-r1 vcs-snapshot
 
 DESCRIPTION="Postgres integration with asyncio."
 HOMEPAGE="http://aiopg.readthedocs.org"
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="https://github.com/aio-libs/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
