@@ -5,21 +5,18 @@
 EAPI=5
 PYTHON_COMPAT=( python3_3 python3_4 python3_5 )
 
-inherit distutils-r1 git-r3
-
-EGIT_REPO_URI="https://github.com/JukkaL/mypy.git"
+inherit distutils-r1 vcs-snapshot
 
 DESCRIPTION="Optional static typing for Python"
 HOMEPAGE="http://www.mypy-lang.org/"
-SRC_URI=""
+SRC_URI="https://github.com/JukkaL/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS=""
-IUSE="doc examples test"
+KEYWORDS="~amd64"
+IUSE="doc examples"
 
 DEPEND="
-	test? ( dev-python/flake8[${PYTHON_USEDEP}] )
 	doc? (
 		dev-python/sphinx[${PYTHON_USEDEP}]
 		dev-python/sphinx_rtd_theme[${PYTHON_USEDEP}]
@@ -41,8 +38,8 @@ python_compile_all() {
 
 python_test() {
 	local PYTHONPATH="$(pwd)"
-
-	"${PYTHON}" runtests.py || die "tests failed under ${EPYTHON}"
+	
+	"${PYTHON}" tests.py || die "tests failed under ${EPYTHON}"
 }
 
 python_install_all() {
