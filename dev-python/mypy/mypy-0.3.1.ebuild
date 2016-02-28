@@ -38,7 +38,7 @@ python_compile_all() {
 
 python_test() {
 	local PYTHONPATH="$(pwd)"
-	
+
 	"${PYTHON}" tests.py || die "tests failed under ${EPYTHON}"
 }
 
