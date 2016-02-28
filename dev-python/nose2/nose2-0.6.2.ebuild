@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 python3_3 python3_4 )
+PYTHON_COMPAT=( python2_7 python3_3 python3_4 python3_5 )
 
 inherit distutils-r1 vcs-snapshot
 
@@ -16,12 +16,18 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="doc"
 
-CDEPEND=">=dev-python/six-1.1[${PYTHON_USEDEP}]"
-DEPEND="
+CDEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
+	>=dev-python/six-1.1[${PYTHON_USEDEP}]
+"
+DEPEND="
+	${CDEPEND}
 	doc? ( >=dev-python/sphinx-1.0.5[${PYTHON_USEDEP}] )
 "
-RDEPEND="${CDEPEND}"
+RDEPEND="
+	${CDEPEND}
+	>=dev-python/cov-core-1.12[${PYTHON_USEDEP}]
+"
 
 python_compile_all() {
 	use doc && emake -C docs html
