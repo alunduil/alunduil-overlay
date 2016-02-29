@@ -33,7 +33,7 @@ RDEPEND="
 
 python_compile_all() {
 	if use doc; then
-		mkdocs build || die "docs failed to build"
+		mkdocs build -d 'mkdocs_site' || die "docs failed to build"
 	fi
 }
 
@@ -42,7 +42,7 @@ python_test() {
 }
 
 python_install_all() {
-	use doc && local HTML_DOCS=( site/. )
+	use doc && local HTML_DOCS=( mkdocs_site/. )
 
 	distutils-r1_python_install_all
 }
