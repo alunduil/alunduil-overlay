@@ -17,8 +17,8 @@ KEYWORDS="~amd64"
 IUSE="doc test"
 
 CDEPEND="
-	>=dev-python/botocore-1.3.29[${PYTHON_USEDEP}]
-	<dev-python/botocore-1.4.0[${PYTHON_USEDEP}]
+	>=dev-python/botocore-1.4.1[${PYTHON_USEDEP}]
+	<dev-python/botocore-1.5.0[${PYTHON_USEDEP}]
 	>=dev-python/jmespath-0.7.1[${PYTHON_USEDEP}]
 	<dev-python/jmespath-1.0.0[${PYTHON_USEDEP}]
 	$(python_gen_cond_dep '>=dev-python/futures-2.2.0[${PYTHON_USEDEP}]' 'python2_7')
