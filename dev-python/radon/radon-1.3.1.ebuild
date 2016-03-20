@@ -18,8 +18,10 @@ IUSE="doc test"
 
 CDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RCDEPEND="
-	~dev-python/mando-0.3[${PYTHON_USEDEP}]
-	~dev-python/colorama-0.3[${PYTHON_USEDEP}]
+	>=dev-python/colorama-0.3[${PYTHON_USEDEP}]
+	<dev-python/colorama-0.4[${PYTHON_USEDEP}]
+	>=dev-python/mando-0.3[${PYTHON_USEDEP}]
+	<dev-python/mando-0.4[${PYTHON_USEDEP}]
 "
 DEPEND="
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
