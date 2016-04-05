@@ -25,13 +25,9 @@ DEPEND="
 		dev-python/sphinx_rtd_theme[${PYTHON_USEDEP}]
 	)
 "
-RDEPEND=""
+RDEPEND="$(python_gen_cond_dep 'dev-python/typing[${PYTHON_USEDEP}]' 'python3_3' 'python3_4')"
 
 python_prepare_all() {
-	local PATCHES=(
-		"${FILESDIR}"/use-which.patch
-	)
-
 	distutils-r1_python_prepare_all
 }
 
