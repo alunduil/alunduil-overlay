@@ -27,10 +27,6 @@ DEPEND="
 "
 RDEPEND="$(python_gen_cond_dep 'dev-python/typing[${PYTHON_USEDEP}]' 'python3_3' 'python3_4')"
 
-python_prepare_all() {
-	distutils-r1_python_prepare_all
-}
-
 python_compile_all() {
 	use doc && emake -C docs html
 }
