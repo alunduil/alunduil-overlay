@@ -1,5 +1,5 @@
 diff --git a/mypy/build.py b/mypy/build.py
-index 74b89b7..54700f5 100644
+index 74b89b7..34043e1 100644
 --- a/mypy/build.py
 +++ b/mypy/build.py
 @@ -285,6 +285,9 @@ def default_data_dir(bin_dir: str) -> str:
@@ -8,7 +8,7 @@ index 74b89b7..54700f5 100644
          return os.path.join(os.path.dirname(dir), 'lib', 'mypy')
 +    elif dir.endswith('python-exec'):
 +        # Gentoo uses a python wrapper in /usr/lib to which mypy is a symlink.
-+        return os.path.join(os.path.dirname(dir), '..', 'mypy')
++        return os.path.join(os.path.dirname(dir), 'mypy')
      else:
          # Don't know where to find the data files!
          raise RuntimeError("Broken installation: can't determine base dir")
