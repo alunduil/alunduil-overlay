@@ -7,7 +7,7 @@ PYTHON_COMPAT=( python3_3 python3_4 python3_5 )
 
 inherit distutils-r1 git-r3
 
-EGIT_REPO_URI="https://github.com/JukkaL/mypy.git"
+EGIT_REPO_URI="https://github.com/python/mypy.git"
 
 DESCRIPTION="Optional static typing for Python"
 HOMEPAGE="http://www.mypy-lang.org/"
