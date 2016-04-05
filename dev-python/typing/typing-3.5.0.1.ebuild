@@ -11,7 +11,7 @@ DESCRIPTION="Type Hints for Python"
 HOMEPAGE="https://docs.python.org/3.5/library/typing.html"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
-LICENSE="PSF"
+LICENSE="PSF-2"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
