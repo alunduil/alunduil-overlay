@@ -29,7 +29,7 @@ RDEPEND="
 	>=dev-python/requests-2.5.2[${PYTHON_USEDEP}]
 	>=dev-python/six-1.4.0[${PYTHON_USEDEP}]
 	>=dev-python/websocket-client-0.32.0[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '>=dev-python/ipaddress-3.4.1[${PYTHON_USEDEP}]' 'python2_7')
+	$(python_gen_cond_dep '>=dev-python/py2-ipaddress-3.4.1[${PYTHON_USEDEP}]' 'python2_7')
 "
 
 python_compile_all() {
