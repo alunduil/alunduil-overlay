@@ -3,7 +3,7 @@
 # $Id$
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 python3_4 )
+PYTHON_COMPAT=( python3_4 )
 
 inherit bash-completion-r1 distutils-r1 vcs-snapshot
 
