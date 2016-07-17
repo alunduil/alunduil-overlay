@@ -16,7 +16,7 @@ SRC_URI=""
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS=""
-IUSE="doc examples test"
+IUSE="doc test"
 
 DEPEND="
 	test? ( dev-python/flake8[${PYTHON_USEDEP}] )
@@ -25,7 +25,7 @@ DEPEND="
 		dev-python/sphinx_rtd_theme[${PYTHON_USEDEP}]
 	)
 "
-RDEPEND="$(python_gen_cond_dep 'dev-python/typing[${PYTHON_USEDEP}]' 'python3_3' 'python3_4')"
+RDEPEND="$(python_gen_cond_dep '!dev-python/typing[${PYTHON_USEDEP}]' 'python3_3' 'python3_4')"
 
 python_compile_all() {
 	use doc && emake -C docs html
@@ -39,7 +39,6 @@ python_test() {
 
 python_install_all() {
 	use doc && local HTML_DOCS=( docs/build/html/. )
-	use examples && local EXAMPLES=( samples/. )
 
 	distutils-r1_python_install_all
 }
