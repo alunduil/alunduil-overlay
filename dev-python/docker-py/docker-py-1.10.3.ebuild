@@ -27,7 +27,7 @@ DEPEND="
 	)
 "
 RDEPEND="
-	>=dev-python/docker-pycreds-0.2.0[${PYTHON_USEDEP}]
+	>=dev-python/docker-pycreds-0.2.1[${PYTHON_USEDEP}]
 	<dev-python/requests-2.11[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.5.2[${PYTHON_USEDEP}]
 	>=dev-python/six-1.4.0[${PYTHON_USEDEP}]
