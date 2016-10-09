@@ -16,7 +16,7 @@ EGIT_REPO_URI="https://github.com/KeepSafe/aiohttp"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc examples test"
+IUSE="doc test"
 
 CDEPEND="
 	dev-python/async_timeout[${PYTHON_USEDEP}]
@@ -53,7 +53,6 @@ python_test() {
 
 python_install_all() {
 	use doc && local HTML_DOCS=( docs/_build/html/. )
-	use examples && local EXAMPLES=( examples/. )
 
 	distutils-r1_python_install_all
 }
