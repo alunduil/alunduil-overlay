@@ -6,11 +6,11 @@ EAPI="6"
 
 PYTHON_COMPAT=( python3_4 python3_5 )
 
-inherit distutils-r1
+inherit distutils-r1 vcs-snapshot
 
 DESCRIPTION="http client/server for asyncio"
 HOMEPAGE="https://pypi.python.org/pypi/aiohttp"
-SRC_URI="mirror://pypi/${P:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="https://github.com/KeepSafe/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 EGIT_REPO_URI="https://github.com/KeepSafe/aiohttp"
 
 LICENSE="Apache-2.0"
@@ -21,7 +21,7 @@ IUSE="doc test"
 CDEPEND="
 	dev-python/async_timeout[${PYTHON_USEDEP}]
 	dev-python/chardet[${PYTHON_USEDEP}]
-	>=dev-python/multidict-2[${PYTHON_USEDEP}]
+	>=dev-python/multidict-2.0[${PYTHON_USEDEP}]
 "
 DEPEND="
 	dev-python/setuptools[${PYTHON_USEDEP}]
